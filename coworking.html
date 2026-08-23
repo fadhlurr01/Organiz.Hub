@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXUS COWORK - Next-Generation Vibrant Coworking Space & Innovation Hub. High-speed fiber, private studios, soundproof pods, artisan cafe, and inspiring creative community.">
+  <meta name="keywords" content="coworking space, hot desk, private office, meeting room, creative studio, remote work hub, innovation workspace">
+  <meta name="author" content="NEXUS Cowork Innovation Lab">
+  <title>NEXUS COWORK | Where Bold Creators & Next-Gen Founders Build the Future</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="coworking.css">
+</head>
+<body class="antialiased">
+
+  <!-- Ambient Energetic Glow Canvas Background -->
+  <div class="ambient-glow-bg" aria-hidden="true">
+    <div class="glow-orb orb-violet"></div>
+    <div class="glow-orb orb-cyan"></div>
+    <div class="glow-orb orb-coral"></div>
+    <div class="glow-orb orb-amber"></div>
+    <div class="mesh-grid-pattern"></div>
+  </div>
+
+  <!-- ========================================================
+       TOP FLOATING GLASS NAVBAR
+  ======================================================== -->
+  <header id="nexus-header" class="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="NEXUS Coworking Space">
+        <div class="logo-icon-box">
+          <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="brand-name">NEXUS<span class="brand-accent">.SPACE</span></span>
+          <span class="brand-badge-status">● LIVE 24/7 OPEN</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="desktop-nav desktop-only" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#spaces" class="nav-link" data-nav="spaces">Spaces</a></li>
+          <li><a href="#amenities" class="nav-link" data-nav="amenities">Amenities</a></li>
+          <li><a href="#tour" class="nav-link" data-nav="tour">Virtual Tour</a></li>
+          <li><a href="#plans" class="nav-link" data-nav="plans">Memberships</a></li>
+          <li><a href="#community" class="nav-link" data-nav="community">Community</a></li>
+          <li><a href="#perks" class="nav-link" data-nav="perks">Perks</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-controls">
+        <!-- Ambiance Sound Toggle (Interactive Cafe Audio Simulator) -->
+        <button class="sound-toggle-btn" id="sound-toggle-btn" title="Toggle Lo-Fi Focus Ambiance" aria-label="Ambiance Audio">
+          <span class="sound-waves" id="sound-waves-indicator">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+          </span>
+          <span class="sound-label" id="sound-label-text">Lo-Fi Cafe</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Header CTA Button -->
+        <div class="header-cta-group desktop-only">
+          <a href="#plans" class="btn btn-glass-outline btn-sm">Explore Passes</a>
+          <button class="btn btn-vibrant-gradient btn-sm" id="btn-open-booking-top">
+            <span>Book a Day Pass</span>
+            <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-nav-toggle mobile-only" id="mobile-nav-toggle" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-backdrop" id="mobile-backdrop"></div>
+  <aside class="mobile-drawer glass-card" id="mobile-drawer">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <div class="logo-icon-box">
+          <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <span class="brand-name">NEXUS<span class="brand-accent">.SPACE</span></span>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Menu">✕</button>
+    </div>
+    <div class="drawer-body">
+      <ul class="drawer-nav-list">
+        <li><a href="#spaces" class="drawer-nav-link">🏢 Space Gallery</a></li>
+        <li><a href="#amenities" class="drawer-nav-link">⚡ Amenities & Gear</a></li>
+        <li><a href="#tour" class="drawer-nav-link">🔮 Interactive 3D Tour</a></li>
+        <li><a href="#plans" class="drawer-nav-link">💳 Membership Tiers</a></li>
+        <li><a href="#community" class="drawer-nav-link">🚀 Community Events</a></li>
+        <li><a href="#perks" class="drawer-nav-link">🎁 Member Perks</a></li>
+      </ul>
+    </div>
+    <div class="drawer-footer">
+      <button class="btn btn-vibrant-gradient full-width" id="btn-open-booking-drawer">Book Space Pass</button>
+    </div>
+  </aside>
+
+  <!-- ========================================================
+       HERO SECTION - ENERGETIC, VIBRANT & INTERACTIVE
+  ======================================================== -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge-pill-glow">
+          <span class="pulse-dot"></span>
+          <span class="badge-text">⚡ Next-Gen Workspace • High-Energy Collaborative Hub</span>
+        </div>
+
+        <h1 class="hero-headline">
+          The Workspace Designed for <span class="gradient-text-vibrant">Peak Flow</span> & Bold Ambitions.
+        </h1>
+
+        <p class="hero-subhead">
+          Ultra-fast 10Gbps fiber, ergonomic Herman Miller setup, soundproof creator pods, artisan nitro cold brew, and a hyper-collaborative network of founders, engineers, and creatives.
+        </p>
+
+        <div class="hero-cta-row">
+          <button class="btn btn-vibrant-gradient btn-lg" id="btn-hero-booking">
+            <span>Claim Free Day Pass</span>
+            <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <a href="#tour" class="btn btn-glass-outline btn-lg" id="btn-hero-tour">
+            <svg class="btn-play-icon" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Explore Virtual Tour</span>
+          </a>
+        </div>
+
+        <!-- Live Metrics Bar -->
+        <div class="hero-stats-row glass-card">
+          <div class="stat-item">
+            <span class="stat-num" data-target="99.9">99.9%</span>
+            <span class="stat-label">Uptime & 10G Fiber</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="450">450+</span>
+            <span class="stat-label">Active Innovators</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="24">24/7</span>
+            <span class="stat-label">Biometric Access</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="4.9">4.9 ★</span>
+            <span class="stat-label">Community Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Interactive 3D Simulator Card -->
+      <div class="hero-visual-col">
+        <div class="hero-stage-card glass-card">
+          <div class="card-glow-reflection"></div>
+          
+          <div class="stage-header">
+            <div class="stage-traffic-lights">
+              <span class="t-light t-red"></span>
+              <span class="t-light t-yellow"></span>
+              <span class="t-light t-green"></span>
+            </div>
+            <div class="stage-tag-badge">
+              <span class="live-blink"></span> FLOOR 4 • CREATIVE LAB
+            </div>
+            <div class="stage-occupancy">
+              <span class="occ-chip">⚡ 78% Filled • 12 Desks Free</span>
+            </div>
+          </div>
+
+          <!-- Interactive Workspace Live Scene Preview -->
+          <div class="space-3d-canvas-wrap">
+            <div class="workspace-scene-svg-wrapper">
+              <svg class="workspace-isometric-svg" viewBox="0 0 600 380" fill="none">
+                <defs>
+                  <linearGradient id="neonFloor" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.9"/>
+                    <stop offset="50%" stop-color="#0f172a" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#030712" stop-opacity="0.98"/>
+                  </linearGradient>
+                  <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#06B6D4"/>
+                    <stop offset="100%" stop-color="#3B82F6"/>
+                  </linearGradient>
+                  <linearGradient id="neonViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#8B5CF6"/>
+                    <stop offset="100%" stop-color="#EC4899"/>
+                  </linearGradient>
+                  <linearGradient id="neonAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#F59E0B"/>
+                    <stop offset="100%" stop-color="#EF4444"/>
+                  </linearGradient>
+                </defs>
+
+                <!-- Isometric Floor Grid -->
+                <polygon points="300,40 560,190 300,340 40,190" fill="url(#neonFloor)" stroke="rgba(124, 58, 237, 0.4)" stroke-width="1.5"/>
+                
+                <!-- Floor Neon Guideway Lines -->
+                <line x1="300" y1="40" x2="300" y2="340" stroke="rgba(6, 182, 212, 0.25)" stroke-dasharray="4,4"/>
+                <line x1="40" y1="190" x2="560" y2="190" stroke="rgba(139, 92, 246, 0.25)" stroke-dasharray="4,4"/>
+
+                <!-- Pod 1: Private Acoustic Cube (Left) -->
+                <g class="hotspot-group" data-spot="pod" id="hotspot-pod">
+                  <polygon points="120,150 180,115 240,150 180,185" fill="rgba(6, 182, 212, 0.2)" stroke="#06B6D4" stroke-width="1.5"/>
+                  <polygon points="120,150 120,200 180,235 180,185" fill="rgba(6, 182, 212, 0.35)" stroke="#06B6D4" stroke-width="1.5"/>
+                  <polygon points="180,185 180,235 240,200 240,150" fill="rgba(6, 182, 212, 0.15)" stroke="#06B6D4" stroke-width="1.5"/>
+                  <!-- Pod Glow Core -->
+                  <circle cx="180" cy="150" r="14" fill="#06B6D4" opacity="0.3" class="pulse-ring"/>
+                  <circle cx="180" cy="150" r="6" fill="#22D3EE"/>
+                </g>
+
+                <!-- Pod 2: Hot Desk Collaborative Matrix (Center) -->
+                <g class="hotspot-group" data-spot="hotdesk" id="hotspot-desk">
+                  <polygon points="260,170 340,125 420,170 340,215" fill="rgba(139, 92, 246, 0.25)" stroke="#A855F7" stroke-width="1.5"/>
+                  <polygon points="260,170 260,205 340,250 340,215" fill="rgba(139, 92, 246, 0.4)" stroke="#A855F7" stroke-width="1.5"/>
+                  <polygon points="340,215 340,250 420,205 420,170" fill="rgba(139, 92, 246, 0.2)" stroke="#A855F7" stroke-width="1.5"/>
+                  <!-- Laptops & Monitors On Desk -->
+                  <rect x="310" y="150" width="22" height="14" rx="2" fill="#38BDF8" transform="skewY(-15)"/>
+                  <rect x="350" y="165" width="22" height="14" rx="2" fill="#F472B6" transform="skewY(15)"/>
+                  <circle cx="340" cy="170" r="16" fill="#8B5CF6" opacity="0.3" class="pulse-ring"/>
+                  <circle cx="340" cy="170" r="6" fill="#C084FC"/>
+                </g>
+
+                <!-- Pod 3: Artisan Brew & Lounge Oasis (Right) -->
+                <g class="hotspot-group" data-spot="cafe" id="hotspot-cafe">
+                  <polygon points="410,130 470,95 530,130 470,165" fill="rgba(245, 158, 11, 0.2)" stroke="#F59E0B" stroke-width="1.5"/>
+                  <polygon points="410,130 410,175 470,210 470,165" fill="rgba(245, 158, 11, 0.35)" stroke="#F59E0B" stroke-width="1.5"/>
+                  <polygon points="470,165 470,210 530,175 530,130" fill="rgba(245, 158, 11, 0.15)" stroke="#F59E0B" stroke-width="1.5"/>
+                  <circle cx="470" cy="130" r="14" fill="#F59E0B" opacity="0.3" class="pulse-ring"/>
+                  <circle cx="470" cy="130" r="6" fill="#FBBF24"/>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Live Floating Tooltip on Scene Hover/Select -->
+            <div class="interactive-spot-card glass-card" id="scene-spot-card">
+              <div class="spot-card-icon" id="spot-icon">🎧</div>
+              <div class="spot-card-info">
+                <strong id="spot-title">Soundproof Focus Pod #04</strong>
+                <span id="spot-status" class="text-cyan">Available Now • Acoustic Class-A</span>
+              </div>
+              <button class="btn btn-sm btn-glass-outline" id="btn-spot-quickbook">Reserve</button>
+            </div>
+          </div>
+
+          <!-- Bottom Scene Controls -->
+          <div class="stage-footer-bar">
+            <button class="scene-tab-btn active" data-target="hotdesk">⚡ Collaborative Desk</button>
+            <button class="scene-tab-btn" data-target="pod">🎧 Focus Pods</button>
+            <button class="scene-tab-btn" data-target="cafe">☕ Nitro Cafe</button>
+            <button class="scene-tab-btn" data-target="boardroom">🏛️ Boardroom</button>
+          </div>
+        </div>
+
+        <!-- Floating Glass Micro-Perks Badges -->
+        <div class="floating-badge badge-top-right glass-card">
+          <span class="badge-icon-circ bg-cyan">⚡</span>
+          <div>
+            <strong>10 Gbps Symmetrical</strong>
+            <small>Dual Dedicated Fiber Feeds</small>
+          </div>
+        </div>
+
+        <div class="floating-badge badge-bottom-left glass-card">
+          <span class="badge-icon-circ bg-violet">☕</span>
+          <div>
+            <strong>Free Unlimited Nitro Brew</strong>
+            <small>& Single-Origin Roast</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FEATURED SPACES & ZONES SHOWCASE (GLASS CARDS)
+  ======================================================== -->
+  <section id="spaces" class="section-spacing">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag-pill">ARCHITECTURAL ZONES</span>
+        <h2 class="section-title">Designed for Every Mode of Work</h2>
+        <p class="section-subtitle">
+          Whether you need pin-drop silence for deep coding, an energetic stage for brainstorming, or a private sanctuary for your 20-person startup.
+        </p>
+      </div>
+
+      <!-- Spaces Filter Navigation -->
+      <div class="filter-tabs-row">
+        <button class="filter-btn active" data-filter="all">All Zones</button>
+        <button class="filter-btn" data-filter="desks">Hot Desks & Open Plan</button>
+        <button class="filter-btn" data-filter="studios">Private Studios</button>
+        <button class="filter-btn" data-filter="meeting">Meeting & Pods</button>
+        <button class="filter-btn" data-filter="lounge">Lounge & Media</button>
+      </div>
+
+      <!-- Spaces Grid -->
+      <div class="spaces-grid">
+        <!-- Card 1: Quantum Open Desks -->
+        <div class="space-card glass-card" data-category="desks">
+          <div class="space-img-wrap">
+            <div class="space-mockup-visual bg-gradient-quantum">
+              <div class="space-card-tag">HOT DESK MATRIX</div>
+              <div class="space-badge-live">● 14 Open Desks</div>
+              <div class="visual-desk-elements">
+                <div class="mini-monitor"></div>
+                <div class="mini-light-strip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="space-body">
+            <div class="space-meta-top">
+              <span class="space-cap">👤 1 Person</span>
+              <span class="space-price">From <strong>$25</strong>/day</span>
+            </div>
+            <h3 class="space-name">Quantum Hot Desk</h3>
+            <p class="space-desc">
+              High-ergonomic workstations with dual 4K USB-C thunderbolt displays, Herman Miller Embody chairs, and ultra-high-speed ethernet drops.
+            </p>
+            <ul class="space-features-list">
+              <li>✓ Dual 27" 4K USB-C Display</li>
+              <li>✓ Herman Miller Embody Chair</li>
+              <li>✓ 10Gbps Ethernet & WiFi 6E</li>
+              <li>✓ Unlimited Nitro Cold Brew</li>
+            </ul>
+            <div class="space-footer">
+              <button class="btn btn-glass-outline btn-sm full-width btn-book-trigger" data-plan="Quantum Hot Desk">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Private Studio Suite -->
+        <div class="space-card glass-card highlight-card" data-category="studios">
+          <div class="space-card-ribbon">MOST POPULAR FOR TEAMS</div>
+          <div class="space-img-wrap">
+            <div class="space-mockup-visual bg-gradient-studio">
+              <div class="space-card-tag">DEDICATED STUDIO</div>
+              <div class="space-badge-live">● 2 Studios Left</div>
+              <div class="visual-studio-elements">
+                <div class="mini-door-biometric"></div>
+                <div class="mini-ambient-lights"></div>
+              </div>
+            </div>
+          </div>
+          <div class="space-body">
+            <div class="space-meta-top">
+              <span class="space-cap">👥 4 - 12 Persons</span>
+              <span class="space-price">From <strong>$1,200</strong>/mo</span>
+            </div>
+            <h3 class="space-name">Cyber Private Studio</h3>
+            <p class="space-desc">
+              Fully furnished, soundproof private glass office with custom company branding, dedicated VLAN security, and personalized smart climate control.
+            </p>
+            <ul class="space-features-list">
+              <li>✓ Biometric Keyless Access</li>
+              <li>✓ Dedicated Private VLAN & Firewall</li>
+              <li>✓ 40 Hrs Free Boardroom Credits</li>
+              <li>✓ Custom Wall Branding & Signage</li>
+            </ul>
+            <div class="space-footer">
+              <button class="btn btn-vibrant-gradient btn-sm full-width btn-book-trigger" data-plan="Cyber Private Studio">Schedule Private Tour</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Acoustic Pod Sanctuary -->
+        <div class="space-card glass-card" data-category="meeting">
+          <div class="space-img-wrap">
+            <div class="space-mockup-visual bg-gradient-pod">
+              <div class="space-card-tag">ACOUSTIC PODS</div>
+              <div class="space-badge-live">● Instant Walk-in</div>
+              <div class="visual-pod-elements">
+                <div class="mini-soundwave"></div>
+              </div>
+            </div>
+          </div>
+          <div class="space-body">
+            <div class="space-meta-top">
+              <span class="space-cap">🎙️ 1 - 2 Persons</span>
+              <span class="space-price">From <strong>$15</strong>/hr</span>
+            </div>
+            <h3 class="space-name">Soundproof Creator Pod</h3>
+            <p class="space-desc">
+              Studio-grade sound insulation (STC 42dB) equipped with Shure SM7B broadcast mic, Elgato Key Lights, and 4K Brio camera for podcasts & pitch calls.
+            </p>
+            <ul class="space-features-list">
+              <li>✓ Studio Acoustics (-42dB Isolation)</li>
+              <li>✓ Shure SM7B & Audio Interface</li>
+              <li>✓ 4K StreamCam & Keylight Ring</li>
+              <li>✓ High-Airflow Silent Ventilation</li>
+            </ul>
+            <div class="space-footer">
+              <button class="btn btn-glass-outline btn-sm full-width btn-book-trigger" data-plan="Soundproof Creator Pod">Reserve Pod</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Executive Matrix Boardroom -->
+        <div class="space-card glass-card" data-category="meeting">
+          <div class="space-img-wrap">
+            <div class="space-mockup-visual bg-gradient-boardroom">
+              <div class="space-card-tag">BOARDROOM LAB</div>
+              <div class="space-badge-live">● Up to 20 Guests</div>
+              <div class="visual-board-elements">
+                <div class="mini-big-screen"></div>
+              </div>
+            </div>
+          </div>
+          <div class="space-body">
+            <div class="space-meta-top">
+              <span class="space-cap">🏛️ 10 - 20 Persons</span>
+              <span class="space-price">From <strong>$75</strong>/hr</span>
+            </div>
+            <h3 class="space-name">Executive Matrix Boardroom</h3>
+            <p class="space-desc">
+              85" 4K Interactive Touch Display, AI tracking conference 360 audio bar, motorized privacy smart glass, and full white-glove catering service on call.
+            </p>
+            <ul class="space-features-list">
+              <li>✓ 85" Samsung Interactive Touch Display</li>
+              <li>✓ Neat Bar Pro AI 360 Camera</li>
+              <li>✓ Switchable Smart Glass Privacy</li>
+              <li>✓ Nespresso Bar & Catering Station</li>
+            </ul>
+            <div class="space-footer">
+              <button class="btn btn-glass-outline btn-sm full-width btn-book-trigger" data-plan="Executive Matrix Boardroom">Book Boardroom</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Podcast & Media Production Stage -->
+        <div class="space-card glass-card" data-category="lounge">
+          <div class="space-img-wrap">
+            <div class="space-mockup-visual bg-gradient-media">
+              <div class="space-card-tag">MEDIA PRODUCTION</div>
+              <div class="space-badge-live">● Full Lighting Rig</div>
+              <div class="visual-media-elements">
+                <div class="mini-mic-stand"></div>
+              </div>
+            </div>
+          </div>
+          <div class="space-body">
+            <div class="space-meta-top">
+              <span class="space-cap">🎬 1 - 6 Persons</span>
+              <span class="space-price">From <strong>$60</strong>/hr</span>
+            </div>
+            <h3 class="space-name">Creator Media Studio</h3>
+            <p class="space-desc">
+              Turnkey YouTube, podcast & product photography setup. Pre-lit with Aputure RGB lights, Blackmagic 6K Pro cameras, and Rodecaster Pro II.
+            </p>
+            <ul class="space-features-list">
+              <li>✓ 3x Blackmagic Cinema Cameras</li>
+              <li>✓ Rodecaster Pro II & 4 Shure Mics</li>
+              <li>✓ Aputure RGB Cinematic Light Grid</li>
+              <li>✓ Green Screen & Acoustic Drapes</li>
+            </ul>
+            <div class="space-footer">
+              <button class="btn btn-glass-outline btn-sm full-width btn-book-trigger" data-plan="Creator Media Studio">Rent Studio</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Rooftop Sunset Event Terrace -->
+        <div class="space-card glass-card" data-category="lounge">
+          <div class="space-img-wrap">
+            <div class="space-mockup-visual bg-gradient-terrace">
+              <div class="space-card-tag">EVENT TERRACE</div>
+              <div class="space-badge-live">● 100 Capacity</div>
+              <div class="visual-terrace-elements">
+                <div class="mini-rooftop-glow"></div>
+              </div>
+            </div>
+          </div>
+          <div class="space-body">
+            <div class="space-meta-top">
+              <span class="space-cap">🥂 Up to 100 Guests</span>
+              <span class="space-price">From <strong>$250</strong>/hr</span>
+            </div>
+            <h3 class="space-name">Skyline Lounge & Terrace</h3>
+            <p class="space-desc">
+              Breathtaking 360° panoramic city skyline views, craft cocktail bar, DJ booth hookup, outdoor fire pits, and integrated surround sound system.
+            </p>
+            <ul class="space-features-list">
+              <li>✓ 360° City Skyline Views</li>
+              <li>✓ Full Bar & Catering Prep Kitchen</li>
+              <li>✓ Sonos Architectural Audio System</li>
+              <li>✓ High-Power Projector & Stage</li>
+            </ul>
+            <div class="space-footer">
+              <button class="btn btn-glass-outline btn-sm full-width btn-book-trigger" data-plan="Skyline Lounge & Terrace">Host an Event</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       INTERACTIVE SPACE TOUR PREVIEW & LIVE EXPLORER
+  ======================================================== -->
+  <section id="tour" class="section-spacing bg-surface-subtle">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag-pill">360° IMMERSIVE EXPLORER</span>
+        <h2 class="section-title">Take the Virtual Floor Tour</h2>
+        <p class="section-subtitle">
+          Interact with our live digital twin. Click zones to examine real-time equipment specs, noise levels, and available seats.
+        </p>
+      </div>
+
+      <div class="tour-simulator-wrapper glass-card">
+        <!-- Tour Screen Display -->
+        <div class="tour-viewport-container" id="tour-viewport">
+          <div class="tour-screen-backdrop" id="tour-backdrop-view">
+            <!-- Dynamic Room Visualizer Graphic -->
+            <div class="tour-room-graphic" id="tour-room-content">
+              <div class="tour-scene-overlay">
+                <div class="tour-hud-top">
+                  <span class="hud-chip" id="hud-room-name">📍 Zone A: Collaborative Open Deck</span>
+                  <span class="hud-chip hud-noise" id="hud-noise-level">🔊 Noise: 38dB (Lofi Ambient)</span>
+                  <span class="hud-chip hud-wifi" id="hud-speed">🚀 980 Mbps WiFi 6E</span>
+                </div>
+
+                <!-- Interactive Hotspots on the Tour Canvas -->
+                <div class="tour-interactive-nodes">
+                  <div class="tour-node-point node-1 active" data-node="screen" style="top: 38%; left: 32%;">
+                    <span class="node-pulse"></span>
+                    <span class="node-marker">+</span>
+                    <div class="node-tooltip">
+                      <strong>Dual 4K Thunderbolt Hub</strong>
+                      <p>Plug in one cable for power, dual screens, & gigabit net.</p>
+                    </div>
+                  </div>
+
+                  <div class="tour-node-point node-2" data-node="chair" style="top: 62%; left: 48%;">
+                    <span class="node-pulse"></span>
+                    <span class="node-marker">+</span>
+                    <div class="node-tooltip">
+                      <strong>Herman Miller Embody</strong>
+                      <p>Engineered for all-day posture alignment & focus.</p>
+                    </div>
+                  </div>
+
+                  <div class="tour-node-point node-3" data-node="bar" style="top: 45%; left: 74%;">
+                    <span class="node-pulse"></span>
+                    <span class="node-marker">+</span>
+                    <div class="node-tooltip">
+                      <strong>Nitro Cold Brew Tap</strong>
+                      <p>Guatemalan Single-Origin on continuous nitrogen tap.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tour View Controls -->
+                <div class="tour-hud-bottom">
+                  <button class="tour-action-chip" id="btn-toggle-lights">💡 Mode: Neon Cyan</button>
+                  <button class="tour-action-chip" id="btn-toggle-pan">🔄 Auto-Orbit 360°</button>
+                  <button class="btn btn-vibrant-gradient btn-sm" id="btn-tour-book-this">Book This Zone</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour Navigation Selector Bar -->
+        <div class="tour-zones-selector">
+          <div class="tour-thumb-btn active" data-zone="hotdesk" data-name="Zone A: Collaborative Open Deck" data-noise="38dB (Lofi Ambient)" data-speed="980 Mbps">
+            <div class="thumb-preview bg-gradient-quantum"></div>
+            <div class="thumb-info">
+              <strong>Open Workspace</strong>
+              <small>Desks, Monitors & Coffee Bar</small>
+            </div>
+          </div>
+
+          <div class="tour-thumb-btn" data-zone="studio" data-name="Zone B: Cyber Team Studios" data-noise="28dB (Soundproofed)" data-speed="1.2 Gbps Dedicated">
+            <div class="thumb-preview bg-gradient-studio"></div>
+            <div class="thumb-info">
+              <strong>Private Studio 4A</strong>
+              <small>Glass Office, Lounge & Whiteboard</small>
+            </div>
+          </div>
+
+          <div class="tour-thumb-btn" data-zone="pod" data-name="Zone C: Focus Acoustic Pods" data-noise="18dB (Ultra Silent)" data-speed="850 Mbps">
+            <div class="thumb-preview bg-gradient-pod"></div>
+            <div class="thumb-info">
+              <strong>Solo Focus Pod</strong>
+              <small>Microphone, Ring Light & Cam</small>
+            </div>
+          </div>
+
+          <div class="tour-thumb-btn" data-zone="lounge" data-name="Zone D: Sky Lounge & Bar" data-noise="55dB (Social & Music)" data-speed="750 Mbps">
+            <div class="thumb-preview bg-gradient-terrace"></div>
+            <div class="thumb-info">
+              <strong>Rooftop Skyline</strong>
+              <small>Terrace, Fire Pits & Bar</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       AMENITIES & HARDWARE SHOWCASE
+  ======================================================== -->
+  <section id="amenities" class="section-spacing">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag-pill">WORLD-CLASS INFRASTRUCTURE</span>
+        <h2 class="section-title">Built for Peak Performance</h2>
+        <p class="section-subtitle">
+          We obsess over the tiny details so you can focus 100% on writing code, closing deals, and shipping game-changing products.
+        </p>
+      </div>
+
+      <div class="amenities-grid">
+        <!-- Amenity 1 -->
+        <div class="amenity-card glass-card">
+          <div class="amenity-icon-box bg-glow-cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+              <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+              <line x1="12" y1="20" x2="12.01" y2="20"></line>
+            </svg>
+          </div>
+          <h3>10 Gbps Symmetrical Fiber</h3>
+          <p>Dual redundant Tier-1 ISP links with sub-5ms latency, private VLAN provisioning, and Wi-Fi 6E mesh routers throughout.</p>
+          <span class="amenity-pill">Zero Downtime SLA</span>
+        </div>
+
+        <!-- Amenity 2 -->
+        <div class="amenity-card glass-card">
+          <div class="amenity-icon-box bg-glow-violet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+              <line x1="14" y1="1" x2="14" y2="4"></line>
+            </svg>
+          </div>
+          <h3>Artisan Cafe & Nitro Taps</h3>
+          <p>Unlimited single-origin espresso, nitro cold brew, matcha lattes, sparkling kombucha, and organic afternoon brain snacks.</p>
+          <span class="amenity-pill">100% Free & Unlimited</span>
+        </div>
+
+        <!-- Amenity 3 -->
+        <div class="amenity-card glass-card">
+          <div class="amenity-icon-box bg-glow-coral">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3>24/7 Smart Biometric Entry</h3>
+          <p>Seamless tap-to-enter via Apple Wallet NFC or biometric facial recognition with continuous security patrol & CCTV.</p>
+          <span class="amenity-pill">Always Accessible</span>
+        </div>
+
+        <!-- Amenity 4 -->
+        <div class="amenity-card glass-card">
+          <div class="amenity-icon-box bg-glow-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+          </div>
+          <h3>Acoustic & Media Pods</h3>
+          <p>Calm, echo-free private booths for pitch calls, podcast recording, deep sprint coding, and telehealth privacy.</p>
+          <span class="amenity-pill">42dB Isolation</span>
+        </div>
+
+        <!-- Amenity 5 -->
+        <div class="amenity-card glass-card">
+          <div class="amenity-icon-box bg-glow-emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            </svg>
+          </div>
+          <h3>Mailbox & Business Address</h3>
+          <p>Prestigious commercial business registration address with mail scanning, package reception, and courier dispatch.</p>
+          <span class="amenity-pill">Legal Address Included</span>
+        </div>
+
+        <!-- Amenity 6 -->
+        <div class="amenity-card glass-card">
+          <div class="amenity-icon-box bg-glow-purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Curated Community & Demo Days</h3>
+          <p>Weekly founder breakfasts, investor pitch nights, hackathons, and intimate fireside chats with Tier-1 tech leaders.</p>
+          <span class="amenity-pill">Top 1% Founder Network</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       MEMBERSHIP PLANS & BILLING TOGGLE (GLASS PRICING)
+  ======================================================== -->
+  <section id="plans" class="section-spacing bg-surface-subtle">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag-pill">FLEXIBLE MEMBERSHIP TIERS</span>
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-subtitle">
+          No hidden fees, no long-term locks. Upgrade, downgrade, or cancel anytime with one click.
+        </p>
+
+        <!-- Billing Switcher Toggle -->
+        <div class="billing-toggle-wrapper glass-card">
+          <span class="billing-opt active" id="billing-lbl-monthly">Monthly Billing</span>
+          <button class="billing-switch-btn" id="billing-switch-btn" aria-label="Toggle Annual Discount">
+            <span class="switch-knob"></span>
+          </button>
+          <span class="billing-opt" id="billing-lbl-annual">
+            Annual Pass <span class="badge-save">SAVE 20% + FREE CREDITS</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Pricing Plans Grid -->
+      <div class="pricing-plans-grid">
+        <!-- Plan 1: Day Pass / Flex -->
+        <div class="pricing-card glass-card">
+          <div class="plan-header">
+            <span class="plan-badge">FLEX STARTER</span>
+            <h3 class="plan-title">Day Explorer Pass</h3>
+            <p class="plan-desc">Perfect for remote travelers, digital nomads & drop-in brainstorms.</p>
+          </div>
+          <div class="plan-pricing-box">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="25" data-annual="20">25</span>
+            <span class="price-cycle">/ day pass</span>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Any open hot desk across Floor 1-3</li>
+            <li>✓ 10 Gbps High-Speed WiFi 6E</li>
+            <li>✓ Unlimited artisan cafe & nitro bar</li>
+            <li>✓ 1 Hour phone booth access</li>
+            <li>✓ Community lounge & rooftop access</li>
+            <li class="disabled">✕ Meeting room booking credits</li>
+            <li class="disabled">✕ Registered business address</li>
+          </ul>
+          <div class="plan-cta">
+            <button class="btn btn-glass-outline full-width btn-book-trigger" data-plan="Day Explorer Pass ($25/day)">Get Day Pass</button>
+          </div>
+        </div>
+
+        <!-- Plan 2: Dedicated Resident (Featured) -->
+        <div class="pricing-card glass-card featured-plan">
+          <div class="plan-ribbon">⭐ BEST VALUE FOR FOUNDERS</div>
+          <div class="plan-header">
+            <span class="plan-badge bg-cyan-pill">RESIDENT PRO</span>
+            <h3 class="plan-title">Dedicated Desk</h3>
+            <p class="plan-desc">Your guaranteed personal desk with lockable storage & monitor.</p>
+          </div>
+          <div class="plan-pricing-box">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="349" data-annual="279">349</span>
+            <span class="price-cycle">/ month</span>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Reserved desk with personal lockable locker</li>
+            <li>✓ Dual 27" 4K USB-C thunderbolt display</li>
+            <li>✓ 24/7 Biometric Smart Key access</li>
+            <li>✓ 10 Hours free meeting room credits / mo</li>
+            <li>✓ Registered business commercial address</li>
+            <li>✓ $50,000 in AWS, Stripe & Notion credits</li>
+            <li>✓ Free access to weekly community dinners</li>
+          </ul>
+          <div class="plan-cta">
+            <button class="btn btn-vibrant-gradient full-width btn-book-trigger" data-plan="Dedicated Desk ($349/mo)">Join as Resident</button>
+          </div>
+        </div>
+
+        <!-- Plan 3: Private Team Studio -->
+        <div class="pricing-card glass-card">
+          <div class="plan-header">
+            <span class="plan-badge">STARTUP SUITE</span>
+            <h3 class="plan-title">Private Office Studio</h3>
+            <p class="plan-desc">Soundproof glass office suite tailored for high-output teams.</p>
+          </div>
+          <div class="plan-pricing-box">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="1,299" data-annual="1,039">1,299</span>
+            <span class="price-cycle">/ month (4 seats)</span>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Private soundproof glass room with company door logo</li>
+            <li>✓ Private encrypted VLAN & dedicated IP</li>
+            <li>✓ 40 Hours boardroom & media studio credits</li>
+            <li>✓ Executive Herman Miller setup for all members</li>
+            <li>✓ Priority catering & guest reception desk</li>
+            <li>✓ Customized room layout & whiteboard walls</li>
+            <li>✓ 24/7 dedicated support concierge</li>
+          </ul>
+          <div class="plan-cta">
+            <button class="btn btn-glass-outline full-width btn-book-trigger" data-plan="Private Office Studio ($1,299/mo)">Inquire Studio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       COMMUNITY & EVENTS CALENDAR
+  ======================================================== -->
+  <section id="community" class="section-spacing">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag-pill">THE NEXUS NETWORK</span>
+        <h2 class="section-title">Where Visionaries Collide</h2>
+        <p class="section-subtitle">
+          Our members don't just share desks—they launch startups, find co-founders, and raise capital together.
+        </p>
+      </div>
+
+      <div class="events-split-grid">
+        <!-- Left: Upcoming Events Calendar List -->
+        <div class="events-list-col">
+          <h3 class="events-col-title">⚡ Upcoming Member Events</h3>
+          
+          <div class="event-card glass-card">
+            <div class="event-date-box">
+              <span class="event-month">AUG</span>
+              <span class="event-day">27</span>
+            </div>
+            <div class="event-info">
+              <span class="event-category-chip">PITCH NIGHT</span>
+              <h4>Demo Day: 10 AI Startups Pitch to Top VCs</h4>
+              <p>Pitching live to Sequoia & a16z partners with rooftop cocktail mixer afterward.</p>
+            </div>
+            <button class="btn btn-sm btn-glass-outline btn-rsvp" data-event="AI Demo Day">RSVP</button>
+          </div>
+
+          <div class="event-card glass-card">
+            <div class="event-date-box">
+              <span class="event-month">SEP</span>
+              <span class="event-day">02</span>
+            </div>
+            <div class="event-info">
+              <span class="event-category-chip">WORKSHOP</span>
+              <h4>Zero to 1M Users: Growth Engineering Masterclass</h4>
+              <p>Hands-on session with former Head of Growth at Stripe & Linear.</p>
+            </div>
+            <button class="btn btn-sm btn-glass-outline btn-rsvp" data-event="Growth Masterclass">RSVP</button>
+          </div>
+
+          <div class="event-card glass-card">
+            <div class="event-date-box">
+              <span class="event-month">SEP</span>
+              <span class="event-day">09</span>
+            </div>
+            <div class="event-info">
+              <span class="event-category-chip">SOCIAL</span>
+              <h4>Sunset Lofi Beats & Wine Tasting on the Terrace</h4>
+              <p>Unwind after a sprint with organic biodynamic wines and artisan cheeses.</p>
+            </div>
+            <button class="btn btn-sm btn-glass-outline btn-rsvp" data-event="Sunset Wine Tasting">RSVP</button>
+          </div>
+        </div>
+
+        <!-- Right: Member Testimonials / Perks -->
+        <div class="community-stats-col glass-card" id="perks">
+          <div class="member-spotlight-header">
+            <div class="member-avatar-wrap">
+              <div class="avatar-img-circle">🚀</div>
+            </div>
+            <div>
+              <h4 class="member-quote-author">Elena Rostova</h4>
+              <span class="member-quote-role">Founder & CEO @ NeuralScale (Raised $4.2M)</span>
+            </div>
+          </div>
+          <blockquote class="member-quote-text">
+            "Moving our 8-person team to NEXUS was the best decision we made. The fiber speed is rock-solid, the acoustic pods saved our investor pitches, and we actually met our lead angel investor at the Friday rooftop mixer."
+          </blockquote>
+
+          <div class="partner-perks-box">
+            <span class="perks-badge">🎁 $150K+ EXCLUSIVE MEMBER PERKS INCLUDED</span>
+            <div class="partner-logos-row">
+              <span class="partner-chip">AWS Cloud ($10k)</span>
+              <span class="partner-chip">Stripe (Free Fees)</span>
+              <span class="partner-chip">Notion Plus</span>
+              <span class="partner-chip">Figma Org</span>
+              <span class="partner-chip">OpenAI Credits</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       HIGH-ENERGY BOOKING CTA HERO
+  ======================================================== -->
+  <section class="section-spacing cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-card glass-card">
+        <div class="cta-banner-content">
+          <span class="badge-pill-glow">⚡ INSTANT ACCESS</span>
+          <h2 class="cta-banner-title">Ready to Elevate Your Workday?</h2>
+          <p class="cta-banner-desc">
+            Book your free trial day pass or schedule an in-person private studio walkthrough with our community team.
+          </p>
+          <div class="cta-banner-actions">
+            <button class="btn btn-vibrant-gradient btn-lg" id="btn-cta-open-modal">
+              <span>Book Your Free Day Pass</span>
+              <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <a href="tel:+18005550199" class="btn btn-glass-outline btn-lg">
+              📞 Direct Concierge: (800) 555-0199
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="brand-logo">
+            <div class="logo-icon-box">
+              <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <span class="brand-name">NEXUS<span class="brand-accent">.SPACE</span></span>
+          </div>
+          <p class="footer-tagline">
+            The next-generation architectural collaborative workspace engineered for creators, founders, and ambitious teams.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Twitter / X">𝕏</a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+            <a href="#" class="social-btn" aria-label="GitHub">GH</a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Spaces</h4>
+          <ul>
+            <li><a href="#spaces">Quantum Hot Desks</a></li>
+            <li><a href="#spaces">Dedicated Resident Desks</a></li>
+            <li><a href="#spaces">Private Studio Offices</a></li>
+            <li><a href="#spaces">Soundproof Creator Pods</a></li>
+            <li><a href="#spaces">Boardrooms & Events</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Locations</h4>
+          <ul>
+            <li><a href="#">Downtown Tech District (HQ)</a></li>
+            <li><a href="#">Innovation Waterfront</a></li>
+            <li><a href="#">SoHo Creative Loft</a></li>
+            <li><a href="#">Silicon Beach Campus</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Hours & Access</h4>
+          <p class="footer-info-text">
+            <strong>Members:</strong> 24/7/365 Biometric Access<br>
+            <strong>Guest & Tours:</strong> Mon - Fri: 8:00 AM – 7:00 PM<br>
+            <strong>Concierge:</strong> hello@nexus.space
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 NEXUS Space Technologies Inc. All rights reserved.</span>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security Protocol</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       INTERACTIVE BOOKING MODAL (GLASS DIALOG)
+  ======================================================== -->
+  <dialog class="booking-dialog glass-card" id="booking-modal">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <span class="modal-tag">⚡ INSTANT PASS RESERVATION</span>
+        <h3 class="modal-title">Book Your Space Pass</h3>
+      </div>
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close">✕</button>
+    </div>
+
+    <form class="booking-form" id="booking-form">
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="book-name">Full Name *</label>
+          <input type="text" id="book-name" required placeholder="e.g. Alex Morgan" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="book-email">Work Email *</label>
+          <input type="email" id="book-email" required placeholder="alex@company.io" class="form-input">
+        </div>
+      </div>
+
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="book-space-type">Space & Pass Type *</label>
+          <select id="book-space-type" class="form-input">
+            <option value="Day Explorer Pass ($25/day)">Day Explorer Pass ($25/day)</option>
+            <option value="Dedicated Desk ($349/mo)">Dedicated Resident Desk ($349/mo)</option>
+            <option value="Private Office Studio ($1,299/mo)">Private Office Studio ($1,299/mo)</option>
+            <option value="Soundproof Creator Pod ($15/hr)">Soundproof Creator Pod ($15/hr)</option>
+            <option value="Executive Boardroom ($75/hr)">Executive Matrix Boardroom ($75/hr)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="book-date">Reservation Date *</label>
+          <input type="date" id="book-date" required class="form-input">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="book-perks">Custom Requests / Gear Needed</label>
+        <input type="text" id="book-perks" placeholder="e.g. Dual 4K monitors, standing desk, podcast mic..." class="form-input">
+      </div>
+
+      <div class="booking-summary-box glass-card">
+        <div class="summary-line">
+          <span>Selected Pass:</span>
+          <strong id="summary-pass-name">Day Explorer Pass</strong>
+        </div>
+        <div class="summary-line">
+          <span>First Visit Promo:</span>
+          <span class="text-cyan">100% Free First Day Pass Applied</span>
+        </div>
+        <div class="summary-total">
+          <span>Total Today:</span>
+          <strong class="total-price">$0.00</strong>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-vibrant-gradient full-width btn-lg">
+        Confirm Instant Reservation →
+      </button>
+      <p class="modal-guarantee-text">🔒 Instant confirmation via email & Apple Wallet pass. Free cancellation anytime.</p>
+    </form>
+  </dialog>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="coworking.js"></script>
+</body>
+</html>
