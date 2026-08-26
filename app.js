@@ -863,13 +863,26 @@ function initLivePreviewSimulator() {
   const closeBtn = document.getElementById('preview-close-modal-btn');
   const btnDesktop = document.getElementById('btn-device-desktop');
   const btnMobile = document.getElementById('btn-device-mobile');
+  const themeToggleBtn = document.getElementById('preview-theme-toggle-btn');
   const frameEl = document.getElementById('preview-device-frame');
   const triggerBtns = document.querySelectorAll('.btn-trigger-live-preview');
 
   if (!modal) return;
 
+  function syncIframeTheme(theme) {
+    try {
+      if (iframe && iframe.contentDocument && iframe.contentDocument.documentElement) {
+        iframe.contentDocument.documentElement.setAttribute('data-theme', theme);
+      }
+    } catch (e) {
+      // Ignore cross-origin access issues if any
+    }
+  }
+
   function setPreviewDemo(url, title) {
-    if (iframe) iframe.src = url;
+    if (iframe) {
+      iframe.src = url;
+    }
     if (titleEl) titleEl.textContent = title || 'Live Preview Demo';
     if (externalLink) externalLink.href = url;
     if (select) {
@@ -882,6 +895,13 @@ function initLivePreviewSimulator() {
     }
   }
 
+  if (iframe) {
+    iframe.addEventListener('load', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      syncIframeTheme(currentTheme);
+    });
+  }
+
   // Trigger buttons from portfolio cards
   triggerBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -890,6 +910,9 @@ function initLivePreviewSimulator() {
       const title = btn.getAttribute('data-demo-title') || 'Website Demo';
       setPreviewDemo(url, title);
       modal.showModal();
+
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      syncIframeTheme(currentTheme);
     });
   });
 
@@ -916,6 +939,17 @@ function initLivePreviewSimulator() {
       btnDesktop.classList.remove('active');
       frameEl.classList.remove('desktop-frame');
       frameEl.classList.add('mobile-frame');
+    });
+  }
+
+  // Preview Theme Switcher (Dark vs Light mode)
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('rw_org_theme', next);
+      syncIframeTheme(next);
     });
   }
 
