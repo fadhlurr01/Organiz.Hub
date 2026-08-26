@@ -843,23 +843,65 @@
 
   <!-- Mobile Bottom Quick Dock for Case Study Page -->
   <nav class="mobile-bottom-dock mobile-only" id="case-study-bottom-dock" aria-label="Mobile Bottom Dock">
-    <a href="index.html#hero" class="dock-item">
-      <svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    <a href="index.html#hero" class="dock-item" id="dock-hero" aria-label="Beranda">
+      <div class="dock-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+      </div>
       <span class="dock-label">Beranda</span>
     </a>
-    <a href="index.html#widgets" class="dock-item">
-      <svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+
+    <a href="index.html#widgets" class="dock-item" id="dock-widgets" aria-label="Simulasi">
+      <div class="dock-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+      </div>
       <span class="dock-label">Simulasi</span>
     </a>
-    <a href="index.html#portofolio" class="dock-item active">
-      <svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-      <span class="dock-label">Portofolio</span>
+
+    <a href="index.html#harga" class="dock-item" id="dock-harga" aria-label="Pilihan Paket">
+      <div class="dock-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23"></line>
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+      </div>
+      <span class="dock-label">Paket</span>
     </a>
-    <a href="index.html#download-brosur" class="dock-item">
-      <svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+
+    <a href="index.html#download-brosur" class="dock-item" id="dock-brosur" aria-label="Unduh Brosur">
+      <div class="dock-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+      </div>
       <span class="dock-label">Brosur</span>
     </a>
   </nav>
+
+  <!-- Floating Actions Stack (Scroll to Top & WhatsApp) -->
+  <div class="floating-actions-stack" id="floating-actions-wrapper">
+    <button class="scroll-top-btn" id="scroll-to-top-btn" aria-label="Kembali ke Atas" title="Kembali ke Atas">
+      <svg class="scroll-top-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+      <span class="action-tooltip">Kembali ke Atas</span>
+    </button>
+
+    <button class="wa-bubble-trigger" id="wa-floating-btn" aria-label="Konsultasi WhatsApp" title="Konsultasi WhatsApp">
+      <svg class="wa-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zM12.05 20.2c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.06 0 1.21.89 2.39 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/>
+      </svg>
+      <span class="action-tooltip">Chat WhatsApp</span>
+    </button>
+  </div>
 
   <script>
     // Tab switching logic for case study page
@@ -907,9 +949,37 @@
       }
     }
 
+    // Scroll to Top & WhatsApp Floating Button
+    function initFloatingButtons() {
+      const scrollBtn = document.getElementById('scroll-to-top-btn');
+      const waBtn = document.getElementById('wa-floating-btn');
+
+      if (scrollBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 280) {
+            scrollBtn.classList.add('visible');
+          } else {
+            scrollBtn.classList.remove('visible');
+          }
+        }, { passive: true });
+
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      if (waBtn) {
+        waBtn.addEventListener('click', () => {
+          const text = encodeURIComponent('Halo Organiz.Hub, saya membaca studi kasus dan tertarik untuk konsultasi implementasi website organisasi.');
+          window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+        });
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       initCaseTabs();
       initTheme();
+      initFloatingButtons();
     });
   </script>
 </body>
