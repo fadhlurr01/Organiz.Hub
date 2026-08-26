@@ -1248,13 +1248,14 @@ function initNavbar() {
 
   const trackedSections = [
     { id: 'hero', navKey: 'hero', dockId: 'dock-hero' },
-    { id: 'solusi', navKey: 'solusi', dockId: 'dock-solusi' },
+    { id: 'solusi', navKey: 'solusi' },
     { id: 'pilar', navKey: 'pilar' },
     { id: 'fitur', navKey: 'fitur' },
     { id: 'widgets', navKey: 'widgets', dockId: 'dock-widgets' },
     { id: 'portofolio', navKey: 'portofolio' },
-    { id: 'alur', navKey: 'alur', dockId: 'dock-alur' },
+    { id: 'alur', navKey: 'alur' },
     { id: 'harga', navKey: 'harga', dockId: 'dock-harga' },
+    { id: 'download-brosur', navKey: 'brosur', dockId: 'dock-brosur' },
     { id: 'faq', navKey: 'faq' }
   ];
 

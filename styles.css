@@ -4448,7 +4448,7 @@ button, input, select, textarea {
   /* Hero Section Grid */
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 
   .hero-content {
@@ -4578,9 +4578,13 @@ button, input, select, textarea {
    MOBILE LANDSCAPE & TABLET PORTRAIT (<= 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Layout & Container Padding */
+  /* Global Page Container & Overflow Prevention */
+  body {
+    overflow-x: hidden !important;
+  }
+
   .section-spacing {
-    padding: 56px 0;
+    padding: 48px 0;
   }
 
   .container {
@@ -4589,24 +4593,24 @@ button, input, select, textarea {
 
   /* Global Typography Scaling */
   .section-header {
-    margin-bottom: 36px;
+    margin-bottom: 30px;
   }
 
   .section-tag {
-    font-size: 0.72rem;
-    padding: 5px 14px;
-    margin-bottom: 12px;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    margin-bottom: 10px;
   }
 
   .section-title {
-    font-size: clamp(1.5rem, 5.5vw, 1.95rem);
+    font-size: clamp(1.45rem, 5.2vw, 1.85rem);
     line-height: 1.25;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .section-subtitle {
-    font-size: 0.92rem;
-    line-height: 1.6;
+    font-size: 0.88rem;
+    line-height: 1.58;
   }
 
   /* Header Optimization */
@@ -4689,194 +4693,358 @@ button, input, select, textarea {
     height: 16px;
   }
 
-  /* Hero Section */
+  /* ========================================================
+     HERO SECTION - MOBILE VIEW SPECIFIC PERFECTION
+     ======================================================== */
   .hero-section {
-    padding: 30px 0 55px 0;
+    padding: 24px 0 44px 0 !important;
+    overflow: hidden !important;
+  }
+
+  .org-network-constellation,
+  .org-foundation-crest {
+    display: none !important; /* Eliminate background overflow on mobile */
+  }
+
+  .hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
   }
 
   .trust-rating-pill {
-    padding: 6px 14px;
-    gap: 8px;
-    margin-bottom: 18px;
+    padding: 5px 12px !important;
+    gap: 6px !important;
+    margin-bottom: 14px !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+  }
+
+  .star-icon {
+    width: 13px !important;
+    height: 13px !important;
   }
 
   .trust-text {
-    font-size: 0.78rem;
+    font-size: 0.74rem !important;
   }
 
   .hero-headline {
-    font-size: clamp(1.85rem, 6.2vw, 2.45rem);
-    line-height: 1.2;
-    letter-spacing: -0.025em;
-    margin-bottom: 16px;
+    font-size: clamp(1.7rem, 6.4vw, 2.3rem) !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 14px !important;
+    text-align: center !important;
+    width: 100% !important;
   }
 
   .hero-subheadline {
-    font-size: 0.94rem;
-    line-height: 1.62;
-    margin-bottom: 24px;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+    max-width: 100% !important;
   }
 
   .hero-cta-group {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    margin-bottom: 28px;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+    margin-bottom: 22px !important;
   }
 
   .hero-cta-group .btn {
-    width: 100%;
-    justify-content: center;
-    padding: 12px 22px;
-    font-size: 0.94rem;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 20px !important;
+    font-size: 0.92rem !important;
   }
 
   .quick-trust-badges {
-    flex-direction: column;
-    width: 100%;
-    gap: 8px;
-    align-items: stretch;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
+    align-items: stretch !important;
   }
 
   .badge-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    padding: 8px 12px;
-    border-radius: var(--radius-pill);
-    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 8px 12px !important;
+    border-radius: var(--radius-pill) !important;
+    font-size: 0.78rem !important;
+    justify-content: flex-start !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
   }
 
-  /* Hero Mockup Frame & Tabs */
+  .badge-icon-svg {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+  }
+
+  /* Hero Mockup Interactive Dashboard */
   .hero-visual {
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .mockup-parallax-layer {
+    animation: none !important;
+    transform: none !important;
+    width: 100% !important;
   }
 
   .glass-dashboard-card {
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35) !important;
+    width: 100% !important;
   }
 
   .mockup-window-header {
-    padding: 10px 14px;
+    padding: 8px 12px !important;
   }
 
   .mockup-url-bar {
-    font-size: 0.68rem;
-    padding: 3px 10px;
-    max-width: 180px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 0.65rem !important;
+    padding: 2px 8px !important;
+    max-width: 150px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .mockup-badge {
+    font-size: 0.66rem !important;
   }
 
   .mockup-tabs-bar {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding: 4px 6px;
-    gap: 4px;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 4px !important;
+    padding: 4px 6px !important;
   }
 
   .mockup-tabs-bar::-webkit-scrollbar {
-    display: none;
+    display: none !important;
   }
 
   .mockup-tab-btn {
-    white-space: nowrap;
-    flex-shrink: 0;
-    font-size: 0.74rem;
-    padding: 6px 10px;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    font-size: 0.72rem !important;
+    padding: 6px 9px !important;
+  }
+
+  .mockup-tab-btn svg {
+    width: 12px !important;
+    height: 12px !important;
   }
 
   .mockup-body {
-    padding: 18px 14px;
+    padding: 14px 12px !important;
   }
 
   .mockup-header-flex {
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 14px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .badge-tag {
+    font-size: 0.64rem !important;
+    padding: 2px 6px !important;
   }
 
   .mockup-title {
-    font-size: 1.02rem;
+    font-size: 0.94rem !important;
+    line-height: 1.35 !important;
   }
 
   .mockup-stats-box {
-    padding: 12px 14px;
-    margin-bottom: 14px;
+    padding: 10px 10px !important;
+    margin-bottom: 10px !important;
   }
 
   .stats-row {
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    gap: 6px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .stat-label {
+    font-size: 0.66rem !important;
   }
 
   .stat-value {
-    font-size: 1rem;
+    font-size: 0.94rem !important;
+  }
+
+  .progress-bar-container {
+    height: 7px !important;
+    margin-bottom: 6px !important;
   }
 
   .stats-footer {
-    flex-wrap: wrap;
-    gap: 6px;
-    font-size: 0.72rem;
+    display: flex !important;
+    justify-content: space-between !important;
+    font-size: 0.66rem !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
   }
 
   .mockup-actions-row {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
   }
 
   .quick-amounts {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 100%;
-    gap: 6px;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    width: 100% !important;
+    gap: 4px !important;
   }
 
   .amount-btn {
-    padding: 6px 4px;
-    font-size: 0.74rem;
-    text-align: center;
+    padding: 6px 2px !important;
+    font-size: 0.72rem !important;
+    text-align: center !important;
+    border-radius: var(--radius-pill) !important;
+    width: 100% !important;
   }
 
   .btn-donasi-sim {
-    width: 100%;
-    justify-content: center;
-    padding: 10px 16px;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 9px 12px !important;
+    font-size: 0.82rem !important;
   }
 
-  /* Floating Badges In Hero - Flow as Stacked Cards below Mockup on Mobile */
+  .kas-stat-box {
+    padding: 8px 10px !important;
+  }
+
+  .kas-label {
+    font-size: 0.66rem !important;
+  }
+
+  .kas-amount {
+    font-size: 0.82rem !important;
+  }
+
+  .mockup-download-pill {
+    font-size: 0.68rem !important;
+    padding: 6px 8px !important;
+  }
+
+  .volunteer-item {
+    padding: 8px 10px !important;
+    gap: 8px !important;
+  }
+
+  .vol-avatar {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .vol-meta strong {
+    font-size: 0.76rem !important;
+  }
+
+  .vol-meta span {
+    font-size: 0.65rem !important;
+  }
+
+  .vol-badge {
+    font-size: 0.62rem !important;
+    padding: 2px 6px !important;
+  }
+
+  /* Floating Badges In Hero - Flow as Stacked Cards below Mockup */
   .floating-glass-card {
     position: relative !important;
     inset: auto !important;
     transform: none !important;
     animation: none !important;
     width: 100% !important;
-    margin-top: 10px;
-    padding: 10px 14px;
+    margin-top: 8px !important;
+    padding: 8px 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    box-sizing: border-box !important;
   }
 
   .card-impact, .card-verified {
-    bottom: auto;
-    left: auto;
-    top: auto;
-    right: auto;
+    bottom: auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
   }
 
   .float-icon-box-svg {
-    width: 36px;
-    height: 36px;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    border-radius: 8px !important;
+  }
+
+  .float-icon-box-svg svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .float-caption {
+    font-size: 0.66rem !important;
   }
 
   .float-number {
-    font-size: 0.95rem;
+    font-size: 0.88rem !important;
+  }
+
+  .float-sub {
+    font-size: 0.66rem !important;
   }
 
   /* Scroll Trigger */
   .modern-scroll-trigger {
-    margin-top: 32px;
+    margin-top: 22px !important;
+    gap: 6px !important;
+  }
+
+  .scroll-pulse-pill {
+    width: 28px !important;
+    height: 40px !important;
+  }
+
+  .scroll-text-digital {
+    font-size: 0.72rem !important;
   }
 
   /* SECTION 2: Solusi Organisasi Grid */
@@ -5543,12 +5711,12 @@ button, input, select, textarea {
 
   /* Hero Headline */
   .hero-headline {
-    font-size: 1.72rem;
-    line-height: 1.22;
+    font-size: 1.62rem !important;
+    line-height: 1.22 !important;
   }
 
   .section-title {
-    font-size: 1.38rem;
+    font-size: 1.35rem;
   }
 
   /* Donut Transparency Chart on Small Screens */
@@ -5639,4 +5807,5 @@ button, input, select, textarea {
     height: 22px !important;
   }
 }
+
 
