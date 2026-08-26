@@ -4041,118 +4041,10 @@ button, input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   18. MODERN MOBILE FLOATING BOTTOM APP DOCK
-   * App-like experience for mobile users, single intuitive navigation
+   18. MOBILE BOTTOM APP DOCK (HIDDEN ON MOBILE/DESKTOP)
    -------------------------------------------------------------------------- */
 .mobile-bottom-dock {
-  display: none;
-}
-
-@media (max-width: 1024px) {
-  .mobile-bottom-dock {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: fixed;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
-    height: 66px;
-    background: var(--dock-bg);
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
-    border: 1px solid var(--border-color-hover);
-    border-radius: var(--radius-pill);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(16, 185, 129, 0.2);
-    z-index: 1000;
-    padding: 0 8px;
-  }
-
-  .dock-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    padding: 6px 12px;
-    color: var(--text-muted);
-    border-radius: var(--radius-pill);
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .dock-item:active,
-  .dock-item.dock-pressed {
-    transform: scale(0.92);
-  }
-
-  .dock-icon-wrap {
-    width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
-  }
-
-  .dock-icon-wrap svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .dock-label {
-    font-size: 0.68rem;
-    font-weight: 600;
-    line-height: 1;
-    transition: color 0.2s ease;
-  }
-
-  .dock-item:hover {
-    color: var(--text-primary);
-  }
-
-  .dock-item.active {
-    color: var(--accent-emerald);
-    background: rgba(16, 185, 129, 0.12);
-  }
-
-  .dock-item.active .dock-icon-wrap {
-    transform: translateY(-2px);
-    color: var(--accent-emerald);
-    filter: drop-shadow(0 0 8px var(--accent-emerald-glow));
-  }
-
-  .dock-item.active::after {
-    content: '';
-    position: absolute;
-    bottom: 4px;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--accent-emerald);
-    box-shadow: 0 0 6px var(--accent-emerald);
-  }
-
-  .dock-ripple {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(16, 185, 129, 0.25);
-    border-radius: 50%;
-    transform: scale(0);
-    animation: dockRippleAnim 0.5s ease-out;
-    pointer-events: none;
-  }
-
-  @keyframes dockRippleAnim {
-    to {
-      transform: scale(2.5);
-      opacity: 0;
-    }
-  }
+  display: none !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -4996,37 +4888,22 @@ button, input, select, textarea {
     gap: 32px;
   }
 
-  /* Floating Bottom Dock Active on Tablets and Mobile */
+  /* Floating Bottom Dock Disabled on Tablets and Mobile */
   .mobile-bottom-dock {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: fixed;
-    bottom: max(12px, env(safe-area-inset-bottom));
-    left: 16px;
-    right: 16px;
-    height: 64px;
-    background: var(--dock-bg);
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
-    border: 1px solid var(--border-color-hover);
-    border-radius: var(--radius-pill);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(16, 185, 129, 0.2);
-    z-index: 2000;
-    padding: 0 8px;
+    display: none !important;
   }
 
-  /* Floating Actions Stack Adjusted Above Bottom Dock */
+  /* Floating Actions Stack in Standard Mobile Position */
   .floating-actions-stack {
-    bottom: calc(76px + max(12px, env(safe-area-inset-bottom))) !important;
+    bottom: max(20px, env(safe-area-inset-bottom)) !important;
     right: 18px !important;
     gap: 10px !important;
     z-index: 1999 !important;
   }
 
-  /* Add bottom padding to footer so dock never obstructs content */
+  /* Footer Bottom Spacing */
   .site-footer {
-    padding-bottom: 110px;
+    padding-bottom: 50px;
   }
 }
 
@@ -6219,31 +6096,13 @@ button, input, select, textarea {
     margin-top: 0;
   }
 
-  /* Mobile Bottom Dock Compact */
+  /* Mobile Bottom Dock Disabled */
   .mobile-bottom-dock {
-    left: 8px;
-    right: 8px;
-    bottom: max(8px, env(safe-area-inset-bottom));
-    height: 58px;
-    padding: 0 4px;
-  }
-
-  .dock-item {
-    padding: 4px 4px;
-    gap: 2px;
-  }
-
-  .dock-icon-wrap svg {
-    width: 17px;
-    height: 17px;
-  }
-
-  .dock-label {
-    font-size: 0.62rem;
+    display: none !important;
   }
 
   .floating-actions-stack {
-    bottom: calc(68px + max(8px, env(safe-area-inset-bottom))) !important;
+    bottom: max(16px, env(safe-area-inset-bottom)) !important;
     right: 12px !important;
     gap: 8px !important;
   }
