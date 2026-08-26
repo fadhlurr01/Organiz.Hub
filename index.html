@@ -1684,8 +1684,11 @@
               <span class="metric-desc" data-i18n="porto.p1.metric">Kenaikan Donasi Online dalam 6 Bulan</span>
             </div>
             <div class="portfolio-actions">
-              <button class="btn btn-sm btn-secondary-glass btn-view-case" data-case="1" data-i18n="porto.btnLive">Live Preview</button>
-              <button class="btn btn-sm btn-primary-glow btn-view-case" data-case="1" data-i18n="porto.btnStudy">Baca Studi Kasus</button>
+              <button class="btn btn-sm btn-secondary-glass btn-trigger-live-preview" data-demo-url="demo-yayasan.html" data-demo-title="Yayasan Peduli Negeri">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>Live Preview</span>
+              </button>
+              <a href="case-study.html?case=1" class="btn btn-sm btn-primary-glow">Baca Studi Kasus →</a>
             </div>
           </div>
         </div>
@@ -1716,8 +1719,11 @@
               <span class="metric-desc" data-i18n="porto.p2.metric">Terdaftar dalam 30 Hari Peluncuran</span>
             </div>
             <div class="portfolio-actions">
-              <button class="btn btn-sm btn-secondary-glass btn-view-case" data-case="2" data-i18n="porto.btnLive">Live Preview</button>
-              <button class="btn btn-sm btn-primary-glow btn-view-case" data-case="2" data-i18n="porto.btnStudy">Baca Studi Kasus</button>
+              <button class="btn btn-sm btn-secondary-glass btn-trigger-live-preview" data-demo-url="demo-lingkungan.html" data-demo-title="Komunitas Bersih Nusantara">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>Live Preview</span>
+              </button>
+              <a href="case-study.html?case=2" class="btn btn-sm btn-primary-glow">Baca Studi Kasus →</a>
             </div>
           </div>
         </div>
@@ -1748,8 +1754,11 @@
               <span class="metric-desc" data-i18n="porto.p3.metric">Hibah Iklan Google Ads Berhasil Aktif</span>
             </div>
             <div class="portfolio-actions">
-              <button class="btn btn-sm btn-secondary-glass btn-view-case" data-case="3" data-i18n="porto.btnLive">Live Preview</button>
-              <button class="btn btn-sm btn-primary-glow btn-view-case" data-case="3" data-i18n="porto.btnStudy">Baca Studi Kasus</button>
+              <button class="btn btn-sm btn-secondary-glass btn-trigger-live-preview" data-demo-url="demo-ngo.html" data-demo-title="Inisiatif Anak Bangsa (NGO)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>Live Preview</span>
+              </button>
+              <a href="case-study.html?case=3" class="btn btn-sm btn-primary-glow">Baca Studi Kasus →</a>
             </div>
           </div>
         </div>
@@ -2388,7 +2397,7 @@
   <!-- Toast Notification Alert -->
   <div class="toast-container" id="toast-container"></div>
 
-  <!-- Case Study Modal Dialog -->
+  <!-- Case Study Quick Modal Dialog (Fall-back) -->
   <dialog class="custom-modal glass-card" id="case-study-modal">
     <div class="modal-header">
       <h3 class="modal-title" id="modal-case-title">Studi Kasus Transformasi</h3>
@@ -2396,6 +2405,70 @@
     </div>
     <div class="modal-body" id="modal-case-body">
       <!-- Dynamic case content -->
+    </div>
+  </dialog>
+
+  <!-- ========================================================
+       LIVE PREVIEW INTERACTIVE DEVICE SIMULATOR MODAL
+       * Toggle between Desktop & Mobile viewports
+       * Switch between live website demos
+  ======================================================== -->
+  <dialog class="live-preview-modal-dialog" id="live-preview-modal">
+    <div class="live-preview-window">
+      <!-- Modal Top Control Bar -->
+      <div class="live-preview-topbar">
+        <div class="preview-brand-info">
+          <span class="preview-live-dot"></span>
+          <span class="preview-title" id="preview-active-title">Live Preview Demo</span>
+        </div>
+
+        <!-- Demo Selector Tabs / Dropdown -->
+        <div class="preview-demo-selector">
+          <select id="preview-demo-select" class="preview-select-input" aria-label="Pilih Website Demo">
+            <option value="demo-yayasan.html">🎓 Yayasan Peduli Negeri (Donasi QRIS)</option>
+            <option value="demo-lingkungan.html">🌊 Komunitas Bersih Nusantara (Relawan)</option>
+            <option value="demo-ngo.html">🌍 Inisiatif Anak Bangsa (Global NGO)</option>
+            <option value="coworking.html">🏢 Nexus Coworking Space Hub</option>
+          </select>
+        </div>
+
+        <!-- Viewport Device Switcher -->
+        <div class="preview-viewport-switcher">
+          <button class="device-btn active" id="btn-device-desktop" title="Mode Desktop (Layar Penuh)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="svg-icon">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span class="desktop-only-inline">Desktop</span>
+          </button>
+          <button class="device-btn" id="btn-device-mobile" title="Mode Smartphone Mobile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="svg-icon">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+            <span class="desktop-only-inline">Mobile</span>
+          </button>
+        </div>
+
+        <!-- Right Window Actions -->
+        <div class="preview-window-actions">
+          <a href="demo-yayasan.html" target="_blank" class="btn btn-xs btn-secondary-glass" id="preview-open-external-btn" title="Buka di Tab Baru">
+            <span>Tab Penuh ↗</span>
+          </a>
+          <button class="preview-close-btn" id="preview-close-modal-btn" aria-label="Tutup Preview">✕</button>
+        </div>
+      </div>
+
+      <!-- Preview Canvas Stage Container -->
+      <div class="preview-stage-container" id="preview-stage-wrap">
+        <div class="preview-device-frame desktop-frame" id="preview-device-frame">
+          <div class="mobile-phone-speaker"></div>
+          <div class="mobile-phone-camera"></div>
+          <iframe src="demo-yayasan.html" id="preview-live-iframe" title="Interactive Website Demo Preview" class="preview-iframe" allowfullscreen></iframe>
+          <div class="mobile-home-bar"></div>
+        </div>
+      </div>
     </div>
   </dialog>
 

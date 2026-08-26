@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTransparencyDonutWidget();
   initFeatureTabs();
   initPortfolioFilter();
+  initLivePreviewSimulator();
   initCaseStudyModal();
   initFaqAccordion();
   initLeadCaptureForm();
@@ -851,79 +852,91 @@ function initPortfolioFilter() {
 }
 
 /* ==========================================================================
-   11. Case Study Modal Dialog
+   11. Interactive Live Preview Simulator Modal (Desktop & Mobile Modes)
+   ========================================================================== */
+function initLivePreviewSimulator() {
+  const modal = document.getElementById('live-preview-modal');
+  const iframe = document.getElementById('preview-live-iframe');
+  const select = document.getElementById('preview-demo-select');
+  const titleEl = document.getElementById('preview-active-title');
+  const externalLink = document.getElementById('preview-open-external-btn');
+  const closeBtn = document.getElementById('preview-close-modal-btn');
+  const btnDesktop = document.getElementById('btn-device-desktop');
+  const btnMobile = document.getElementById('btn-device-mobile');
+  const frameEl = document.getElementById('preview-device-frame');
+  const triggerBtns = document.querySelectorAll('.btn-trigger-live-preview');
+
+  if (!modal) return;
+
+  function setPreviewDemo(url, title) {
+    if (iframe) iframe.src = url;
+    if (titleEl) titleEl.textContent = title || 'Live Preview Demo';
+    if (externalLink) externalLink.href = url;
+    if (select) {
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === url) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }
+
+  // Trigger buttons from portfolio cards
+  triggerBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = btn.getAttribute('data-demo-url') || 'demo-yayasan.html';
+      const title = btn.getAttribute('data-demo-title') || 'Website Demo';
+      setPreviewDemo(url, title);
+      modal.showModal();
+    });
+  });
+
+  // Dropdown demo switch
+  if (select) {
+    select.addEventListener('change', () => {
+      const selectedUrl = select.value;
+      const selectedTitle = select.options[select.selectedIndex].text;
+      setPreviewDemo(selectedUrl, selectedTitle);
+    });
+  }
+
+  // Viewport Device Switcher (Desktop 100% vs Mobile 390px phone bezel)
+  if (btnDesktop && btnMobile && frameEl) {
+    btnDesktop.addEventListener('click', () => {
+      btnDesktop.classList.add('active');
+      btnMobile.classList.remove('active');
+      frameEl.classList.remove('mobile-frame');
+      frameEl.classList.add('desktop-frame');
+    });
+
+    btnMobile.addEventListener('click', () => {
+      btnMobile.classList.add('active');
+      btnDesktop.classList.remove('active');
+      frameEl.classList.remove('desktop-frame');
+      frameEl.classList.add('mobile-frame');
+    });
+  }
+
+  // Close modal
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => modal.close());
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.close();
+  });
+}
+
+/* ==========================================================================
+   11.5 Quick Case Study Fallback Modal
    ========================================================================== */
 function initCaseStudyModal() {
   const modal = document.getElementById('case-study-modal');
   const closeBtn = document.getElementById('modal-close-btn');
-  const viewBtns = document.querySelectorAll('.btn-view-case');
-  const modalTitle = document.getElementById('modal-case-title');
-  const modalBody = document.getElementById('modal-case-body');
-
-  const caseStudies = {
-    1: {
-      title: "Studi Kasus: Yayasan Peduli Negeri",
-      body: `
-        <h4>Tantangan:</h4>
-        <p>Proses donasi offline lambat dan donatur sering ragu karena laporan mutasi kas manual di media sosial.</p>
-        <h4>Solusi Digital:</h4>
-        <ul>
-          <li>Integrasi QRIS Dynamic langsung masuk rekening giro yayasan.</li>
-          <li>Widget transparansi kas otomatis terupdate tiap hari.</li>
-          <li>Auto-notifikasi WhatsApp dan kwitansi resmi berlogo instansi.</li>
-        </ul>
-        <h4>Hasil:</h4>
-        <p><strong style="color: var(--accent-emerald);">+240%</strong> Kenaikan donatur online dalam 6 bulan pertama peluncuran sistem.</p>
-      `
-    },
-    2: {
-      title: "Studi Kasus: Komunitas Bersih Nusantara",
-      body: `
-        <h4>Tantangan:</h4>
-        <p>Pendaftaran relawan tersebar di form Google Docs tanpa database terpusat untuk koordinasi lapangan.</p>
-        <h4>Solusi Digital:</h4>
-        <ul>
-          <li>Portal relawan satu pintu dengan penerbitan kartu digital ID.</li>
-          <li>Sistem presensi barcode event webinar & aksi pesisir.</li>
-        </ul>
-        <h4>Hasil:</h4>
-        <p><strong style="color: var(--blueprint-blue);">1.500+ Relawan Aktif</strong> terdaftar dan terorganisir dalam 30 hari.</p>
-      `
-    },
-    3: {
-      title: "Studi Kasus: Inisiatif Anak Bangsa (NGO)",
-      body: `
-        <h4>Tantangan:</h4>
-        <p>Membutuhkan struktur web kredibel untuk lolos verifikasi hibah iklan Google Non-Profits.</p>
-        <h4>Solusi Digital:</h4>
-        <ul>
-          <li>Konfigurasi arsitektur multi-bahasa (ID & EN).</li>
-          <li>Download center laporan tahunan berstandar akuntabel publik.</li>
-          <li>Setup sertifikasi keamanan 256-bit SSL.</li>
-        </ul>
-        <h4>Hasil:</h4>
-        <p><strong style="color: var(--accent-purple);">$10.000 / bulan</strong> Google Ad Grants aktif dan mendatangkan ribuan donatur luar negeri.</p>
-      `
-    }
-  };
-
-  viewBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const caseId = btn.getAttribute('data-case');
-      const data = caseStudies[caseId];
-      if (data && modal) {
-        modalTitle.textContent = data.title;
-        modalBody.innerHTML = data.body;
-        modal.showModal();
-      }
-    });
-  });
-
   if (closeBtn && modal) {
     closeBtn.addEventListener('click', () => modal.close());
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.close();
-    });
   }
 }
 

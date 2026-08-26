@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yayasan Peduli Negeri | Portal Donasi & Beasiswa Terintegrasi QRIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .demo-topbar {
+      background: rgba(16, 185, 129, 0.15);
+      border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--accent-emerald);
+      font-weight: 600;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .demo-topbar a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      margin-left: 12px;
+    }
+    .demo-hero-banner {
+      padding: 60px 0 50px 0;
+      text-align: center;
+      background: radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
+    }
+    .demo-tag {
+      display: inline-flex;
+      padding: 4px 14px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 9999px;
+      color: var(--accent-emerald);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .demo-campaign-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-top: 30px;
+      text-align: left;
+    }
+    .qris-box-mock {
+      background: #ffffff;
+      color: #000000;
+      padding: 16px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-topbar">
+    <span>🏛️ Demo Website: <strong>Yayasan Peduli Negeri</strong> (Pendidikan & Donasi QRIS)</span>
+    <span>
+      <a href="case-study.html?case=1">📖 Baca Studi Kasus</a>
+      <a href="index.html#portofolio">← Kembali ke Organiz.Hub</a>
+    </span>
+  </div>
+
+  <header class="site-header" style="position: relative;">
+    <div class="container header-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon-box" style="background: linear-gradient(135deg, #10B981, #059669);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" style="width: 22px; height: 22px;">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+        </div>
+        <div class="brand-title-wrap">
+          <span class="brand-name">PEDULI<span class="text-emerald">NEGERI</span></span>
+          <span class="brand-sub-spec">YAYASAN PENDIDIKAN & BEASISWA</span>
+        </div>
+      </a>
+      <nav class="desktop-nav desktop-only">
+        <a href="#program" class="nav-link">Program Beasiswa</a>
+        <a href="#transparansi" class="nav-link">Laporan Kas</a>
+        <a href="#donasi" class="nav-link">Salurkan Donasi</a>
+      </nav>
+      <div class="header-controls">
+        <a href="#donasi" class="btn btn-primary-glow btn-sm">Donasi Sekarang</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="demo-hero-banner">
+      <div class="container">
+        <span class="demo-tag">🎓 PROGRAM UTAMA 2026</span>
+        <h1 style="font-size: clamp(1.9rem, 5vw, 3.2rem); max-width: 800px; margin: 0 auto 16px auto; line-height: 1.2;">
+          Beasiswa Masa Depan untuk <span class="text-gradient-emerald">10.000 Anak Yatim</span> & Dhuafa di Pelosok Negeri
+        </h1>
+        <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto 30px auto; line-height: 1.6;">
+          Setiap donasi Anda disalurkan 100% transparan dengan pelaporan mutasi harian, sertifikat donatur digital, dan notifikasi real-time via WhatsApp.
+        </p>
+
+        <div style="max-width: 680px; margin: 0 auto;" class="demo-campaign-card glass-card">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-secondary);">Terkumpul dari 4.820 Donatur:</span>
+              <h2 style="font-size: 1.8rem; color: var(--accent-emerald); font-weight: 800; margin: 4px 0 0 0;">Rp 820.450.000</h2>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-size: 0.8rem; color: var(--text-secondary);">Target Dana:</span>
+              <div style="font-size: 1.1rem; font-weight: 700;">Rp 1.000.000.000</div>
+            </div>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.1); height: 10px; border-radius: 9999px; overflow: hidden; margin-bottom: 16px;">
+            <div style="background: linear-gradient(90deg, #10B981, #34D399); height: 100%; width: 82%; border-radius: 9999px;"></div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 24px; flex-wrap: wrap; gap: 8px;">
+            <span>🎯 <strong>82%</strong> Tercapai</span>
+            <span>⏳ <strong>18 Hari</strong> Tersisa</span>
+            <span>✅ <strong>Audit WTP 2025</strong></span>
+          </div>
+
+          <div id="donasi" class="qris-box-mock">
+            <h4 style="font-weight: 800; font-size: 1.05rem; margin-bottom: 4px; color: #0f172a;">PILIH METODE DONASI INSTAN</h4>
+            <p style="font-size: 0.78rem; color: #64748b; margin-bottom: 12px;">Mendukung QRIS (GoPay, OVO, Dana, ShopeePay, BCA, Mandiri, BSI)</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; width: 100%; margin-bottom: 14px;">
+              <button class="btn btn-sm" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; font-weight: 700;">Rp 50.000</button>
+              <button class="btn btn-sm" style="background: #10B981; color: #ffffff; border: none; font-weight: 700;">Rp 100.000</button>
+              <button class="btn btn-sm" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; font-weight: 700;">Rp 250.000</button>
+              <button class="btn btn-sm" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; font-weight: 700;">Rp 500.000</button>
+            </div>
+            <button class="btn btn-primary-glow full-width" style="padding: 12px; font-weight: 700; width: 100%;" onclick="alert('✅ Simulasi Berhasil! Pada sistem nyata, kode QRIS dinamis langsung muncul secara instan.')">
+              Buka QRIS Donasi Rp 100.000 →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transparansi Kas Section -->
+    <section id="transparansi" class="section-spacing" style="padding: 40px 0;">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">BUKU KAS PUBLIK REAL-TIME</span>
+          <h2 class="section-title">Laporan Penggunaan Dana Terbuka</h2>
+          <p class="section-subtitle">Setiap rupiah yang masuk dan keluar tercatat otomatis dan dapat diaudit publik.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto;">
+          <div class="glass-card" style="padding: 20px;">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Penyaluran SPP Sekolah</span>
+            <h3 style="font-size: 1.4rem; color: var(--accent-emerald); margin: 6px 0;">Rp 410.200.000</h3>
+            <span style="font-size: 0.78rem; color: var(--text-secondary);">50% Total Anggaran (4.100 Siswa)</span>
+          </div>
+          <div class="glass-card" style="padding: 20px;">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Paket Seragam & Buku</span>
+            <h3 style="font-size: 1.4rem; color: var(--blueprint-blue); margin: 6px 0;">Rp 246.120.000</h3>
+            <span style="font-size: 0.78rem; color: var(--text-secondary);">30% Total Anggaran (10.000 Paket)</span>
+          </div>
+          <div class="glass-card" style="padding: 20px;">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Pendampingan & Pelatihan</span>
+            <h3 style="font-size: 1.4rem; color: var(--accent-amber); margin: 6px 0;">Rp 164.130.000</h3>
+            <span style="font-size: 0.78rem; color: var(--text-secondary);">20% Total Anggaran (50 Fasilitator)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="border-top: 1px solid var(--border-color); padding: 30px 0; text-align: center; font-size: 0.84rem; color: var(--text-muted);">
+    <div class="container">
+      <p>© 2026 Yayasan Peduli Negeri. Solusi Portal Digital ditenagai oleh <strong>Organiz.Hub</strong>.</p>
+    </div>
+  </footer>
+</body>
+</html>

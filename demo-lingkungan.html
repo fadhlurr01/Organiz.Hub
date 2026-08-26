@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komunitas Bersih Nusantara | Gerakan Aksi Peduli Pesisir & Relawan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .demo-topbar {
+      background: rgba(59, 130, 246, 0.15);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--blueprint-blue);
+      font-weight: 600;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .demo-topbar a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      margin-left: 12px;
+    }
+    .demo-hero-banner {
+      padding: 60px 0 50px 0;
+      text-align: center;
+      background: radial-gradient(circle at 50% 30%, rgba(59, 130, 246, 0.18) 0%, transparent 70%);
+    }
+    .demo-tag {
+      display: inline-flex;
+      padding: 4px 14px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 9999px;
+      color: var(--blueprint-blue);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .action-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-topbar">
+    <span>🌊 Demo Website: <strong>Komunitas Bersih Nusantara</strong> (Aksi Lingkungan & Manajemen Relawan)</span>
+    <span>
+      <a href="case-study.html?case=2">📖 Baca Studi Kasus</a>
+      <a href="index.html#portofolio">← Kembali ke Organiz.Hub</a>
+    </span>
+  </div>
+
+  <header class="site-header" style="position: relative;">
+    <div class="container header-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon-box" style="background: linear-gradient(135deg, #3B82F6, #1D4ED8);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" style="width: 22px; height: 22px;">
+            <path d="M2 12h20M2 17h20M2 7h20"></path>
+          </svg>
+        </div>
+        <div class="brand-title-wrap">
+          <span class="brand-name">BERSIH<span class="text-blue">NUSANTARA</span></span>
+          <span class="brand-sub-spec">GERAKAN RELAWAN PESISIR & LINGKUNGAN</span>
+        </div>
+      </a>
+      <nav class="desktop-nav desktop-only">
+        <a href="#aksi" class="nav-link">Jadwal Aksi</a>
+        <a href="#relawan" class="nav-link">Gabung Relawan</a>
+        <a href="#dampak" class="nav-link">Peta Dampak</a>
+      </nav>
+      <div class="header-controls">
+        <a href="#relawan" class="btn btn-primary-glow btn-sm" style="background: linear-gradient(135deg, #3B82F6, #2563EB);">Gabung Aksi</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="demo-hero-banner">
+      <div class="container">
+        <span class="demo-tag">🌊 GERAKAN NASIONAL 2026</span>
+        <h1 style="font-size: clamp(1.9rem, 5vw, 3.2rem); max-width: 820px; margin: 0 auto 16px auto; line-height: 1.2;">
+          Bersihkan 50 Pesisir Pantai Indonesia Bersama <span style="color: var(--blueprint-blue);">1.500+ Pejuang Bumi</span>
+        </h1>
+        <p style="color: var(--text-secondary); max-width: 680px; margin: 0 auto 30px auto; line-height: 1.6;">
+          Platform koordinasi aksi lingkungan terpadu: sistem registrasi relawan otomatis, kartu ID digital, barcode presensi event lapangan, dan pelacak tonase sampah terkumpul.
+        </p>
+
+        <!-- Stats Matrix -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; max-width: 800px; margin: 0 auto 36px auto;">
+          <div class="glass-card" style="padding: 16px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--blueprint-blue);">1.542</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary);">Relawan Terdaftar</div>
+          </div>
+          <div class="glass-card" style="padding: 16px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald);">48.6 Ton</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary);">Sampah Terdaur Ulang</div>
+          </div>
+          <div class="glass-card" style="padding: 16px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-amber);">32 Titik</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary);">Pantai & Muara Sungai</div>
+          </div>
+        </div>
+
+        <div id="relawan" style="max-width: 580px; margin: 0 auto;" class="action-card glass-card">
+          <h3 style="font-size: 1.2rem; margin-bottom: 6px; color: var(--text-primary);">📝 Registrasi Relawan Batch Maret 2026</h3>
+          <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 18px;">Dapatkan e-Badge Relawan, sertifikat keikutsertaan digital, dan perlengkapan aksi lapangan.</p>
+          
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <input type="text" class="form-input" placeholder="Nama Lengkap Anda" value="Ahmad Farhan">
+            <input type="tel" class="form-input" placeholder="Nomor WhatsApp" value="0812-9876-5432">
+            <select class="form-select">
+              <option>Pilih Lokasi Aksi: Pantai Ancol, Jakarta (7 Maret 2026)</option>
+              <option>Pantai Parangtritis, Yogyakarta (14 Maret 2026)</option>
+              <option>Pantai Kuta, Bali (21 Maret 2026)</option>
+            </select>
+            <button class="btn btn-primary-glow full-width" style="background: linear-gradient(135deg, #3B82F6, #1D4ED8); padding: 12px; font-weight: 700; width: 100%;" onclick="alert('✅ Simulasi Pendaftaran Berhasil! Nomor ID Relawan Digital otomatis terbit via WhatsApp.')">
+              Daftar Jadi Relawan Sekarang →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="border-top: 1px solid var(--border-color); padding: 30px 0; text-align: center; font-size: 0.84rem; color: var(--text-muted);">
+    <div class="container">
+      <p>© 2026 Komunitas Bersih Nusantara. Solusi Portal Digital ditenagai oleh <strong>Organiz.Hub</strong>.</p>
+    </div>
+  </footer>
+</body>
+</html>
