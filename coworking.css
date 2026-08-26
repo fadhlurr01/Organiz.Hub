@@ -2072,6 +2072,11 @@ button, input, select, textarea {
     gap: 40px;
   }
 
+  .spaces-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
   .events-split-grid {
     grid-template-columns: 1fr;
   }
@@ -2087,7 +2092,20 @@ button, input, select, textarea {
 
 @media (max-width: 768px) {
   .section-spacing {
-    padding: 70px 0;
+    padding: 55px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 7vw, 2.7rem);
+  }
+
+  .spaces-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .form-row-2 {
@@ -2095,7 +2113,7 @@ button, input, select, textarea {
   }
 
   .tour-viewport-container {
-    height: 380px;
+    height: 340px;
   }
 
   .tour-zones-selector {
@@ -2104,9 +2122,57 @@ button, input, select, textarea {
 
   .footer-top-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .badge-top-right, .badge-bottom-left {
-    display: none;
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 100%;
+    margin-top: 10px;
   }
 }
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 12px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-badge-status {
+    display: none;
+  }
+
+  .hero-headline {
+    font-size: 1.85rem;
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+  }
+
+  .filter-tabs-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    padding: 4px 6px;
+  }
+
+  .filter-tabs-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
+}
+

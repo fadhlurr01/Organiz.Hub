@@ -4379,7 +4379,8 @@ button, input, select, textarea {
 /* --------------------------------------------------------------------------
    21. RESPONSIVE BREAKPOINTS (TV, Ultrawide, Desktop, Tablet, Mobile)
    -------------------------------------------------------------------------- */
-/* Large Displays & Smart TVs (1080p, 2K, 4K) */
+
+/* Ultra-Wide Displays & 4K TVs */
 @media (min-width: 1920px) {
   .header-container {
     max-width: 1720px;
@@ -4401,144 +4402,736 @@ button, input, select, textarea {
   }
 }
 
-/* Medium Desktop & Standard TV Zoom (1200px - 1320px) */
+/* Medium Desktop & Compact Laptops (1025px - 1320px) */
 @media (max-width: 1320px) {
-  .btn-pill-outline {
-    display: none !important;
-  }
-
   .header-container {
-    padding: 0 16px;
-    gap: 10px;
+    padding: 0 20px;
+    gap: 12px;
   }
 
   .nav-link {
     padding: 5px 8px;
-    font-size: 0.74rem;
+    font-size: 0.76rem;
+  }
+
+  .hero-grid {
+    gap: 36px;
   }
 }
 
-/* Tablet & Compact Screen Breakpoint (Switch to Clean App Drawer) */
-@media (max-width: 1140px) {
+/* ==========================================================================
+   TABLET BREAKPOINT (<= 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Toggle Nav Mode */
   .desktop-only { display: none !important; }
   .mobile-only { display: flex !important; }
 
+  .mobile-nav-toggle {
+    display: flex !important;
+  }
+
+  /* Header Container */
+  .header-container {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  .site-header {
+    padding: 12px 0;
+  }
+
+  .site-header.scrolled {
+    padding: 8px 0;
+  }
+
+  /* Hero Section Grid */
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .trust-rating-pill {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-subheadline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .quick-trust-badges {
+    justify-content: center;
+  }
+
+  /* Floating Badges in Hero */
+  .card-impact {
+    bottom: -15px;
+    left: 10px;
+  }
+
+  .card-verified {
+    top: -15px;
+    right: 10px;
+  }
+
+  /* 4 Pilar & Solusi Grids */
+  .solusi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .pilar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .widget-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .pricing-card.popular-card {
+    grid-column: span 2;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    transform: none;
+  }
+
+  .addons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
   .conversion-split-grid {
     grid-template-columns: 1fr;
-    padding: 32px 20px;
+    gap: 36px;
+    padding: 36px 28px;
   }
 
   .footer-top-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 32px;
   }
 
-  .floating-actions-stack {
-    bottom: 84px;
+  /* Floating Bottom Dock Active on Tablets and Mobile */
+  .mobile-bottom-dock {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    left: 16px;
     right: 16px;
-    gap: 8px;
+    height: 64px;
+    background: var(--dock-bg);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid var(--border-color-hover);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(16, 185, 129, 0.2);
+    z-index: 2000;
+    padding: 0 8px;
+  }
+
+  /* Floating Actions Stack Adjusted Above Bottom Dock */
+  .floating-actions-stack {
+    bottom: calc(76px + max(12px, env(safe-area-inset-bottom))) !important;
+    right: 18px !important;
+    gap: 10px !important;
+    z-index: 1999 !important;
+  }
+
+  /* Add bottom padding to footer so dock never obstructs content */
+  .site-footer {
+    padding-bottom: 110px;
   }
 }
 
-/* Mobile Screens (Tablets & Smartphones <= 768px) */
+/* ==========================================================================
+   MOBILE LANDSCAPE & TABLET PORTRAIT (<= 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
+  /* Layout & Container Padding */
   .section-spacing {
-    padding: 55px 0;
-  }
-
-  .hero-section {
-    padding: 30px 0 60px 0;
+    padding: 56px 0;
   }
 
   .container {
     padding: 0 16px;
   }
 
-  /* Typography Scaling */
+  /* Global Typography Scaling */
+  .section-header {
+    margin-bottom: 36px;
+  }
+
+  .section-tag {
+    font-size: 0.72rem;
+    padding: 5px 14px;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 5.5vw, 1.95rem);
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* Header Optimization */
+  .site-header {
+    padding: 10px 0;
+  }
+
+  .header-container {
+    padding: 0 14px;
+  }
+
+  .brand-logo {
+    gap: 8px;
+  }
+
+  .logo-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .logo-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-sub-spec {
+    font-size: 0.58rem;
+  }
+
+  .header-controls {
+    gap: 8px;
+  }
+
+  /* Hide language switcher in top header on mobile - it's accessible inside drawer */
+  #main-header .lang-switch-container {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .mobile-nav-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Mobile Nav Drawer Full Polish */
+  .mobile-nav-drawer {
+    width: 310px;
+    max-width: 86vw;
+    height: 100dvh;
+    padding: 20px 16px;
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+
+  .drawer-header {
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+  }
+
+  .drawer-nav-link {
+    padding: 11px 14px;
+    font-size: 0.92rem;
+  }
+
+  .drawer-link-icon-box {
+    width: 32px;
+    height: 32px;
+  }
+
+  .drawer-link-icon-box svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 30px 0 55px 0;
+  }
+
+  .trust-rating-pill {
+    padding: 6px 14px;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .trust-text {
+    font-size: 0.78rem;
+  }
+
   .hero-headline {
-    font-size: 2.1rem;
+    font-size: clamp(1.85rem, 6.2vw, 2.45rem);
     line-height: 1.2;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
   }
 
   .hero-subheadline {
     font-size: 0.94rem;
-    line-height: 1.6;
+    line-height: 1.62;
     margin-bottom: 24px;
   }
 
-  .section-title {
-    font-size: 1.6rem;
-    line-height: 1.25;
-  }
-
-  .section-subtitle {
-    font-size: 0.88rem;
-    margin-bottom: 24px;
-  }
-
-  /* Hero Actions Stack */
-  .hero-actions {
+  .hero-cta-group {
     flex-direction: column;
     width: 100%;
-    gap: 12px;
+    gap: 10px;
+    margin-bottom: 28px;
   }
 
-  .hero-actions .btn {
+  .hero-cta-group .btn {
     width: 100%;
     justify-content: center;
+    padding: 12px 22px;
+    font-size: 0.94rem;
   }
 
-  .hero-trust-badges {
+  .quick-trust-badges {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .badge-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+  }
+
+  /* Hero Mockup Frame & Tabs */
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .glass-dashboard-card {
+    border-radius: var(--radius-lg);
+  }
+
+  .mockup-window-header {
+    padding: 10px 14px;
+  }
+
+  .mockup-url-bar {
+    font-size: 0.68rem;
+    padding: 3px 10px;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mockup-tabs-bar {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 6px;
+    gap: 4px;
+  }
+
+  .mockup-tabs-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mockup-tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 0.74rem;
+    padding: 6px 10px;
+  }
+
+  .mockup-body {
+    padding: 18px 14px;
+  }
+
+  .mockup-header-flex {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .mockup-title {
+    font-size: 1.02rem;
+  }
+
+  .mockup-stats-box {
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+
+  .stats-row {
     flex-wrap: wrap;
     gap: 8px;
   }
 
-  /* Hero Simulator Tabs Touch Carousel */
-  .hero-tabs-bar {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
-    gap: 6px !important;
-    padding: 4px 6px !important;
-    margin-bottom: 12px !important;
+  .stat-value {
+    font-size: 1rem;
   }
 
-  .hero-tabs-bar::-webkit-scrollbar {
+  .stats-footer {
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 0.72rem;
+  }
+
+  .mockup-actions-row {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .quick-amounts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    gap: 6px;
+  }
+
+  .amount-btn {
+    padding: 6px 4px;
+    font-size: 0.74rem;
+    text-align: center;
+  }
+
+  .btn-donasi-sim {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+  }
+
+  /* Floating Badges In Hero - Flow as Stacked Cards below Mockup on Mobile */
+  .floating-glass-card {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    animation: none !important;
+    width: 100% !important;
+    margin-top: 10px;
+    padding: 10px 14px;
+  }
+
+  .card-impact, .card-verified {
+    bottom: auto;
+    left: auto;
+    top: auto;
+    right: auto;
+  }
+
+  .float-icon-box-svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .float-number {
+    font-size: 0.95rem;
+  }
+
+  /* Scroll Trigger */
+  .modern-scroll-trigger {
+    margin-top: 32px;
+  }
+
+  /* SECTION 2: Solusi Organisasi Grid */
+  .solusi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .solusi-card {
+    padding: 24px 20px !important;
+  }
+
+  .solusi-name {
+    font-size: 1.15rem;
+  }
+
+  .solusi-desc {
+    font-size: 0.88rem;
+    margin-bottom: 18px;
+  }
+
+  .solusi-feature-list {
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+
+  /* SECTION 3: 4 Pilar Arsitektur Grid */
+  .pilar-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .pilar-card-modern {
+    padding: 24px 18px !important;
+  }
+
+  .pilar-top-row {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .pilar-icon-header {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .pilar-icon-wrap-svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .pilar-title {
+    font-size: 1.08rem;
+  }
+
+  .pilar-metrics-pills {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .p-pill {
+    font-size: 0.76rem;
+    padding: 6px 10px;
+  }
+
+  /* SECTION 4: Harga & Billing Switcher */
+  .billing-switcher {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    padding: 4px;
+    margin-top: 18px;
+  }
+
+  .billing-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    gap: 4px;
+  }
+
+  .discount-badge {
+    font-size: 0.62rem;
+    padding: 1px 4px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .pricing-card {
+    padding: 28px 20px !important;
+  }
+
+  .pricing-card.popular-card {
+    grid-column: span 1;
+    transform: none !important;
+  }
+
+  .popular-ribbon {
+    font-size: 0.68rem;
+    padding: 4px 12px;
+    top: -12px;
+  }
+
+  .plan-name {
+    font-size: 1.25rem;
+  }
+
+  .price-amount {
+    font-size: 2rem;
+  }
+
+  .plan-features {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .plan-features li {
+    font-size: 0.85rem;
+  }
+
+  /* SECTION 5: Workflow Connected Pipeline on Mobile (Left-Rail Stepper) */
+  .pipeline-flow-wrapper {
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+
+  .pipeline-laser-track {
+    left: 20px;
+    width: 3px;
+    transform: none;
+    top: 20px;
+    bottom: 20px;
+  }
+
+  .pipeline-steps-list {
+    gap: 22px;
+  }
+
+  .pipeline-step-row {
+    display: grid !important;
+    grid-template-columns: 42px 1fr !important;
+    gap: 14px !important;
+    align-items: flex-start !important;
+  }
+
+  .pipeline-empty-spacer {
     display: none !important;
   }
 
-  .dashboard-tab-btn {
-    white-space: nowrap !important;
-    flex-shrink: 0 !important;
-    font-size: 0.76rem !important;
-    padding: 6px 12px !important;
+  .pipeline-node-center {
+    width: 42px !important;
+    height: 42px !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
   }
 
-  /* Hero Floating Badges */
-  .hero-floating-badges-row {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 14px;
+  .node-ring {
+    inset: 1px;
+    border-width: 1.5px;
   }
 
-  .card-impact,
-  .card-verified {
-    position: static !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    transform: none !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+  .node-icon-core {
+    width: 36px !important;
+    height: 36px !important;
   }
 
-  /* Modern Touch-Scroll Filter Tabs (Feature Library & Portfolio) */
+  .node-icon-core svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .node-num-badge {
+    font-size: 0.55rem !important;
+    padding: 1px 4px !important;
+    top: -3px !important;
+    right: -3px !important;
+  }
+
+  .pipeline-content-panel {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    padding: 18px 16px !important;
+    text-align: left !important;
+  }
+
+  .step-left .pipeline-content-panel,
+  .step-right .pipeline-content-panel {
+    text-align: left !important;
+  }
+
+  .pipeline-panel-header {
+    justify-content: space-between !important;
+    margin-bottom: 8px;
+  }
+
+  .phase-tag {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+  }
+
+  .time-est {
+    font-size: 0.72rem;
+  }
+
+  .pipeline-heading {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .pipeline-desc {
+    font-size: 0.86rem;
+    margin-bottom: 14px;
+  }
+
+  .pipeline-tags-row {
+    justify-content: flex-start !important;
+    gap: 6px;
+  }
+
+  .p-tag {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+  }
+
+  /* SECTION 6: The Advantage Grid */
+  .advantage-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  .advantage-card {
+    padding: 22px 18px !important;
+  }
+
+  .adv-icon-svg {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .adv-title {
+    font-size: 1.1rem;
+  }
+
+  .adv-desc {
+    font-size: 0.86rem;
+  }
+
+  /* SECTION 7: Feature Library Tabs & Grid */
   .filter-tab-container {
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -4547,11 +5140,9 @@ button, input, select, textarea {
     scrollbar-width: none !important;
     justify-content: flex-start !important;
     width: 100% !important;
-    max-width: 100% !important;
-    padding: 6px 10px !important;
-    margin: 18px 0 24px 0 !important;
-    border-radius: var(--radius-pill) !important;
-    gap: 6px !important;
+    padding: 5px 6px !important;
+    margin-top: 18px !important;
+    gap: 5px !important;
   }
 
   .filter-tab-container::-webkit-scrollbar {
@@ -4561,138 +5152,266 @@ button, input, select, textarea {
   .filter-tab-btn {
     white-space: nowrap !important;
     flex-shrink: 0 !important;
-    padding: 8px 16px !important;
-    font-size: 0.8rem !important;
-    border-radius: var(--radius-pill) !important;
+    padding: 7px 14px !important;
+    font-size: 0.78rem !important;
   }
 
-  /* Grid Layouts Stack to 1 Column */
-  .features-grid,
-  .portfolio-grid,
-  .solutions-grid,
-  .pillars-quad-grid,
-  .widget-grid,
-  .pricing-grid,
-  .addons-grid {
+  .features-grid {
     grid-template-columns: 1fr !important;
-    gap: 18px !important;
-  }
-
-  /* Card Paddings & Touch Elevation */
-  .feature-card,
-  .portfolio-card,
-  .solution-card-glass,
-  .pilar-card-modern,
-  .widget-demo-card,
-  .pricing-card {
-    padding: 22px 18px !important;
-  }
-
-  .portfolio-actions {
-    flex-direction: column !important;
-    gap: 8px !important;
-  }
-
-  .portfolio-actions .btn {
-    width: 100% !important;
-    justify-content: center !important;
-  }
-
-  /* Pricing Switcher */
-  .pricing-switcher-wrap {
-    width: 100% !important;
-    max-width: 100% !important;
-    justify-content: center !important;
-  }
-
-  .switch-btn {
-    padding: 7px 12px !important;
-    font-size: 0.76rem !important;
-  }
-
-  /* Connected Laser Pipeline Mobile Layout */
-  .pipeline-flow-wrapper {
-    padding: 16px 0;
-  }
-
-  .pipeline-laser-track {
-    left: 24px;
-    transform: none;
-  }
-
-  .pipeline-steps-list {
-    gap: 28px;
-  }
-
-  .pipeline-step-row {
-    grid-template-columns: 48px 1fr;
     gap: 14px;
   }
 
-  .pipeline-empty-spacer {
-    display: none;
+  .feature-card {
+    padding: 22px 18px !important;
   }
 
-  .pipeline-node-center {
-    width: 48px;
-    height: 48px;
-    grid-column: 1;
-    grid-row: 1;
+  .feature-icon-svg {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 14px;
   }
 
-  .node-ring {
-    inset: 2px;
+  .feature-title {
+    font-size: 1.08rem;
   }
 
-  .node-icon-core {
+  .feature-desc {
+    font-size: 0.86rem;
+    margin-bottom: 14px;
+  }
+
+  /* SECTION 8: Interactive Widgets Grid */
+  .widget-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  .widget-demo-card {
+    padding: 22px 16px !important;
+  }
+
+  .widget-name {
+    font-size: 1.15rem;
+  }
+
+  .widget-desc {
+    font-size: 0.86rem;
+    margin-bottom: 16px;
+  }
+
+  .live-widget-box {
+    padding: 16px 14px;
+    gap: 14px;
+  }
+
+  .amount-cur {
+    font-size: 1.2rem;
+  }
+
+  .interact-btn-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .interact-btn-group .btn-reset-donation {
+    grid-column: span 2;
+  }
+
+  .impact-counter-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .counter-item {
+    padding: 10px 4px;
+  }
+
+  .counter-num {
+    font-size: 1.1rem;
+  }
+
+  .counter-label {
+    font-size: 0.65rem;
+  }
+
+  .counter-growth-pill {
+    font-size: 0.58rem;
+  }
+
+  .quick-reply-btn {
+    white-space: normal;
+    padding: 8px 12px;
+    font-size: 0.76rem;
+  }
+
+  .donut-chart-container {
+    gap: 12px;
+  }
+
+  .donut-visual-wrap {
+    width: 85px;
+    height: 85px;
+  }
+
+  .chart-pct {
+    font-size: 1.05rem;
+  }
+
+  .chart-legend {
+    gap: 5px;
+    font-size: 0.7rem;
+  }
+
+  .legend-item {
+    padding: 4px 6px;
+  }
+
+  /* SECTION 9: Portfolio Showcase */
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  .frame-preview {
+    height: 150px;
+    padding: 14px;
+  }
+
+  .portfolio-info {
+    padding: 20px 16px;
+  }
+
+  .portfolio-title {
+    font-size: 1.08rem;
+    margin-bottom: 14px;
+  }
+
+  .portfolio-actions {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .portfolio-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 16px;
+  }
+
+  /* SECTION 10: Download Brosur Form */
+  .conversion-split-grid {
+    padding: 24px 16px !important;
+    border-radius: var(--radius-lg);
+    gap: 28px;
+  }
+
+  .conversion-title {
+    font-size: 1.45rem;
+  }
+
+  .conversion-desc {
+    font-size: 0.9rem;
+    margin-bottom: 22px;
+  }
+
+  .value-checklist {
+    gap: 14px;
+  }
+
+  .value-item {
+    gap: 12px;
+  }
+
+  .value-icon-svg {
     width: 38px;
     height: 38px;
   }
 
-  .node-icon-core svg {
-    width: 16px;
-    height: 16px;
+  .value-icon-svg svg {
+    width: 18px;
+    height: 18px;
   }
 
-  .node-num-badge {
-    right: -2px;
-    top: -4px;
-    font-size: 0.58rem;
-    padding: 1px 4px;
+  .value-item strong {
+    font-size: 0.88rem;
   }
 
-  .pipeline-content-panel {
-    grid-column: 2;
-    grid-row: 1;
-    padding: 18px 16px;
-    text-align: left !important;
+  .value-item p {
+    font-size: 0.78rem;
   }
 
-  .pipeline-panel-header {
-    justify-content: flex-start !important;
+  .form-container {
+    padding: 20px 16px;
   }
 
-  .pipeline-tags-row {
-    justify-content: flex-start !important;
+  .form-header-title {
+    font-size: 1.15rem;
   }
 
-  .pipeline-heading {
-    font-size: 1.02rem;
+  .form-header-sub {
+    font-size: 0.78rem;
+    margin-bottom: 18px;
   }
 
-  /* Form & Footer Responsive */
   .form-row-2 {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+
+  .btn-submit-lead {
+    font-size: 0.85rem;
+    padding: 12px 16px;
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  /* SECTION 11: Add-ons Grid */
+  .addons-grid {
+    grid-template-columns: 1fr !important;
     gap: 14px;
   }
 
-  .conversion-split-grid {
-    padding: 24px 16px !important;
+  .addon-card {
+    padding: 22px 18px !important;
   }
 
-  .footer-top-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
+  .addon-icon-wrap-svg {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .addon-title {
+    font-size: 1.08rem;
+  }
+
+  .addon-desc {
+    font-size: 0.86rem;
+  }
+
+  /* SECTION 12: Marquee & Testimonials */
+  .marquee-track {
+    gap: 18px;
+    animation-duration: 25s;
+  }
+
+  .marquee-item {
+    padding: 6px 14px;
+    gap: 8px;
+  }
+
+  .logo-text {
+    font-size: 0.82rem;
   }
 
   .testimonial-carousel-container {
@@ -4701,68 +5420,141 @@ button, input, select, textarea {
 
   .testi-quote {
     font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
 
-  /* Interactive Widget Controls */
-  .interact-btn-group {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 6px !important;
+  .carousel-controls {
+    margin-top: 24px;
+    gap: 14px;
   }
 
-  .interact-btn-group .chip-btn {
-    flex: 1 1 calc(50% - 6px) !important;
-    text-align: center !important;
-    font-size: 0.75rem !important;
-    padding: 7px 8px !important;
+  /* SECTION 13: FAQ Accordion */
+  .faq-search-wrapper {
+    max-width: 100%;
+    margin-top: 16px;
+    padding: 8px 14px;
   }
 
-  .interact-btn-group .btn-reset-donation {
-    flex: 1 1 100% !important;
+  .faq-accordion-container {
+    gap: 10px;
   }
 
-  /* Floating Actions Stack */
-  .floating-actions-stack {
-    bottom: 82px !important;
-    right: 14px !important;
-    gap: 8px !important;
-    z-index: 1999 !important;
+  .faq-question-btn {
+    padding: 16px 18px;
   }
 
-  .scroll-top-btn {
-    width: 38px !important;
-    height: 38px !important;
+  .faq-q-text {
+    font-size: 0.92rem;
   }
 
-  .scroll-top-icon {
-    width: 17px !important;
-    height: 17px !important;
+  .faq-answer-pane p {
+    padding: 0 18px 18px 18px;
+    font-size: 0.86rem;
   }
 
-  .wa-bubble-trigger {
-    width: 46px !important;
-    height: 46px !important;
+  /* SECTION 14: Global Footer */
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
-  .wa-icon-svg {
-    width: 22px !important;
-    height: 22px !important;
+  .footer-newsletter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 18px;
+    gap: 16px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .newsletter-form .btn {
+    width: 100%;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Modals */
+  .custom-modal {
+    width: calc(100% - 24px);
+    max-width: 500px;
+    padding: 22px 18px;
+  }
+
+  .modal-title {
+    font-size: 1.15rem;
+  }
+
+  .modal-body {
+    font-size: 0.88rem;
   }
 }
 
-/* Small Smartphone Screen Breakpoint (<= 480px) */
+/* ==========================================================================
+   SMALL SMARTPHONES BREAKPOINT (<= 480px)
+   ========================================================================== */
 @media (max-width: 480px) {
+  /* Ultra-Compact Top Header */
+  .header-container {
+    padding: 0 10px;
+  }
+
+  .brand-logo {
+    gap: 6px;
+  }
+
+  .logo-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .logo-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .brand-name {
+    font-size: 0.96rem;
+  }
+
+  .brand-sub-spec {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mobile-nav-toggle {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Hero Headline */
   .hero-headline {
-    font-size: 1.85rem;
+    font-size: 1.72rem;
+    line-height: 1.22;
   }
 
   .section-title {
-    font-size: 1.45rem;
+    font-size: 1.38rem;
   }
 
+  /* Donut Transparency Chart on Small Screens */
   .donut-chart-container {
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     text-align: center;
     gap: 14px;
   }
@@ -4777,34 +5569,74 @@ button, input, select, textarea {
 
   .legend-item {
     justify-content: center;
+    padding: 6px 10px;
   }
 
-  .pilar-top-row {
-    flex-wrap: wrap;
+  /* Impact Counters 1-Col on Tiny Screens */
+  .impact-counter-grid {
+    grid-template-columns: 1fr;
     gap: 8px;
   }
 
-  .pilar-metrics-pills {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .quick-reply-btn {
-    white-space: normal;
+  .counter-item {
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     text-align: left;
   }
 
-  .impact-counter-grid {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
+  .counter-num {
+    font-size: 1.2rem;
+    margin-bottom: 0;
   }
 
-  .newsletter-form {
-    flex-direction: column;
-    width: 100%;
+  .counter-growth-pill {
+    margin-top: 0;
   }
 
-  .newsletter-form .btn {
-    width: 100%;
+  /* Mobile Bottom Dock Compact */
+  .mobile-bottom-dock {
+    left: 8px;
+    right: 8px;
+    bottom: max(8px, env(safe-area-inset-bottom));
+    height: 58px;
+    padding: 0 4px;
+  }
+
+  .dock-item {
+    padding: 4px 4px;
+    gap: 2px;
+  }
+
+  .dock-icon-wrap svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .dock-label {
+    font-size: 0.62rem;
+  }
+
+  .floating-actions-stack {
+    bottom: calc(68px + max(8px, env(safe-area-inset-bottom))) !important;
+    right: 12px !important;
+    gap: 8px !important;
+  }
+
+  .scroll-top-btn {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .wa-bubble-trigger {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .wa-icon-svg {
+    width: 22px !important;
+    height: 22px !important;
   }
 }
+
