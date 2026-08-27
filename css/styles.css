@@ -3316,6 +3316,10 @@ button, input, select, textarea {
   margin-left: 10px;
   font-size: 0.74rem;
   color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: calc(100% - 60px);
 }
 
 .frame-preview {
@@ -3332,9 +3336,21 @@ button, input, select, textarea {
 .preview-yayasan { background: linear-gradient(135deg, #064E3B, #0F172A); }
 .preview-lingkungan { background: linear-gradient(135deg, #1E3A8A, #0F172A); }
 .preview-ngo { background: linear-gradient(135deg, #581C87, #0F172A); }
+.preview-terra-kinship { background: linear-gradient(135deg, #064E3B, #047857, #0F172A); }
+.preview-lumina-global { background: linear-gradient(135deg, #1E3A8A, #2563EB, #0F172A); }
+.preview-vitalis { background: linear-gradient(135deg, #0F766E, #0284C7, #0F172A); }
+.preview-wildcore { background: linear-gradient(135deg, #14532D, #166534, #0F172A); }
+.preview-novalis { background: linear-gradient(135deg, #4C1D95, #6D28D9, #0F172A); }
+.preview-aegis { background: linear-gradient(135deg, #881337, #BE123C, #0F172A); }
+.preview-terra-vanguard { background: linear-gradient(135deg, #065F46, #059669, #0F172A); }
+.preview-frontier { background: linear-gradient(135deg, #991B1B, #EA580C, #0F172A); }
+.preview-lumina-hope { background: linear-gradient(135deg, #B45309, #D97706, #0F172A); }
+.preview-orbita { background: linear-gradient(135deg, #5B21B6, #0284C7, #0F172A); }
 
 .preview-hero-mock {
   text-align: center;
+  max-width: 100%;
+  padding: 0 10px;
 }
 
 .preview-badge {
@@ -3343,12 +3359,16 @@ button, input, select, textarea {
   color: #FFFFFF;
   margin-bottom: 6px;
   display: inline-block;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .preview-hero-mock h4 {
   font-size: 1.05rem;
   color: #FFFFFF;
   margin-bottom: 10px;
+  line-height: 1.35;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  word-break: break-word;
 }
 
 .preview-mini-bar {
@@ -3377,6 +3397,8 @@ button, input, select, textarea {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .segment-badge {
@@ -3388,6 +3410,11 @@ button, input, select, textarea {
 .segment-badge.emerald { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
 .segment-badge.blue { background: rgba(59, 130, 246, 0.15); color: var(--blueprint-blue); }
 .segment-badge.purple { background: rgba(139, 92, 246, 0.15); color: var(--accent-purple); }
+.segment-badge.amber { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+.segment-badge.teal { background: rgba(20, 184, 166, 0.15); color: #14B8A6; }
+.segment-badge.rose { background: rgba(244, 63, 94, 0.15); color: #F43F5E; }
+.segment-badge.cyan { background: rgba(6, 182, 212, 0.15); color: #06B6D4; }
+.segment-badge.indigo { background: rgba(99, 102, 241, 0.15); color: #6366F1; }
 
 .client-name {
   font-size: 0.8rem;
@@ -5771,24 +5798,85 @@ button, input, select, textarea {
   /* SECTION 9: Portfolio Showcase */
   .portfolio-grid {
     grid-template-columns: 1fr !important;
-    gap: 18px;
+    gap: 20px;
+  }
+
+  .portfolio-card {
+    border-radius: var(--radius-lg);
+  }
+
+  .frame-bar {
+    padding: 8px 12px;
+  }
+
+  .frame-title {
+    font-size: 0.72rem;
+    max-width: calc(100% - 50px);
   }
 
   .frame-preview {
-    height: 150px;
-    padding: 14px;
+    height: 145px;
+    padding: 12px;
+  }
+
+  .preview-badge {
+    font-size: 0.68rem;
+    margin-bottom: 4px;
+  }
+
+  .preview-hero-mock h4 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .preview-mini-bar {
+    width: 100px;
+    height: 5px;
   }
 
   .portfolio-info {
-    padding: 20px 16px;
+    padding: 18px 16px;
+  }
+
+  .portfolio-meta {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .segment-badge {
+    font-size: 0.7rem;
+    padding: 2px 7px;
+  }
+
+  .client-name {
+    font-size: 0.78rem;
   }
 
   .portfolio-title {
-    font-size: 1.08rem;
+    font-size: 1.02rem;
     margin-bottom: 14px;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  .metric-highlight-box {
+    padding: 10px 12px;
+    margin-bottom: 16px;
+  }
+
+  .metric-growth {
+    font-size: 1.05rem;
+    margin-bottom: 3px;
+  }
+
+  .metric-desc {
+    font-size: 0.74rem;
+    line-height: 1.35;
   }
 
   .portfolio-actions {
+    display: flex;
     flex-direction: column;
     gap: 8px;
     width: 100%;
@@ -5797,7 +5885,9 @@ button, input, select, textarea {
   .portfolio-actions .btn {
     width: 100%;
     justify-content: center;
-    padding: 9px 16px;
+    padding: 10px 16px;
+    font-size: 0.84rem;
+    font-weight: 600;
   }
 
   /* SECTION 10: Download Brosur Form */
