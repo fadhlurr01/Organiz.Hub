@@ -615,10 +615,20 @@ function initGsapAnimations() {
         { autoAlpha: 1, y: 0, scale: 1, rotationX: 0, duration: 1.05, ease: "power3.out" }, 
         "-=0.85"
       )
-      .fromTo(".mockup-floating-badge, .mockup-floating-badge-bottom", 
+      .fromTo(".mockup-floating-badge, .mockup-floating-badge-bottom, .floating-glass-card", 
         { autoAlpha: 0, scale: 0.6, y: 15 }, 
         { autoAlpha: 1, scale: 1, y: 0, duration: 0.6, stagger: 0.15, ease: "back.out(2)" }, 
         "-=0.5"
+      )
+      .fromTo(".hero-stats-ribbon-container", 
+        { autoAlpha: 0, y: 30, scale: 0.96 }, 
+        { autoAlpha: 1, y: 0, scale: 1, duration: 0.75, ease: "power3.out" }, 
+        "-=0.3"
+      )
+      .fromTo(".modern-scroll-trigger", 
+        { autoAlpha: 0, y: -10 }, 
+        { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 
+        "-=0.2"
       );
 
     // Continuous Subtle Floating Hero Mockup
