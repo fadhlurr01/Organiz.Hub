@@ -611,40 +611,107 @@ function initGsapAnimations() {
       .fromTo(".hero-stats-ribbon-container", { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.7 }, "-=0.3")
       .fromTo(".modern-scroll-trigger", { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.2");
 
-    // Floating Hero Mockup Layer
+    // Floating Hero Mockup Layer Subtle Sway
     gsap.to("#hero-mockup-layer", {
-      y: -8,
-      duration: 3.5,
+      y: -10,
+      duration: 3.2,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut"
     });
 
-    // Global ScrollTrigger Reveals
+    // Interactive 3D Mouse Parallax on Hero Visual
+    const heroSection = document.getElementById('hero');
+    const mockupLayer = document.getElementById('hero-mockup-layer');
+    if (heroSection && mockupLayer && isDesktop) {
+      heroSection.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const xPos = (clientX / window.innerWidth - 0.5) * 24;
+        const yPos = (clientY / window.innerHeight - 0.5) * 24;
+        gsap.to(mockupLayer, {
+          rotationY: xPos * 0.4,
+          rotationX: -yPos * 0.4,
+          x: xPos * 0.6,
+          y: yPos * 0.6,
+          duration: 0.8,
+          ease: "power2.out"
+        });
+      });
+
+      heroSection.addEventListener('mouseleave', () => {
+        gsap.to(mockupLayer, {
+          rotationY: 0,
+          rotationX: 0,
+          x: 0,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out"
+        });
+      });
+    }
+
+    // --- SCROLLTRIGGER BATCHING & ENTRANCE ANIMATIONS ---
     if (typeof ScrollTrigger !== 'undefined') {
+      // Section Headers
       gsap.utils.toArray(".section-header").forEach(el => {
         gsap.fromTo(el,
-          { autoAlpha: 0, y: 25 },
+          { autoAlpha: 0, y: 30 },
           {
             autoAlpha: 1,
             y: 0,
-            duration: 0.75,
+            duration: 0.8,
+            ease: "power2.out",
             scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none none" }
           }
         );
       });
 
-      gsap.utils.toArray(".solusi-card-modern, .pilar-card, .template-card, .pricing-card, .widget-card, .case-card, .addon-card, .testi-card, .faq-item").forEach(card => {
-        gsap.fromTo(card,
-          { autoAlpha: 0, y: 30 },
+      // Batched Card Entrances for High Performance & Smooth Stagger
+      ScrollTrigger.batch(".solusi-card-modern, .pilar-card, .template-card, .pricing-card, .widget-card, .case-card, .addon-card, .testi-card, .why-card", {
+        interval: 0.1,
+        batchMax: 3,
+        onEnter: (batch) => {
+          gsap.fromTo(batch,
+            { autoAlpha: 0, y: 35, scale: 0.96 },
+            { autoAlpha: 1, y: 0, scale: 1, stagger: 0.12, duration: 0.7, ease: "power3.out", overwrite: "auto" }
+          );
+        },
+        start: "top 90%"
+      });
+
+      // Roadmap Progress Timeline Line Scrub
+      const roadmapWrap = document.querySelector('.growth-timeline-wrap');
+      const timelineLine = document.querySelector('.timeline-line');
+      if (roadmapWrap && timelineLine) {
+        gsap.fromTo(timelineLine,
+          { scaleY: 0, transformOrigin: "top center" },
           {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.65,
-            scrollTrigger: { trigger: card, start: "top 90%", toggleActions: "play none none none" }
+            scaleY: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: roadmapWrap,
+              start: "top 75%",
+              end: "bottom 80%",
+              scrub: 0.5
+            }
           }
         );
-      });
+      }
+
+      // Background Constellation Subtle Parallax Drift
+      const bgSvg = document.querySelector('.org-network-svg');
+      if (bgSvg) {
+        gsap.to(bgSvg, {
+          y: 60,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+      }
     }
   });
 }

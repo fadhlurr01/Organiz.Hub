@@ -1739,13 +1739,32 @@ img, svg {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 24px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-emerald) 0%, var(--blueprint-blue) 50%, var(--accent-coral) 100%);
+  transform: translateX(-50%);
+  opacity: 0.4;
+}
+
+@media (max-width: 991px) {
+  .timeline-line {
+    left: 20px;
+  }
 }
 
 .timeline-step {
   display: flex;
   gap: 16px;
   align-items: flex-start;
+  position: relative;
+  z-index: 2;
 }
 
 .step-circle {
