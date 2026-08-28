@@ -1,294 +1,175 @@
 /**
- * ORGANIZ.HUB - JAVASCRIPT APPLICATION ENGINE
+ * ORGANIZ.HUB — JAVASCRIPT APPLICATION ENGINE
  * Features:
- * 1. Dual-Tone Theme Manager (Dark/Light with localStorage persistence)
- * 2. Multi-Language (i18n ID / EN) Engine
- * 3. Mobile Slide-Out Drawer Navigation
- * 4. GSAP 3.12+ & ScrollTrigger Animation Suite
- * 5. Hero Dashboard Multi-Tab Switcher & Donation Calculator Simulation
- * 6. 14 Live Templates Showcase Filtering
- * 7. Feature Library Interactive Filter Tabs
- * 8. FAQ Accordion Engine
- * 9. Live Responsive Demo Modal Emulator (Desktop / Tablet / Mobile)
- * 10. Scroll-to-Top & Floating Action Stack
+ * 1. Theme Manager (Dark / Light)
+ * 2. Multi-Language Switcher (ID / EN)
+ * 3. Mobile Navigation Drawer
+ * 4. Hero Dashboard Tabs & Donation Simulator
+ * 5. 14 Live Template Category Filtering
+ * 6. Feature Library Modular Tab Renderer
+ * 7. FAQ Accordion Engine
+ * 8. Live Responsive Demo Modal Emulator
+ * 9. Scroll-to-Top & Sticky Frosted Header
+ * 10. GSAP 3.12+ & ScrollTrigger Animations
+ * 11. Lead Capture Form Handler
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeManager();
   initLanguageManager();
   initMobileDrawer();
-  initHeroDashboardTabs();
+  initHeroDashboard();
   initTemplateFilter();
   initFeatureLibrary();
   initFaqAccordion();
-  initDemoModalEmulator();
-  initFloatingActionButtons();
+  initDemoModal();
+  initFloatingScroll();
+  initLeadForm();
   initGsapAnimations();
-  initLeadFormHandler();
 });
 
 /* ==========================================================================
-   1. Dual-Tone Theme Manager
+   1. Theme Manager (Dark / Light)
    ========================================================================== */
 function initThemeManager() {
-  const themeBtn = document.getElementById('theme-toggle-btn');
+  const themeBtn = document.getElementById('btn-theme-toggle');
   const htmlEl = document.documentElement;
 
-  const savedTheme = localStorage.getItem('rw_org_theme') || 'dark';
+  const savedTheme = localStorage.getItem('organiz_theme') || 'dark';
   htmlEl.setAttribute('data-theme', savedTheme);
 
   if (themeBtn) {
     themeBtn.addEventListener('click', () => {
-      const currentTheme = htmlEl.getAttribute('data-theme');
-      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      htmlEl.setAttribute('data-theme', nextTheme);
-      localStorage.setItem('rw_org_theme', nextTheme);
+      const current = htmlEl.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', next);
+      localStorage.setItem('organiz_theme', next);
     });
   }
 }
 
 /* ==========================================================================
-   2. Multi-Language (i18n) Engine (ID / EN)
+   2. Language Switcher (ID / EN)
    ========================================================================== */
-const i18nData = {
-  id: {
-    "nav.home": "Beranda",
-    "nav.solutions": "Solusi",
-    "nav.templates": "14 Template Live",
-    "nav.pillars": "4 Pilar",
-    "nav.features": "Fitur",
-    "nav.widgets": "Smart Tools",
-    "nav.pricing": "Paket & Harga",
-    "nav.portfolio": "Portofolio",
-    "nav.faq": "FAQ",
-    "nav.contact": "Kontak",
-    "mega.yayasan.title": "Yayasan Sosial & Pendidikan",
-    "mega.yayasan.sub": "Panti, beasiswa, donasi QRIS & kas publik",
-    "mega.komunitas.title": "Komunitas & Asosiasi",
-    "mega.komunitas.sub": "Keanggotaan, direktori relawan & event",
-    "mega.ngo.title": "NGO & Lembaga Filantropi",
-    "mega.ngo.sub": "Advokasi, multi-bahasa & audit transparan",
-    "cta.viewPricing": "Lihat Harga",
-    "cta.freeConsultText": "Konsultasi Gratis",
-    "hero.ratingText": "Spesialis Digital untuk Yayasan, Komunitas & NGO Sejak 2018",
-    "hero.headline": "Digital Presence & Arsitektur Website <span class=\"text-gradient-emerald\">Khusus Organisasi</span>",
-    "hero.subheadline": "Kami membantu Yayasan Sosial, Komunitas & Asosiasi, serta Lembaga NGO memiliki kehadiran digital yang profesional — Branding & Trust, Fundraising Donasi QRIS, Transparansi Kas WTP, dan Manajemen Relawan dalam satu platform terpadu.",
-    "hero.ctaPricing": "Lihat Paket & Harga",
-    "hero.ctaConsult": "Konsultasi Gratis",
-    "hero.mockupLive": "● Live System",
-    "hero.mockupTag": "KAMPANYE BEASISWA NUSANTARA",
-    "hero.mockupCampaignTitle": "1.000 Beasiswa Pelajar Pelosok Indonesia",
-    "hero.mockupAutoSync": "Auto-Sync",
-    "hero.mockupCollected": "Terkumpul",
-    "hero.mockupTarget": "Target",
-    "hero.mockupFunded": "Tercapai",
-    "hero.mockupDaysLeft": "Hari Tersisa",
-    "hero.mockupDonors": "Donatur",
-    "hero.mockupInstantDonate": "Simulasi Donasi QRIS",
-    "hero.scrollDown": "Scroll untuk Eksplorasi",
-    "solusi.tag": "SOLUSI TEPAT GUNA",
-    "solusi.title": "Solusi untuk Setiap Segmen Organisasi",
-    "solusi.subtitle": "Kami memahami bahwa Yayasan, Komunitas, dan NGO memiliki alur kerja, audiens, dan kebutuhan legalitas yang berbeda. Temukan arsitektur sistem yang tepat untuk organisasi Anda."
-  },
-  en: {
-    "nav.home": "Home",
-    "nav.solutions": "Solutions",
-    "nav.templates": "14 Live Templates",
-    "nav.pillars": "4 Pillars",
-    "nav.features": "Features",
-    "nav.widgets": "Smart Tools",
-    "nav.pricing": "Packages & Pricing",
-    "nav.portfolio": "Portfolio",
-    "nav.faq": "FAQ",
-    "nav.contact": "Contact",
-    "mega.yayasan.title": "Foundations & Education",
-    "mega.yayasan.sub": "Orphanages, scholarships, instant QRIS & audit",
-    "mega.komunitas.title": "Communities & Associations",
-    "mega.komunitas.sub": "Membership, volunteer directory & events",
-    "mega.ngo.title": "NGO & Philanthropy",
-    "mega.ngo.sub": "Advocacy, multi-language & open transparency",
-    "cta.viewPricing": "View Pricing",
-    "cta.freeConsultText": "Free Consultation",
-    "hero.ratingText": "Digital Specialist for Foundations, Communities & NGOs Since 2018",
-    "hero.headline": "Digital Presence & Website Architecture <span class=\"text-gradient-emerald\">Tailored for Nonprofits</span>",
-    "hero.subheadline": "We empower Foundations, Communities, and NGOs with enterprise-grade digital platforms — Branding & Trust, QRIS Fundraising, Transparent Audits, and Volunteer Automation in one unified ecosystem.",
-    "hero.ctaPricing": "Explore Packages & Pricing",
-    "hero.ctaConsult": "Free Consultation",
-    "hero.mockupLive": "● Live System",
-    "hero.mockupTag": "EMERGENCY SCHOLARSHIP CAMPAIGN",
-    "hero.mockupCampaignTitle": "1,000 Remote Archipelago Student Scholarships",
-    "hero.mockupAutoSync": "Auto-Sync",
-    "hero.mockupCollected": "Collected",
-    "hero.mockupTarget": "Target",
-    "hero.mockupFunded": "Funded",
-    "hero.mockupDaysLeft": "Days Left",
-    "hero.mockupDonors": "Donors",
-    "hero.mockupInstantDonate": "Simulate QRIS Donation",
-    "hero.scrollDown": "Scroll to Explore",
-    "solusi.tag": "TARGETED SOLUTIONS",
-    "solusi.title": "Tailored Solutions for Every Nonprofit Spectrum",
-    "solusi.subtitle": "We understand that Foundations, Communities, and NGOs operate under distinct workflows, donor psychology, and governance. Discover the exact digital system for your mission."
-  }
-};
-
 function initLanguageManager() {
-  const idBtn = document.getElementById('lang-id-btn');
-  const enBtn = document.getElementById('lang-en-btn');
-  const savedLang = localStorage.getItem('rw_org_lang') || 'id';
+  const btnId = document.getElementById('btn-lang-id');
+  const btnEn = document.getElementById('btn-lang-en');
 
-  setLanguage(savedLang);
-
-  if (idBtn) {
-    idBtn.addEventListener('click', () => {
-      setLanguage('id');
-      localStorage.setItem('rw_org_lang', 'id');
-    });
-  }
-
-  if (enBtn) {
-    enBtn.addEventListener('click', () => {
-      setLanguage('en');
-      localStorage.setItem('rw_org_lang', 'en');
-    });
-  }
-}
-
-function setLanguage(lang) {
-  const translations = i18nData[lang] || i18nData.id;
-  document.querySelectorAll('[data-i18n]').forEach((el) => {
-    const key = el.getAttribute('data-i18n');
-    if (translations[key]) {
-      el.innerHTML = translations[key];
+  function setLang(lang) {
+    if (btnId && btnEn) {
+      if (lang === 'id') {
+        btnId.classList.add('active');
+        btnEn.classList.remove('active');
+      } else {
+        btnEn.classList.add('active');
+        btnId.classList.remove('active');
+      }
     }
-  });
-
-  const idBtn = document.getElementById('lang-id-btn');
-  const enBtn = document.getElementById('lang-en-btn');
-
-  if (idBtn && enBtn) {
-    if (lang === 'id') {
-      idBtn.classList.add('active');
-      enBtn.classList.remove('active');
-    } else {
-      enBtn.classList.add('active');
-      idBtn.classList.remove('active');
-    }
+    document.documentElement.lang = lang;
+    localStorage.setItem('organiz_lang', lang);
   }
 
-  document.documentElement.lang = lang;
+  if (btnId) btnId.addEventListener('click', () => setLang('id'));
+  if (btnEn) btnEn.addEventListener('click', () => setLang('en'));
+
+  const savedLang = localStorage.getItem('organiz_lang') || 'id';
+  setLang(savedLang);
 }
 
 /* ==========================================================================
-   3. Mobile Slide-Out Drawer Navigation
+   3. Mobile Navigation Drawer
    ========================================================================== */
 function initMobileDrawer() {
-  const toggleBtn = document.getElementById('mobile-nav-toggle');
-  const drawer = document.getElementById('mobile-nav-drawer');
-  const backdrop = document.getElementById('mobile-nav-backdrop');
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const drawer = document.getElementById('mobile-drawer');
+  const overlay = document.getElementById('drawer-overlay');
   const closeBtn = document.getElementById('drawer-close-btn');
 
-  function openDrawer() {
+  function open() {
     drawer.classList.add('active');
-    backdrop.classList.add('active');
+    overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeDrawer() {
+  function close() {
     drawer.classList.remove('active');
-    backdrop.classList.remove('active');
+    overlay.classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  if (toggleBtn) toggleBtn.addEventListener('click', openDrawer);
-  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-  if (backdrop) backdrop.addEventListener('click', closeDrawer);
+  if (toggleBtn) toggleBtn.addEventListener('click', open);
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  if (overlay) overlay.addEventListener('click', close);
 
-  // Close when clicking any drawer link
-  document.querySelectorAll('.drawer-nav-link, .drawer-sublink, .drawer-action-btn').forEach((link) => {
-    link.addEventListener('click', closeDrawer);
-  });
-
-  // Drawer expandable submenu toggle
-  document.querySelectorAll('.drawer-expandable').forEach((item) => {
-    const subtoggle = item.querySelector('.drawer-subtoggle');
-    if (subtoggle) {
-      subtoggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        item.classList.toggle('expanded');
-      });
-    }
+  document.querySelectorAll('.d-link').forEach(link => {
+    link.addEventListener('click', close);
   });
 }
 
 /* ==========================================================================
-   4. Hero Dashboard Multi-Tab Switcher & Donation Calculator Simulation
+   4. Hero Dashboard Tabs & Donation Simulator
    ========================================================================== */
-function initHeroDashboardTabs() {
-  const tabBtns = document.querySelectorAll('.mockup-tab-btn');
-  const tabPanels = document.querySelectorAll('.mockup-tab-panel');
+function initHeroDashboard() {
+  const tabBtns = document.querySelectorAll('.m-tab-btn');
+  const tabContents = document.querySelectorAll('.m-tab-content');
 
-  tabBtns.forEach((btn) => {
+  tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const targetTab = btn.getAttribute('data-mockup-tab');
-
-      tabBtns.forEach((b) => b.classList.remove('active'));
-      tabPanels.forEach((p) => p.classList.remove('active'));
+      const target = btn.getAttribute('data-tab');
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
 
       btn.classList.add('active');
-      const activePanel = document.getElementById(`panel-mockup-${targetTab}`);
-      if (activePanel) activePanel.classList.add('active');
+      const activeEl = document.getElementById(`tab-content-${target}`);
+      if (activeEl) activeEl.classList.add('active');
     });
   });
 
-  // Simulation amount buttons
-  const amountBtns = document.querySelectorAll('.amount-btn');
-  const statCollected = document.getElementById('hero-stat-collected');
-  const progressBar = document.getElementById('hero-progress-bar');
-  let currentBase = 842500000;
+  // Simulator
+  const simBtns = document.querySelectorAll('.btn-sim');
+  const statVal = document.getElementById('stat-collected');
+  const statBar = document.getElementById('stat-bar');
+  let baseAmount = 842500000;
 
-  amountBtns.forEach((btn) => {
+  simBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      amountBtns.forEach((b) => b.classList.remove('active'));
+      simBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const addAmount = parseInt(btn.getAttribute('data-amount') || '50000', 10);
-      const simulatedTotal = currentBase + addAmount;
-      const formatted = 'Rp ' + simulatedTotal.toLocaleString('id-ID');
-      if (statCollected) statCollected.textContent = formatted;
-
-      const pct = Math.min(100, (simulatedTotal / 1000000000) * 100);
-      if (progressBar) progressBar.style.width = pct.toFixed(1) + '%';
+      const add = parseInt(btn.getAttribute('data-amount') || '50000', 10);
+      const total = baseAmount + add;
+      if (statVal) statVal.textContent = 'Rp ' + total.toLocaleString('id-ID');
+      const pct = Math.min(100, (total / 1000000000) * 100);
+      if (statBar) statBar.style.width = pct.toFixed(1) + '%';
     });
   });
 
-  // Demo Donate Trigger
-  const donateBtn = document.getElementById('hero-btn-donasi-demo');
-  if (donateBtn) {
-    donateBtn.addEventListener('click', () => {
-      alert('🌟 Simulasi Sukses! Pada sistem asli, donatur akan langsung diarahkan ke QRIS Dinamis atau Payment Gateway resmi atas nama organisasi Anda.');
+  const demoTrigger = document.getElementById('btn-trigger-demo-donate');
+  if (demoTrigger) {
+    demoTrigger.addEventListener('click', () => {
+      alert('🌟 Simulasi Sukses! Pada sistem asli, donatur akan langsung diarahkan ke QRIS Dinamis atau Payment Gateway resmi atas nama yayasan Anda.');
     });
   }
 }
 
 /* ==========================================================================
-   5. 14 Live Templates Showcase Filtering
+   5. 14 Live Template Category Filtering
    ========================================================================== */
 function initTemplateFilter() {
   const filterBtns = document.querySelectorAll('.t-filter-btn');
-  const templateCards = document.querySelectorAll('.template-card');
+  const cards = document.querySelectorAll('.template-card');
 
-  filterBtns.forEach((btn) => {
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach((b) => b.classList.remove('active'));
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      const cat = btn.getAttribute('data-filter');
 
-      const filter = btn.getAttribute('data-filter');
-
-      templateCards.forEach((card) => {
-        const cat = card.getAttribute('data-cat');
-        if (filter === 'all' || cat === filter) {
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-cat');
+        if (cat === 'all' || cardCat === cat) {
           card.style.display = 'flex';
           if (typeof gsap !== 'undefined') {
-            gsap.fromTo(card, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4 });
+            gsap.fromTo(card, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 });
           }
         } else {
           card.style.display = 'none';
@@ -299,106 +180,72 @@ function initTemplateFilter() {
 }
 
 /* ==========================================================================
-   6. Feature Library Interactive Filter Tabs
+   6. Feature Library Modular Tab Renderer
    ========================================================================== */
 const featureLibraryData = {
   website: [
-    { title: "Responsive Multi-Device", desc: "Tampilan sempurna di Smartphone, Tablet, Laptop, Desktop hingga TV.", icon: "globe" },
-    { title: "Dual-Tone Dark & Light Mode", desc: "Dua palet tema modern yang memanjakan mata donatur di berbagai situasi.", icon: "sun" },
-    { title: "Ultra Fast Loading (99+)", desc: "Optimasi aset dan kode ringan untuk kecepatan akses instan di jaringan pelosok.", icon: "zap" },
-    { title: "Custom Domain Organisasi", desc: "Integrasi domain resmi berakhiran .or.id, .org, atau .id dengan SSL gratis.", icon: "link" },
-    { title: "Arsitektur Glassmorphism 3D", desc: "Estetika modern kelas institusional yang memancarkan kepercayaan donatur.", icon: "layers" },
-    { title: "Dashboard Admin Pengurus", desc: "Kelola seluruh konten, berita, dan program tanpa perlu keahlian coding.", icon: "layout" }
+    { title: "Desain Responsif Multi-Device", desc: "Tampilan proporsional di smartphone, tablet, laptop, dan layar monitor besar." },
+    { title: "Dual Theme (Dark & Light)", desc: "Dua palet warna profesional yang nyaman dibaca donatur di berbagai kondisi." },
+    { title: "Ultra Fast Loading (Score 99+)", desc: "Kode bersih dan optimasi gambar untuk kecepatan akses instan di pelosok." },
+    { title: "Domain Resmi .or.id / .org", desc: "Penggunaan nama domain resmi organisasi berizin Kemenkumham dengan SSL gratis." },
+    { title: "Dashboard Admin Ramah Pemula", desc: "Kelola berita, galeri, dan laporan dengan mudah tanpa keahlian coding." },
+    { title: "Banner Kampanye & Hero Slider", desc: "Pamerkan program prioritas utama di halaman depan untuk menarik empati donatur." }
   ],
   donasi: [
-    { title: "Donasi QRIS Dinamis & Statis", desc: "Dukung semua e-wallet (GoPay, OVO, Dana, ShopeePay) & Mobile Banking.", icon: "credit-card" },
-    { title: "Virtual Account Multi-Bank", desc: "BCA, Mandiri, BNI, BRI, BSI untuk donasi jumlah besar institusi/perusahaan.", icon: "briefcase" },
-    { title: "Donation Progress Meter", desc: "Grafik visual persentase dana terkumpul dengan live counter auto-sync.", icon: "activity" },
-    { title: "Kwitansi Donasi PDF Otomatis", desc: "Cetak bukti donasi ber-barcode dan stempel digital yayasan dalam hitungan detik.", icon: "file-text" },
-    { title: "Kalkulator Zakat & Amal", desc: "Hitung zakat maal, profesi, dan infaq otomatis berdasarkan nisab harga emas.", icon: "percent" },
-    { title: "Donatur Recurring / Bulanan", desc: "Sistem pengingat donasi rutin via pesan WhatsApp terotomasi.", icon: "repeat" }
+    { title: "Donasi QRIS Semua E-Wallet", desc: "Mendukung GoPay, OVO, DANA, LinkAja, ShopeePay, dan seluruh Mobile Banking." },
+    { title: "Virtual Account Multi-Bank", desc: "BCA, Mandiri, BRI, BNI, BSI untuk donasi jumlah besar institusi dan perusahaan." },
+    { title: "Live Progress Bar Otomatis", desc: "Grafik capaian dana yang bertambah otomatis secara real-time saat donasi masuk." },
+    { title: "Kwitansi PDF Berstempel Digital", desc: "Kirim bukti penerimaan donasi otomatis ber-barcode kepada para donatur." },
+    { title: "Kalkulator Zakat Maal & Profesi", desc: "Perhitungan zakat otomatis sesuai nisab harga emas terbaru." },
+    { title: "Rekap Data Donatur Aman", desc: "Database kontak donatur tersimpan rapi untuk menjalin silaturahmi berkala." }
   ],
   relawan: [
-    { title: "Direktori Relawan Lapangan", desc: "Database anggota relawan di 34 provinsi dengan status keikutsertaan.", icon: "users" },
-    { title: "Generator E-KTA Relawan", desc: "Kartu anggota digital dengan QR code verifikasi identitas resmi.", icon: "award" },
-    { title: "Kalender Aksi & Event Sosial", desc: "Jadwal kegiatan bakti sosial, workshop, webinar, dan penyaluran bantuan.", icon: "calendar" },
-    { title: "Sertifikat Keikutsertaan PDF", desc: "Generate otomatis e-sertifikat relawan setelah aksi selesai.", icon: "check-circle" },
-    { title: "Penugasan Wilayah & Posko", desc: "Pemetaan koordinasi tim darurat bencana di lokasi terdampak.", icon: "map-pin" },
-    { title: "Form Pendaftaran Relawan", desc: "Kuesioner keahlian (medis, logistik, pengajar) tersaring rapi.", icon: "clipboard" }
+    { title: "Direktori Relawan 34 Provinsi", desc: "Database anggota relawan dengan pemetaan wilayah dan keahlian khusus." },
+    { title: "Generator E-KTA Ber-QR Code", desc: "Kartu anggota digital dengan identitas unik untuk verifikasi di posko lapangan." },
+    { title: "Kalender Aksi & Bakti Sosial", desc: "Jadwal kegiatan kemanusiaan, workshop, dan distribusi logistik terpadu." },
+    { title: "E-Sertifikat Partisipasi Aksi", desc: "Cetak sertifikat otomatis ber-barcode setelah relawan selesai bertugas." },
+    { title: "Formulir Pendaftaran Relawan", desc: "Kuesioner pendaftaran dengan filtering minat dan ketersediaan waktu." },
+    { title: "Integrasi Grup WhatsApp Relawan", desc: "Tautan masuk grup koordinasi cepat per posko daerah bencana." }
   ],
   transparansi: [
-    { title: "Laporan Kas Publik Real-Time", desc: "Grafik terbuka pemasukan donasi dan penyaluran dana sosial.", icon: "bar-chart-2" },
-    { title: "Download Center Laporan Tahunan", desc: "Pusat unduhan berkas PDF laporan audit keuangan berpredikat WTP.", icon: "download" },
-    { title: "Diagram Alokasi Dana 85/10/5", desc: "Visualisasi proporsi bantuan nyata, operasional, dan dana darurat.", icon: "pie-chart" },
-    { title: "Arsip Berita Acara Penyaluran", desc: "Foto serah terima bantuan dan tanda terima penerima manfaat terverifikasi.", icon: "file-check" },
-    { title: "Audit Log Transaksi Donasi", desc: "Riwayat transaksi aman yang tidak dapat dimanipulasi pihak luar.", icon: "shield" },
-    { title: "Status Kemenkumham Terbuka", desc: "Publikasi nomor registrasi izin dinas sosial dan kementerian.", icon: "check-square" }
+    { title: "Laporan Kas Publik Real-Time", desc: "Grafik terbuka pemasukan donasi dan rincian alokasi dana secara jujur." },
+    { title: "Download Center Laporan WTP", desc: "Pusat unduhan berkas PDF audit akuntan publik untuk donor besar." },
+    { title: "Diagram Alokasi Dana 85/10/5", desc: "Transparansi proporsi dana bantuan nyata, operasional, dan cadangan." },
+    { title: "Dokumentasi Serah Terima Bantuan", desc: "Foto dan berita acara penyaluran bantuan kepada penerima manfaat." },
+    { title: "Publikasi Legalitas Hukum", desc: "Pencantuman nomor SK Kemenkumham dan izin operasional Dinas Sosial." },
+    { title: "Audit Log Transaksi Donasi", desc: "Riwayat transaksi aman yang tidak dapat dimanipulasi pihak luar." }
   ],
   keamanan: [
-    { title: "Enkripsi SSL 256-Bit", desc: "Protokol keamanan data tertinggi untuk melindungi privasi donatur.", icon: "lock" },
-    { title: "Verifikasi Legalitas Hukum", desc: "Badge verifikasi Kemenkumham dan izin operasional resmi.", icon: "shield-check" },
-    { title: "Anti-DDoS & Firewall Cloud", desc: "Perlindungan website dari serangan siber 24/7 tanpa downtime.", icon: "server" },
-    { title: "Backup Data Harian Otomatis", desc: "Pencadangan database donatur dan berkas laporan ke cloud terpisah.", icon: "database" },
-    { title: "Role-Based Access Control", desc: "Pembatasan hak akses admin (Ketua, Bendahara, Koordinator Relawan).", icon: "user-check" },
-    { title: "Kepatuhan UU PDP", desc: "Penerapan standar privasi data pribadi donatur dan anak asuh binaan.", icon: "eye-off" }
-  ],
-  widgets: [
-    { title: "Timeline Program Perjalanan", desc: "Jadwal dan alur program kemanusiaan dalam bentuk kronologi visual.", icon: "clock" },
-    { title: "Peta Interaktif Sebaran Posko", desc: "Visualisasi titik posko dan penerima manfaat di seluruh Indonesia.", icon: "map" },
-    { title: "WhatsApp Multi-CS Float", desc: "Floating hotline yang terhubung ke petugas layanan donatur.", icon: "message-circle" },
-    { title: "Testimonial Carousel Slider", desc: "Kumpulan ulasan donatur dan cerita inspiratif penerima manfaat.", icon: "star" },
-    { title: "Countdown Urgensi Kampanye", desc: "Hitung mundur sisa hari penggalangan dana darurat bencana.", icon: "timer" },
-    { title: "FAQ Accordion Interaktif", desc: "Tanya jawab seputar donasi, legalitas, dan mekanisme bantuan.", icon: "help-circle" }
+    { title: "Enkripsi SSL 256-Bit", desc: "Standar keamanan data tertinggi untuk melindungi privasi donatur." },
+    { title: "Anti-DDoS & Cloud Firewall", desc: "Perlindungan website dari serangan siber tanpa risiko down 24/7." },
+    { title: "Pencadangan Data Harian (Backup)", desc: "Pencadangan database donatur ke cloud terpisah setiap tengah malam." },
+    { title: "Role-Based Admin Access", desc: "Pembagian hak akses admin (Ketua Yayasan, Bendahara, Koordinator Relawan)." },
+    { title: "Kepatuhan UU PDP", desc: "Penerapan perlindungan data pribadi donatur dan anak asuh binaan." },
+    { title: "Notifikasi Login Mencurigakan", desc: "Peringatan otomatis via email saat ada upaya akses tidak sah." }
   ],
   seo: [
-    { title: "Struktur SEO Standar Google", desc: "Schema markup nirlaba agar mudah ditemukan di halaman pertama Google.", icon: "search" },
-    { title: "AI-Ready Search Optimization", desc: "Terindeks optimal oleh mesin pencari AI (ChatGPT, Perplexity, Gemini).", icon: "cpu" },
-    { title: "Open Graph & Media Sharing", desc: "Pratinjau tautan WhatsApp/Facebook rapi dengan banner kampanye tajam.", icon: "share-2" },
-    { title: "Sitemap XML & Robots Otomatis", desc: "Indeks berkala setiap kali Anda menerbitkan berita atau program baru.", icon: "file-code" },
-    { title: "Optimasi Gambar WebP Ringan", desc: "Kompresi foto kegiatan otomatis tanpa mengurangi kualitas ketajaman.", icon: "image" },
-    { title: "Google Search Console Terhubung", desc: "Laporan kata kunci donatur yang mengunjungi website organisasi Anda.", icon: "trending-up" }
-  ],
-  i18n: [
-    { title: "Multi-Language (ID / EN)", desc: "Dukungan dwibahasa instan untuk menjangkau donatur asing & grant global.", icon: "globe" },
-    { title: "Penerjemah Halaman Cepat", desc: "Struktur switch bahasa ringan tanpa perlu me-reload seluruh halaman.", icon: "translate" },
-    { title: "Mata Uang Ganda (IDR / USD)", desc: "Konversi perkiraan donasi mata uang asing secara real-time.", icon: "dollar-sign" },
-    { title: "Format Tanggal Internasional", desc: "Penyesuaian format kalender sesuai standar mitra internasional.", icon: "calendar" },
-    { title: "Proposal Hibah Bahasa Inggris", desc: "Halaman khusus presentasi organisasi untuk lembaga donor asing.", icon: "file" },
-    { title: "Dukungan Multi-Zona Waktu", desc: "WIB, WITA, WIT, dan UTC untuk event webinar nirlaba global.", icon: "watch" }
-  ],
-  integrasi: [
-    { title: "Integrasi Midtrans / Xendit", desc: "Payment gateway resmi langsung masuk ke rekening bank yayasan.", icon: "link-2" },
-    { title: "Meta Pixel & TikTok Pixel", desc: "Pelacakan donatur untuk optimasi efektivitas iklan media sosial.", icon: "target" },
-    { title: "Google Analytics 4 & GTM", desc: "Analisis demografi donatur dan halaman kampanye paling diminati.", icon: "pie-chart" },
-    { title: "WhatsApp Business API Direct", desc: "Kirim pesan notifikasi otomatis saat donasi berhasil masuk.", icon: "send" },
-    { title: "Mailchimp / Email Newsletter", desc: "Kirim buletin kabar perkembangan panti kepada donatur setia.", icon: "mail" },
-    { title: "Export Data ke Excel / CSV", desc: "Unduh rekap donatur dan relawan sekali klik untuk rapat pengurus.", icon: "file-spreadsheet" }
-  ],
-  analytics: [
-    { title: "Dashboard Pertumbuhan Donasi", desc: "Grafik tren donasi bulanan, tahunan, dan donatur terloyal.", icon: "bar-chart" },
-    { title: "Heatmap Perilaku Pengunjung", desc: "Ketahui bagian website yang paling sering dibaca donatur via Clarity.", icon: "eye" },
-    { title: "Conversion Funnel Tracking", desc: "Pantau rasio pengunjung yang berhasil menyelesaikan donasi.", icon: "filter" },
-    { title: "Laporan Kinerja Tiap Kampanye", desc: "Evaluasi program mana yang paling cepat mencapai target dana.", icon: "award" },
-    { title: "Rekap Demografi Wilayah", desc: "Ketahui kota dan provinsi asal donatur terbanyak lembaga Anda.", icon: "compass" },
-    { title: "Audit Biaya vs Dampak Sosial", desc: "Rasio transparansi penggunaan dana operasional organisasi.", icon: "sliders" }
+    { title: "Struktur SEO Standar Google", desc: "Schema markup nirlaba agar website mudah ditemukan di halaman 1 Google." },
+    { title: "AI-Ready Search Optimization", desc: "Terindeks optimal oleh mesin pencari AI (ChatGPT, Perplexity, Gemini)." },
+    { title: "Open Graph Social Sharing", desc: "Pratinjau link WhatsApp & Facebook rapi dengan poster kampanye tajam." },
+    { title: "Sitemap XML Otomatis", desc: "Pembaruan indeks berkala setiap kali menerbitkan artikel atau program baru." },
+    { title: "Google Search Console Terhubung", desc: "Laporan kata kunci donatur yang mengunjungi website organisasi Anda." },
+    { title: "Kompresi Gambar WebP", desc: "Foto kegiatan tajam namun sangat ringan dibuka di jaringan seluler." }
   ]
 };
 
 function initFeatureLibrary() {
   const fTabs = document.querySelectorAll('.f-tab-btn');
-  const container = document.getElementById('feature-items-container');
+  const container = document.getElementById('feature-items-wrapper');
 
-  function renderFeatures(cat) {
+  function render(cat) {
     if (!container) return;
     const items = featureLibraryData[cat] || featureLibraryData.website;
     container.innerHTML = items.map(item => `
-      <div class="feature-item-card glass-card">
-        <div class="f-icon-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline>
-          </svg>
+      <div class="feat-item-card glass-panel">
+        <div class="feat-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
         </div>
-        <div class="f-text">
+        <div>
           <h4>${item.title}</h4>
           <p>${item.desc}</p>
         </div>
@@ -406,7 +253,7 @@ function initFeatureLibrary() {
     `).join('');
 
     if (typeof gsap !== 'undefined') {
-      gsap.fromTo('.feature-item-card', { opacity: 0, y: 15 }, { opacity: 1, y: 0, stagger: 0.05, duration: 0.35 });
+      gsap.fromTo('.feat-item-card', { opacity: 0, y: 15 }, { opacity: 1, y: 0, stagger: 0.05, duration: 0.3 });
     }
   }
 
@@ -415,40 +262,40 @@ function initFeatureLibrary() {
       fTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       const cat = tab.getAttribute('data-fcat');
-      renderFeatures(cat);
+      render(cat);
     });
   });
 
-  renderFeatures('website');
+  render('website');
 }
 
 /* ==========================================================================
    7. FAQ Accordion Engine
    ========================================================================== */
 function initFaqAccordion() {
-  const faqItems = document.querySelectorAll('.faq-item');
+  const rows = document.querySelectorAll('.faq-row');
 
-  faqItems.forEach(item => {
-    const btn = item.querySelector('.faq-question-btn');
-    const panel = item.querySelector('.faq-answer-panel');
+  rows.forEach(row => {
+    const trigger = row.querySelector('.faq-trigger');
+    const panel = row.querySelector('.faq-panel');
 
-    if (btn && panel) {
-      btn.addEventListener('click', () => {
-        const isOpen = item.classList.contains('active');
+    if (trigger && panel) {
+      trigger.addEventListener('click', () => {
+        const isOpen = row.classList.contains('active');
 
         // Close all
-        faqItems.forEach(other => {
-          other.classList.remove('active');
-          const otherPanel = other.querySelector('.faq-answer-panel');
-          const otherBtn = other.querySelector('.faq-question-btn');
-          if (otherPanel) otherPanel.style.maxHeight = null;
-          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        rows.forEach(r => {
+          r.classList.remove('active');
+          const p = r.querySelector('.faq-panel');
+          const t = r.querySelector('.faq-trigger');
+          if (p) p.style.maxHeight = null;
+          if (t) t.setAttribute('aria-expanded', 'false');
         });
 
-        // Toggle clicked
+        // Open clicked
         if (!isOpen) {
-          item.classList.add('active');
-          btn.setAttribute('aria-expanded', 'true');
+          row.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
           panel.style.maxHeight = panel.scrollHeight + 40 + 'px';
         }
       });
@@ -457,34 +304,33 @@ function initFaqAccordion() {
 }
 
 /* ==========================================================================
-   8. Live Responsive Demo Modal Emulator (14 Templates)
+   8. Live Responsive Demo Modal Emulator
    ========================================================================== */
-function initDemoModalEmulator() {
-  const modal = document.getElementById('live-demo-modal');
-  const iframe = document.getElementById('demo-preview-iframe');
-  const titleText = document.getElementById('demo-modal-title-text');
-  const externalLink = document.getElementById('demo-modal-external-link');
-  const closeBtn = document.getElementById('btn-close-demo-modal');
-  const closeDot = document.getElementById('demo-modal-close-dot');
+function initDemoModal() {
+  const modal = document.getElementById('modal-demo-dialog');
+  const iframe = document.getElementById('demo-iframe');
+  const title = document.getElementById('demo-title-text');
+  const extLink = document.getElementById('demo-ext-link');
+  const closeBtn = document.getElementById('btn-close-modal-x');
+  const closeDot = document.getElementById('dialog-dot-close');
   const vpBtns = document.querySelectorAll('.vp-btn');
-  const loadingIndicator = document.getElementById('demo-loading-indicator');
+  const loading = document.getElementById('demo-loading');
 
   if (!modal) return;
 
-  function openDemo(url, title) {
-    if (titleText) titleText.textContent = title;
-    if (externalLink) externalLink.setAttribute('href', url);
-    if (loadingIndicator) loadingIndicator.style.display = 'flex';
+  function openDemo(url, titleText) {
+    if (title) title.textContent = titleText;
+    if (extLink) extLink.href = url;
+    if (loading) loading.style.display = 'block';
 
     if (iframe) {
       iframe.src = url;
       iframe.className = 'demo-iframe vp-desktop';
       iframe.onload = () => {
-        if (loadingIndicator) loadingIndicator.style.display = 'none';
+        if (loading) loading.style.display = 'none';
       };
     }
 
-    // Reset viewport buttons to desktop
     vpBtns.forEach(b => b.classList.remove('active'));
     const defVp = document.querySelector('.vp-btn[data-vp="desktop"]');
     if (defVp) defVp.classList.add('active');
@@ -499,88 +345,92 @@ function initDemoModalEmulator() {
     document.body.style.overflow = '';
   }
 
-  // Open triggers
-  document.querySelectorAll('.btn-open-demo-modal').forEach(btn => {
+  document.querySelectorAll('.btn-demo-trigger').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const url = btn.getAttribute('data-url');
-      const title = btn.getAttribute('data-title') || 'Live Template Preview';
-      if (url) openDemo(url, title);
+      const titleText = btn.getAttribute('data-title') || 'Live Template Preview';
+      if (url) openDemo(url, titleText);
     });
   });
 
   if (closeBtn) closeBtn.addEventListener('click', closeDemo);
   if (closeDot) closeDot.addEventListener('click', closeDemo);
 
-  // Close when clicking modal backdrop
   modal.addEventListener('click', (e) => {
     const rect = modal.getBoundingClientRect();
-    const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+    const inside = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
       rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
-    if (!isInDialog) closeDemo();
+    if (!inside) closeDemo();
   });
 
-  // Viewport switchers (Desktop, Tablet, Mobile)
   vpBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       vpBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const vp = btn.getAttribute('data-vp');
-
-      if (iframe) {
-        iframe.className = `demo-iframe vp-${vp}`;
-      }
+      if (iframe) iframe.className = `demo-iframe vp-${vp}`;
     });
   });
 }
 
 /* ==========================================================================
-   9. Scroll-to-Top & Floating Action Stack
+   9. Scroll-to-Top & Sticky Frosted Header
    ========================================================================== */
-function initFloatingActionButtons() {
-  const scrollBtn = document.getElementById('scroll-to-top-btn');
+function initFloatingScroll() {
+  const scrollBtn = document.getElementById('btn-scroll-top');
+  const header = document.getElementById('main-header');
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (scrollBtn) {
+      if (y > 300) scrollBtn.classList.add('visible');
+      else scrollBtn.classList.remove('visible');
+    }
+
+    if (header) {
+      if (y > 40) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    }
+  }, { passive: true });
 
   if (scrollBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 280) {
-        scrollBtn.classList.add('visible');
-      } else {
-        scrollBtn.classList.remove('visible');
-      }
-    }, { passive: true });
-
     scrollBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-
-  // Header Scroll Frosted State
-  const header = document.getElementById('main-header');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 30) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }, { passive: true });
-  }
 }
 
 /* ==========================================================================
-   10. GSAP 3.12+ & ScrollTrigger Animation Suite
+   10. Lead Capture Form Handler
+   ========================================================================== */
+function initLeadForm() {
+  const form = document.getElementById('lead-form-brosur');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('inp-name').value;
+    const org = document.getElementById('inp-org').value;
+    const phone = document.getElementById('inp-phone').value;
+
+    const msg = encodeURIComponent(`Halo Organiz.Hub, saya ${name} dari ${org} (${phone}). Saya ingin meminta Brosur & Panduan Digitalisasi Organisasi 2026 format PDF.`);
+    window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
+
+    alert(`Terima kasih ${name}! Brosur digitalisasi akan langsung diteruskan ke WhatsApp Anda (${phone}).`);
+    form.reset();
+  });
+}
+
+/* ==========================================================================
+   11. GSAP 3.12+ & ScrollTrigger Animation Suite
    ========================================================================== */
 function initGsapAnimations() {
-  if (typeof gsap === 'undefined') {
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('revealed'));
-    return;
-  }
+  if (typeof gsap === 'undefined') return;
 
   if (typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
   }
-
-  gsap.defaults({ ease: "power2.out", duration: 0.8 });
 
   const mm = gsap.matchMedia();
 
@@ -590,70 +440,48 @@ function initGsapAnimations() {
   }, (context) => {
     const { isDesktop, reduceMotion } = context.conditions;
 
-    if (reduceMotion) {
-      gsap.set(".reveal-on-scroll, .inline-spec-badge, .hero-headline, .hero-subheadline, .hero-cta-group .btn", {
-        autoAlpha: 1, y: 0, scale: 1
-      });
-      return;
-    }
+    if (reduceMotion) return;
 
-    // Hero Master Timeline
+    // Hero Entrance Timeline
     const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     heroTl
-      .fromTo(".inline-spec-badge", { autoAlpha: 0, y: -20 }, { autoAlpha: 1, y: 0, duration: 0.6, delay: 0.1 })
-      .fromTo(".hero-headline", { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.8 }, "-=0.35")
-      .fromTo(".hero-subheadline", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.7 }, "-=0.45")
-      .fromTo(".hero-cta-group .btn", { autoAlpha: 0, y: 20, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, stagger: 0.1, duration: 0.55, ease: "back.out(1.5)" }, "-=0.4")
-      .fromTo(".hero-five-pillars-strip .pillar-mini-item", { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, stagger: 0.08, duration: 0.5 }, "-=0.3")
-      .fromTo(".glass-dashboard-card.main-frame", { autoAlpha: 0, y: 45, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.95 }, "-=0.7")
-      .fromTo(".floating-glass-card", { autoAlpha: 0, scale: 0.7, y: 15 }, { autoAlpha: 1, scale: 1, y: 0, stagger: 0.15, duration: 0.6, ease: "back.out(1.8)" }, "-=0.4")
-      .fromTo(".hero-stats-ribbon-container", { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.7 }, "-=0.3")
-      .fromTo(".modern-scroll-trigger", { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.2");
+      .fromTo(".badge-pill-spesialis", { autoAlpha: 0, y: -20 }, { autoAlpha: 1, y: 0, duration: 0.6 })
+      .fromTo(".hero-title", { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.8 }, "-=0.3")
+      .fromTo(".hero-description", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.7 }, "-=0.4")
+      .fromTo(".hero-actions .btn-primary, .hero-actions .btn-secondary, .hero-actions .btn-outline-glass", { autoAlpha: 0, y: 20, scale: 0.95 }, { autoAlpha: 1, y: 0, scale: 1, stagger: 0.1, duration: 0.5 }, "-=0.4")
+      .fromTo(".dashboard-window", { autoAlpha: 0, y: 40, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.9 }, "-=0.6")
+      .fromTo(".floating-badge", { autoAlpha: 0, scale: 0.6, y: 15 }, { autoAlpha: 1, scale: 1, y: 0, stagger: 0.15, duration: 0.6, ease: "back.out(2)" }, "-=0.3");
 
-    // Floating Hero Mockup Layer Subtle Sway
-    gsap.to("#hero-mockup-layer", {
-      y: -10,
-      duration: 3.2,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut"
-    });
-
-    // Interactive 3D Mouse Parallax on Hero Visual
+    // 3D Interactive Mouse Parallax on Hero Visual
     const heroSection = document.getElementById('hero');
-    const mockupLayer = document.getElementById('hero-mockup-layer');
-    if (heroSection && mockupLayer && isDesktop) {
+    const mockupWrap = document.getElementById('hero-mockup-wrapper');
+    if (heroSection && mockupWrap && isDesktop) {
       heroSection.addEventListener('mousemove', (e) => {
         const { clientX, clientY } = e;
-        const xPos = (clientX / window.innerWidth - 0.5) * 24;
-        const yPos = (clientY / window.innerHeight - 0.5) * 24;
-        gsap.to(mockupLayer, {
+        const xPos = (clientX / window.innerWidth - 0.5) * 20;
+        const yPos = (clientY / window.innerHeight - 0.5) * 20;
+        gsap.to(mockupWrap, {
           rotationY: xPos * 0.4,
           rotationX: -yPos * 0.4,
-          x: xPos * 0.6,
-          y: yPos * 0.6,
           duration: 0.8,
           ease: "power2.out"
         });
       });
 
       heroSection.addEventListener('mouseleave', () => {
-        gsap.to(mockupLayer, {
+        gsap.to(mockupWrap, {
           rotationY: 0,
           rotationX: 0,
-          x: 0,
-          y: 0,
           duration: 1.2,
           ease: "power3.out"
         });
       });
     }
 
-    // --- SCROLLTRIGGER BATCHING & ENTRANCE ANIMATIONS ---
+    // ScrollTrigger Batched Entrances
     if (typeof ScrollTrigger !== 'undefined') {
-      // Section Headers
-      gsap.utils.toArray(".section-header").forEach(el => {
+      gsap.utils.toArray(".section-title-wrap").forEach(el => {
         gsap.fromTo(el,
           { autoAlpha: 0, y: 30 },
           {
@@ -666,75 +494,17 @@ function initGsapAnimations() {
         );
       });
 
-      // Batched Card Entrances for High Performance & Smooth Stagger
-      ScrollTrigger.batch(".solusi-card-modern, .pilar-card, .template-card, .pricing-card, .widget-card, .case-card, .addon-card, .testi-card, .why-card", {
+      ScrollTrigger.batch(".solution-card, .pillar-card, .template-card, .pricing-card, .roadmap-step, .why-card, .widget-card, .addon-card, .testi-card", {
         interval: 0.1,
         batchMax: 3,
         onEnter: (batch) => {
           gsap.fromTo(batch,
             { autoAlpha: 0, y: 35, scale: 0.96 },
-            { autoAlpha: 1, y: 0, scale: 1, stagger: 0.12, duration: 0.7, ease: "power3.out", overwrite: "auto" }
+            { autoAlpha: 1, y: 0, scale: 1, stagger: 0.12, duration: 0.65, ease: "power3.out", overwrite: "auto" }
           );
         },
         start: "top 90%"
       });
-
-      // Roadmap Progress Timeline Line Scrub
-      const roadmapWrap = document.querySelector('.growth-timeline-wrap');
-      const timelineLine = document.querySelector('.timeline-line');
-      if (roadmapWrap && timelineLine) {
-        gsap.fromTo(timelineLine,
-          { scaleY: 0, transformOrigin: "top center" },
-          {
-            scaleY: 1,
-            ease: "none",
-            scrollTrigger: {
-              trigger: roadmapWrap,
-              start: "top 75%",
-              end: "bottom 80%",
-              scrub: 0.5
-            }
-          }
-        );
-      }
-
-      // Background Constellation Subtle Parallax Drift
-      const bgSvg = document.querySelector('.org-network-svg');
-      if (bgSvg) {
-        gsap.to(bgSvg, {
-          y: 60,
-          ease: "none",
-          scrollTrigger: {
-            trigger: "#hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: true
-          }
-        });
-      }
     }
-  });
-}
-
-/* ==========================================================================
-   11. Lead Consultation Form Handler
-   ========================================================================== */
-function initLeadFormHandler() {
-  const form = document.getElementById('lead-consult-form');
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const name = formData.get('name') || '';
-    const phone = formData.get('phone') || '';
-    const org = formData.get('org_name') || '';
-    const segment = formData.get('segment') || '';
-
-    const text = encodeURIComponent(`Halo Organiz.Hub, saya ${name} dari ${org} (${segment}). Saya ingin meminta brosur lengkap & panduan digitalisasi organisasi 2026.`);
-    window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
-
-    alert(`Terima kasih ${name}! Permintaan Anda telah diterima. Dokumen brosur & konsultasi akan diteruskan ke kontak WhatsApp Anda (${phone}).`);
-    form.reset();
   });
 }

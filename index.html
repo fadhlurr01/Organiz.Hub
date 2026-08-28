@@ -3,1136 +3,673 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Organiz.Hub - Platform & Website Template Profesional Khusus Yayasan, Komunitas, dan NGO. Hadir dengan Sistem Donasi Instan QRIS, Manajemen Relawan, dan Laporan Transparansi Kas Publik.">
-  <meta name="keywords" content="website yayasan, website organisasi, template NGO, website komunitas, portal donasi online, transparansi dana nirlaba, web panti asuhan, template donasi qris">
-  <meta name="author" content="Organiz.Hub Digital Foundation Architecture">
-  <meta property="og:title" content="Organiz.Hub - Website & Smart System Khusus Yayasan, Komunitas & NGO">
-  <meta property="og:description" content="Solusi digital terintegrasi untuk Yayasan, Komunitas, dan NGO: Website profesional, donasi instan QRIS, transparansi kas WTP, dan otomasi relawan.">
+  <title>Organiz.Hub — Solusi Website & Digital Presence Khusus Yayasan, Komunitas, dan NGO</title>
+  <meta name="description" content="Organiz.Hub menghadirkan infrastruktur digital terintegrasi untuk Yayasan Sosial, Komunitas & Asosiasi, serta Lembaga NGO — Branding, Donasi QRIS, Kas Transparan WTP, dan Otomasi Relawan.">
+  <meta name="keywords" content="website yayasan, website komunitas, website ngo, donasi online qris, sistem kas yayasan, web nirlaba indonesia">
+  
+  <!-- Open Graph / Meta Social -->
   <meta property="og:type" content="website">
-  <title>Organiz.Hub - Website & Smart System Khusus Yayasan, Komunitas & NGO</title>
+  <meta property="og:title" content="Organiz.Hub — Digital Presence Khusus Yayasan, Komunitas & NGO">
+  <meta property="og:description" content="Platform arsitektur website modern khusus organisasi nirlaba Indonesia. Live demo 14 template, modul donasi QRIS & kas publik.">
+  <meta property="og:image" content="assets/images/og-preview.jpg">
 
-  <!-- Google Fonts: Plus Jakarta Sans, Outfit, Inter, JetBrains Mono -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300D68F'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
+
+  <!-- Google Fonts: Outfit (Display & Numbers) + Plus Jakarta Sans (Headings) + Inter (Body Text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="antialiased">
-
-  <!-- Structural Background Blueprint Grid & Multi-Layered Glows -->
-  <div class="blueprint-bg" aria-hidden="true">
-    <div class="grid-overlay"></div>
-    <div class="glow-orb glow-top-left"></div>
-    <div class="glow-orb glow-top-right"></div>
-    <div class="glow-orb glow-center"></div>
-  </div>
+<body>
 
   <!-- ========================================================
-       GLOBAL HEADER (FLOATING GLASS PILL NAVBAR)
-  ======================================================== -->
-  <!-- ========================================================
-       GLOBAL HEADER (ELITE FLOATING GLASS NAVBAR)
+       NAVBAR / HEADER (FLOATING FROSTED GLASS BAR)
   ======================================================== -->
   <header id="main-header" class="site-header">
-    <div class="header-inner container">
-      <!-- 1. Brand Logo -->
-      <a href="#hero" class="brand-logo" id="header-logo" aria-label="Organiz.Hub">
-        <div class="logo-icon-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="Organiz.Hub Beranda">
+        <div class="logo-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
             <path d="M2 17l10 5 10-5"></path>
             <path d="M2 12l10 5 10-5"></path>
           </svg>
         </div>
-        <div class="logo-text-col">
-          <span class="brand-name">Organiz<span class="text-emerald">.Hub</span></span>
-          <span class="brand-badge-pill">Yayasan • Komunitas • NGO</span>
+        <div class="logo-text">
+          <span class="brand-title">Organiz<span class="brand-accent">.Hub</span></span>
+          <span class="brand-sub">Yayasan • Komunitas • NGO</span>
         </div>
       </a>
 
-      <!-- 2. Desktop Navigation Menu -->
-      <nav class="desktop-nav" id="main-navbar" aria-label="Navigasi Utama">
-        <ul class="nav-menu-list">
-          <!-- Solusi Dropdown -->
-          <li class="nav-dropdown-item">
-            <a href="#solusi" class="nav-link dropdown-toggle" data-nav="solusi">
-              <span data-i18n="nav.solutions">Solusi</span>
-              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-navigation" aria-label="Navigasi Utama">
+        <ul class="nav-list">
+          <!-- Dropdown Solusi -->
+          <li class="nav-item has-dropdown">
+            <a href="#solusi" class="nav-anchor">
+              <span>Solusi</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
-            <div class="dropdown-panel glass-surface">
-              <a href="#solusi-yayasan" class="dropdown-card">
-                <div class="dd-icon-box emerald">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10a3 3 0 0 1 6 0v11"/></svg>
-                </div>
-                <div class="dd-text">
-                  <strong data-i18n="mega.yayasan.title">Yayasan Sosial & Pendidikan</strong>
-                  <span data-i18n="mega.yayasan.sub">Panti asuhan, beasiswa, donasi QRIS & kas publik</span>
-                </div>
+            <div class="dropdown-menu">
+              <a href="#solusi-yayasan" class="dropdown-link">
+                <div class="dd-icon emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10a3 3 0 0 1 6 0v11"/></svg></div>
+                <div><strong>Yayasan Sosial & Pendidikan</strong><span>Panti, beasiswa, donasi QRIS & kas publik</span></div>
               </a>
-              <a href="#solusi-komunitas" class="dropdown-card">
-                <div class="dd-icon-box blue">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <div class="dd-text">
-                  <strong data-i18n="mega.komunitas.title">Komunitas & Asosiasi</strong>
-                  <span data-i18n="mega.komunitas.sub">Keanggotaan, direktori relawan, event & KTA</span>
-                </div>
+              <a href="#solusi-komunitas" class="dropdown-link">
+                <div class="dd-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+                <div><strong>Komunitas & Asosiasi</strong><span>Keanggotaan, database relawan & event</span></div>
               </a>
-              <a href="#solusi-ngo" class="dropdown-card">
-                <div class="dd-icon-box purple">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <div class="dd-text">
-                  <strong data-i18n="mega.ngo.title">NGO & Filantropi</strong>
-                  <span data-i18n="mega.ngo.sub">Advokasi, multi-bahasa, grant & audit WTP</span>
-                </div>
+              <a href="#solusi-ngo" class="dropdown-link">
+                <div class="dd-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                <div><strong>NGO & Filantropi</strong><span>Advokasi, proposal grant & audit WTP</span></div>
               </a>
             </div>
           </li>
 
-          <li>
-            <a href="#templates" class="nav-link template-link" data-nav="templates">
-              <span class="live-dot-indicator"></span>
-              <span data-i18n="nav.templates">14 Template Live</span>
-            </a>
-          </li>
-          <li><a href="#pilar" class="nav-link" data-nav="pilar" data-i18n="nav.pillars">4 Pilar</a></li>
-          <li><a href="#fitur" class="nav-link" data-nav="fitur" data-i18n="nav.features">Fitur</a></li>
-          <li><a href="#widgets" class="nav-link" data-nav="widgets" data-i18n="nav.widgets">Smart Tools</a></li>
-          <li><a href="#harga" class="nav-link" data-nav="harga" data-i18n="nav.pricing">Paket & Biaya</a></li>
-          <li><a href="#portofolio" class="nav-link" data-nav="portofolio" data-i18n="nav.portfolio">Portofolio</a></li>
-          <li><a href="#faq" class="nav-link" data-nav="faq" data-i18n="nav.faq">FAQ</a></li>
+          <li class="nav-item"><a href="#pilar" class="nav-anchor">4 Pilar</a></li>
+          <li class="nav-item"><a href="#templates" class="nav-anchor template-badge-link"><span class="dot-pulse"></span>14 Template Live</a></li>
+          <li class="nav-item"><a href="#paket" class="nav-anchor">Pilihan Paket</a></li>
+          <li class="nav-item"><a href="#fitur" class="nav-anchor">Fitur Modular</a></li>
+          <li class="nav-item"><a href="#widgets" class="nav-anchor">Smart Tools</a></li>
+          <li class="nav-item"><a href="#faq" class="nav-anchor">FAQ</a></li>
         </ul>
       </nav>
 
-      <!-- 3. Right Controls & Action Button -->
-      <div class="header-actions">
+      <!-- Right Header Actions -->
+      <div class="header-controls">
         <!-- Language Switcher -->
-        <div class="lang-switch-toggle" id="lang-switch-wrapper" title="Ganti Bahasa">
-          <button class="lang-option-btn active" id="lang-id-btn" data-lang="id">ID</button>
-          <button class="lang-option-btn" id="lang-en-btn" data-lang="en">EN</button>
+        <div class="lang-switch">
+          <button class="lang-btn active" id="btn-lang-id" data-lang="id">ID</button>
+          <button class="lang-btn" id="btn-lang-en" data-lang="en">EN</button>
         </div>
 
         <!-- Theme Toggle -->
-        <button class="theme-icon-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Ganti Mode Gelap / Terang">
-          <svg class="theme-svg sun-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <svg class="theme-svg moon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
+        <button class="theme-btn" id="btn-theme-toggle" aria-label="Ganti Tema">
+          <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
 
-        <!-- Primary CTA Button -->
-        <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20kami%20ingin%20konsultasi%20pembuatan%20website%20organisasi" target="_blank" rel="noopener noreferrer" class="btn-primary-nav" id="header-btn-consult">
-          <svg class="nav-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
-          <span data-i18n="cta.freeConsultText">Konsultasi Gratis</span>
+        <!-- CTA Button -->
+        <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20konsultasi%20website%20organisasi" target="_blank" rel="noopener noreferrer" class="btn-cta-nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+          <span>Konsultasi Gratis</span>
         </a>
 
-        <!-- Mobile Hamburger Button -->
-        <button class="hamburger-toggle-btn" id="mobile-nav-toggle" aria-label="Buka Menu Navigasi" aria-expanded="false">
-          <span class="bar-line"></span>
-          <span class="bar-line"></span>
-          <span class="bar-line"></span>
+        <!-- Mobile Drawer Hamburger -->
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Buka Menu">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer Backdrop & Sliding Menu Panel -->
-  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
-  <aside class="mobile-nav-drawer glass-card" id="mobile-nav-drawer" aria-label="Menu Navigasi Mobile">
-    <div class="drawer-header">
-      <a href="#hero" class="brand-logo drawer-logo" aria-label="Organiz.Hub - Yayasan, Komunitas & NGO">
-        <div class="logo-icon-box">
-          <svg class="svg-icon logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-            <path d="M2 17l10 5 10-5"></path>
-            <path d="M2 12l10 5 10-5"></path>
-          </svg>
-        </div>
-        <div class="logo-text-group">
-          <span class="brand-name">Organiz<span class="text-emerald">.Hub</span></span>
-        </div>
-      </a>
-      <div class="drawer-top-actions">
-        <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Tutup Menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        </button>
-      </div>
+  <!-- Mobile Slide Drawer -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-top">
+      <span class="brand-title">Organiz<span class="brand-accent">.Hub</span></span>
+      <button class="drawer-close" id="drawer-close-btn">&times;</button>
     </div>
-
-    <div class="drawer-body">
-      <ul class="drawer-nav-list">
-        <li><a href="#hero" class="drawer-nav-link active" data-nav="hero" data-i18n="nav.home">Beranda</a></li>
-        <li class="drawer-expandable">
-          <div class="drawer-expand-header">
-            <a href="#solusi" class="drawer-nav-link" data-nav="solusi" data-i18n="nav.solutions">Solusi Organisasi</a>
-            <button class="drawer-subtoggle" aria-label="Buka Submenu Solusi">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-          </div>
-          <div class="drawer-sublinks">
-            <a href="#solusi-yayasan" class="drawer-sublink">Yayasan Sosial & Pendidikan</a>
-            <a href="#solusi-komunitas" class="drawer-sublink">Komunitas & Asosiasi</a>
-            <a href="#solusi-ngo" class="drawer-sublink">NGO & Lembaga Filantropi</a>
-          </div>
-        </li>
-        <li><a href="#templates" class="drawer-nav-link" data-nav="templates">14 Template Live</a></li>
-        <li><a href="#pilar" class="drawer-nav-link" data-nav="pilar" data-i18n="nav.pillars">4 Pilar Digital</a></li>
-        <li><a href="#fitur" class="drawer-nav-link" data-nav="fitur" data-i18n="nav.features">Feature Library</a></li>
-        <li><a href="#widgets" class="drawer-nav-link" data-nav="widgets" data-i18n="nav.widgets">Smart Tools</a></li>
-        <li><a href="#harga" class="drawer-nav-link" data-nav="harga" data-i18n="nav.pricing">Pilihan Paket</a></li>
-        <li><a href="#portofolio" class="drawer-nav-link" data-nav="portofolio" data-i18n="nav.portfolio">Portofolio & Kasus</a></li>
-        <li><a href="#faq" class="drawer-nav-link" data-nav="faq" data-i18n="nav.faq">FAQ</a></li>
-        <li><a href="#contact" class="drawer-nav-link" data-nav="contact" data-i18n="nav.contact">Kontak</a></li>
-      </ul>
+    <div class="drawer-links">
+      <a href="#hero" class="d-link">Beranda</a>
+      <a href="#solusi" class="d-link">Solusi 3 Segmen</a>
+      <a href="#pilar" class="d-link">4 Pilar Arsitektur</a>
+      <a href="#templates" class="d-link">14 Template Live</a>
+      <a href="#paket" class="d-link">Pilihan Paket & Biaya</a>
+      <a href="#roadmap" class="d-link">Roadmap Pertumbuhan</a>
+      <a href="#why-us" class="d-link">Mengapa Organiz.Hub?</a>
+      <a href="#fitur" class="d-link">Feature Library</a>
+      <a href="#widgets" class="d-link">Smart Tools & Widgets</a>
+      <a href="#brosur" class="d-link">Download Brosur 2026</a>
+      <a href="#addons" class="d-link">Layanan Tambahan</a>
+      <a href="#team" class="d-link">Tim Konsultan</a>
+      <a href="#testimoni" class="d-link">Testimoni Klien</a>
+      <a href="#faq" class="d-link">FAQ</a>
     </div>
-
-    <div class="drawer-footer">
-      <a href="#harga" class="btn btn-secondary-glass full-width mb-2 drawer-action-btn" data-i18n="cta.viewPricing">Lihat Harga Paket</a>
-      <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20ingin%20konsultasi%20website%20organisasi" target="_blank" rel="noopener noreferrer" class="btn btn-coral full-width drawer-action-btn" data-i18n="cta.freeConsultText">Konsultasi Gratis</a>
+    <div class="drawer-bottom">
+      <a href="https://wa.me/6281234567890" target="_blank" class="btn-primary w-100">Hubungi WhatsApp Kami</a>
     </div>
   </aside>
 
   <!-- ========================================================
-       SECTION 1: HERO SECTION
+       1. HERO SECTION (INTERAKTIF DENGAN 3D LIVE DASHBOARD)
   ======================================================== -->
-  <section id="hero" class="hero-section">
-    <!-- Philanthropic Constellation Canvas Background -->
-    <div class="hero-org-graphic-bg" aria-hidden="true">
-      <div class="org-mesh-grid"></div>
-      <div class="org-network-constellation">
-        <svg class="org-network-svg" viewBox="0 0 1440 600" preserveAspectRatio="none" fill="none">
-          <path class="network-pulse-path p1" d="M 100 250 Q 350 120 700 280 T 1350 180" stroke="url(#org-net-grad1)" stroke-width="1.8" stroke-dasharray="6 8" />
-          <path class="network-pulse-path p2" d="M 50 420 Q 420 480 850 320 T 1400 400" stroke="url(#org-net-grad2)" stroke-width="1.8" stroke-dasharray="4 6" />
-          <g class="org-node n1"><circle cx="200" cy="210" r="6" fill="#00D68F" /><circle cx="200" cy="210" r="14" stroke="#00D68F" stroke-width="1" opacity="0.4" class="node-pulse" /></g>
-          <g class="org-node n2"><circle cx="450" cy="180" r="8" fill="#4F8EFF" /><circle cx="450" cy="180" r="18" stroke="#4F8EFF" stroke-width="1" opacity="0.4" class="node-pulse" /></g>
-          <g class="org-node n3"><circle cx="700" cy="280" r="7" fill="#A78BFA" /><circle cx="700" cy="280" r="16" stroke="#A78BFA" stroke-width="1" opacity="0.4" class="node-pulse" /></g>
-          <g class="org-node n4"><circle cx="950" cy="240" r="9" fill="#00D68F" /><circle cx="950" cy="240" r="22" stroke="#00D68F" stroke-width="1" opacity="0.4" class="node-pulse" /></g>
-          <g class="org-node n5"><circle cx="1250" cy="190" r="6" fill="#FF6B00" /><circle cx="1250" cy="190" r="14" stroke="#FF6B00" stroke-width="1" opacity="0.4" class="node-pulse" /></g>
-          <defs>
-            <linearGradient id="org-net-grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#00D68F" stop-opacity="0.1" />
-              <stop offset="50%" stop-color="#00D68F" stop-opacity="0.6" />
-              <stop offset="100%" stop-color="#4F8EFF" stop-opacity="0.1" />
-            </linearGradient>
-            <linearGradient id="org-net-grad2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#4F8EFF" stop-opacity="0.1" />
-              <stop offset="50%" stop-color="#A78BFA" stop-opacity="0.55" />
-              <stop offset="100%" stop-color="#FF6B00" stop-opacity="0.1" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    </div>
-
-    <div class="container hero-grid">
-      <!-- Left Hero Content -->
-      <div class="hero-content reveal-on-scroll">
-        <!-- Badge -->
-        <div class="inline-spec-badge">
-          <span class="pulse-dot-coral"></span>
-          <span class="spec-badge-text" data-i18n="hero.ratingText">Spesialis Digital untuk Yayasan, Komunitas & NGO Sejak 2018</span>
+  <section id="hero" class="section hero-section">
+    <div class="container hero-layout">
+      <!-- Left Hero Pitch -->
+      <div class="hero-left-content">
+        <div class="badge-pill-spesialis">
+          <span class="pulse-dot-emerald"></span>
+          <span>Spesialis Digital untuk Yayasan, Komunitas & NGO Sejak 2018</span>
         </div>
 
-        <h1 class="hero-headline" data-i18n="hero.headline">
-          Digital Presence & Arsitektur Website <span class="text-gradient-emerald">Khusus Organisasi</span>
+        <h1 class="hero-title">
+          Digital Presence & Arsitektur Website <span class="gradient-text-emerald">Khusus Organisasi</span>
         </h1>
 
-        <p class="hero-subheadline" data-i18n="hero.subheadline">
-          Kami membantu Yayasan Sosial, Komunitas & Asosiasi, serta Lembaga NGO memiliki kehadiran digital yang profesional — <strong>Branding & Trust</strong>, <strong>Fundraising Donasi QRIS</strong>, <strong>Transparansi Kas WTP</strong>, dan <strong>Manajemen Relawan</strong> dalam satu platform terpadu.
+        <p class="hero-description">
+          Kami membantu Yayasan Sosial, Komunitas & Asosiasi, serta Lembaga NGO memiliki kehadiran digital yang profesional — Branding & Trust, Fundraising Donasi QRIS, Transparansi Kas WTP, dan Manajemen Relawan dalam satu platform terpadu.
         </p>
 
-        <!-- CTA Action Buttons -->
-        <div class="hero-cta-group">
-          <a href="#harga" class="btn btn-primary-glow btn-lg" id="hero-btn-pricing">
-            <span data-i18n="hero.ctaPricing">Lihat Paket & Harga</span>
-            <svg class="btn-arrow svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        <div class="hero-actions">
+          <a href="#paket" class="btn-primary">
+            <span>Lihat Paket & Harga</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
-          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20ingin%20konsultasi%20website%20organisasi" target="_blank" rel="noopener noreferrer" class="btn btn-coral btn-lg" id="hero-btn-consult">
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
-            <span data-i18n="hero.ctaConsult">Konsultasi Gratis</span>
+          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20kami%20ingin%20konsultasi%20arsitektur%20website" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+            <span>Konsultasi Gratis</span>
           </a>
-          <a href="#templates" class="btn btn-secondary-glass btn-lg" id="hero-btn-templates">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; color: var(--accent-emerald);"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <a href="#templates" class="btn-outline-glass">
             <span>14 Template Live ↗</span>
           </a>
         </div>
 
-        <!-- 5 Pillars Value Badges -->
-        <div class="hero-five-pillars-strip">
-          <div class="pillar-mini-item">
-            <div class="pillar-icon-box emerald">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div>
-              <p class="pillar-title">Branding</p>
-              <p class="pillar-sub">& Kepercayaan</p>
-            </div>
-          </div>
-          <div class="pillar-mini-item">
-            <div class="pillar-icon-box blue">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <div>
-              <p class="pillar-title">Fundraising</p>
-              <p class="pillar-sub">& QRIS Instan</p>
-            </div>
-          </div>
-          <div class="pillar-mini-item">
-            <div class="pillar-icon-box purple">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            </div>
-            <div>
-              <p class="pillar-title">Transparansi</p>
-              <p class="pillar-sub">& Kas Terbuka</p>
-            </div>
-          </div>
-          <div class="pillar-mini-item">
-            <div class="pillar-icon-box amber">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-            </div>
-            <div>
-              <p class="pillar-title">Relawan</p>
-              <p class="pillar-sub">& 34 Provinsi</p>
-            </div>
-          </div>
-          <div class="pillar-mini-item">
-            <div class="pillar-icon-box coral">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </div>
-            <div>
-              <p class="pillar-title">Aman & Legal</p>
-              <p class="pillar-sub">Kemenkumham</p>
-            </div>
-          </div>
+        <!-- 5 Mini Pillars Strip -->
+        <div class="hero-pillars-bar">
+          <div class="hp-item"><div class="hp-icon emerald">✓</div><span>Branding & Trust</span></div>
+          <div class="hp-item"><div class="hp-icon blue">✓</div><span>Donasi QRIS</span></div>
+          <div class="hp-item"><div class="hp-icon purple">✓</div><span>Kas Publik WTP</span></div>
+          <div class="hp-item"><div class="hp-icon amber">✓</div><span>E-KTA Relawan</span></div>
+          <div class="hp-item"><div class="hp-icon coral">✓</div><span>Legalitas Kemenkumham</span></div>
         </div>
       </div>
 
-      <!-- Right 3D Interactive Multi-Tab Digital Dashboard Preview -->
-      <div class="hero-visual reveal-on-scroll">
-        <div class="mockup-parallax-layer" id="hero-mockup-layer">
-          <div class="glass-dashboard-card main-frame glass-card">
-            <!-- Window Header -->
-            <div class="mockup-window-header">
-              <div class="window-dots">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-              </div>
-              <div class="mockup-url-bar">
-                <svg class="svg-icon lock-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                <span>https://organiz-hub.org/transparansi-publik</span>
-              </div>
-              <div class="mockup-badge" data-i18n="hero.mockupLive">● Live System</div>
+      <!-- Right Interactive Mockup Dashboard -->
+      <div class="hero-right-visual" id="hero-mockup-wrapper">
+        <div class="dashboard-window glass-panel">
+          <div class="window-header">
+            <div class="win-dots">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
             </div>
-
-            <!-- Tab Navigation Header inside Mockup -->
-            <div class="mockup-tabs-bar">
-              <button class="mockup-tab-btn active" data-mockup-tab="donasi">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"></path><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"></path><circle cx="18" cy="12" r="2"></circle></svg>
-                <span>Kampanye & QRIS</span>
-              </button>
-              <button class="mockup-tab-btn" data-mockup-tab="kas">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                <span>Transparansi Kas</span>
-              </button>
-              <button class="mockup-tab-btn" data-mockup-tab="relawan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                <span>Relawan Siaga</span>
-              </button>
-            </div>
-
-            <!-- Mockup Content Panel 1: Live Campaign Progress & Instant Donate -->
-            <div class="mockup-tab-panel active" id="panel-mockup-donasi">
-              <div class="mockup-body">
-                <div class="mockup-header-flex">
-                  <div>
-                    <span class="badge-tag emerald" data-i18n="hero.mockupTag">KAMPANYE BEASISWA NUSANTARA</span>
-                    <h3 class="mockup-title" data-i18n="hero.mockupCampaignTitle">1.000 Beasiswa Pelajar Pelosok Indonesia</h3>
-                  </div>
-                  <div class="live-pulse-badge">
-                    <span class="pulse-dot"></span> <span data-i18n="hero.mockupAutoSync">Auto-Sync</span>
-                  </div>
-                </div>
-
-                <div class="mockup-stats-box glass-card">
-                  <div class="stats-row">
-                    <div>
-                      <span class="stat-label" data-i18n="hero.mockupCollected">Terkumpul</span>
-                      <strong class="stat-value text-emerald" id="hero-stat-collected">Rp 842.500.000</strong>
-                    </div>
-                    <div class="text-right">
-                      <span class="stat-label" data-i18n="hero.mockupTarget">Target</span>
-                      <strong class="stat-value">Rp 1.000.000.000</strong>
-                    </div>
-                  </div>
-                  <div class="progress-bar-container">
-                    <div class="progress-bar-fill emerald" id="hero-progress-bar" style="width: 84.2%;"></div>
-                  </div>
-                  <div class="stats-footer">
-                    <span><svg class="metric-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg> <strong>84.2%</strong> <span data-i18n="hero.mockupFunded">Tercapai</span></span>
-                    <span><svg class="metric-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>12</strong> <span data-i18n="hero.mockupDaysLeft">Hari Tersisa</span></span>
-                    <span><svg class="metric-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg> <strong>3.420</strong> <span data-i18n="hero.mockupDonors">Donatur</span></span>
-                  </div>
-                </div>
-
-                <div class="mockup-actions-row">
-                  <div class="quick-amounts">
-                    <button class="amount-btn active" data-amount="50000">50K</button>
-                    <button class="amount-btn" data-amount="100000">100K</button>
-                    <button class="amount-btn" data-amount="250000">250K</button>
-                    <button class="amount-btn" data-amount="500000">500K</button>
-                  </div>
-                  <button class="btn btn-primary-glow btn-sm btn-donasi-sim" id="hero-btn-donasi-demo">
-                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 15px; height: 15px;">
-                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                    </svg>
-                    <span data-i18n="hero.mockupInstantDonate">Simulasi Donasi QRIS</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Mockup Content Panel 2: Live Kas -->
-            <div class="mockup-tab-panel" id="panel-mockup-kas">
-              <div class="mockup-body">
-                <div class="mockup-header-flex">
-                  <div>
-                    <span class="badge-tag blue">AUDIT TRANSPARANSI KAS TERBUKA</span>
-                    <h3 class="mockup-title">Laporan Penyaluran Kas Real-Time</h3>
-                  </div>
-                  <span class="live-status-pill">WTP Verified</span>
-                </div>
-                <div class="transparency-breakdown-grid">
-                  <div class="kas-stat-box glass-card">
-                    <span class="kas-label">Penyaluran Program Sosial & Pendidikan</span>
-                    <strong class="kas-amount text-emerald">Rp 716.125.000 (85%)</strong>
-                    <div class="mini-bar-track"><div class="mini-bar-fill emerald" style="width: 85%;"></div></div>
-                  </div>
-                  <div class="kas-stat-box glass-card">
-                    <span class="kas-label">Operasional, Tim & Pemeliharaan</span>
-                    <strong class="kas-amount text-blue">Rp 84.250.000 (10%)</strong>
-                    <div class="mini-bar-track"><div class="mini-bar-fill blue" style="width: 10%;"></div></div>
-                  </div>
-                  <div class="kas-stat-box glass-card">
-                    <span class="kas-label">Cadangan Dana Darurat & Mitigasi</span>
-                    <strong class="kas-amount text-amber">Rp 42.125.000 (5%)</strong>
-                    <div class="mini-bar-track"><div class="mini-bar-fill amber" style="width: 5%;"></div></div>
-                  </div>
-                </div>
-                <div class="mockup-download-pill">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                  <span>Unduh Rekap Laporan Audit Finansial (PDF WTP)</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Mockup Content Panel 3: Volunteer -->
-            <div class="mockup-tab-panel" id="panel-mockup-relawan">
-              <div class="mockup-body">
-                <div class="mockup-header-flex">
-                  <div>
-                    <span class="badge-tag purple">DIREKTORI RELAWAN & AKSI</span>
-                    <h3 class="mockup-title">1.820 Relawan Lapangan Siaga</h3>
-                  </div>
-                  <span class="live-status-pill purple">34 Provinsi</span>
-                </div>
-                <div class="volunteer-live-list">
-                  <div class="volunteer-item glass-card">
-                    <div class="vol-avatar vol-1">RS</div>
-                    <div class="vol-meta">
-                      <strong>Rian Saputra (Koordinator Lapangan)</strong>
-                      <span>Aksi Peduli Pesisir • Terverifikasi Aktif</span>
-                    </div>
-                    <span class="vol-badge active">Siaga di Lapangan</span>
-                  </div>
-                  <div class="volunteer-item glass-card">
-                    <div class="vol-avatar vol-2">ND</div>
-                    <div class="vol-meta">
-                      <strong>dr. Nadia Dewi (Tim Medis Relawan)</strong>
-                      <span>Klinik Kesehatan Gratis Pelosok • Siaga</span>
-                    </div>
-                    <span class="vol-badge active">Siaga 24 Jam</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Floating Glass Card 1: Proof & Rating -->
-          <div class="floating-glass-card card-impact glass-card" id="hero-floating-impact">
-            <div class="float-icon-box-svg emerald">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <div>
-              <span class="float-caption">14+ Template Live & 250+ Organisasi</span>
-              <div class="float-rating-stars">
-                <span class="text-amber">★★★★★</span> <strong class="text-white">4.9/5</strong>
-              </div>
-            </div>
-          </div>
-
-          <!-- Floating Glass Card 2: Legal Verification -->
-          <div class="floating-glass-card card-verified glass-card" id="hero-floating-verified">
-            <div class="float-icon-box-svg blue">
+            <div class="win-url-bar">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>https://yayasan-nusantara.or.id/program/beasiswa</span>
             </div>
-            <div>
-              <span class="float-caption">Laporan Audit WTP</span>
-              <div class="float-number text-emerald">Terverifikasi Publik</div>
+            <span class="live-status-chip">● Live System</span>
+          </div>
+
+          <!-- Mockup Tab Bar -->
+          <div class="mockup-tab-nav">
+            <button class="m-tab-btn active" data-tab="donasi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              <span>Kampanye & QRIS</span>
+            </button>
+            <button class="m-tab-btn" data-tab="kas">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              <span>Transparansi Kas</span>
+            </button>
+            <button class="m-tab-btn" data-tab="relawan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              <span>Relawan Siaga</span>
+            </button>
+          </div>
+
+          <!-- Tab Content 1: Donasi -->
+          <div class="m-tab-content active" id="tab-content-donasi">
+            <div class="campaign-card-inner">
+              <div class="camp-top">
+                <span class="tag-badge emerald">KAMPANYE BEASISWA NUSANTARA</span>
+                <span class="camp-status">Auto-Sync</span>
+              </div>
+              <h3 class="camp-title">1.000 Beasiswa Pelajar Pelosok Indonesia</h3>
+              
+              <div class="donation-progress-wrap">
+                <div class="d-row">
+                  <div><span class="d-label">Terkumpul</span><strong class="d-value text-emerald" id="stat-collected">Rp 842.500.000</strong></div>
+                  <div><span class="d-label">Target</span><strong class="d-value">Rp 1.000.000.000</strong></div>
+                </div>
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill" id="stat-bar" style="width: 84.2%;"></div>
+                </div>
+                <div class="d-meta-row">
+                  <span>84.2% Tercapai</span>
+                  <span>12 Hari Tersisa</span>
+                  <span>3.420 Donatur Terdaftar</span>
+                </div>
+              </div>
+
+              <!-- Instant Simulation Buttons -->
+              <div class="quick-donation-sim">
+                <span class="sim-label">Uji Coba Tambah Donasi:</span>
+                <div class="sim-btns">
+                  <button class="btn-sim" data-amount="50000">+Rp 50rb</button>
+                  <button class="btn-sim" data-amount="250000">+Rp 250rb</button>
+                  <button class="btn-sim active" data-amount="1000000">+Rp 1jt</button>
+                </div>
+                <button class="btn-sim-trigger" id="btn-trigger-demo-donate">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  <span>Simulasi Donasi QRIS</span>
+                </button>
+              </div>
             </div>
           </div>
+
+          <!-- Tab Content 2: Transparansi Kas -->
+          <div class="m-tab-content" id="tab-content-kas">
+            <div class="kas-card-inner">
+              <div class="camp-top">
+                <span class="tag-badge blue">AUDIT KAS WTP — REAL-TIME</span>
+                <span class="camp-status">Per 28 Agustus 2026</span>
+              </div>
+              <div class="kas-items-grid">
+                <div class="kas-metric-box">
+                  <span class="k-label">Penyaluran Program (85%)</span>
+                  <span class="k-val text-emerald">Rp 716.125.000</span>
+                  <div class="k-bar"><div style="width: 85%; background: var(--accent-emerald);"></div></div>
+                </div>
+                <div class="kas-metric-box">
+                  <span class="k-label">Operasional & Logistik (10%)</span>
+                  <span class="k-val text-blue">Rp 84.250.000</span>
+                  <div class="k-bar"><div style="width: 10%; background: var(--blueprint-blue);"></div></div>
+                </div>
+                <div class="kas-metric-box">
+                  <span class="k-label">Dana Cadangan Darurat (5%)</span>
+                  <span class="k-val text-amber">Rp 42.125.000</span>
+                  <div class="k-bar"><div style="width: 5%; background: var(--accent-amber);"></div></div>
+                </div>
+              </div>
+              <div class="kas-doc-download">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Unduh Laporan Audit Akuntan Publik WTP 2025 (PDF)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content 3: Relawan -->
+          <div class="m-tab-content" id="tab-content-relawan">
+            <div class="relawan-card-inner">
+              <div class="camp-top">
+                <span class="tag-badge purple">DIREKTORI RELAWAN AKTIF</span>
+                <span class="camp-status">1.428 Anggota</span>
+              </div>
+              <div class="vol-list">
+                <div class="vol-row">
+                  <div class="vol-avatar vol-1">DR</div>
+                  <div class="vol-info"><strong>dr. Rian Satria</strong><span>Koordinator Medis Lapangan • Banda Aceh</span></div>
+                  <span class="vol-badge-live">Siaga 1</span>
+                </div>
+                <div class="vol-row">
+                  <div class="vol-avatar vol-2">SW</div>
+                  <div class="vol-info"><strong>Siti Wardani, S.Pd.</strong><span>Pengajar Pelosok Nusantara • NTT</span></div>
+                  <span class="vol-badge-live">Aktif</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Glass Stat Cards -->
+        <div class="floating-badge badge-top-right">
+          <div class="f-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
+          <div><span class="f-sub">Laporan Audit WTP</span><strong>Terverifikasi Publik</strong></div>
+        </div>
+
+        <div class="floating-badge badge-bottom-left">
+          <div class="f-icon emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+          <div><span class="f-sub">14+ Template Live</span><strong>250+ Organisasi Mitra</strong></div>
         </div>
       </div>
     </div>
 
-    <!-- Hero Trust Ribbon -->
-    <div class="container hero-stats-ribbon-container reveal-on-scroll">
-      <div class="hero-stats-ribbon glass-card">
-        <div class="hero-ribbon-item">
-          <div class="ribbon-icon-box emerald">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <div class="ribbon-text">
-            <strong class="ribbon-value">250+</strong>
-            <span class="ribbon-label">Yayasan & NGO Aktif</span>
-          </div>
-        </div>
-        <div class="ribbon-divider"></div>
-        <div class="hero-ribbon-item">
-          <div class="ribbon-icon-box blue">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <div class="ribbon-text">
-            <strong class="ribbon-value text-emerald">Rp 42.8 M+</strong>
-            <span class="ribbon-label">Dana Tervalidasi</span>
-          </div>
-        </div>
-        <div class="ribbon-divider"></div>
-        <div class="hero-ribbon-item">
-          <div class="ribbon-icon-box purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <div class="ribbon-text">
-            <strong class="ribbon-value">14.280+</strong>
-            <span class="ribbon-label">Relawan Lapangan</span>
-          </div>
-        </div>
-        <div class="ribbon-divider"></div>
-        <div class="hero-ribbon-item">
-          <div class="ribbon-icon-box amber">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-          </div>
-          <div class="ribbon-text">
-            <strong class="ribbon-value text-blue">100% WTP</strong>
-            <span class="ribbon-label">Transparansi Publik</span>
-          </div>
-        </div>
-      </div>
+    <!-- Scroll Down Exploration Indicator -->
+    <div class="scroll-down-wrap">
+      <a href="#solusi" class="scroll-pill-trigger">
+        <span class="laser-dot"></span>
+        <span class="scroll-text">Scroll untuk Eksplorasi 18 Bagian Lengkap</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </a>
     </div>
-
-    <!-- Modern Digital Animated Scroll Indicator -->
-    <a href="#solusi" class="modern-scroll-trigger" aria-label="Scroll untuk Eksplorasi">
-      <div class="scroll-pulse-pill">
-        <div class="scroll-laser-dot"></div>
-        <svg class="scroll-chevron-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M7 10l5 5 5-5"></path>
-        </svg>
-      </div>
-      <span class="scroll-text-digital" data-i18n="hero.scrollDown">Scroll untuk Eksplorasi</span>
-    </a>
   </section>
 
   <!-- ========================================================
-       SECTION 2: SOLUSI UNTUK 3 SEGMEN ORGANISASI
-       (Strictly: Yayasan, Komunitas, NGO)
+       2. SOLUSI UNTUK SETIAP SEGMEN ORGANISASI
   ======================================================== -->
-  <section id="solusi" class="section-spacing section-solusi bg-secondary-subtle">
+  <section id="solusi" class="section section-dark-alt">
     <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <div class="inline-section-tag emerald">
-          <span class="pulse-dot"></span>
-          <span data-i18n="solusi.tag">SOLUSI TEPAT GUNA</span>
-        </div>
-        <h2 class="section-title" data-i18n="solusi.title">Solusi untuk Setiap Segmen Organisasi</h2>
-        <p class="section-subtitle" data-i18n="solusi.subtitle">
+      <div class="section-title-wrap">
+        <span class="section-tag">SOLUSI TEPAT GUNA</span>
+        <h2 class="section-heading">Solusi untuk Setiap Segmen Organisasi</h2>
+        <p class="section-subheading">
           Kami memahami bahwa Yayasan, Komunitas, dan NGO memiliki alur kerja, audiens, dan kebutuhan legalitas yang berbeda. Temukan arsitektur sistem yang tepat untuk organisasi Anda.
         </p>
       </div>
 
-      <div class="solusi-grid-3">
+      <div class="grid-3-col">
         <!-- Segmen 1: Yayasan -->
-        <div class="solusi-card-modern glass-card reveal-on-scroll" id="solusi-yayasan" data-delay="100">
-          <div class="solusi-card-top-bar">
-            <span class="segment-badge-pill emerald">SEGMEN 1</span>
-            <span class="segment-type-tag">Sosial & Pendidikan</span>
+        <div class="solution-card glass-panel" id="solusi-yayasan">
+          <div class="sol-header">
+            <div class="sol-icon-box emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10a3 3 0 0 1 6 0v11"/></svg></div>
+            <span class="sol-badge emerald">YAYASAN SOSIAL</span>
           </div>
-          <div class="solusi-card-icon emerald">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10a3 3 0 0 1 6 0v11"/></svg>
-          </div>
-          <h3 class="solusi-card-title">Yayasan Sosial & Pendidikan</h3>
-          <p class="solusi-card-desc">Lembaga panti asuhan, program beasiswa, rumah tahfidz, dan yayasan sosial kemanusiaan.</p>
-          
-          <div class="solusi-feature-pills">
-            <span class="feat-pill">Portal Donasi QRIS & VA</span>
-            <span class="feat-pill">Laporan Kas WTP Real-Time</span>
-            <span class="feat-pill">Galeri Anak Binaan</span>
-            <span class="feat-pill">Bukti Donasi PDF Otomatis</span>
-            <span class="feat-pill">Kalkulator Zakat/Amal</span>
-          </div>
-
-          <div class="solusi-card-action">
-            <a href="#templates" class="btn btn-sm btn-primary-glow full-width">Lihat Template Yayasan →</a>
-          </div>
+          <h3 class="sol-title">Yayasan Sosial & Pendidikan</h3>
+          <p class="sol-desc">Untuk panti asuhan, lembaga pendidikan, pondok tahfidz, dan lembaga pengelola zakat/infaq.</p>
+          <ul class="sol-checklist">
+            <li><span>✓</span> Portal Donasi QRIS Dinamis & Virtual Account</li>
+            <li><span>✓</span> Laporan Kas Publik & Transparansi Donasi Real-Time</li>
+            <li><span>✓</span> Galeri Anak Asuh & Program Binaan Terbuka</li>
+            <li><span>✓</span> Bukti Kwitansi PDF Otomatis Berstempel Digital</li>
+          </ul>
+          <a href="#templates" class="sol-link">Lihat Template Yayasan →</a>
         </div>
 
-        <!-- Segmen 2: Komunitas & Asosiasi -->
-        <div class="solusi-card-modern glass-card reveal-on-scroll" id="solusi-komunitas" data-delay="200">
-          <div class="solusi-card-top-bar">
-            <span class="segment-badge-pill blue">SEGMEN 2</span>
-            <span class="segment-type-tag">Keanggotaan & Gerakan</span>
+        <!-- Segmen 2: Komunitas -->
+        <div class="solution-card glass-panel" id="solusi-komunitas">
+          <div class="sol-header">
+            <div class="sol-icon-box blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <span class="sol-badge blue">KOMUNITAS</span>
           </div>
-          <div class="solusi-card-icon blue">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3 class="solusi-card-title">Komunitas & Asosiasi</h3>
-          <p class="solusi-card-desc">Komunitas relawan, asosiasi profesi, forum kepemudaan, dan gerakan sosial akar rumput.</p>
-          
-          <div class="solusi-feature-pills">
-            <span class="feat-pill">Direktori Relawan Siaga</span>
-            <span class="feat-pill">Registrasi Anggota & E-KTA</span>
-            <span class="feat-pill">Event & Kalender Aksi</span>
-            <span class="feat-pill">WhatsApp Group Direct CTA</span>
-            <span class="feat-pill">Dokumentasi Proyek Sosial</span>
-          </div>
-
-          <div class="solusi-card-action">
-            <a href="#templates" class="btn btn-sm btn-primary-glow full-width">Lihat Template Komunitas →</a>
-          </div>
+          <h3 class="sol-title">Komunitas & Asosiasi</h3>
+          <p class="sol-desc">Untuk komunitas hobi, gerakan sosial kepemudaan, ikatan alumni, dan asosiasi profesi.</p>
+          <ul class="sol-checklist">
+            <li><span>✓</span> Database Keanggotaan & Generator E-KTA Digital</li>
+            <li><span>✓</span> Kalender Aksi Sosial, Meetup & Event Ticketing</li>
+            <li><span>✓</span> Form Pendaftaran Relawan & Screening Keahlian</li>
+            <li><span>✓</span> Integrasi Forum Diskusi & WhatsApp Group</li>
+          </ul>
+          <a href="#templates" class="sol-link">Lihat Template Komunitas →</a>
         </div>
 
-        <!-- Segmen 3: NGO & Filantropi -->
-        <div class="solusi-card-modern glass-card reveal-on-scroll" id="solusi-ngo" data-delay="300">
-          <div class="solusi-card-top-bar">
-            <span class="segment-badge-pill purple">SEGMEN 3</span>
-            <span class="segment-type-tag">Advokasi & Hibah Global</span>
+        <!-- Segmen 3: NGO -->
+        <div class="solution-card glass-panel" id="solusi-ngo">
+          <div class="sol-header">
+            <div class="sol-icon-box purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <span class="sol-badge purple">NGO & FILANTROPI</span>
           </div>
-          <div class="solusi-card-icon purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <h3 class="solusi-card-title">NGO & Lembaga Filantropi</h3>
-          <p class="solusi-card-desc">Non-Governmental Organization, lembaga advokasi hak asasi, iklim, dan penerima grant internasional.</p>
-          
-          <div class="solusi-feature-pills">
-            <span class="feat-pill">Dukungan Multi-Bahasa (i18n)</span>
-            <span class="feat-pill">Download Center Laporan Tahunan</span>
-            <span class="feat-pill">Monitoring Hibah & Proposal</span>
-            <span class="feat-pill">Sertifikasi & Kemenkumham</span>
-            <span class="feat-pill">Security Enkripsi 256-Bit</span>
-          </div>
-
-          <div class="solusi-card-action">
-            <a href="#templates" class="btn btn-sm btn-primary-glow full-width">Lihat Template NGO →</a>
-          </div>
+          <h3 class="sol-title">NGO & Lembaga Filantropi</h3>
+          <p class="sol-desc">Untuk organisasi nirlaba internasional, lembaga advokasi hak asasi, lingkungan, dan riset sosial.</p>
+          <ul class="sol-checklist">
+            <li><span>✓</span> Multi-Bahasa (ID / EN) untuk Mitra Donor Internasional</li>
+            <li><span>✓</span> Pusat Unduhan Laporan Tahunan & Audit Keuangan WTP</li>
+            <li><span>✓</span> Halaman Publikasi Riset, Kertas Kebijakan & Artikel</li>
+            <li><span>✓</span> Formulir Pengajuan Hibah & Kemitraan Strategis</li>
+          </ul>
+          <a href="#templates" class="sol-link">Lihat Template NGO →</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       SECTION 3: 4 PILAR DIGITAL PRESENCE ORGANISASI
-       (BUKAN SEKADAR WEBSITE)
+       3. DIGITAL PRESENCE PROFESIONAL UNTUK ORGANISASI NIRLABA (4 PILAR)
   ======================================================== -->
-  <section id="pilar" class="section-spacing">
+  <section id="pilar" class="section">
     <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <div class="inline-section-tag coral">
-          <span class="pulse-dot-coral"></span>
-          <span>BUKAN SEKADAR WEBSITE</span>
-        </div>
-        <h2 class="section-title">Digital Presence Profesional untuk Organisasi Nirlaba</h2>
-        <p class="section-subtitle">
-          Kami tidak sekadar membuat website. Kami membangun infrastruktur digital nirlaba melalui <strong>4 pilar arsitektur</strong> yang saling memperkuat — Branding, Fundraising, Transparansi, dan Otomasi Relawan.
+      <div class="section-title-wrap">
+        <span class="section-tag">4 PILAR ARSITEKTUR</span>
+        <h2 class="section-heading">Digital Presence Profesional untuk Organisasi Nirlaba</h2>
+        <p class="section-subheading">
+          Kami tidak sekadar membuat website. Kami membangun infrastruktur digital nirlaba melalui 4 pilar arsitektur yang saling memperkuat — Branding, Fundraising, Transparansi, dan Otomasi Relawan.
         </p>
       </div>
 
-      <div class="grid-2-col">
-        <!-- Pilar 1 -->
-        <div class="pilar-card glass-card reveal-on-scroll" data-delay="100">
-          <div class="pilar-header">
-            <div class="pilar-icon-box emerald">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
-            </div>
-            <div>
-              <div class="pilar-tag-row">
-                <span class="pilar-num text-emerald">Pilar 1</span>
-                <span class="pilar-category">Branding & Trust</span>
-              </div>
-              <h3 class="pilar-title">Bangun Kepercayaan Donatur Sebelum Mereka Bertransaksi</h3>
-            </div>
-          </div>
-          <p class="pilar-desc">Website menjadi wajah resmi lembaga Anda di hadapan donatur, mitra CSR BUMN/Swasta, dan publik. Meningkatkan trust, kredibilitas, dan legitimasi hukum.</p>
-          <div class="pilar-tags-wrap">
-            <span class="pilar-tag emerald">Trust & Kredibilitas</span>
-            <span class="pilar-tag emerald">Profil Lembaga Lengkap</span>
-            <span class="pilar-tag emerald">Dokumentasi Aksi</span>
-            <span class="pilar-tag emerald">Legalitas Kemenkumham</span>
-            <span class="pilar-tag emerald">Social Proof</span>
-            <span class="pilar-tag emerald">Testimoni Penerima Manfaat</span>
-          </div>
+      <div class="grid-4-col">
+        <div class="pillar-card glass-panel">
+          <div class="p-num">01</div>
+          <div class="p-icon-box emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3 class="p-title">Branding & Kepercayaan Publik</h3>
+          <p class="p-desc">Membangun identitas visual yang memancarkan kredibilitas hukum (Kemenkumham), rekam jejak, dan visi mulia lembaga.</p>
         </div>
 
-        <!-- Pilar 2 -->
-        <div class="pilar-card glass-card reveal-on-scroll" data-delay="200">
-          <div class="pilar-header">
-            <div class="pilar-icon-box coral">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>
-            </div>
-            <div>
-              <div class="pilar-tag-row">
-                <span class="pilar-num text-coral">Pilar 2</span>
-                <span class="pilar-category">Fundraising & Marketing</span>
-              </div>
-              <h3 class="pilar-title">Semua Aktivitas Penggalangan Dana Berpusat di Website Anda</h3>
-            </div>
-          </div>
-          <p class="pilar-desc">Portal donasi instan dengan payment gateway QRIS, Virtual Account, dan kartu. Mempermudah donatur berdonasi dalam hitungan detik tanpa potongan pihak ketiga yang memberatkan.</p>
-          <div class="pilar-tags-wrap">
-            <span class="pilar-tag coral">Landing Page Kampanye</span>
-            <span class="pilar-tag coral">Donasi QRIS & VA</span>
-            <span class="pilar-tag coral">Donation Progress Meter</span>
-            <span class="pilar-tag coral">WhatsApp Hotline</span>
-            <span class="pilar-tag coral">Download Brosur Program</span>
-            <span class="pilar-tag coral">Lead Donatur CRM</span>
-          </div>
+        <div class="pillar-card glass-panel">
+          <div class="p-num">02</div>
+          <div class="p-icon-box blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+          <h3 class="p-title">Fundraising & Donasi QRIS</h3>
+          <p class="p-desc">Integrasi pembayaran donasi instan tanpa ribet via QRIS semua e-wallet, Virtual Account multi-bank, dan kalkulator zakat.</p>
         </div>
 
-        <!-- Pilar 3 -->
-        <div class="pilar-card glass-card reveal-on-scroll" data-delay="300">
-          <div class="pilar-header">
-            <div class="pilar-icon-box blue">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
-            </div>
-            <div>
-              <div class="pilar-tag-row">
-                <span class="pilar-num text-blue">Pilar 3</span>
-                <span class="pilar-category">Transparency & Visibility</span>
-              </div>
-              <h3 class="pilar-title">Mudah Ditemukan di Google, AI Search & Laporan Terbuka</h3>
-            </div>
-          </div>
-          <p class="pilar-desc">Website dibangun dengan struktur SEO standar Google dan AI-ready, dilengkapi widget grafik penyaluran kas terbuka berpredikat WTP yang dapat diaudit publik kapan saja.</p>
-          <div class="pilar-tags-wrap">
-            <span class="pilar-tag blue">Laporan Kas WTP</span>
-            <span class="pilar-tag blue">SEO Ready Google</span>
-            <span class="pilar-tag blue">Multi-Bahasa (ID/EN)</span>
-            <span class="pilar-tag blue">Mobile-First UI/UX</span>
-            <span class="pilar-tag blue">Fast Loading 99+</span>
-            <span class="pilar-tag blue">Download Center PDF</span>
-          </div>
+        <div class="pillar-card glass-panel">
+          <div class="p-num">03</div>
+          <div class="p-icon-box purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <h3 class="p-title">Transparansi & Akuntabilitas WTP</h3>
+          <p class="p-desc">Penyajian grafik kas terbuka, laporan berkala, dan dokumentasi penyaluran nyata yang membuktikan integritas pengurus.</p>
         </div>
 
-        <!-- Pilar 4 -->
-        <div class="pilar-card glass-card reveal-on-scroll" data-delay="400">
-          <div class="pilar-header">
-            <div class="pilar-icon-box purple">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
-            </div>
-            <div>
-              <div class="pilar-tag-row">
-                <span class="pilar-num text-purple">Pilar 4</span>
-                <span class="pilar-category">Productivity & Automation</span>
-              </div>
-              <h3 class="pilar-title">Bantu Pengurus Organisasi Bekerja Lebih Cepat & Rapi</h3>
-            </div>
-          </div>
-          <p class="pilar-desc">Sistem dashboard terintegrasi untuk manajemen data relawan, sertifikat keikutsertaan otomatis, rekap kwitansi donasi digital, dan pembagian tugas lapangan.</p>
-          <div class="pilar-tags-wrap">
-            <span class="pilar-tag purple">Database Relawan</span>
-            <span class="pilar-tag purple">Kwitansi Donasi Otomatis</span>
-            <span class="pilar-tag purple">E-KTA Keanggotaan</span>
-            <span class="pilar-tag purple">Proposal Generator</span>
-            <span class="pilar-tag purple">Multi-User Admin</span>
-            <span class="pilar-tag purple">Dashboard Reporting</span>
-          </div>
+        <div class="pillar-card glass-panel">
+          <div class="p-num">04</div>
+          <div class="p-icon-box coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <h3 class="p-title">Otomasi Relawan & Komunitas</h3>
+          <p class="p-desc">Sistem pendaftaran relawan online, kartu anggota digital (e-KTA), sertifikat aksi, dan broadcast informasi cepat.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       SECTION 4: 14 TEMPLATE WEBSITE UNGGULAN (LIVE NAVIGATOR)
+       4. KOLEKSI TEMPLATE WEBSITE ORGANISASI MODERN (14 LIVE TEMPLATES)
   ======================================================== -->
-  <section id="templates" class="section-spacing bg-secondary-subtle">
+  <section id="templates" class="section section-dark-alt">
     <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <div class="inline-section-tag emerald">
-          <span class="pulse-dot"></span>
-          <span>14 TEMPLATE LIVE SIAP PAKAI</span>
-        </div>
-        <h2 class="section-title">Koleksi Template Website Organisasi Modern</h2>
-        <p class="section-subtitle">
-          Klik tombol <strong>Live Preview</strong> untuk menguji langsung website template yang telah dideploy secara live di lingkungan cloud.
+      <div class="section-title-wrap">
+        <span class="section-tag">LIVE CLOUD DEMO DEPLOYMENT</span>
+        <h2 class="section-heading">Koleksi Template Website Organisasi Modern</h2>
+        <p class="section-subheading">
+          Klik tombol Live Preview untuk menguji langsung website template yang telah dideploy secara live di lingkungan cloud.
         </p>
       </div>
 
-      <!-- Filter Buttons -->
-      <div class="template-filter-tabs">
+      <!-- Filter Category Buttons -->
+      <div class="filter-tab-bar">
         <button class="t-filter-btn active" data-filter="all">Semua Template (14)</button>
-        <button class="t-filter-btn" data-filter="yayasan">Yayasan & Sosial (5)</button>
-        <button class="t-filter-btn" data-filter="komunitas">Komunitas & Lingkungan (4)</button>
-        <button class="t-filter-btn" data-filter="ngo">NGO & Filantropi (5)</button>
+        <button class="t-filter-btn" data-filter="yayasan">Yayasan & Sosial</button>
+        <button class="t-filter-btn" data-filter="komunitas">Komunitas & Aksi</button>
+        <button class="t-filter-btn" data-filter="ngo">NGO & Lingkungan</button>
       </div>
 
-      <!-- 14 Templates Grid -->
+      <!-- 14 Live Templates Showcase Grid -->
       <div class="templates-grid">
         <!-- 1. Terra Kinship -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="ngo" data-delay="50">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge emerald">NGO Konservasi</span>
-              <span class="t-num">#01</span>
-            </div>
-            <h3 class="t-title">Terra Kinship</h3>
-            <p class="t-subtitle">Wildlife & Nature Conservation Alliance</p>
-            <p class="t-desc">Platform perlindungan keanekaragaman hayati dan advokasi satwa liar dengan peta wilayah konservasi interaktif.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://wildlife-organizatio-dty4.bolt.host" data-title="Terra Kinship — Wildlife & Nature Conservation">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://wildlife-organizatio-dty4.bolt.host" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="ngo">
+          <div class="t-head"><span class="t-badge emerald">NGO & Konservasi</span><span class="t-num">#01</span></div>
+          <h4 class="t-name">Terra Kinship</h4>
+          <span class="t-focus">Wildlife & Nature Conservation</span>
+          <p class="t-desc">Desain alam modern dengan visual biodiversity tajam, modul perlindungan satwa langka & kampanye habitat.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://wildlife-organizatio-dty4.bolt.host" data-title="Terra Kinship — Wildlife & Nature Conservation">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://wildlife-organizatio-dty4.bolt.host" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 2. Lumina Global -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="yayasan" data-delay="100">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge blue">Yayasan Kemanusiaan</span>
-              <span class="t-num">#02</span>
-            </div>
-            <h3 class="t-title">Lumina Global</h3>
-            <p class="t-subtitle">Humanitarian & Children Empowerment</p>
-            <p class="t-desc">Template portal donasi modern dengan integrasi multi-kampanye beasiswa dan perlindungan hak anak terlantar.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://lmn-ten.vercel.app/" data-title="Lumina Global — Humanitarian & Children Empowerment">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://lmn-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="yayasan">
+          <div class="t-head"><span class="t-badge emerald">Yayasan & Filantropi</span><span class="t-num">#02</span></div>
+          <h4 class="t-name">Lumina Global</h4>
+          <span class="t-focus">Humanitarian Aid & Children Empowerment</span>
+          <p class="t-desc">Portal kemanusiaan anak asuh, kampanye beasiswa, dan laporan kas donasi terintegrasi.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://lmn-ten.vercel.app/" data-title="Lumina Global — Humanitarian Aid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://lmn-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 3. VITALIS -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="ngo" data-delay="150">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge purple">NGO Kesehatan</span>
-              <span class="t-num">#03</span>
-            </div>
-            <h3 class="t-title">VITALIS Health</h3>
-            <p class="t-subtitle">Global Health & Medical Aid Organization</p>
-            <p class="t-desc">Sistem advokasi kesehatan masyarakat, klinik darurat pelosok, dan penyaluran air bersih terstruktur.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://vitli.vercel.app/" data-title="VITALIS — Global Health Organization">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://vitli.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="ngo">
+          <div class="t-head"><span class="t-badge blue">NGO & Medis</span><span class="t-num">#03</span></div>
+          <h4 class="t-name">VITALIS</h4>
+          <span class="t-focus">Global Health Initiative & Medical Aid</span>
+          <p class="t-desc">Arsitektur nirlaba medis, klinik darurat, dan koordinasi tenaga medis sukarela di daerah pelosok.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://vitli.vercel.app/" data-title="VITALIS — Global Health Initiative">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://vitli.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 4. WILDCORE -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="komunitas" data-delay="200">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge emerald">Komunitas Alam</span>
-              <span class="t-num">#04</span>
-            </div>
-            <h3 class="t-title">WILDCORE</h3>
-            <p class="t-subtitle">Biosphere & Forest Guardians Alliance</p>
-            <p class="t-desc">Platform partisipatif untuk aksi penanaman pohon, monitoring deforestasi, dan adopsi satwa endemik.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://limunu.vercel.app/" data-title="WILDCORE — Biosphere Alliance">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://limunu.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="ngo">
+          <div class="t-head"><span class="t-badge emerald">NGO Lingkungan</span><span class="t-num">#04</span></div>
+          <h4 class="t-name">WILDCORE</h4>
+          <span class="t-focus">Biosphere & Rainforest Guardians</span>
+          <p class="t-desc">Portal advokasi hutan tropis, adopsi pohon, dan perlindungan ekosistem hutan nusantara.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://limunu.vercel.app/" data-title="WILDCORE — Rainforest Guardians">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://limunu.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 5. Novalis Global -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="yayasan" data-delay="250">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge amber">Yayasan Riset</span>
-              <span class="t-num">#05</span>
-            </div>
-            <h3 class="t-title">Novalis Global</h3>
-            <p class="t-subtitle">Human Potential & Research Grants</p>
-            <p class="t-desc">Website yayasan riset sains sosial dan penyaluran dana beasiswa saintis muda berprestasi.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://bhfkj.vercel.app/" data-title="Novalis Global — Human Potential">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://bhfkj.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="yayasan">
+          <div class="t-head"><span class="t-badge purple">Yayasan Riset</span><span class="t-num">#05</span></div>
+          <h4 class="t-name">Novalis Global</h4>
+          <span class="t-focus">Human Potential & Health Research</span>
+          <p class="t-desc">Portal publikasi riset sosial, pengajuan grant inovasi, dan transparansi dana filantropi.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://bhfkj.vercel.app/" data-title="Novalis Global — Health Research Grants">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://bhfkj.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 6. AEGIS GLOBAL -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="ngo" data-delay="300">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge purple">NGO Hukum</span>
-              <span class="t-num">#06</span>
-            </div>
-            <h3 class="t-title">AEGIS GLOBAL</h3>
-            <p class="t-subtitle">Human Dignity & Legal Defense</p>
-            <p class="t-desc">Template NGO advokasi bantuan hukum gratis, perlindungan saksi, dan publikasi kebijakan publik.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://globl.vercel.app/" data-title="AEGIS GLOBAL — Human Dignity">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://globl.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="ngo">
+          <div class="t-head"><span class="t-badge blue">NGO Hukum</span><span class="t-num">#06</span></div>
+          <h4 class="t-name">AEGIS GLOBAL</h4>
+          <span class="t-focus">Human Dignity & Legal Advocacy</span>
+          <p class="t-desc">Platform advokasi hukum, pendampingan korban, dan kertas kebijakan nirlaba berstandar internasional.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://globl.vercel.app/" data-title="AEGIS GLOBAL — Legal Advocacy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://globl.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 7. Terra Vanguard -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="komunitas" data-delay="350">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge emerald">Gerakan Iklim</span>
-              <span class="t-num">#07</span>
-            </div>
-            <h3 class="t-title">Terra Vanguard</h3>
-            <p class="t-subtitle">Planetary Climate Action & Resistance</p>
-            <p class="t-desc">Infrastruktur kampanye aksi iklim, penyerapan jejak karbon, dan direktori aktivis lingkungan nusantara.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://terri-gray.vercel.app/" data-title="Terra Vanguard — Climate Resistance">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://terri-gray.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="ngo">
+          <div class="t-head"><span class="t-badge coral">NGO Iklim</span><span class="t-num">#07</span></div>
+          <h4 class="t-name">Terra Vanguard</h4>
+          <span class="t-focus">Planetary Climate Action & Resistance</span>
+          <p class="t-desc">Aksi darurat iklim, edukasi transisi energi hijau, dan petisi online masyarakat terorganisir.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://terri-gray.vercel.app/" data-title="Terra Vanguard — Climate Action">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://terri-gray.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 8. Frontier Medics -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="ngo" data-delay="400">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge coral">Tanggap Bencana</span>
-              <span class="t-num">#08</span>
-            </div>
-            <h3 class="t-title">Frontier Medics</h3>
-            <p class="t-subtitle">Emergency Disaster Response & Aid</p>
-            <p class="t-desc">Sistem mitigasi bencana, pendaftaran relawan medis darurat, dan pelaporan bantuan logistik cepat.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://frontier-khaki.vercel.app/" data-title="Frontier Medics — Emergency Medical Action">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://frontier-khaki.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="komunitas">
+          <div class="t-head"><span class="t-badge blue">Komunitas Medis</span><span class="t-num">#08</span></div>
+          <h4 class="t-name">Frontier Medics</h4>
+          <span class="t-focus">Emergency Response & Medical Aid</span>
+          <p class="t-desc">Portal koordinasi tanggap bencana darurat, logistik obat-obatan, dan pemetaan posko lapangan.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://frontier-khaki.vercel.app/" data-title="Frontier Medics — Emergency Response">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://frontier-khaki.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 9. Lumina Hope -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="yayasan" data-delay="450">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge amber">Kesejahteraan Anak</span>
-              <span class="t-num">#09</span>
-            </div>
-            <h3 class="t-title">Lumina Hope</h3>
-            <p class="t-subtitle">Every Child. Every Right. Foundation</p>
-            <p class="t-desc">Platform santunan panti asuhan, renovasi sekolah pelosok, dan pemenuhan gizi anak nusantara.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://bnnc.vercel.app/" data-title="Lumina Hope — Every Child. Every Right.">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://bnnc.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="yayasan">
+          <div class="t-head"><span class="t-badge emerald">Yayasan Yatim</span><span class="t-num">#09</span></div>
+          <h4 class="t-name">Lumina Hope</h4>
+          <span class="t-focus">Child Welfare & Safe Education</span>
+          <p class="t-desc">Sistem santunan anak yatim terprogram, laporan beasiswa berkala, dan interaksi orang tua asuh.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://bnnc.vercel.app/" data-title="Lumina Hope — Child Welfare">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://bnnc.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 10. Orbita Global -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="komunitas" data-delay="500">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge blue">Inkubator Sosial</span>
-              <span class="t-num">#10</span>
-            </div>
-            <h3 class="t-title">Orbita Global</h3>
-            <p class="t-subtitle">Community Impact in Motion Hub</p>
-            <p class="t-desc">Wadah pendanaan proyek sosial mikro, kolaborasi pemuda kreatif, dan inkubasi inovasi nirlaba.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://orbit-seven-alpha.vercel.app/" data-title="Orbita Global — Impact in Motion">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://orbit-seven-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="komunitas">
+          <div class="t-head"><span class="t-badge blue">Komunitas Pemuda</span><span class="t-num">#10</span></div>
+          <h4 class="t-name">Orbita Global</h4>
+          <span class="t-focus">Community Impact in Motion Hub</span>
+          <p class="t-desc">Platform kolaborasi gerakan pemuda, direktori anggota daerah, dan ruang pamer karya sosial.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://orbit-seven-alpha.vercel.app/" data-title="Orbita Global — Community Impact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://orbit-seven-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 11. GID Foundation -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="yayasan" data-delay="550">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge emerald">Pemberdayaan Desa</span>
-              <span class="t-num">#11</span>
-            </div>
-            <h3 class="t-title">GID Foundation</h3>
-            <p class="t-subtitle">Global Impact & Sustainable Development</p>
-            <p class="t-desc">Template program bina desa mandiri, ketahanan pangan lokal, dan koperasi komunitas berkelanjutan.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://gid-r.vercel.app/" data-title="GID Foundation — Global Impact">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://gid-r.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="yayasan">
+          <div class="t-head"><span class="t-badge emerald">Yayasan Global</span><span class="t-num">#11</span></div>
+          <h4 class="t-name">GID Foundation</h4>
+          <span class="t-focus">Global Impact & Sustainable Development</span>
+          <p class="t-desc">Template nirlaba berbasis tujuan pembangunan berkelanjutan (SDGs) dengan metriks dampak interaktif.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://gid-r.vercel.app/" data-title="GID Foundation — Global Impact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://gid-r.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 12. VNGRD Hub -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="ngo" data-delay="600">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge purple">Filantropi Modern</span>
-              <span class="t-num">#12</span>
-            </div>
-            <h3 class="t-title">VNGRD Hub</h3>
-            <p class="t-subtitle">Vanguard Philanthropy & Grants Platform</p>
-            <p class="t-desc">Ekosistem penggalangan dana berskala besar, kemitraan CSR institusi, dan tata kelola dana hibah.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://vngrd.vercel.app/#work" data-title="VNGRD Philanthropy Platform">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://vngrd.vercel.app/#work" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="ngo">
+          <div class="t-head"><span class="t-badge purple">Filantropi & Grants</span><span class="t-num">#12</span></div>
+          <h4 class="t-name">VNGRD Hub</h4>
+          <span class="t-focus">Vanguard Philanthropy & Grants Platform</span>
+          <p class="t-desc">Portal manajemen hibah dana sosial, seleksi proposal nirlaba, dan tracking pencairan dana bertahap.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://vngrd.vercel.app/#work" data-title="VNGRD Hub — Philanthropy Platform">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://vngrd.vercel.app/#work" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
         <!-- 13. Mountain & Nature Trust -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="komunitas" data-delay="650">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge blue">Konservasi Gunung</span>
-              <span class="t-num">#13</span>
-            </div>
-            <h3 class="t-title">Mountain Trust</h3>
-            <p class="t-subtitle">Alpine & Highland Nature Guardians</p>
-            <p class="t-desc">Website komunitas pelestarian jalur pendakian, reboisasi lereng gunung, dan bank sampah pendaki.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://mnt-nu.vercel.app/" data-title="Mountain & Nature Trust">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://mnt-nu.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <div class="template-card glass-panel" data-cat="komunitas">
+          <div class="t-head"><span class="t-badge emerald">Komunitas Alam</span><span class="t-num">#13</span></div>
+          <h4 class="t-name">Mountain Trust</h4>
+          <span class="t-focus">Highland Nature & Alpine Conservation</span>
+          <p class="t-desc">Gerakan pelestari pegunungan, penanaman pohon cemara, dan panduan keselamatan pendaki relawan.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://mnt-nu.vercel.app/" data-title="Mountain & Nature Trust">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://mnt-nu.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
 
-        <!-- 14. NXDER Ecosystem -->
-        <div class="template-card glass-card reveal-on-scroll" data-cat="yayasan" data-delay="700">
-          <div class="t-card-header">
-            <div class="browser-dots"><span class="b-dot red"></span><span class="b-dot yellow"></span><span class="b-dot green"></span></div>
-            <span class="t-badge-live">● Live Cloud</span>
-          </div>
-          <div class="t-card-body">
-            <div class="t-meta">
-              <span class="t-segment-badge coral">Inovasi Digital</span>
-              <span class="t-num">#14</span>
-            </div>
-            <h3 class="t-title">NXDER Network</h3>
-            <p class="t-subtitle">Next-Gen Nonprofit Tech Ecosystem</p>
-            <p class="t-desc">Platform arsitektur teknologi terbuka untuk kolaborasi lintas yayasan, NGO, dan lembaga amal dunia.</p>
-            <div class="t-actions">
-              <button class="btn btn-sm btn-primary-glow btn-open-demo-modal" data-url="https://nxder.vercel.app/" data-title="NXDER Digital Nonprofit Ecosystem">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Live Preview</span>
-              </button>
-              <a href="https://nxder.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-glass" title="Buka Tab Baru">↗</a>
-            </div>
+        <!-- 14. NXDER Network -->
+        <div class="template-card glass-panel" data-cat="komunitas">
+          <div class="t-head"><span class="t-badge blue">Asosiasi Digital</span><span class="t-num">#14</span></div>
+          <h4 class="t-name">NXDER Network</h4>
+          <span class="t-focus">Next-Gen Nonprofit Digital Ecosystem</span>
+          <p class="t-desc">Platform ekosistem relawan digital, edukasi literasi teknologi nirlaba, dan jaringan aksi terdesentralisasi.</p>
+          <div class="t-foot">
+            <button class="btn-demo-trigger" data-url="https://nxder.vercel.app/" data-title="NXDER Network — Nonprofit Digital">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Live Preview</span>
+            </button>
+            <a href="https://nxder.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-icon-link" title="Buka di Tab Baru">↗</a>
           </div>
         </div>
       </div>
@@ -1140,640 +677,316 @@
   </section>
 
   <!-- ========================================================
-       SECTION 5: PILIHAN PAKET WEBSITE ORGANISASI
-       (6 PRODUK TERSTRUKTUR & TRANSPARAN)
+       5. PILIH PAKET WEBSITE YANG SESUAI (6 PAKET)
   ======================================================== -->
-  <section id="harga" class="section-spacing">
+  <section id="paket" class="section">
     <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <div class="inline-section-tag coral">
-          <span class="pulse-dot-coral"></span>
-          <span>HARGA & PAKET TRANSPARAN</span>
-        </div>
-        <h2 class="section-title">Pilih Paket Website yang Sesuai</h2>
-        <p class="section-subtitle">Investasi terbaik untuk pertumbuhan dampak, kepercayaan donatur, dan kemandirian digital organisasi Anda.</p>
+      <div class="section-title-wrap">
+        <span class="section-tag">INVESTASI TRANSPARAN</span>
+        <h2 class="section-heading">Pilih Paket Website yang Sesuai</h2>
+        <p class="section-subheading">
+          Investasi terbaik untuk pertumbuhan dampak, kepercayaan donatur, dan kemandirian digital organisasi Anda.
+        </p>
       </div>
 
-      <div class="pricing-grid-3">
-        <!-- Paket 1: Campaign Landing Page -->
-        <div class="pricing-card glass-card reveal-on-scroll" data-delay="100">
-          <div class="p-card-badge-num">1</div>
-          <span class="p-card-tier emerald">Pemula / Kampanye Tunggal</span>
-          <h3 class="p-card-title">Campaign Landing Page</h3>
-          <p class="p-card-desc">Untuk mempromosikan 1 program darurat, kampanye beasiswa, atau event penggalangan dana spesifik.</p>
-          
-          <div class="p-card-price-box">
-            <span class="price-start-label">Mulai Dari</span>
-            <div class="price-val-wrap">
-              <span class="price-cross">Rp 1.200.000</span>
-              <strong class="price-main text-emerald">Rp 899.000</strong>
-            </div>
-          </div>
-
-          <div class="p-slot-alert">
-            <div class="slot-text"><span class="fire-icon">🔥</span> Sisa 2 dari 5 slot — Batch Bulan Ini</div>
-            <div class="slot-bar-track"><div class="slot-bar-fill coral" style="width: 60%;"></div></div>
-          </div>
-
-          <div class="p-specs-pill-row">
-            <span>1 Halaman</span>
-            <span>1× Revisi</span>
-            <span>2–4 Hari Kerja</span>
-            <span>14 Hari Support</span>
-          </div>
-
-          <ul class="p-feature-list">
-            <li><span class="chk emerald">✓</span> 1 Halaman Landing Page responsif</li>
-            <li><span class="chk emerald">✓</span> Widget Progress Bar donasi online</li>
-            <li><span class="chk emerald">✓</span> Tombol Donasi QRIS Instan</li>
-            <li><span class="chk emerald">✓</span> Galeri dokumentasi (Maks 10 foto)</li>
-            <li><span class="chk emerald">✓</span> Form donasi terhubung WhatsApp CS</li>
-            <li><span class="chk emerald">✓</span> Basic SEO & Google Maps lokasi</li>
-            <li><span class="chk emerald">✓</span> Sticky CTA floating di mobile</li>
+      <div class="grid-3-col">
+        <!-- Paket 1 -->
+        <div class="pricing-card glass-panel">
+          <div class="p-badge-num">01</div>
+          <h3 class="pkg-title">Campaign Landing Page</h3>
+          <span class="pkg-sub">Khusus 1 Program / Galang Dana Urgen</span>
+          <div class="pkg-price">Rp 2.900.000 <span class="price-type">/ program</span></div>
+          <p class="pkg-summary">Satu halaman fokus konversi donatur cepat dengan form donasi QRIS terintegrasi.</p>
+          <ul class="pkg-features">
+            <li><span>✓</span> 1 Halaman Responsif Ultra Cepat</li>
+            <li><span>✓</span> Integrasi Donasi QRIS Otomatis</li>
+            <li><span>✓</span> Live Donation Progress Meter</li>
+            <li><span>✓</span> WhatsApp Direct Hotline & Notifikasi</li>
+            <li><span>✓</span> Free Domain & SSL 1 Tahun</li>
           </ul>
-
-          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20dengan%20Paket%201%20Campaign%20Landing%20Page" target="_blank" rel="noopener noreferrer" class="btn btn-primary-glow full-width">Pilih Paket 1 →</a>
+          <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Paket%20Campaign%20Landing%20Page" target="_blank" class="btn-outline w-100">Pilih Paket Ini</a>
         </div>
 
-        <!-- Paket 2: Organization Company Profile -->
-        <div class="pricing-card glass-card reveal-on-scroll" data-delay="200">
-          <div class="p-card-badge-num">2</div>
-          <span class="p-card-tier blue">Organisasi Kecil–Menengah</span>
-          <h3 class="p-card-title">Organization Company Profile</h3>
-          <p class="p-card-desc">Website profil lengkap untuk memperkenalkan visi misi, legalitas SK Kemenkumham, struktur pengurus & program rutin.</p>
-          
-          <div class="p-card-price-box">
-            <span class="price-start-label">Mulai Dari</span>
-            <div class="price-val-wrap">
-              <span class="price-cross">Rp 3.500.000</span>
-              <strong class="price-main text-blue">Rp 2.900.000</strong>
-            </div>
-          </div>
-
-          <div class="p-slot-alert">
-            <div class="slot-text"><span class="fire-icon">🔥</span> Sisa 3 dari 5 slot — Batch Bulan Ini</div>
-            <div class="slot-bar-track"><div class="slot-bar-fill blue" style="width: 40%;"></div></div>
-          </div>
-
-          <div class="p-specs-pill-row">
-            <span>Hingga 5 Halaman</span>
-            <span>2× Revisi</span>
-            <span>5–10 Hari Kerja</span>
-            <span>30 Hari Support</span>
-          </div>
-
-          <ul class="p-feature-list">
-            <li><span class="chk blue">✓</span> Hingga 5 halaman profil profesional</li>
-            <li><span class="chk blue">✓</span> Halaman Legalitas & SK Kemenkumham</li>
-            <li><span class="chk blue">✓</span> Logo mitra CSR / donatur berjalan</li>
-            <li><span class="chk blue">✓</span> Galeri foto & video kegiatan binaan</li>
-            <li><span class="chk blue">✓</span> Testimoni penerima manfaat & tokoh</li>
-            <li><span class="chk blue">✓</span> Katalog sederhana (maks 10 program)</li>
-            <li><span class="chk blue">✓</span> Google Review & Search Console Setup</li>
+        <!-- Paket 2 -->
+        <div class="pricing-card glass-panel">
+          <div class="p-badge-num">02</div>
+          <h3 class="pkg-title">Organization Profile</h3>
+          <span class="pkg-sub">Standard Yayasan & Komunitas Baru</span>
+          <div class="pkg-price">Rp 4.900.000 <span class="price-type">/ sistem</span></div>
+          <p class="pkg-summary">Profil legalitas lengkap untuk membangun kredibilitas dinas sosial dan publik.</p>
+          <ul class="pkg-features">
+            <li><span>✓</span> 5-7 Halaman Informasi Lembaga</li>
+            <li><span>✓</span> Publikasi Legalitas Kemenkumham</li>
+            <li><span>✓</span> Galeri Kegiatan & Berita Terbitan</li>
+            <li><span>✓</span> Form Kontak & Formulir Relawan</li>
+            <li><span>✓</span> SEO Dasar & Google Maps Lokasi</li>
           </ul>
-
-          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20dengan%20Paket%202%20Company%20Profile" target="_blank" rel="noopener noreferrer" class="btn btn-blue full-width">Pilih Paket 2 →</a>
+          <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Paket%20Organization%20Profile" target="_blank" class="btn-outline w-100">Pilih Paket Ini</a>
         </div>
 
-        <!-- Paket 3: Smart Donation & Catalog Portal -->
-        <div class="pricing-card glass-card reveal-on-scroll" data-delay="300">
-          <div class="p-card-badge-num">3</div>
-          <span class="p-card-tier purple">Yayasan Banyak Program</span>
-          <h3 class="p-card-title">Smart Donation & Catalog Portal</h3>
-          <p class="p-card-desc">Website katalog program donasi dengan filter kategori, detail target penerima manfaat, dan kalkulator amal.</p>
-          
-          <div class="p-card-price-box">
-            <span class="price-start-label">Mulai Dari</span>
-            <div class="price-val-wrap">
-              <span class="price-cross">Rp 5.900.000</span>
-              <strong class="price-main text-purple">Rp 4.900.000</strong>
-            </div>
-          </div>
-
-          <div class="p-slot-alert">
-            <div class="slot-text"><span class="fire-icon">🔥</span> Sisa 2 dari 4 slot — Batch Bulan Ini</div>
-            <div class="slot-bar-track"><div class="slot-bar-fill purple" style="width: 50%;"></div></div>
-          </div>
-
-          <div class="p-specs-pill-row">
-            <span>Hingga 10 Halaman</span>
-            <span>3× Revisi</span>
-            <span>10–18 Hari Kerja</span>
-            <span>45 Hari Support</span>
-          </div>
-
-          <ul class="p-feature-list">
-            <li><span class="chk purple">✓</span> Hingga 10 halaman & katalog 50 program</li>
-            <li><span class="chk purple">✓</span> Filter program (Zakat, Wakaf, Sedekah, Bencana)</li>
-            <li><span class="chk purple">✓</span> Timeline penyaluran & rincian target</li>
-            <li><span class="chk purple">✓</span> Download brosur laporan donasi otomatis</li>
-            <li><span class="chk purple">✓</span> Share kampanye ke WhatsApp dengan pesan rapi</li>
-            <li><span class="chk purple">✓</span> Multi-CS WhatsApp Floating Widget</li>
-            <li><span class="chk purple">✓</span> Blog artikel & berita terindeks SEO</li>
+        <!-- Paket 3 -->
+        <div class="pricing-card glass-panel">
+          <div class="p-badge-num">03</div>
+          <h3 class="pkg-title">Smart Donation Portal</h3>
+          <span class="pkg-sub">Fokus Fundraising Rutin & QRIS</span>
+          <div class="pkg-price">Rp 7.500.000 <span class="price-type">/ sistem</span></div>
+          <p class="pkg-summary">Portal penggalangan dana multi-kampanye dengan payment gateway dan rekap donatur.</p>
+          <ul class="pkg-features">
+            <li><span>✓</span> Multi-Kampanye Donasi Tanpa Batas</li>
+            <li><span>✓</span> Payment Gateway QRIS, E-Wallet & VA</li>
+            <li><span>✓</span> Kalkulator Zakat Maal & Profesi</li>
+            <li><span>✓</span> Generate Kwitansi PDF Otomatis</li>
+            <li><span>✓</span> Dashboard Rekap Data Donatur</li>
           </ul>
-
-          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20dengan%20Paket%203%20Smart%20Donation%20Portal" target="_blank" rel="noopener noreferrer" class="btn btn-purple full-width">Pilih Paket 3 →</a>
+          <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Paket%20Smart%20Donation%20Portal" target="_blank" class="btn-outline w-100">Pilih Paket Ini</a>
         </div>
 
-        <!-- Paket 4: Brand & Fundraising Growth Website (Featured) -->
-        <div class="pricing-card glass-card featured-popular reveal-on-scroll" data-delay="150">
-          <div class="featured-badge-top">★ PALING POPULER</div>
-          <div class="p-card-badge-num">4</div>
-          <span class="p-card-tier coral">Organisasi Aktif Fundraising</span>
-          <h3 class="p-card-title">Brand & Fundraising Growth Website</h3>
-          <p class="p-card-desc">Website untuk organisasi yang aktif menjalankan iklan meta, SEO, dan butuh CRM database donatur otomatis.</p>
-          
-          <div class="p-card-price-box">
-            <span class="price-start-label">Mulai Dari</span>
-            <div class="price-val-wrap">
-              <span class="price-cross">Rp 9.900.000</span>
-              <strong class="price-main text-coral">Rp 7.900.000</strong>
-            </div>
-            <div class="bonus-tag-wrap">
-              <span class="b-tag">🎁 Meta Pixel Setup</span>
-              <span class="b-tag">🎁 Kwitansi PDF Otomatis</span>
-              <span class="b-tag">🎁 AI Copywriting</span>
-            </div>
-          </div>
-
-          <div class="p-slot-alert">
-            <div class="slot-text"><span class="fire-icon">🔥</span> Sisa 1 dari 3 slot — Batch Bulan Ini</div>
-            <div class="slot-bar-track"><div class="slot-bar-fill coral" style="width: 66%;"></div></div>
-          </div>
-
-          <div class="p-specs-pill-row">
-            <span>Hingga 15 Halaman</span>
-            <span>4× Revisi</span>
-            <span>15–25 Hari Kerja</span>
-            <span>60 Hari Support</span>
-          </div>
-
-          <ul class="p-feature-list">
-            <li><span class="chk coral">✓</span> Semua fitur Paket 1–3 lengkap</li>
-            <li><span class="chk coral">✓</span> CRM Database Donatur & Riwayat Transaksi</li>
-            <li><span class="chk coral">✓</span> Meta Pixel, TikTok Pixel & Google Tag Manager</li>
-            <li><span class="chk coral">✓</span> Google Analytics 4 & Conversion Tracking</li>
-            <li><span class="chk coral">✓</span> Microsoft Clarity Heatmap pelacak donatur</li>
-            <li><span class="chk coral">✓</span> Kwitansi / Surat Bukti Donasi PDF Otomatis</li>
-            <li><span class="chk coral">✓</span> AI generator deskripsi kampanye & FAQ</li>
-            <li><span class="chk coral">✓</span> Akses admin hingga 5 user pengurus</li>
+        <!-- Paket 4 (Featured) -->
+        <div class="pricing-card glass-panel featured-pkg">
+          <div class="popular-ribbon">PALING BANYAK DIPILIH</div>
+          <div class="p-badge-num">04</div>
+          <h3 class="pkg-title">Growth Website Platform</h3>
+          <span class="pkg-sub">All-in-One Yayasan, Komunitas & NGO</span>
+          <div class="pkg-price">Rp 10.900.000 <span class="price-type">/ sistem</span></div>
+          <p class="pkg-summary">Solusi digital terlengkap menggabungkan profil, fundraising, kas WTP dan relawan.</p>
+          <ul class="pkg-features">
+            <li><span>✓</span> Seluruh Fitur Paket 1, 2, dan 3</li>
+            <li><span>✓</span> Laporan Transparansi Kas Terbuka (WTP)</li>
+            <li><span>✓</span> Multi-Bahasa Dwibahasa (ID / EN)</li>
+            <li><span>✓</span> Direktori Relawan & Generator E-KTA</li>
+            <li><span>✓</span> Unduhan PDF Laporan Tahunan & Riset</li>
           </ul>
-
-          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20dengan%20Paket%204%20Growth%20Website" target="_blank" rel="noopener noreferrer" class="btn btn-coral full-width">Pilih Paket 4 (Rekomendasi) →</a>
+          <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Paket%20Growth%20Website%20Platform" target="_blank" class="btn-primary w-100">Konsultasikan Paket Ini</a>
         </div>
 
-        <!-- Paket 5: Volunteer & Productivity Platform -->
-        <div class="pricing-card glass-card reveal-on-scroll" data-delay="250">
-          <div class="p-card-badge-num">5</div>
-          <span class="p-card-tier emerald">Komunitas & Operasional Lapangan</span>
-          <h3 class="p-card-title">Volunteer & Productivity Platform</h3>
-          <p class="p-card-desc">Website + dashboard tools untuk manajemen relawan, penugasan wilayah, proposal CSR, dan event organisasi.</p>
-          
-          <div class="p-card-price-box">
-            <span class="price-start-label">Mulai Dari</span>
-            <div class="price-val-wrap">
-              <span class="price-cross">Rp 15.000.000</span>
-              <strong class="price-main text-emerald">Rp 12.900.000</strong>
-            </div>
-          </div>
-
-          <div class="p-slot-alert">
-            <div class="slot-text"><span class="fire-icon">🔥</span> Sisa 1 dari 2 slot — Batch Bulan Ini</div>
-            <div class="slot-bar-track"><div class="slot-bar-fill emerald" style="width: 50%;"></div></div>
-          </div>
-
-          <div class="p-specs-pill-row">
-            <span>Web + Dashboard</span>
-            <span>4× Revisi</span>
-            <span>25–40 Hari Kerja</span>
-            <span>90 Hari Support</span>
-          </div>
-
-          <ul class="p-feature-list">
-            <li><span class="chk emerald">✓</span> Website + Dashboard Tools Pengurus</li>
-            <li><span class="chk emerald">✓</span> Generator E-KTA & Kartu Relawan Digital</li>
-            <li><span class="chk emerald">✓</span> Generator Proposal CSR & Kwitansi Donasi</li>
-            <li><span class="chk emerald">✓</span> Manifest Relawan & Checklist Penugasan</li>
-            <li><span class="chk emerald">✓</span> Database Anggota & Riwayat Keikutsertaan</li>
-            <li><span class="chk emerald">✓</span> Sertifikat Relawan PDF Otomatis</li>
-            <li><span class="chk emerald">✓</span> Akses admin hingga 10 user pengurus</li>
+        <!-- Paket 5 -->
+        <div class="pricing-card glass-panel">
+          <div class="p-badge-num">05</div>
+          <h3 class="pkg-title">Volunteer Platform</h3>
+          <span class="pkg-sub">Khusus Komunitas & Gerakan Massal</span>
+          <div class="pkg-price">Rp 8.900.000 <span class="price-type">/ sistem</span></div>
+          <p class="pkg-summary">Manajemen keanggotaan relawan 34 provinsi dengan absensi dan e-sertifikat aksi.</p>
+          <ul class="pkg-features">
+            <li><span>✓</span> Database Relawan Terverifikasi</li>
+            <li><span>✓</span> Generator E-KTA Ber-QR Code Unik</li>
+            <li><span>✓</span> Kalender Aksi & Ticketing Event</li>
+            <li><span>✓</span> E-Sertifikat Partisipasi Aksi Otomatis</li>
+            <li><span>✓</span> Sistem Penugasan Posko Lapangan</li>
           </ul>
-
-          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20dengan%20Paket%205%20Volunteer%20Productivity" target="_blank" rel="noopener noreferrer" class="btn btn-primary-glow full-width">Pilih Paket 5 →</a>
+          <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Paket%20Volunteer%20Platform" target="_blank" class="btn-outline w-100">Pilih Paket Ini</a>
         </div>
 
-        <!-- Paket 6: Enterprise Foundation Management Platform -->
-        <div class="pricing-card glass-card reveal-on-scroll" data-delay="350">
-          <div class="p-card-badge-num">6</div>
-          <span class="p-card-tier amber">Lembaga Besar / Multi-Cabang</span>
-          <h3 class="p-card-title">Enterprise Foundation Management</h3>
-          <p class="p-card-desc">Sistem komprehensif untuk yayasan dan NGO nasional dengan multi-cabang, multi-divisi, dan audit keuangan ketat.</p>
-          
-          <div class="p-card-price-box">
-            <span class="price-start-label">Mulai Dari</span>
-            <div class="price-val-wrap">
-              <strong class="price-main text-amber">Mulai Rp 24.900.000</strong>
-            </div>
-          </div>
-
-          <div class="p-slot-alert">
-            <div class="slot-text"><span class="fire-icon">🔥</span> Sisa 2 dari 2 slot — Batch Bulan Ini</div>
-            <div class="slot-bar-track"><div class="slot-bar-fill amber" style="width: 20%;"></div></div>
-          </div>
-
-          <div class="p-specs-pill-row">
-            <span>Full Custom Scope</span>
-            <span>Custom Scope</span>
-            <span>1–3 Bulan Kerja</span>
-            <span>180 Hari Support</span>
-          </div>
-
-          <ul class="p-feature-list">
-            <li><span class="chk amber">✓</span> Semua fitur Paket 1–5 terintegrasi</li>
-            <li><span class="chk amber">✓</span> Modul Multi-Cabang & Multi-Divisi</li>
-            <li><span class="chk amber">✓</span> Sistem Akuntansi Finansial Kas Internal</li>
-            <li><span class="chk amber">✓</span> Approval Workflow Bertingkat (Ketua/Bendahara)</li>
-            <li><span class="chk amber">✓</span> Portal Donatur Institusi / Mitra Perusahaan</li>
-            <li><span class="chk amber">✓</span> Integrasi API Custom & Bank Virtual Account</li>
-            <li><span class="chk amber">✓</span> Dedicated Cloud Server & Backup Harian</li>
+        <!-- Paket 6 -->
+        <div class="pricing-card glass-panel">
+          <div class="p-badge-num">06</div>
+          <h3 class="pkg-title">Enterprise NGO Platform</h3>
+          <span class="pkg-sub">Lembaga Nasional & Internasional</span>
+          <div class="pkg-price">Rp 16.500.000 <span class="price-type">/ sistem</span></div>
+          <p class="pkg-summary">Infrastruktur kustom skala besar dengan audit keamanan, multi-cabang dan integrasi API.</p>
+          <ul class="pkg-features">
+            <li><span>✓</span> Arsitektur Multi-Cabang / Daerah</li>
+            <li><span>✓</span> Modul Advokasi Kebijakan & Petisi</li>
+            <li><span>✓</span> Portal Hibah Dana (Grant Application)</li>
+            <li><span>✓</span> Enkripsi Data Tertinggi & SLA Support</li>
+            <li><span>✓</span> Integrasi Custom Database & CRM</li>
           </ul>
-
-          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20konsultasi%20Paket%206%20Enterprise%20Management" target="_blank" rel="noopener noreferrer" class="btn btn-amber full-width">Konsultasi Enterprise →</a>
-        </div>
-      </div>
-
-      <div class="text-center mt-8">
-        <a href="#brosur" class="btn btn-pill-outline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px;"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          <span>Unduh Brosur Perbandingan Fitur Lengkap (PDF)</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SECTION 6: ROADMAP PERJALANAN PERTUMBUHAN DIGITAL
-  ======================================================== -->
-  <section class="section-spacing bg-secondary-subtle">
-    <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <h2 class="section-title">Perjalanan Pertumbuhan Digital Organisasi Anda</h2>
-        <p class="section-subtitle">Mulai dari langkah pertama, berkembang bertahap sesuai kebutuhan dan kapasitas lembaga.</p>
-      </div>
-
-      <div class="growth-timeline-wrap">
-        <div class="timeline-line"></div>
-        
-        <div class="timeline-step reveal-on-scroll" data-delay="100">
-          <div class="step-circle emerald">1</div>
-          <div class="step-content glass-card">
-            <h4>Landing Page Kampanye</h4>
-            <p>Uji coba penggalangan dana program perdana dengan landing page yang cepat jadi dan siap sebar.</p>
-          </div>
-        </div>
-
-        <div class="timeline-step reveal-on-scroll" data-delay="200">
-          <div class="step-circle blue">2</div>
-          <div class="step-content glass-card">
-            <h4>Company Profile Resmi</h4>
-            <p>Membangun legitimasi hukum, struktur pengurus, dan profil lembaga agar dipercaya donatur institusi.</p>
-          </div>
-        </div>
-
-        <div class="timeline-step reveal-on-scroll" data-delay="300">
-          <div class="step-circle purple">3</div>
-          <div class="step-content glass-card">
-            <h4>Smart Donation Portal</h4>
-            <p>Menampilkan puluhan program donasi sekaligus dengan filter kategori dan pembayaran QRIS/VA otomatis.</p>
-          </div>
-        </div>
-
-        <div class="timeline-step reveal-on-scroll" data-delay="400">
-          <div class="step-circle coral">4</div>
-          <div class="step-content glass-card">
-            <h4>Growth & Fundraising Web</h4>
-            <p>Mengoptimalkan perolehan donatur baru melalui iklan Meta/Google, SEO, dan CRM retensi donatur.</p>
-          </div>
-        </div>
-
-        <div class="timeline-step reveal-on-scroll" data-delay="500">
-          <div class="step-circle emerald">5</div>
-          <div class="step-content glass-card">
-            <h4>Volunteer & Productivity</h4>
-            <p>Mengotomasikan operasional relawan lapangan, e-KTA digital, dan proposal kemitraan CSR.</p>
-          </div>
-        </div>
-
-        <div class="timeline-step reveal-on-scroll" data-delay="600">
-          <div class="step-circle amber">6</div>
-          <div class="step-content glass-card">
-            <h4>Enterprise Management</h4>
-            <p>Mengintegrasikan multi-cabang wilayah, pembukuan kas WTP, dan tata kelola skala nasional.</p>
-          </div>
+          <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Paket%20Enterprise%20NGO%20Platform" target="_blank" class="btn-outline w-100">Pilih Paket Ini</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       SECTION 7: MENGAPA ORGANIZ.HUB?
+       6. PERJALANAN PERTUMBUHAN DIGITAL ORGANISASI ANDA (ROADMAP)
   ======================================================== -->
-  <section class="section-spacing">
+  <section id="roadmap" class="section section-dark-alt">
     <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <h2 class="section-title">Mengapa Organiz.Hub?</h2>
-        <p class="section-subtitle">Bukan sekadar web developer umum. Kami memahami operasional, regulasi, dan psikologi donatur nirlaba secara mendalam.</p>
+      <div class="section-title-wrap">
+        <span class="section-tag">TAHAPAN DIGITALISASI</span>
+        <h2 class="section-heading">Perjalanan Pertumbuhan Digital Organisasi Anda</h2>
+        <p class="section-subheading">
+          Mulai dari langkah pertama, berkembang bertahap sesuai kebutuhan dan kapasitas lembaga.
+        </p>
       </div>
 
-      <div class="why-us-grid mb-10">
-        <div class="why-card glass-card text-center reveal-on-scroll" data-delay="100">
-          <div class="why-icon emerald">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
-          </div>
-          <h3 class="why-title">Spesialis Yayasan, Komunitas & NGO</h3>
-          <p class="why-desc">Bahasa Organisasi Nirlaba & Legalitas, Bukan Sekadar Bahasa IT Teknis.</p>
+      <div class="roadmap-grid">
+        <div class="roadmap-step glass-panel">
+          <div class="step-badge emerald">01</div>
+          <h4>Fase Fondasi: Legalitas & Profil</h4>
+          <p>Menerbitkan legalitas Kemenkumham, struktur pengurus, dan profil program agar dinilai kredibel oleh donatur awal.</p>
         </div>
 
-        <div class="why-card glass-card text-center reveal-on-scroll" data-delay="200">
-          <div class="why-icon coral">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
-          </div>
-          <h3 class="why-title">Digital Presence, Bukan Sekadar Website</h3>
-          <p class="why-desc">Branding • Fundraising • Transparansi Kas • Otomasi Relawan</p>
+        <div class="roadmap-step glass-panel">
+          <div class="step-badge blue">02</div>
+          <h4>Fase Fundraising: Donasi Otomatis</h4>
+          <p>Memasang sistem QRIS dan rekening yayasan langsung di website sehingga donatur dapat berdonasi kapan saja dalam hitungan detik.</p>
         </div>
 
-        <div class="why-card glass-card text-center reveal-on-scroll" data-delay="300">
-          <div class="why-icon blue">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
-          </div>
-          <h3 class="why-title">Sistem Ringan, Stabil & Terpercaya</h3>
-          <p class="why-desc">Biaya Transparan di Awal, Tanpa Biaya Tersembunyi.</p>
+        <div class="roadmap-step glass-panel">
+          <div class="step-badge purple">03</div>
+          <h4>Fase Akuntabilitas: Kas WTP</h4>
+          <p>Membuka grafik laporan kas secara real-time dan unduhan berkas PDF audit akuntan untuk mempertahankan loyalitas donatur tetap.</p>
         </div>
-      </div>
 
-      <!-- Matrix Kami Memahami -->
-      <div class="understanding-box glass-card reveal-on-scroll">
-        <h3 class="u-title text-center">Kami Memahami Kebutuhan Nyata Lembaga Anda:</h3>
-        <div class="u-grid">
-          <div class="u-item"><span class="chk-blue">✓</span> Laporan Kas WTP Terbuka</div>
-          <div class="u-item"><span class="chk-blue">✓</span> Donasi QRIS Instan Tanpa Delay</div>
-          <div class="u-item"><span class="chk-blue">✓</span> Direktori Relawan Lapangan</div>
-          <div class="u-item"><span class="chk-blue">✓</span> E-KTA & Keanggotaan Digital</div>
-          <div class="u-item"><span class="chk-blue">✓</span> Format Grant Proposal NGO</div>
-          <div class="u-item"><span class="chk-blue">✓</span> Publikasi Audit Tahunan</div>
-          <div class="u-item"><span class="chk-blue">✓</span> Legalitas Kemenkumham</div>
-          <div class="u-item"><span class="chk-blue">✓</span> Kwitansi Donasi PDF Otomatis</div>
-          <div class="u-item"><span class="chk-blue">✓</span> WhatsApp Floating Hotline</div>
-          <div class="u-item"><span class="chk-blue">✓</span> Multi-Bahasa (i18n ID/EN)</div>
+        <div class="roadmap-step glass-panel">
+          <div class="step-badge coral">04</div>
+          <h4>Fase Skala Nasional: Komunitas & Relawan</h4>
+          <p>Merekrut relawan secara masif di 34 provinsi dengan e-KTA digital, kalender aksi, dan kemitraan lembaga donor internasional.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       SECTION 8: FEATURE LIBRARY (10 KATEGORI)
+       7. MENGAPA ORGANIZ.HUB?
   ======================================================== -->
-  <section id="fitur" class="section-spacing bg-secondary-subtle">
+  <section id="why-us" class="section">
     <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <h2 class="section-title">Feature Library</h2>
-        <p class="section-subtitle">Kumpulan fitur modular yang dirancang khusus untuk operasional Yayasan, Komunitas, dan NGO.</p>
+      <div class="section-title-wrap">
+        <span class="section-tag">SPESIALISASI MENDALAM</span>
+        <h2 class="section-heading">Mengapa Organiz.Hub?</h2>
+        <p class="section-subheading">
+          Bukan sekadar web developer umum. Kami memahami operasional, regulasi, dan psikologi donatur nirlaba secara mendalam.
+        </p>
       </div>
 
-      <div class="feature-category-tabs">
-        <button class="f-tab-btn active" data-fcat="website">Website</button>
-        <button class="f-tab-btn" data-fcat="donasi">Donasi & QRIS</button>
-        <button class="f-tab-btn" data-fcat="relawan">Relawan</button>
-        <button class="f-tab-btn" data-fcat="transparansi">Transparansi</button>
+      <div class="grid-3-col">
+        <div class="why-card glass-panel">
+          <div class="why-icon emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3 class="why-title">Paham Regulasi & Legalitas Hukum</h3>
+          <p class="why-desc">Kami memastikan struktur publikasi website Anda patuh terhadap UU Kemenkumham, aturan Dinas Sosial, dan keterbukaan informasi nirlaba.</p>
+        </div>
+
+        <div class="why-card glass-panel">
+          <div class="why-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+          <h3 class="why-title">Rekening 100% Langsung ke Organisasi</h3>
+          <p class="why-desc">Tidak ada pemotongan biaya pihak ketiga yang tersembunyi. Seluruh donasi masuk langsung ke rekening bank atau QRIS resmi atas nama lembaga Anda.</p>
+        </div>
+
+        <div class="why-card glass-panel">
+          <div class="why-icon coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+          <h3 class="why-title">Pendampingan & Pelatihan Pengurus</h3>
+          <p class="why-desc">Tim kami memberikan sesi panduan khusus bagi pengurus yayasan agar dapat mengunggah berita, foto penyaluran, dan laporan kas dengan sangat mudah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       8. FEATURE LIBRARY (MODULAR)
+  ======================================================== -->
+  <section id="fitur" class="section section-dark-alt">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">ARSITEKTUR MODULAR</span>
+        <h2 class="section-heading">Feature Library</h2>
+        <p class="section-subheading">
+          Kumpulan fitur modular yang dirancang khusus untuk operasional Yayasan, Komunitas, dan NGO.
+        </p>
+      </div>
+
+      <!-- Feature Tabs -->
+      <div class="feature-nav-tabs">
+        <button class="f-tab-btn active" data-fcat="website">Website & Core</button>
+        <button class="f-tab-btn" data-fcat="donasi">Donasi & Kas</button>
+        <button class="f-tab-btn" data-fcat="relawan">Relawan & Aksi</button>
+        <button class="f-tab-btn" data-fcat="transparansi">Transparansi WTP</button>
         <button class="f-tab-btn" data-fcat="keamanan">Keamanan & Legal</button>
-        <button class="f-tab-btn" data-fcat="widgets">Smart Widgets</button>
-        <button class="f-tab-btn" data-fcat="seo">SEO & AI</button>
-        <button class="f-tab-btn" data-fcat="i18n">Multi-Language</button>
-        <button class="f-tab-btn" data-fcat="integrasi">Integrasi</button>
-        <button class="f-tab-btn" data-fcat="analytics">Analytics</button>
+        <button class="f-tab-btn" data-fcat="seo">SEO & Media</button>
       </div>
 
-      <div class="feature-items-grid" id="feature-items-container">
-        <!-- Will be populated / filtered dynamically by JS -->
+      <div class="feature-content-grid" id="feature-items-wrapper">
+        <!-- Rendered via JavaScript -->
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       SECTION 9: SMART WIDGET LIBRARY (INTERACTIVE SANDBOX)
+       9. ORGANIZATION SMART WIDGET LIBRARY
   ======================================================== -->
-  <section id="widgets" class="section-spacing">
+  <section id="widgets" class="section">
     <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <h2 class="section-title">Organization Smart Widget Library</h2>
-        <p class="section-subtitle">Koleksi komponen widget interaktif siap pasang untuk memperkuat keterlibatan donatur dan pengunjung.</p>
+      <div class="section-title-wrap">
+        <span class="section-tag">KOMPONEN INTERAKTIF</span>
+        <h2 class="section-heading">Organization Smart Widget Library</h2>
+        <p class="section-subheading">
+          Koleksi komponen widget interaktif siap pasang untuk memperkuat keterlibatan donatur dan pengunjung.
+        </p>
       </div>
 
-      <div class="widgets-showcase-grid">
-        <!-- W1: Donation Progress Meter -->
-        <div class="widget-card glass-card reveal-on-scroll" data-delay="100">
-          <div class="w-icon emerald">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <div class="grid-3-col">
+        <!-- Widget 1: Donation Progress -->
+        <div class="widget-card glass-panel">
+          <div class="w-icon emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+          <h3 class="w-title">Live Donation Progress Bar</h3>
+          <p class="w-desc">Menampilkan persentase dana terkumpul dengan live counter dan tombol donasi QRIS dinamis.</p>
+          <div class="w-demo-box">
+            <div class="w-bar-track"><div class="w-bar-fill" style="width: 78%;"></div></div>
+            <span class="w-stat">Rp 390.000.000 / Rp 500.000.000 (78%)</span>
           </div>
-          <h4 class="w-title">Donation Progress Meter</h4>
-          <p class="w-desc">Bar visual persentase dana terkumpul, target kampanye, sisa hari, dan jumlah donatur real-time.</p>
         </div>
 
-        <!-- W2: Live Impact Counter -->
-        <div class="widget-card glass-card reveal-on-scroll" data-delay="150">
-          <div class="w-icon blue">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <!-- Widget 2: Kas Transparency -->
+        <div class="widget-card glass-panel">
+          <div class="w-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <h3 class="w-title">Interactive Kas Transparency</h3>
+          <p class="w-desc">Diagram proporsi penyaluran bantuan 85% program nyata, 10% operasional, 5% dana cadangan.</p>
+          <div class="w-demo-box">
+            <span class="w-stat text-emerald">Audit WTP: Rp 1,2 Miliar Tersalurkan</span>
           </div>
-          <h4 class="w-title">Live Social Impact Counter</h4>
-          <p class="w-desc">Animasi angka dinamis menghitung penerima manfaat, relawan terdaftar, dan cakupan provinsi.</p>
         </div>
 
-        <!-- W3: Public Transparency Chart -->
-        <div class="widget-card glass-card reveal-on-scroll" data-delay="200">
-          <div class="w-icon purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 10 10h-10z"/></svg>
+        <!-- Widget 3: E-KTA Generator -->
+        <div class="widget-card glass-panel">
+          <div class="w-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <h3 class="w-title">Digital Volunteer E-KTA</h3>
+          <p class="w-desc">Kartu anggota virtual otomatis ber-QR Code untuk verifikasi identitas relawan saat bertugas.</p>
+          <div class="w-demo-box">
+            <span class="w-stat text-purple">ID: ORG-2026-8842 • Terverifikasi</span>
           </div>
-          <h4 class="w-title">Public Transparency Chart</h4>
-          <p class="w-desc">Diagram lingkaran alokasi dana bantuan (85%), operasional (10%), dan mitigasi bencana (5%).</p>
-        </div>
-
-        <!-- W4: WhatsApp Hotline Float -->
-        <div class="widget-card glass-card reveal-on-scroll" data-delay="250">
-          <div class="w-icon emerald">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
-          </div>
-          <h4 class="w-title">WhatsApp Hotline Float</h4>
-          <p class="w-desc">Tombol konsultasi mengambang dengan respons cepat langsung ke tim customer service organisasi.</p>
-        </div>
-
-        <!-- W5: Volunteer Siaga Map -->
-        <div class="widget-card glass-card reveal-on-scroll" data-delay="300">
-          <div class="w-icon amber">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h4 class="w-title">Volunteer Siaga Map</h4>
-          <p class="w-desc">Peta visual sebaran posko relawan aktif di 34 provinsi dengan status kesiapsiagaan.</p>
-        </div>
-
-        <!-- W6: Bukti Donasi PDF Generator -->
-        <div class="widget-card glass-card reveal-on-scroll" data-delay="350">
-          <div class="w-icon coral">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
-          <h4 class="w-title">Kwitansi Donasi PDF Generator</h4>
-          <p class="w-desc">Otomatis mencetak lembar kwitansi dan surat ucapan terima kasih donasi ber-barcode verifikasi.</p>
-        </div>
-
-        <!-- W7: Legalitas Kemenkumham Badge -->
-        <div class="widget-card glass-card reveal-on-scroll" data-delay="400">
-          <div class="w-icon emerald">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-          </div>
-          <h4 class="w-title">Legalitas & Kemenkumham Badge</h4>
-          <p class="w-desc">Lencana verifikasi hukum, nomor SK Kemenkumham, dan izin operasional dinas sosial.</p>
-        </div>
-
-        <!-- W8: AI Grant & Proposal Assistant -->
-        <div class="widget-card glass-card reveal-on-scroll" data-delay="450">
-          <div class="w-icon purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/></svg>
-          </div>
-          <h4 class="w-title">AI Grant & Proposal Assistant</h4>
-          <p class="w-desc">Asisten AI pembantu penyusunan latar belakang proposal hibah dan storytelling dampak sosial.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       SECTION 10: PORTOFOLIO & KASUS TRANSFORMASI DIGITAL
+       10. DOWNLOAD BROSUR & PANDUAN DIGITALISASI ORGANISASI 2026
   ======================================================== -->
-  <section id="portofolio" class="section-spacing bg-secondary-subtle">
+  <section id="brosur" class="section section-dark-alt">
     <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <h2 class="section-title">Portofolio & Transformasi Nyata</h2>
-        <p class="section-subtitle">Studi kasus nyata implementasi website organisasi yang berhasil melipatgandakan kepercayaan dan donasi.</p>
-      </div>
-
-      <div class="case-showcase-grid">
-        <!-- Case 1 -->
-        <div class="case-card glass-card reveal-on-scroll" data-delay="100">
-          <div class="case-card-header">
-            <span class="case-tag emerald">Yayasan Yatim & Dhuafa</span>
-            <strong class="case-client">Panti Asuhan Kasih Mandiri</strong>
-          </div>
-          <div class="case-body">
-            <div class="case-metric-box">
-              <span class="m-val text-emerald">+320%</span>
-              <span class="m-lbl">Pertumbuhan Donatur Rutin</span>
-            </div>
-            <p class="case-text"><strong>Tantangan:</strong> Sulit mendapatkan donatur di luar kota karena hanya mengandalkan kotak amal fisik dan transfer manual.</p>
-            <p class="case-text"><strong>Solusi:</strong> Implementasi portal donasi QRIS instan dan halaman laporan transparansi kas mingguan.</p>
-          </div>
-        </div>
-
-        <!-- Case 2 -->
-        <div class="case-card glass-card reveal-on-scroll" data-delay="200">
-          <div class="case-card-header">
-            <span class="case-tag blue">Komunitas Relawan</span>
-            <strong class="case-client">Nusantara Bersih Pantai</strong>
-          </div>
-          <div class="case-body">
-            <div class="case-metric-box">
-              <span class="m-val text-blue">4.800+</span>
-              <span class="m-lbl">Relawan Baru Terdaftar</span>
-            </div>
-            <p class="case-text"><strong>Tantangan:</strong> Pendaftaran aksi bersih pantai via WhatsApp selalu overload dan database relawan tercecer di Excel.</p>
-            <p class="case-text"><strong>Solusi:</strong> Sistem registrasi relawan terotomasi dengan e-KTA barcode dan kalender jadwal aksi.</p>
-          </div>
-        </div>
-
-        <!-- Case 3 -->
-        <div class="case-card glass-card reveal-on-scroll" data-delay="300">
-          <div class="case-card-header">
-            <span class="case-tag purple">NGO Lingkungan & Konservasi</span>
-            <strong class="case-client">Aliansi Hutan Lestari</strong>
-          </div>
-          <div class="case-body">
-            <div class="case-metric-box">
-              <span class="m-val text-purple">Rp 3.8 M</span>
-              <span class="m-lbl">Grant Internasional Terdanai</span>
-            </div>
-            <p class="case-text"><strong>Tantangan:</strong> Proposal hibah global ditolak karena website lama tidak memiliki versi bahasa Inggris dan download laporan audit.</p>
-            <p class="case-text"><strong>Solusi:</strong> Pembuatan website dwibahasa (i18n) dengan pusat unduh PDF laporan WTP tersertifikasi.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-8">
-        <a href="case-study.html" class="btn btn-pill-outline">Lihat Analisis Mendalam 13 Studi Kasus Lengkap →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SECTION 11: DOWNLOAD BROSUR & FORM KONSULTASI
-  ======================================================== -->
-  <section id="brosur" class="section-spacing">
-    <div class="container">
-      <div class="brochure-lead-card glass-card reveal-on-scroll">
+      <div class="brochure-lead-box glass-panel">
         <div class="brochure-left">
-          <div class="inline-section-tag coral">
-            <span class="pulse-dot-coral"></span>
-            <span>MATERI PANDUAN GRATIS 2026</span>
+          <span class="section-tag">DOKUMEN PANDUAN LENGKAP</span>
+          <h2 class="brochure-title">Download Brosur & Panduan Digitalisasi Organisasi 2026</h2>
+          <p class="brochure-desc">
+            Dapatkan panduan komprehensif berisi perbandingan fitur, rincian biaya paket, contoh proposal hibah nirlaba, dan panduan integrasi donasi QRIS langsung ke WhatsApp Anda.
+          </p>
+          <div class="brochure-checklist">
+            <div>✓ Dokumen PDF 28 Halaman Bebas Biaya</div>
+            <div>✓ Contoh Proposal Kemenkumham & Donatur</div>
+            <div>✓ Panduan Praktis Kas Terbuka WTP</div>
           </div>
-          <h2 class="b-heading">Download Brosur & Panduan Digitalisasi Organisasi 2026</h2>
-          <p class="b-sub">Tinggalkan kontak Anda untuk mendapatkan dokumen PDF standar arsitektur website yayasan, perbandingan skema biaya, dan konsultasi gratis dari konsultan nirlaba kami.</p>
-          
-          <ul class="b-perks">
-            <li><span class="chk emerald">✓</span> Brosur lengkap 6 paket produk Organiz.Hub</li>
-            <li><span class="chk emerald">✓</span> Panduan integrasi Payment Gateway QRIS & VA donasi</li>
-            <li><span class="chk emerald">✓</span> Template laporan transparansi kas WTP siap pakai</li>
-            <li><span class="chk emerald">✓</span> Konsultasi strategi fundraising digital gratis via WA</li>
-          </ul>
         </div>
 
         <div class="brochure-right">
-          <form class="lead-form glass-card" id="lead-consult-form">
-            <h3 class="form-title">Form Permintaan Brosur & Konsultasi</h3>
-            
+          <form class="lead-form-box" id="lead-form-brosur">
+            <h4 class="form-title">Kirimkan Brosur ke Kontak Saya:</h4>
             <div class="form-group">
-              <label class="form-label">Nama Lengkap *</label>
-              <input type="text" class="form-input" name="name" required placeholder="Nama Anda / Pengurus">
+              <label for="inp-name">Nama Lengkap Pengurus</label>
+              <input type="text" id="inp-name" name="name" required placeholder="Contoh: Budi Santoso, S.Sos">
             </div>
-
             <div class="form-group">
-              <label class="form-label">No. WhatsApp *</label>
-              <input type="tel" class="form-input" name="phone" required placeholder="0812-3456-7890">
+              <label for="inp-org">Nama Organisasi / Yayasan / Komunitas</label>
+              <input type="text" id="inp-org" name="org_name" required placeholder="Contoh: Yayasan Cahaya Mandiri">
             </div>
-
-            <div class="form-row-2">
-              <div class="form-group">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-input" name="email" placeholder="nama@organisasi.or.id">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Nama Organisasi</label>
-                <input type="text" class="form-input" name="org_name" placeholder="Yayasan / Komunitas / NGO">
-              </div>
-            </div>
-
             <div class="form-group">
-              <label class="form-label">Segmen Organisasi *</label>
-              <select class="form-select" name="segment" required>
-                <option value="">Pilih segmen...</option>
-                <option value="Yayasan Sosial / Pendidikan">Yayasan Sosial & Pendidikan</option>
-                <option value="Komunitas / Asosiasi">Komunitas & Asosiasi</option>
-                <option value="NGO / Lembaga Filantropi">NGO & Lembaga Filantropi</option>
-              </select>
+              <label for="inp-phone">Nomor WhatsApp Aktif</label>
+              <input type="tel" id="inp-phone" name="phone" required placeholder="0812xxxxxxxx">
             </div>
-
-            <button type="submit" class="btn btn-coral full-width btn-submit-lead">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              <span>Download Brosur & Dapatkan Konsultasi Gratis</span>
+            <button type="submit" class="btn-primary w-100">
+              <span>Unduh Brosur & Panduan (PDF)</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             </button>
-
-            <p class="form-privacy">🔒 Privasi terjamin. Bebas spam promosi pihak ketiga.</p>
           </form>
         </div>
       </div>
@@ -1781,100 +994,73 @@
   </section>
 
   <!-- ========================================================
-       SECTION 12: LAYANAN TAMBAHAN (ADD-ON MODULES)
+       11. LAYANAN TAMBAHAN (ADD-ON MODULES)
   ======================================================== -->
-  <section class="section-spacing bg-secondary-subtle">
+  <section id="addons" class="section">
     <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <h2 class="section-title">Layanan Tambahan (Add-On Modules)</h2>
-        <p class="section-subtitle">Tingkatkan fungsionalitas sistem website Anda dengan modul add-on opsional sesuai kebutuhan.</p>
+      <div class="section-title-wrap">
+        <span class="section-tag">MODUL TAMBAHAN</span>
+        <h2 class="section-heading">Layanan Tambahan (Add-On Modules)</h2>
+        <p class="section-subheading">
+          Tingkatkan fungsionalitas sistem website Anda dengan modul add-on opsional sesuai kebutuhan.
+        </p>
       </div>
 
-      <div class="addon-grid-4">
-        <!-- Addon 1 -->
-        <div class="addon-card glass-card reveal-on-scroll" data-delay="100">
-          <h3 class="addon-category emerald">Add-On Website & Konten</h3>
-          <ul class="addon-list">
-            <li><span>Extra Page Tambahan</span> <strong>Rp 300.000 / hal</strong></li>
-            <li><span>Jasa Copywriting Program</span> <strong>Rp 500.000</strong></li>
-            <li><span>Penerjemahan Bahasa (i18n)</span> <strong>Rp 500.000</strong></li>
-            <li><span>Migrasi Data Website Lama</span> <strong>Rp 350.000</strong></li>
-          </ul>
+      <div class="grid-4-col">
+        <div class="addon-card glass-panel">
+          <span class="addon-tag emerald">PEMBAYARAN</span>
+          <h4 class="addon-title">WhatsApp Business API Direct</h4>
+          <p class="addon-desc">Kirim notifikasi bukti donasi langsung ke WhatsApp donatur otomatis saat dana masuk.</p>
         </div>
 
-        <!-- Addon 2 -->
-        <div class="addon-card glass-card reveal-on-scroll" data-delay="200">
-          <h3 class="addon-category coral">Add-On Widget Nirlaba</h3>
-          <ul class="addon-list">
-            <li><span>Kalkulator Zakat / Donasi</span> <strong>Rp 350.000</strong></li>
-            <li><span>Peta Interaktif Sebaran Posko</span> <strong>Rp 500.000</strong></li>
-            <li><span>WhatsApp Multi-CS Widget</span> <strong>Rp 250.000</strong></li>
-            <li><span>Countdown Urgensi Kampanye</span> <strong>Rp 200.000</strong></li>
-          </ul>
+        <div class="addon-card glass-panel">
+          <span class="addon-tag blue">MARKETING</span>
+          <h4 class="addon-title">Meta Pixel & TikTok Tracking</h4>
+          <p class="addon-desc">Optimasi iklan penggalangan dana sosial Anda di Facebook, Instagram, dan TikTok Ads.</p>
         </div>
 
-        <!-- Addon 3 -->
-        <div class="addon-card glass-card reveal-on-scroll" data-delay="300">
-          <h3 class="addon-category blue">Add-On Marketing & SEO</h3>
-          <ul class="addon-list">
-            <li><span>Meta Pixel & TikTok Pixel</span> <strong>Rp 250.000</strong></li>
-            <li><span>Google Analytics & Tag Manager</span> <strong>Rp 300.000</strong></li>
-            <li><span>Audit SEO Organisasi</span> <strong>Rp 500.000</strong></li>
-            <li><span>Heatmap Donatur Clarity</span> <strong>Rp 200.000</strong></li>
-          </ul>
+        <div class="addon-card glass-panel">
+          <span class="addon-tag purple">KEANGGOTAAN</span>
+          <h4 class="addon-title">Absensi QR Code Event Relawan</h4>
+          <p class="addon-desc">Sistem presensi kehadiran bakti sosial langsung scan QR dari smartphone pengurus.</p>
         </div>
 
-        <!-- Addon 4 -->
-        <div class="addon-card glass-card reveal-on-scroll" data-delay="400">
-          <h3 class="addon-category purple">Add-On Otomasi & Relawan</h3>
-          <ul class="addon-list">
-            <li><span>Generator Kwitansi PDF</span> <strong>Rp 750.000</strong></li>
-            <li><span>Generator E-KTA Relawan</span> <strong>Rp 750.000</strong></li>
-            <li><span>Generator Proposal CSR</span> <strong>Rp 750.000</strong></li>
-            <li><span>Maintenance Bulanan</span> <strong>Rp 300.000 / bln</strong></li>
-          </ul>
+        <div class="addon-card glass-panel">
+          <span class="addon-tag coral">PRODUKSI</span>
+          <h4 class="addon-title">Video Dokumentasi Profil Yayasan</h4>
+          <p class="addon-desc">Layanan liputan video profil sinematik untuk panti asuhan dan program binaan Anda.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       SECTION 13: DIALOG KONSULTASI / MEET THE EXPERT
+       12. TIM KONSULTAN DIGITAL ORGANIZ.HUB
   ======================================================== -->
-  <section class="section-spacing">
+  <section id="team" class="section section-dark-alt">
     <div class="container">
-      <div class="expert-card glass-card reveal-on-scroll">
-        <div class="expert-profile-left">
-          <div class="expert-avatar-box">
-            <div class="expert-avatar-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <span class="expert-online-dot"></span>
-          </div>
-          <div class="expert-info">
-            <h3 class="expert-name">Tim Konsultan Digital Organiz.Hub</h3>
-            <p class="expert-role">Specialist Digital Architecture for Foundations & NGOs</p>
-            <div class="expert-badges">
-              <span class="e-badge emerald">10+ Tahun Pengalaman</span>
-              <span class="e-badge blue">250+ Proyek Nirlaba</span>
-              <span class="e-badge purple">Kemenkumham & Audit WTP</span>
-            </div>
-          </div>
-        </div>
+      <div class="section-title-wrap">
+        <span class="section-tag">EXPERT TEAM</span>
+        <h2 class="section-heading">Tim Konsultan Digital Organiz.Hub</h2>
+        <p class="section-subheading">
+          Specialist Digital Architecture for Foundations & NGOs
+        </p>
+      </div>
 
-        <div class="expert-content-right">
-          <p class="expert-quote">
-            "Misi kami adalah membantu setiap yayasan sosial, komunitas relawan, dan lembaga NGO di Indonesia memiliki wadah digital berstandar arsitektur profesional yang menumbuhkan kepercayaan donatur dan memudahkan tata kelola organisasi."
+      <div class="team-profile-card glass-panel">
+        <div class="team-avatar-box">
+          <div class="team-avatar-initials">OH</div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Fadhlur Rohman & Tim Arsitektur Nirlaba</h3>
+          <span class="team-role text-emerald">Principal Architect & Nonprofit Digital Strategist</span>
+          <p class="team-bio">
+            Telah berpengalaman mendampingi lebih dari 250+ Yayasan Sosial, Komunitas Nasional, dan Lembaga NGO di seluruh Indonesia sejak 2018 dalam membangun platform digital mandiri, aman, dan terpercaya.
           </p>
-          <div class="expert-cta-actions">
-            <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20ingin%20konsultasi%20langsung%20dengan%20tim%20ahli" target="_blank" rel="noopener noreferrer" class="btn btn-coral">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
-              <span>Konsultasi Langsung via WhatsApp</span>
-            </a>
-            <div class="hotline-numbers">
-              <span>Hotline 1: +62 812-3456-7890</span>
-              <span>Hotline 2: +62 821-9876-5432</span>
-            </div>
+          <div class="team-badges">
+            <span class="t-badge">✓ 250+ Organisasi Didampingi</span>
+            <span class="t-badge">✓ Kepatuhan Hukum & Kas WTP</span>
+            <span class="t-badge">✓ Spesialis Donasi QRIS Terverifikasi</span>
           </div>
         </div>
       </div>
@@ -1882,50 +1068,43 @@
   </section>
 
   <!-- ========================================================
-       SECTION 14: CLIENT TESTIMONIALS & TRUST MARQUEE
+       13. DIPERCAYA PENGURUS ORGANISASI DI SELURUH INDONESIA
   ======================================================== -->
-  <section class="section-spacing bg-secondary-subtle">
+  <section id="testimoni" class="section">
     <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <h2 class="section-title">Dipercaya Pengurus Organisasi di Seluruh Indonesia</h2>
-        <p class="section-subtitle">Dari yayasan yatim lokal hingga NGO berskala nasional — mereka mempercayakan arsitektur digital pada Organiz.Hub.</p>
+      <div class="section-title-wrap">
+        <span class="section-tag">BUKTI KEPUASAN KLIEN</span>
+        <h2 class="section-heading">Dipercaya Pengurus Organisasi di Seluruh Indonesia</h2>
+        <p class="section-subheading">
+          Dari yayasan yatim lokal hingga NGO berskala nasional — mereka mempercayakan arsitektur digital pada Organiz.Hub.
+        </p>
       </div>
 
-      <!-- Testimonials 3 Col -->
-      <div class="testi-grid-3">
-        <div class="testi-card glass-card reveal-on-scroll" data-delay="100">
+      <div class="grid-3-col">
+        <div class="testi-card glass-panel">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Website kami sekarang tampil sangat kredibel di hadapan mitra CSR perusahaan. Laporan transparansi kas yang rapi membuat donatur semakin yakin berdonasi rutin."</p>
+          <p class="testi-quote">"Donasi yayasan kami melonjak lebih dari 300% setelah menggunakan website donasi QRIS dari Organiz.Hub. Laporan kas publiknya membuat para donatur makin percaya."</p>
           <div class="testi-author">
-            <div class="author-avatar emerald">HM</div>
-            <div>
-              <strong>H. Marwan Santoso</strong>
-              <span>Ketua Yayasan Yatim Peduli Negeri</span>
-            </div>
+            <strong>H. Ahmad Fauzi</strong>
+            <span>Ketua Yayasan Yatim Nusantara Mandiri</span>
           </div>
         </div>
 
-        <div class="testi-card glass-card reveal-on-scroll" data-delay="200">
+        <div class="testi-card glass-panel">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Fitur direktori relawan dan generator e-KTA sangat memudahkan kami mengelola lebih dari 3.000 anggota komunitas di berbagai kota tanpa ribet."</p>
+          <p class="testi-quote">"Manajemen 1.200 anggota relawan di 12 kota jadi sangat mudah dengan generator E-KTA dan sistem kalender aksi sosial. Sangat direkomendasikan untuk komunitas."</p>
           <div class="testi-author">
-            <div class="author-avatar blue">SA</div>
-            <div>
-              <strong>Siti Aminah, S.Sos</strong>
-              <span>Koordinator Komunitas Relawan Nusantara</span>
-            </div>
+            <strong>Nadira Putri, S.I.Kom</strong>
+            <span>Koordinator Gerakan Relawan Hijau</span>
           </div>
         </div>
 
-        <div class="testi-card glass-card reveal-on-scroll" data-delay="300">
+        <div class="testi-card glass-panel">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Dukungan multi-bahasa dan pusat unduh berkas laporan audit keuangan membuat lembaga kami berhasil lolos verifikasi hibah grant internasional."</p>
+          <p class="testi-quote">"Fitur dwibahasa dan laporan audit WTP memudahkan lembaga kami mendapatkan persetujuan grant kemitraan dari donor filantropi internasional."</p>
           <div class="testi-author">
-            <div class="author-avatar purple">RH</div>
-            <div>
-              <strong>dr. Reza Hendrawan</strong>
-              <span>Direktur Eksekutif Yayasan Medis Siaga</span>
-            </div>
+            <strong>Bambang Wicaksono, M.Sc</strong>
+            <span>Direktur Advokasi Hak & Lingkungan Hidup</span>
           </div>
         </div>
       </div>
@@ -1933,68 +1112,56 @@
   </section>
 
   <!-- ========================================================
-       SECTION 15: FAQ ACCORDION
+       14. FAQ (TANYA JAWAB LENGKAP)
   ======================================================== -->
-  <section id="faq" class="section-spacing">
-    <div class="container max-w-3xl">
-      <div class="section-header text-center reveal-on-scroll">
-        <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
-        <p class="section-subtitle">Jawaban atas pertanyaan umum seputar pembuatan website Yayasan, Komunitas, dan NGO.</p>
+  <section id="faq" class="section section-dark-alt">
+    <div class="container max-w-860">
+      <div class="section-title-wrap">
+        <span class="section-tag">TANYA JAWAB</span>
+        <h2 class="section-heading">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+        <p class="section-subheading">
+          Segala hal yang perlu Anda ketahui mengenai proses pembuatan website organisasi di Organiz.Hub.
+        </p>
       </div>
 
-      <div class="faq-accordion-list">
-        <!-- FAQ 1 -->
-        <div class="faq-item glass-card reveal-on-scroll" data-delay="100">
-          <button class="faq-question-btn" aria-expanded="false">
-            <span>Apa perbedaan Organiz.Hub dengan pembuat website biasa?</span>
-            <svg class="faq-chevron svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      <div class="faq-list-accordion">
+        <div class="faq-row glass-panel">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Berapa lama proses pembuatan website organisasi hingga siap online?</span>
+            <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer-panel">
-            <p>Organiz.Hub dirancang khusus mengikuti model operasional organisasi nirlaba (Yayasan, Komunitas, NGO). Kami mengintegrasikan sistem donasi instan QRIS/VA tanpa biaya komisi potongan pihak ketiga, laporan kas terbuka berstandar WTP, manajemen database relawan, dan sertifikasi legalitas Kemenkumham yang tidak dimiliki template website komersial umum.</p>
+          <div class="faq-panel">
+            <p>Untuk paket Campaign Landing Page dan Organization Profile rata-rata selesai dalam 3-5 hari kerja. Untuk paket Growth Platform atau Enterprise rata-rata membutuhkan waktu 7-14 hari kerja termasuk integrasi payment gateway QRIS.</p>
           </div>
         </div>
 
-        <!-- FAQ 2 -->
-        <div class="faq-item glass-card reveal-on-scroll" data-delay="150">
-          <button class="faq-question-btn" aria-expanded="false">
-            <span>Bagaimana mekanisme sistem donasi online QRIS & Virtual Account bekerja?</span>
-            <svg class="faq-chevron svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        <div class="faq-row glass-panel">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Apakah dana donasi dipotong oleh pihak Organiz.Hub?</span>
+            <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer-panel">
-            <p>Dana donasi akan langsung masuk ke rekening bank resmi atas nama yayasan/organisasi Anda. Sistem kami memfasilitasi payment gateway resmi (seperti Midtrans, Xendit, atau QRIS Dinamis langsung) yang terhubung ke rekening lembaga Anda secara legal, aman, dan tanpa perantara pihak ketiga.</p>
+          <div class="faq-panel">
+            <p>Sama sekali tidak. Kami tidak memotong donasi sepeser pun (0% fee potongan). Seluruh dana dari donatur masuk 100% langsung ke rekening bank atau akun payment gateway resmi atas nama organisasi Anda.</p>
           </div>
         </div>
 
-        <!-- FAQ 3 -->
-        <div class="faq-item glass-card reveal-on-scroll" data-delay="200">
-          <button class="faq-question-btn" aria-expanded="false">
-            <span>Berapa lama waktu pengerjaan website sampai siap tayang?</span>
-            <svg class="faq-chevron svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        <div class="faq-row glass-panel">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Bagaimana jika pengurus yayasan kami belum paham mengelola website?</span>
+            <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer-panel">
-            <p>Waktu pengerjaan bervariasi sesuai paket: Paket 1 Campaign Landing Page siap dalam 2–4 hari kerja; Paket 2 Company Profile dalam 5–10 hari kerja; Paket 3 & 4 dalam 10–25 hari kerja; dan Paket Enterprise dalam 1–3 bulan sesuai kompleksitas modul.</p>
+          <div class="faq-panel">
+            <p>Tim kami menyediakan sesi training panduan khusus via Zoom / Google Meet serta video tutorial langkah demi langkah. Dashboard admin kami rancang sangat ramah pemula tanpa perlu keahlian coding sama sekali.</p>
           </div>
         </div>
 
-        <!-- FAQ 4 -->
-        <div class="faq-item glass-card reveal-on-scroll" data-delay="250">
-          <button class="faq-question-btn" aria-expanded="false">
-            <span>Apakah pengurus organisasi bisa mengelola konten website sendiri tanpa coding?</span>
-            <svg class="faq-chevron svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        <div class="faq-row glass-panel">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Apakah website sudah termasuk domain resmi .or.id atau .org?</span>
+            <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer-panel">
-            <p>Ya, tentu saja! Kami menyediakan dashboard admin yang sangat mudah digunakan (user-friendly). Anda bisa menambah berita kegiatan, mengganti target donasi, mengunggah foto anak binaan, dan mengunduh data donatur tanpa perlu keahlian coding.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 5 -->
-        <div class="faq-item glass-card reveal-on-scroll" data-delay="300">
-          <button class="faq-question-btn" aria-expanded="false">
-            <span>Apakah ada garansi dan pelatihan penggunaan setelah website selesai?</span>
-            <svg class="faq-chevron svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer-panel">
-            <p>Ya! Setiap paket telah mencakup sesi panduan pelatihan (video tutorial & Zoom meeting) untuk pengurus organisasi Anda, serta garansi pemeliharaan teknis dan bantuan support selama 14 hingga 180 hari sesuai paket yang dipilih.</p>
+          <div class="faq-panel">
+            <p>Ya, seluruh paket kami sudah termasuk domain resmi (.or.id, .org, atau .id) beserta sertifikat keamanan SSL dan hosting cloud berkecepatan tinggi selama 1 tahun penuh.</p>
           </div>
         </div>
       </div>
@@ -2002,19 +1169,20 @@
   </section>
 
   <!-- ========================================================
-       SECTION 16: FINAL CALL TO ACTION (CONTACT)
+       15. FINAL CALL TO ACTION
   ======================================================== -->
-  <section id="contact" class="section-spacing">
-    <div class="container">
-      <div class="final-cta-banner glass-card text-center reveal-on-scroll">
-        <h2 class="cta-banner-title">Siap Membangun Website Organisasi yang Profesional & Terpercaya?</h2>
-        <p class="cta-banner-sub">Dapatkan rekomendasi arsitektur dan paket terbaik untuk Yayasan, Komunitas, atau NGO Anda. Konsultasi gratis, ramah, dan tanpa komitmen.</p>
-        
-        <div class="cta-banner-buttons">
-          <a href="#harga" class="btn btn-light-glow btn-lg">Lihat Paket & Harga →</a>
-          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20ingin%20konsultasi%20website%20organisasi" target="_blank" rel="noopener noreferrer" class="btn btn-coral btn-lg">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
-            <span>WhatsApp Konsultasi Kami</span>
+  <section class="section cta-final-section">
+    <div class="container max-w-960 text-center">
+      <div class="cta-final-card glass-panel">
+        <span class="section-tag">KONSULTASI BEBAS BIAYA</span>
+        <h2 class="cta-title">Siap Membangun Website Organisasi yang Profesional & Terpercaya?</h2>
+        <p class="cta-desc">
+          Dapatkan rekomendasi arsitektur dan paket terbaik untuk Yayasan, Komunitas, atau NGO Anda. Konsultasi gratis, ramah, dan tanpa komitmen.
+        </p>
+        <div class="cta-btn-wrap">
+          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20kami%20ingin%20konsultasi%20pembuatan%20website%20organisasi" target="_blank" rel="noopener noreferrer" class="btn-primary btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+            <span>Hubungi Tim Konsultan via WhatsApp</span>
           </a>
         </div>
       </div>
@@ -2022,155 +1190,105 @@
   </section>
 
   <!-- ========================================================
-       GLOBAL FOOTER
+       16. FOOTER 4 KOLOM MODERN
   ======================================================== -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid-4 mb-8">
-        <!-- Col 1: Brand Info -->
-        <div class="footer-col">
-          <a href="#hero" class="brand-logo footer-logo">
-            <div class="logo-icon-box">
-              <svg class="svg-icon logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="M2 17l10 5 10-5"></path>
-                <path d="M2 12l10 5 10-5"></path>
-              </svg>
-            </div>
-            <span class="brand-name">Organiz<span class="text-emerald">.Hub</span></span>
-          </a>
-          <p class="footer-tagline">Arsitektur Digital & Website Template Terpercaya Khusus Yayasan, Komunitas & NGO di Indonesia.</p>
-          <div class="footer-compliance-pill">
-            <span>🛡️ Legal & Compliance Standard</span>
+    <div class="container footer-grid-4">
+      <div class="footer-col brand-col">
+        <div class="brand-logo footer-logo">
+          <div class="logo-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
           </div>
+          <span class="brand-title">Organiz<span class="brand-accent">.Hub</span></span>
         </div>
-
-        <!-- Col 2: Solusi 3 Segmen -->
-        <div class="footer-col">
-          <h4 class="footer-heading">Solusi Organisasi</h4>
-          <ul class="footer-links-list">
-            <li><a href="#solusi-yayasan">Yayasan Sosial & Pendidikan</a></li>
-            <li><a href="#solusi-komunitas">Komunitas & Asosiasi Relawan</a></li>
-            <li><a href="#solusi-ngo">NGO & Lembaga Filantropi</a></li>
-            <li><a href="#templates">14 Template Live Showcase</a></li>
-            <li><a href="case-study.html">Studi Kasus Transformasi</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Paket Produk -->
-        <div class="footer-col">
-          <h4 class="footer-heading">Pilihan Paket</h4>
-          <ul class="footer-links-list">
-            <li><a href="#harga">Campaign Landing Page</a></li>
-            <li><a href="#harga">Organization Profile</a></li>
-            <li><a href="#harga">Smart Donation Portal</a></li>
-            <li><a href="#harga">Fundraising Growth Web</a></li>
-            <li><a href="#harga">Volunteer Platform</a></li>
-            <li><a href="#harga">Enterprise Management</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Dukungan & Kontak -->
-        <div class="footer-col">
-          <h4 class="footer-heading">Konsultasi & Kontak</h4>
-          <ul class="footer-links-list">
-            <li><a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">WhatsApp: +62 812-3456-7890</a></li>
-            <li><span>Hotline: +62 821-9876-5432</span></li>
-            <li><span>Email: halo@organiz-hub.org</span></li>
-            <li><span>Jam Kerja: 08.00 - 21.00 WIB</span></li>
-          </ul>
-        </div>
+        <p class="footer-desc">Specialist Digital Architecture & Website Solutions for Foundations, Communities & NGOs in Indonesia.</p>
+        <span class="footer-reg">Izin Operasional & Standar Kemenkumham Terbuka</span>
       </div>
 
-      <div class="footer-bottom-row">
-        <p class="footer-copyright">© 2018–2026 Organiz.Hub. Seluruh Hak Cipta Dilindungi.</p>
-        <div class="footer-bottom-links">
-          <a href="#faq">Kebijakan Privasi</a>
-          <a href="#faq">Syarat & Ketentuan</a>
-          <a href="#hero">Kembali ke Atas ↑</a>
-        </div>
+      <div class="footer-col">
+        <h4 class="f-col-title">Solusi Segmen</h4>
+        <ul class="f-links">
+          <li><a href="#solusi-yayasan">Yayasan Sosial & Panti</a></li>
+          <li><a href="#solusi-komunitas">Komunitas & Asosiasi</a></li>
+          <li><a href="#solusi-ngo">NGO & Lembaga Filantropi</a></li>
+          <li><a href="#templates">14 Template Live Cloud</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="f-col-title">Arsitektur & Paket</h4>
+        <ul class="f-links">
+          <li><a href="#pilar">4 Pilar Infrastruktur</a></li>
+          <li><a href="#paket">Pilihan 6 Paket Website</a></li>
+          <li><a href="#fitur">Feature Library Modular</a></li>
+          <li><a href="#widgets">Organization Smart Tools</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="f-col-title">Kontak Resmi</h4>
+        <ul class="f-links contact-info">
+          <li>WhatsApp: +62 812-3456-7890</li>
+          <li>Email: halo@organizhub.id</li>
+          <li>Jam Layanan: Senin - Sabtu (08:00 - 20:00 WIB)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Organiz.Hub. Hak Cipta Dilindungi Undang-Undang.</p>
+      <div class="f-bottom-links">
+        <a href="#faq">Kebijakan Privasi</a>
+        <a href="#faq">Syarat & Ketentuan</a>
+        <a href="#hero">Kembali ke Atas ↑</a>
       </div>
     </div>
   </footer>
 
   <!-- ========================================================
-       FLOATING ACTION BUTTONS STACK
+       FLOATING ACTIONS (SCROLL TO TOP & WHATSAPP)
   ======================================================== -->
-  <div class="floating-actions-stack">
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top-btn" id="scroll-to-top-btn" aria-label="Kembali ke Atas Halaman" title="Scroll ke Atas">
-      <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <line x1="12" y1="19" x2="12" y2="5"></line>
-        <polyline points="5 12 12 5 19 12"></polyline>
-      </svg>
-    </button>
-
-    <!-- Floating WhatsApp Concierge Button -->
-    <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20ingin%20konsultasi%20website%20organisasi" target="_blank" rel="noopener noreferrer" class="wa-bubble-trigger" id="wa-floating-btn" aria-label="Konsultasi WhatsApp">
-      <svg class="wa-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-      </svg>
+  <div class="floating-actions">
+    <button class="btn-scroll-top" id="btn-scroll-top" aria-label="Scroll ke Atas">↑</button>
+    <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20konsultasi" target="_blank" rel="noopener noreferrer" class="btn-wa-float" aria-label="WhatsApp Hotline">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
     </a>
   </div>
 
   <!-- ========================================================
        LIVE RESPONSIVE DEMO MODAL EMULATOR (14 TEMPLATES)
   ======================================================== -->
-  <dialog id="live-demo-modal" class="live-demo-dialog">
-    <div class="demo-modal-container">
-      <div class="demo-modal-header">
-        <div class="demo-modal-title-wrap">
-          <div class="browser-dots">
-            <span class="b-dot red" id="demo-modal-close-dot"></span>
-            <span class="b-dot yellow"></span>
-            <span class="b-dot green"></span>
-          </div>
-          <span class="demo-modal-title" id="demo-modal-title-text">Terra Kinship — Wildlife Conservation</span>
+  <dialog id="modal-demo-dialog" class="demo-dialog">
+    <div class="dialog-container">
+      <div class="dialog-header">
+        <div class="dialog-title-group">
+          <span class="dialog-dot red" id="dialog-dot-close"></span>
+          <span class="dialog-dot yellow"></span>
+          <span class="dialog-dot green"></span>
+          <span class="dialog-title-text" id="demo-title-text">Live Template Preview</span>
         </div>
-
-        <!-- Viewport Switcher -->
-        <div class="viewport-switch-bar">
-          <button class="vp-btn active" data-vp="desktop" title="Desktop View (100%)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <span>Desktop</span>
-          </button>
-          <button class="vp-btn" data-vp="tablet" title="Tablet View (768px)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            <span>Tablet</span>
-          </button>
-          <button class="vp-btn" data-vp="mobile" title="Mobile View (390px)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            <span>Mobile</span>
-          </button>
+        <div class="vp-switcher">
+          <button class="vp-btn active" data-vp="desktop">Desktop</button>
+          <button class="vp-btn" data-vp="tablet">Tablet (768px)</button>
+          <button class="vp-btn" data-vp="mobile">Mobile (390px)</button>
         </div>
-
-        <!-- Modal Controls -->
-        <div class="demo-modal-controls">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-demo-open-external" id="demo-modal-external-link" title="Buka di Tab Baru Asli">
-            <span>Buka Asli ↗</span>
-          </a>
-          <button class="btn-demo-close" id="btn-close-demo-modal" aria-label="Tutup Preview">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-          </button>
+        <div class="dialog-controls">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-open-ext" id="demo-ext-link">Buka Asli ↗</a>
+          <button class="btn-close-modal" id="btn-close-modal-x">&times;</button>
         </div>
       </div>
-
-      <!-- Iframe Container -->
-      <div class="demo-iframe-viewport-wrap" id="demo-viewport-wrapper">
-        <div class="demo-loading-indicator" id="demo-loading-indicator">
-          <div class="loading-spinner"></div>
-          <span>Memuat Live Website Template...</span>
-        </div>
-        <iframe src="about:blank" id="demo-preview-iframe" class="demo-iframe" title="Live Template Preview" loading="lazy"></iframe>
+      <div class="dialog-body" id="demo-body-wrapper">
+        <div class="dialog-loading" id="demo-loading">Memuat Live Template Website...</div>
+        <iframe src="about:blank" id="demo-iframe" class="demo-iframe vp-desktop" title="Live Preview"></iframe>
       </div>
     </div>
   </dialog>
 
-  <!-- GSAP 3.12+ & ScrollTrigger Animation Engine -->
+  <!-- GSAP 3.12+ & ScrollTrigger Library -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  
-  <!-- Interactive JavaScript Application Engine -->
+
+  <!-- Application Engine Logic -->
   <script src="js/app.js"></script>
 </body>
 </html>
