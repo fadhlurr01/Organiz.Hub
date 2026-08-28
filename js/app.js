@@ -972,6 +972,38 @@ function initGsapAnimations() {
         start: "top 90%"
       });
 
+      // 5. Testimonial Section Entrance & Auto-Swipe Activation
+      gsap.fromTo("#testimoni .testi-carousel-wrapper",
+        { autoAlpha: 0, y: 40, scale: 0.96 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: "#testimoni",
+            start: "top 80%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+
+      gsap.fromTo(".org-trust-marquee-wrap",
+        { autoAlpha: 0, y: 20 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: "#testimoni",
+            start: "top 85%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+
       // Subtle parallax on floating badges
       gsap.to(".badge-top-right", {
         y: -30,

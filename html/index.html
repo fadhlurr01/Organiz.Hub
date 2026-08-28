@@ -1212,90 +1212,152 @@
   </section>
 
   <!-- ========================================================
-       13. DIPERCAYA PENGURUS ORGANISASI DI SELURUH INDONESIA (INTERACTIVE SWIPE CAROUSEL)
+       13. DIPERCAYA PENGURUS ORGANISASI DI SELURUH INDONESIA (AUTO-SWIPE MULTI-ORGANIZATION CAROUSEL)
   ======================================================== -->
-  <section id="testimoni" class="section">
+  <section id="testimoni" class="section section-testi-enhanced">
     <div class="container">
       <div class="section-title-wrap">
-        <span class="section-tag">BUKTI KEPUASAN KLIEN</span>
-        <h2 class="section-heading">Dipercaya Pengurus Organisasi di Seluruh Indonesia</h2>
-        <p class="section-subheading">
+        <span class="section-tag" data-i18n="testi_tag">BUKTI KEPUASAN KLIEN</span>
+        <h2 class="section-heading" data-i18n="testi_title">Dipercaya Pengurus Organisasi di Seluruh Indonesia</h2>
+        <p class="section-subheading" data-i18n="testi_sub">
           Dari yayasan yatim lokal hingga NGO berskala nasional — mereka mempercayakan arsitektur digital pada Organiz.Hub. Geser untuk membaca ulasan lainnya.
         </p>
       </div>
 
-      <!-- Testimonials Carousel Container -->
+      <!-- Verified Organizations Trust Ticker / Marquee -->
+      <div class="org-trust-marquee-wrap">
+        <span class="marquee-label">KEMITRAAN DIGITAL TERVERIFIKASI:</span>
+        <div class="org-marquee-track">
+          <div class="org-chip"><span class="chip-dot"></span> Yayasan Yatim Nusantara Mandiri</div>
+          <div class="org-chip"><span class="chip-dot"></span> Gerakan Relawan Hijau Indonesia</div>
+          <div class="org-chip"><span class="chip-dot"></span> Lembaga Advokasi Hak & Lingkungan</div>
+          <div class="org-chip"><span class="chip-dot"></span> Panti Asuhan Kasih Ibu Mandiri</div>
+          <div class="org-chip"><span class="chip-dot"></span> Dompet Filantropi & Zakat Nasional</div>
+          <div class="org-chip"><span class="chip-dot"></span> Aksi Relawan Medis Darurat 34 Provinsi</div>
+          <div class="org-chip"><span class="chip-dot"></span> Yayasan Beasiswa Pelajar Pelosok</div>
+          <div class="org-chip"><span class="chip-dot"></span> Asosiasi Konservasi Satwa Nusantara</div>
+          <!-- Duplicate for infinite seamless scroll -->
+          <div class="org-chip"><span class="chip-dot"></span> Yayasan Yatim Nusantara Mandiri</div>
+          <div class="org-chip"><span class="chip-dot"></span> Gerakan Relawan Hijau Indonesia</div>
+          <div class="org-chip"><span class="chip-dot"></span> Lembaga Advokasi Hak & Lingkungan</div>
+          <div class="org-chip"><span class="chip-dot"></span> Panti Asuhan Kasih Ibu Mandiri</div>
+        </div>
+      </div>
+
+      <!-- Testimonials Carousel Container with Auto-Swipe -->
       <div class="testi-carousel-wrapper">
         <div class="testi-carousel-viewport" id="testi-viewport">
           <div class="testi-carousel-track" id="testi-track">
             
-            <!-- Slide 1 -->
+            <!-- Slide 1: Yayasan Yatim -->
             <div class="testi-slide active">
               <div class="testi-card glass-panel">
                 <div class="testi-top-meta">
+                  <div class="testi-org-type-badge crimson">YAYASAN YATIM & DHUAFA</div>
                   <div class="testi-stars">★★★★★</div>
-                  <span class="testi-verified-tag">✓ Donasi QRIS Terverifikasi</span>
+                  <span class="testi-verified-tag">✓ Donasi QRIS +340% Real-Time</span>
                 </div>
-                <p class="testi-quote">"Donasi yayasan kami melonjak lebih dari 300% setelah menggunakan website donasi QRIS dari Organiz.Hub. Laporan kas publik real-time membuat para donatur makin loyal dan percaya."</p>
+                <p class="testi-quote">"Donasi yayasan kami melonjak lebih dari 340% setelah menggunakan website donasi QRIS terintegrasi dari Organiz.Hub. Donatur sangat mengapresiasi laporan kas publik terbuka dan kwitansi PDF digital otomatis yang mereka terima seketika."</p>
                 <div class="testi-author-row">
-                  <div class="author-avatar-chip emerald">AF</div>
+                  <div class="author-avatar-chip crimson">AF</div>
                   <div class="testi-author">
-                    <strong>H. Ahmad Fauzi</strong>
+                    <strong>H. Ahmad Fauzi, S.E.I.</strong>
                     <span>Ketua Yayasan Yatim Nusantara Mandiri • Jakarta</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Slide 2 -->
+            <!-- Slide 2: Komunitas Relawan & Aksi -->
             <div class="testi-slide">
               <div class="testi-card glass-panel">
                 <div class="testi-top-meta">
+                  <div class="testi-org-type-badge amber">KOMUNITAS RELAWAN AKSI</div>
                   <div class="testi-stars">★★★★★</div>
-                  <span class="testi-verified-tag">✓ 1.200 Relawan Terdaftar</span>
+                  <span class="testi-verified-tag">✓ 1.850 Relawan 34 Provinsi Terdata</span>
                 </div>
-                <p class="testi-quote">"Manajemen 1.200 anggota relawan di 12 kota jadi sangat mudah dengan generator E-KTA ber-QR code dan sistem kalender aksi sosial terpadu. Sangat direkomendasikan untuk komunitas nasional."</p>
+                <p class="testi-quote">"Manajemen 1.850 anggota relawan di 34 provinsi jadi sangat tertib berkat generator E-KTA ber-QR code dan kalender aksi terpadu. Verifikasi posko di daerah bencana kini hanya butuh scan barcode 2 detik."</p>
                 <div class="testi-author-row">
-                  <div class="author-avatar-chip blue">NP</div>
+                  <div class="author-avatar-chip amber">NP</div>
                   <div class="testi-author">
-                    <strong>Nadira Putri, S.I.Kom</strong>
-                    <span>Koordinator Gerakan Relawan Hijau Indonesia • Bandung</span>
+                    <strong>Nadira Putri, S.I.Kom.</strong>
+                    <span>Koordinator Nasional Gerakan Relawan Hijau Indonesia • Bandung</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Slide 3 -->
+            <!-- Slide 3: NGO & Advokasi Filantropi -->
             <div class="testi-slide">
               <div class="testi-card glass-panel">
                 <div class="testi-top-meta">
+                  <div class="testi-org-type-badge purple">NGO & LEMBAGA FILANTROPI</div>
                   <div class="testi-stars">★★★★★</div>
-                  <span class="testi-verified-tag">✓ Laporan Audit WTP Terbit</span>
+                  <span class="testi-verified-tag">✓ Grant $85.000 Disetujui</span>
                 </div>
-                <p class="testi-quote">"Fitur multi-bahasa dwibahasa dan pusat unduhan audit WTP memudahkan lembaga kami lolos proses due-diligence dan mendapatkan persetujuan grant dari donor filantropi internasional."</p>
+                <p class="testi-quote">"Fitur multi-bahasa (ID & EN) dan pusat unduhan laporan audit akuntan publik WTP sangat krusial dalam meloloskan lembaga kami pada tahap due-diligence donor internasional hingga disetujuinya dana hibah program konservasi."</p>
                 <div class="testi-author-row">
                   <div class="author-avatar-chip purple">BW</div>
                   <div class="testi-author">
-                    <strong>Bambang Wicaksono, M.Sc</strong>
-                    <span>Direktur Eksekutif Advokasi Hak & Lingkungan • Yogyakarta</span>
+                    <strong>Bambang Wicaksono, M.Sc.</strong>
+                    <span>Direktur Eksekutif Lembaga Advokasi Hak & Lingkungan • Yogyakarta</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Slide 4 -->
+            <!-- Slide 4: Yayasan Pendidikan & Beasiswa -->
             <div class="testi-slide">
               <div class="testi-card glass-panel">
                 <div class="testi-top-meta">
+                  <div class="testi-org-type-badge crimson">YAYASAN BEASISWA PENDIDIKAN</div>
                   <div class="testi-stars">★★★★★</div>
-                  <span class="testi-verified-tag">✓ 0% Potongan Biaya</span>
+                  <span class="testi-verified-tag">✓ 1.200 Anak Asuh Terdata</span>
                 </div>
-                <p class="testi-quote">"Yang paling kami sukai adalah rekening dan QRIS 100% masuk ke rekening yayasan kami tanpa perantara atau potongan tersembunyi. Pengurus yang gaptek pun langsung bisa update kegiatan."</p>
+                <p class="testi-quote">"Sistem profil program dan direktori anak asuh berbasis cloud sangat transparan. Para orang tua asuh dapat memantau langsung nilai rapor dan penyaluran SPP anak binaan setiap semester secara daring."</p>
                 <div class="testi-author-row">
-                  <div class="author-avatar-chip amber">SH</div>
+                  <div class="author-avatar-chip crimson">SR</div>
                   <div class="testi-author">
-                    <strong>Siti Rahmawati, S.Pd</strong>
-                    <span>Pembina Panti Asuhan Kasih Ibu • Surabaya</span>
+                    <strong>Dr. Siti Rahmawati, M.Pd.</strong>
+                    <span>Pembina Yayasan Beasiswa Pelajar Pelosok Nusantara • Surabaya</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5: Komunitas Medis Siaga Bencana -->
+            <div class="testi-slide">
+              <div class="testi-card glass-panel">
+                <div class="testi-top-meta">
+                  <div class="testi-org-type-badge amber">KOMUNITAS MEDIS SIAGA BENCANA</div>
+                  <div class="testi-stars">★★★★★</div>
+                  <span class="testi-verified-tag">✓ 24 Posko Tanggap Darurat Siaga</span>
+                </div>
+                <p class="testi-quote">"Kecepatan akses website di jaringan seluler pelosok daerah bencana luar biasa cepat (loading < 1 detik). Form screening relawan dokter dan perawat memotong waktu koordinasi dari 3 hari menjadi hitungan menit."</p>
+                <div class="testi-author-row">
+                  <div class="author-avatar-chip amber">RS</div>
+                  <div class="testi-author">
+                    <strong>dr. Rian Satria, Sp.EM</strong>
+                    <span>Ketua Presidium Relawan Medis Darurat Bencana • Padang</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6: Lembaga Pengelola Zakat & Wakaf -->
+            <div class="testi-slide">
+              <div class="testi-card glass-panel">
+                <div class="testi-top-meta">
+                  <div class="testi-org-type-badge purple">LEMBAGA ZAKAT & WAKAF</div>
+                  <div class="testi-stars">★★★★★</div>
+                  <span class="testi-verified-tag">✓ Audit WTP 3 Tahun Beruntun</span>
+                </div>
+                <p class="testi-quote">"Kalkulator zakat maal otomatis dan rekening yang 100% langsung masuk ke kas lembaga tanpa potongan perantara memberi ketenangan penuh bagi para muzakki. Organiz.Hub adalah mitra terbaik transformasi nirlaba."</p>
+                <div class="testi-author-row">
+                  <div class="author-avatar-chip purple">MH</div>
+                  <div class="testi-author">
+                    <strong>K.H. Mustofa Harun, M.Ag.</strong>
+                    <span>Dewan Syariah Dompet Filantropi & Zakat Nusantara • Semarang</span>
                   </div>
                 </div>
               </div>
@@ -1311,17 +1373,18 @@
           </button>
 
           <div class="testi-dots-track" id="testi-dots-track">
-            <span class="testi-dot active" data-slide="0"></span>
-            <span class="testi-dot" data-slide="1"></span>
-            <span class="testi-dot" data-slide="2"></span>
-            <span class="testi-dot" data-slide="3"></span>
+            <span class="testi-dot active" data-slide="0" title="Yayasan Yatim"></span>
+            <span class="testi-dot" data-slide="1" title="Komunitas Relawan"></span>
+            <span class="testi-dot" data-slide="2" title="NGO Advokasi"></span>
+            <span class="testi-dot" data-slide="3" title="Yayasan Beasiswa"></span>
+            <span class="testi-dot" data-slide="4" title="Komunitas Medis"></span>
+            <span class="testi-dot" data-slide="5" title="Lembaga Zakat"></span>
           </div>
 
           <button class="testi-btn-next" id="testi-btn-next" aria-label="Testimoni Selanjutnya">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-
       </div>
     </div>
   </section>
