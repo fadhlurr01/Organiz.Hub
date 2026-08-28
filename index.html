@@ -31,86 +31,92 @@
   <!-- ========================================================
        GLOBAL HEADER (FLOATING GLASS PILL NAVBAR)
   ======================================================== -->
+  <!-- ========================================================
+       GLOBAL HEADER (ELITE FLOATING GLASS NAVBAR)
+  ======================================================== -->
   <header id="main-header" class="site-header">
-    <div class="container header-container">
-      <!-- Brand Logo -->
-      <a href="#hero" class="brand-logo" id="header-logo" aria-label="Organiz.Hub - Beranda">
+    <div class="header-inner container">
+      <!-- 1. Brand Logo -->
+      <a href="#hero" class="brand-logo" id="header-logo" aria-label="Organiz.Hub">
         <div class="logo-icon-box">
-          <svg class="svg-icon logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
             <path d="M2 17l10 5 10-5"></path>
             <path d="M2 12l10 5 10-5"></path>
           </svg>
         </div>
-        <div class="logo-text-group">
-          <div class="brand-title-wrap">
-            <span class="brand-name">Organiz<span class="text-emerald">.Hub</span></span>
-            <span class="brand-sub-spec">Specialist Yayasan • Komunitas • NGO</span>
-          </div>
+        <div class="logo-text-col">
+          <span class="brand-name">Organiz<span class="text-emerald">.Hub</span></span>
+          <span class="brand-badge-pill">Yayasan • Komunitas • NGO</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu (Streamlined & Collision-Proof) -->
-      <nav class="desktop-nav desktop-only" id="main-navbar" aria-label="Navigasi Utama">
-        <ul class="nav-links">
-          <!-- Solusi 3 Segmen Dropdown -->
-          <li class="nav-item-dropdown">
-            <a href="#solusi" class="nav-link dropdown-trigger" data-nav="solusi">
+      <!-- 2. Desktop Navigation Menu -->
+      <nav class="desktop-nav" id="main-navbar" aria-label="Navigasi Utama">
+        <ul class="nav-menu-list">
+          <!-- Solusi Dropdown -->
+          <li class="nav-dropdown-item">
+            <a href="#solusi" class="nav-link dropdown-toggle" data-nav="solusi">
               <span data-i18n="nav.solutions">Solusi</span>
-              <svg class="dropdown-chevron svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
-            <div class="nav-dropdown-menu glass-card">
-              <a href="#solusi-yayasan" class="dropdown-item">
-                <span class="dropdown-icon-wrap emerald">
+            <div class="dropdown-panel glass-surface">
+              <a href="#solusi-yayasan" class="dropdown-card">
+                <div class="dd-icon-box emerald">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10a3 3 0 0 1 6 0v11"/></svg>
-                </span>
-                <div class="dropdown-text">
+                </div>
+                <div class="dd-text">
                   <strong data-i18n="mega.yayasan.title">Yayasan Sosial & Pendidikan</strong>
-                  <span data-i18n="mega.yayasan.sub">Panti, beasiswa, donasi QRIS & kas publik</span>
+                  <span data-i18n="mega.yayasan.sub">Panti asuhan, beasiswa, donasi QRIS & kas publik</span>
                 </div>
               </a>
-              <a href="#solusi-komunitas" class="dropdown-item">
-                <span class="dropdown-icon-wrap blue">
+              <a href="#solusi-komunitas" class="dropdown-card">
+                <div class="dd-icon-box blue">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </span>
-                <div class="dropdown-text">
+                </div>
+                <div class="dd-text">
                   <strong data-i18n="mega.komunitas.title">Komunitas & Asosiasi</strong>
-                  <span data-i18n="mega.komunitas.sub">Keanggotaan, direktori relawan & event</span>
+                  <span data-i18n="mega.komunitas.sub">Keanggotaan, direktori relawan, event & KTA</span>
                 </div>
               </a>
-              <a href="#solusi-ngo" class="dropdown-item">
-                <span class="dropdown-icon-wrap purple">
+              <a href="#solusi-ngo" class="dropdown-card">
+                <div class="dd-icon-box purple">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </span>
-                <div class="dropdown-text">
-                  <strong data-i18n="mega.ngo.title">NGO & Lembaga Filantropi</strong>
-                  <span data-i18n="mega.ngo.sub">Advokasi, multi-bahasa & audit transparan</span>
+                </div>
+                <div class="dd-text">
+                  <strong data-i18n="mega.ngo.title">NGO & Filantropi</strong>
+                  <span data-i18n="mega.ngo.sub">Advokasi, multi-bahasa, grant & audit WTP</span>
                 </div>
               </a>
             </div>
           </li>
 
-          <li><a href="#templates" class="nav-link nav-highlight" data-nav="templates"><span class="badge-dot"></span><span data-i18n="nav.templates">14 Template Live</span></a></li>
+          <li>
+            <a href="#templates" class="nav-link template-link" data-nav="templates">
+              <span class="live-dot-indicator"></span>
+              <span data-i18n="nav.templates">14 Template Live</span>
+            </a>
+          </li>
           <li><a href="#pilar" class="nav-link" data-nav="pilar" data-i18n="nav.pillars">4 Pilar</a></li>
           <li><a href="#fitur" class="nav-link" data-nav="fitur" data-i18n="nav.features">Fitur</a></li>
           <li><a href="#widgets" class="nav-link" data-nav="widgets" data-i18n="nav.widgets">Smart Tools</a></li>
-          <li><a href="#harga" class="nav-link" data-nav="harga" data-i18n="nav.pricing">Paket</a></li>
+          <li><a href="#harga" class="nav-link" data-nav="harga" data-i18n="nav.pricing">Paket & Biaya</a></li>
           <li><a href="#portofolio" class="nav-link" data-nav="portofolio" data-i18n="nav.portfolio">Portofolio</a></li>
           <li><a href="#faq" class="nav-link" data-nav="faq" data-i18n="nav.faq">FAQ</a></li>
         </ul>
       </nav>
 
-      <!-- Right Control Bar -->
-      <div class="header-controls">
+      <!-- 3. Right Controls & Action Button -->
+      <div class="header-actions">
         <!-- Language Switcher -->
-        <div class="lang-switch-container" id="lang-switch-wrapper" title="Ganti Bahasa / Switch Language">
-          <button class="lang-btn active" id="lang-id-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
-          <button class="lang-btn" id="lang-en-btn" data-lang="en" aria-label="English">EN</button>
+        <div class="lang-switch-toggle" id="lang-switch-wrapper" title="Ganti Bahasa">
+          <button class="lang-option-btn active" id="lang-id-btn" data-lang="id">ID</button>
+          <button class="lang-option-btn" id="lang-en-btn" data-lang="en">EN</button>
         </div>
 
         <!-- Theme Toggle -->
-        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti Mode Tampilan" title="Toggle Light/Dark Mode">
-          <svg class="theme-icon sun-icon svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button class="theme-icon-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Ganti Mode Gelap / Terang">
+          <svg class="theme-svg sun-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -121,25 +127,22 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg class="theme-icon moon-icon svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="theme-svg moon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
 
-        <!-- CTA Action Buttons -->
-        <div class="header-cta-group desktop-only">
-          <a href="#harga" class="btn-pill-outline hide-on-laptop" id="header-btn-pricing" data-i18n="cta.viewPricing">Lihat Harga</a>
-          <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20konsultasi%20website%20organisasi%20kami" target="_blank" rel="noopener noreferrer" class="btn-pill-coral" id="header-btn-consult">
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
-            <span data-i18n="cta.freeConsultText">Konsultasi Gratis</span>
-          </a>
-        </div>
+        <!-- Primary CTA Button -->
+        <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20kami%20ingin%20konsultasi%20pembuatan%20website%20organisasi" target="_blank" rel="noopener noreferrer" class="btn-primary-nav" id="header-btn-consult">
+          <svg class="nav-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+          <span data-i18n="cta.freeConsultText">Konsultasi Gratis</span>
+        </a>
 
-        <!-- Mobile Hamburger Toggle -->
-        <button class="mobile-nav-toggle mobile-only" id="mobile-nav-toggle" aria-label="Buka Navigasi Menu" aria-expanded="false">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-toggle-btn" id="mobile-nav-toggle" aria-label="Buka Menu Navigasi" aria-expanded="false">
+          <span class="bar-line"></span>
+          <span class="bar-line"></span>
+          <span class="bar-line"></span>
         </button>
       </div>
     </div>
