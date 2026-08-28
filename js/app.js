@@ -16,18 +16,59 @@
  */
 
 /* ==========================================================================
-   TRANSLATION DICTIONARY (INDONESIAN & ENGLISH)
+   TRANSLATION DICTIONARY (INDONESIAN, ENGLISH & MANDARIN CHINESE)
    ========================================================================== */
 const I18N = {
   id: {
-    // Navigation
+    // Navigation 4 Menus
     nav_solusi: "Solusi",
     nav_products: "Produk & Fitur",
-    nav_templates: "14 Template Live",
     nav_info: "Informasi",
+    nav_contact: "Kontak",
     nav_cta: "Konsultasi Gratis",
     
-    // Hero
+    // Dropdown Items
+    dd_sol_yayasan_title: "Yayasan Sosial & Pendidikan",
+    dd_sol_yayasan_sub: "Panti asuhan, beasiswa, donasi QRIS & kas publik",
+    dd_sol_komunitas_title: "Komunitas & Asosiasi",
+    dd_sol_komunitas_sub: "Keanggotaan, database relawan, event & E-KTA",
+    dd_sol_ngo_title: "NGO & Filantropi",
+    dd_sol_ngo_sub: "Advokasi, multi-bahasa, grant & audit WTP",
+    
+    dd_prod_tpl_title: "14 Template Live Cloud ↗",
+    dd_prod_tpl_sub: "Koleksi template cloud live siap pakai untuk Yayasan, Komunitas & NGO",
+    dd_prod_pilar_title: "4 Pilar Arsitektur",
+    dd_prod_pilar_sub: "Branding, Fundraising, Transparansi, Relawan",
+    dd_prod_pkg_title: "Pilihan 6 Paket Website",
+    dd_prod_pkg_sub: "Dari Campaign Landing Page hingga Enterprise",
+    dd_prod_feat_title: "Feature Library Modular",
+    dd_prod_feat_sub: "Kumpulan modul spesifik operasional nirlaba",
+    dd_prod_tools_title: "Organization Smart Tools",
+    dd_prod_tools_sub: "Widget kalkulator zakat, meter donasi & E-KTA",
+    dd_prod_addon_title: "Layanan Tambahan (Add-Ons)",
+    dd_prod_addon_sub: "WhatsApp API, Ads Tracking & Video Profil",
+
+    dd_info_why_title: "Mengapa Organiz.Hub?",
+    dd_info_why_sub: "Spesialisasi regulasi & psikologi donatur",
+    dd_info_road_title: "Roadmap Pertumbuhan",
+    dd_info_road_sub: "Tahapan digitalisasi bertahap nirlaba",
+    dd_info_team_title: "Tim Konsultan Digital",
+    dd_info_team_sub: "Principal architect & nonprofit strategists",
+    dd_info_testi_title: "Dipercaya di Seluruh Indonesia",
+    dd_info_testi_sub: "Testimoni nyata dari ketua yayasan & NGO",
+    dd_info_brochure_title: "Download Brosur 2026",
+    dd_info_brochure_sub: "Panduan lengkap PDF & rincian biaya paket",
+    dd_info_faq_title: "FAQ (Tanya Jawab)",
+    dd_info_faq_sub: "Jawaban seputar teknis, rekening & hosting",
+
+    dd_contact_wa_title: "Konsultasi WhatsApp Langsung",
+    dd_contact_wa_sub: "Diskusi kebutuhan & estimasi biaya (Respon < 15 Menit)",
+    dd_contact_zoom_title: "Jadwal Diskusi Zoom Virtual",
+    dd_contact_zoom_sub: "Presentasi demo live untuk jajaran pengurus & pembina",
+    dd_contact_prop_title: "Permintaan Proposal & RAB",
+    dd_contact_prop_sub: "Pengajuan dokumen penawaran resmi untuk rapat yayasan",
+    
+    // Hero Section
     hero_spesialis: "Spesialis Digital untuk Yayasan, Komunitas & NGO Sejak 2018",
     hero_title_1: "Digital Presence & Arsitektur Website",
     hero_title_2: "Khusus Organisasi",
@@ -123,14 +164,55 @@ const I18N = {
     cta_btn: "Hubungi Tim Konsultan Digital via WhatsApp"
   },
   en: {
-    // Navigation
+    // Navigation 4 Menus
     nav_solusi: "Solutions",
     nav_products: "Products & Features",
-    nav_templates: "14 Live Templates",
     nav_info: "Information",
+    nav_contact: "Contact",
     nav_cta: "Free Consultation",
     
-    // Hero
+    // Dropdown Items
+    dd_sol_yayasan_title: "Social & Education Foundations",
+    dd_sol_yayasan_sub: "Orphanages, scholarships, QRIS donations & ledger",
+    dd_sol_komunitas_title: "Communities & Associations",
+    dd_sol_komunitas_sub: "Membership, volunteer database, events & E-Cards",
+    dd_sol_ngo_title: "NGOs & Philanthropy",
+    dd_sol_ngo_sub: "Advocacy, multilingual, grants & audit reports",
+    
+    dd_prod_tpl_title: "14 Live Cloud Templates ↗",
+    dd_prod_tpl_sub: "Ready-to-deploy cloud templates for Foundations & NGOs",
+    dd_prod_pilar_title: "4 Architecture Pillars",
+    dd_prod_pilar_sub: "Branding, Fundraising, Transparency, Volunteers",
+    dd_prod_pkg_title: "6 Investment Packages",
+    dd_prod_pkg_sub: "From Campaign Landing Pages to Full Enterprise",
+    dd_prod_feat_title: "Modular Feature Library",
+    dd_prod_feat_sub: "Suite of specialized nonprofit operating modules",
+    dd_prod_tools_title: "Organization Smart Tools",
+    dd_prod_tools_sub: "Zakat calculator, donation meters & QR E-Cards",
+    dd_prod_addon_title: "Additional Add-Ons",
+    dd_prod_addon_sub: "WhatsApp API, Ads Tracking & Profile Video",
+
+    dd_info_why_title: "Why Organiz.Hub?",
+    dd_info_why_sub: "Deep compliance & donor psychology specialization",
+    dd_info_road_title: "Growth Roadmap",
+    dd_info_road_sub: "Stepwise digital maturity framework",
+    dd_info_team_title: "Digital Consulting Team",
+    dd_info_team_sub: "Principal architects & nonprofit strategists",
+    dd_info_testi_title: "Trusted Across the Nation",
+    dd_info_testi_sub: "Authentic reviews from foundation and NGO leaders",
+    dd_info_brochure_title: "Download 2026 Brochure",
+    dd_info_brochure_sub: "Complete PDF blueprint and package pricing",
+    dd_info_faq_title: "FAQ & Help Center",
+    dd_info_faq_sub: "Clear answers on technical, hosting, and banking setup",
+
+    dd_contact_wa_title: "Direct WhatsApp Consultation",
+    dd_contact_wa_sub: "Discuss scope & cost estimation (Response < 15 Mins)",
+    dd_contact_zoom_title: "Virtual Zoom Demo Session",
+    dd_contact_zoom_sub: "Live architecture walkthrough for board of trustees",
+    dd_contact_prop_title: "Official Proposal & Budget Request",
+    dd_contact_prop_sub: "Formal procurement document for committee meetings",
+    
+    // Hero Section
     hero_spesialis: "Digital Specialist for Foundations, Communities & NGOs Since 2018",
     hero_title_1: "Digital Presence & Website Architecture",
     hero_title_2: "Dedicated to Nonprofits",
@@ -224,6 +306,150 @@ const I18N = {
     cta_title: "Ready to Build a Professional & Trusted Organization Website?",
     cta_desc: "Get the best architectural recommendation and package for your Foundation, Community, or NGO. Free, friendly, and non-binding consultation.",
     cta_btn: "Consult with Our Digital Architects via WhatsApp"
+  },
+  zh: {
+    // Navigation 4 Menus
+    nav_solusi: "解决方案",
+    nav_products: "产品与功能",
+    nav_info: "关于我们",
+    nav_contact: "联系咨询",
+    nav_cta: "免费咨询",
+    
+    // Dropdown Items
+    dd_sol_yayasan_title: "社会与教育基金会",
+    dd_sol_yayasan_sub: "孤儿院、助学金、QRIS在线捐款及公开财务账目",
+    dd_sol_komunitas_title: "公益社团与行业协会",
+    dd_sol_komunitas_sub: "会员管理、志愿者数据库、活动日历与电子会员卡",
+    dd_sol_ngo_title: "非政府组织与慈善机构",
+    dd_sol_ngo_sub: "社会倡导、多语言支持、国际赠款与WTP审计报告",
+    
+    dd_prod_tpl_title: "14套在线云模板 ↗",
+    dd_prod_tpl_sub: "专为基金会与公益组织量身打造的即用型云端模板",
+    dd_prod_pilar_title: "四大数字架构支柱",
+    dd_prod_pilar_sub: "品牌信誉、筹款募捐、财务透明、志愿者自动化",
+    dd_prod_pkg_title: "六大建站套餐选择",
+    dd_prod_pkg_sub: "从单页募捐着陆页到大型企业级非营利平台",
+    dd_prod_feat_title: "模块化功能库",
+    dd_prod_feat_sub: "专为非营利组织运营设计的全套功能模块",
+    dd_prod_tools_title: "组织智能小工具",
+    dd_prod_tools_sub: "天课计算器、实时捐赠进度条与二维码电子卡",
+    dd_prod_addon_title: "增值扩展服务",
+    dd_prod_addon_sub: "WhatsApp官方API、广告归因与机构宣传视频",
+
+    dd_info_why_title: "为什么选择 Organiz.Hub？",
+    dd_info_why_sub: "深谙非营利法规、合规流程与捐助者信任心理",
+    dd_info_road_title: "数字化成长路线图",
+    dd_info_road_sub: "四阶段稳健数字化赋能体系",
+    dd_info_team_title: "数字化咨询专家团队",
+    dd_info_team_sub: "首席系统架构师与非营利战略专家",
+    dd_info_testi_title: "印尼全国机构信赖之选",
+    dd_info_testi_sub: "来自各地基金会主席与NGO负责人的真实好评",
+    dd_info_brochure_title: "下载2026年机构手册",
+    dd_info_brochure_sub: "获取完整的PDF架构指南与详细费用明细",
+    dd_info_faq_title: "常见问题解答 (FAQ)",
+    dd_info_faq_sub: "关于技术搭建、独立账户与云端托管的详尽解答",
+
+    dd_contact_wa_title: "WhatsApp 实时在线咨询",
+    dd_contact_wa_sub: "探讨需求与费用估算（15分钟内极速响应）",
+    dd_contact_zoom_title: "预约 Zoom 远程演示会议",
+    dd_contact_zoom_sub: "为理事会与管理团队提供现场系统演示",
+    dd_contact_prop_title: "申请官方方案书与预算报价",
+    dd_contact_prop_sub: "获取符合基金会会议标准的正式采购提案",
+    
+    // Hero Section
+    hero_spesialis: "自2018年起专注基金会、社团与NGO的数字化专家",
+    hero_title_1: "专业数字形象与网站架构",
+    hero_title_2: "专为公益组织打造",
+    hero_desc: "我们帮助社会基金会、公益社团及非政府组织建立专业可信的数字阵地——涵盖品牌信任、QRIS在线筹款、透明财务看板及志愿者协同管理，尽在一体化云端平台。",
+    hero_btn_pricing: "查看建站套餐与报价",
+    hero_btn_consult: "立即免费咨询",
+    hero_btn_templates: "14套云模板预览 ↗",
+    scroll_explore: "向下滑动探索完整数字化架构",
+
+    // Solusi
+    sol_tag: "细分领域定制架构",
+    sol_title: "满足各类非营利组织的专属解决方案",
+    sol_sub: "我们深刻理解基金会、社团和NGO在工作流、受众及法律合规方面的差异。为您的组织找到最契合的系统架构。",
+
+    // 4 Pilar
+    pilar_tag: "四大数字化核心支柱",
+    pilar_title: "为非营利组织打造卓越的专业数字形象",
+    pilar_sub: "我们不仅是建站，更是通过四大相互协同的支柱——品牌塑造、筹款系统、透明公开与志愿者自动化，构筑数字基建。",
+
+    // Templates
+    tpl_tag: "14套已部署云端模板",
+    tpl_title: "现代非营利组织网站模板精选",
+    tpl_sub: "点击“在线预览”按钮，即可直接在真实云环境中测试体验已部署的模板系统。",
+    tpl_filter_all: "全部模板 (14)",
+    tpl_filter_yayasan: "公益基金会 (5)",
+    tpl_filter_komunitas: "社团与行动 (5)",
+    tpl_filter_ngo: "非政府组织 (4)",
+
+    // Pricing
+    pkg_tag: "精选投资套餐",
+    pkg_title: "选择最适合您组织的建站套餐",
+    pkg_sub: "最具性价比的数字化投资，助力扩大社会影响力、赢得捐助者信任并实现数字自主。",
+
+    // Workflow
+    workflow_tag: "数字化实施路径",
+    workflow_title: "您的组织数字化成长全流程",
+    workflow_sub: "严谨的分阶段架构——从初始合规搭建到全国乃至全球级公信力机构。",
+    wf_step1_badge: "第一阶段 • 基石与合规",
+    wf_step1_time: "第1周",
+    wf_step1_title: "法定资质与公信力形象",
+    wf_step1_desc: "开通官方.or.id/.org域名，整合司法部注册批文，公开管理层架构与项目档案，确立初期公信力。",
+    wf_deliv1: "官方 .or.id / .org 顶级域名",
+    wf_deliv2: "256位高强度SSL安全证书",
+    wf_deliv3: "官方法人资质与批文集成",
+    
+    wf_step2_badge: "第二阶段 • 自主筹款",
+    wf_step2_time: "第2周",
+    wf_step2_title: "启用QRIS即时捐款与支付网关",
+    wf_step2_desc: "部署全电子钱包动态QRIS和多银行虚拟账户捐款通道。款项100%直接进入基金会账户，0%中介抽成。",
+    wf_deliv4: "支持全部电子钱包的动态QRIS",
+    wf_deliv5: "带防伪条码的自动PDF电子收据",
+    wf_deliv6: "智能天课与善款计算器",
+    
+    wf_step3_badge: "第三阶段 • 公开透明",
+    wf_step3_time: "第3周",
+    wf_step3_title: "实时财务账目与WTP无保留审计",
+    wf_step3_desc: "向公众如实公开资金流水与支出明细看板，并提供注册会计师审计报告下载专区，吸引大型机构资助。",
+    wf_deliv7: "实时资金流向与支出动态图表",
+    wf_deliv8: "WTP无保留意见审计报告下载中心",
+    wf_deliv9: "善款发放图文与签收凭证档案",
+    
+    wf_step4_badge: "第四阶段 • 全国与全球拓展",
+    wf_step4_time: "第4周+",
+    wf_step4_title: "志愿者协同自动化与国际合作",
+    wf_step4_desc: "支持34省志愿者在线招募与二维码电子卡生成，配备统一活动日历及双语网站，助力申请国际公益基金赠款。",
+    wf_deliv10: "志愿者花名册与二维码电子证件生成器",
+    wf_deliv11: "印尼语、英语与中文多语言平台",
+    wf_deliv12: "国际赠款申请门户与专用对接通道",
+
+    // Why Us
+    why_tag: "深厚行业洞察",
+    why_title: "为什么选择 Organiz.Hub？",
+    why_sub: "绝非普通外包公司。我们深刻理解非营利组织运营规律、政策监管以及捐款人的心理预期。",
+
+    // Features
+    feat_tag: "模块化架构体系",
+    feat_title: "专为组织打造的功能模块库",
+    feat_sub: "为基金会、社团与NGO量身定制的模块化功能组件，支持自由组合与平滑升级。",
+
+    // Testimonials
+    testi_tag: "客户口碑见证",
+    testi_title: "深受印尼各地非营利组织负责人的信赖",
+    testi_sub: "从地方孤儿福利基金会到全国性非政府组织——他们均选择 Organiz.Hub 构筑数字化基石。",
+
+    // FAQ
+    faq_tag: "常见问题解答",
+    faq_title: "关于建站的常见疑问 (FAQ)",
+    faq_sub: "为您梳理在 Organiz.Hub 搭建组织官方网站所需了解的一切关键细节。",
+
+    // CTA
+    cta_title: "准备好打造专业且值得信赖的官方网站了吗？",
+    cta_desc: "为您的基金会、社团或NGO获取量身定制的架构方案与最佳套餐。免费、热情且毫无负担的专业咨询。",
+    cta_btn: "通过 WhatsApp 立即联络数字化顾问团队"
   }
 };
 
@@ -266,26 +492,26 @@ function initThemeManager() {
 }
 
 /* ==========================================================================
-   2. Full Multilingual Engine (ID / EN)
+   2. Full Multilingual Engine (ID / EN / ZH)
    ========================================================================== */
 function initLanguageManager() {
   const btnId = document.getElementById('btn-lang-id');
   const btnEn = document.getElementById('btn-lang-en');
+  const btnZh = document.getElementById('btn-lang-zh');
 
   function applyLanguage(lang) {
-    const dict = I18N[lang] || I18N.id;
-    document.documentElement.lang = lang;
-    localStorage.setItem('organiz_lang', lang);
+    const validLang = (lang === 'zh' || lang === 'en' || lang === 'id') ? lang : 'id';
+    const dict = I18N[validLang] || I18N.id;
+    document.documentElement.lang = validLang;
+    localStorage.setItem('organiz_lang', validLang);
 
-    if (btnId && btnEn) {
-      if (lang === 'id') {
-        btnId.classList.add('active');
-        btnEn.classList.remove('active');
-      } else {
-        btnEn.classList.add('active');
-        btnId.classList.remove('active');
-      }
-    }
+    // Update active button state
+    [btnId, btnEn, btnZh].forEach(b => {
+      if (b) b.classList.remove('active');
+    });
+    if (validLang === 'id' && btnId) btnId.classList.add('active');
+    if (validLang === 'en' && btnEn) btnEn.classList.add('active');
+    if (validLang === 'zh' && btnZh) btnZh.classList.add('active');
 
     // Apply translations to all DOM elements marked with [data-i18n]
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -299,12 +525,13 @@ function initLanguageManager() {
     const activeFTab = document.querySelector('.f-tab-btn.active');
     const fCat = activeFTab ? activeFTab.getAttribute('data-fcat') : 'website';
     if (typeof renderFeatureLibrary === 'function') {
-      renderFeatureLibrary(fCat, lang);
+      renderFeatureLibrary(fCat, validLang);
     }
   }
 
   if (btnId) btnId.addEventListener('click', () => applyLanguage('id'));
   if (btnEn) btnEn.addEventListener('click', () => applyLanguage('en'));
+  if (btnZh) btnZh.addEventListener('click', () => applyLanguage('zh'));
 
   const savedLang = localStorage.getItem('organiz_lang') || 'id';
   applyLanguage(savedLang);
