@@ -295,8 +295,16 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   2. DUAL-ISLAND SPLIT MODERN NAVBAR (SEPARATED RIGHT CTA & HIGH-CONTRAST)
+   2. UNIFIED FROSTED GLASS NAVBAR (ZERO COLLISION GUARANTEED)
    ========================================================================== */
+svg {
+  max-width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .site-header {
   position: fixed;
   top: 16px;
@@ -308,24 +316,15 @@ button, input, select, textarea {
   transition: var(--transition);
 }
 
-.header-split-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1280px;
-  margin: 0 auto;
-  width: 94%;
-  gap: 14px;
-}
-
-/* Island 1: Main Navigation Capsule */
-.nav-island-main {
+.header-container {
   pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
   height: 58px;
-  padding: 0 12px 0 16px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 10px 0 16px;
   border-radius: var(--radius-pill);
   background: rgba(6, 11, 25, 0.88);
   backdrop-filter: blur(24px);
@@ -333,21 +332,22 @@ button, input, select, textarea {
   border: 1px solid var(--border-color);
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
   transition: var(--transition);
+  flex-wrap: nowrap;
 }
 
-[data-theme="light"] .nav-island-main {
+[data-theme="light"] .header-container {
   background: rgba(255, 255, 255, 0.94);
   border-color: rgba(15, 23, 42, 0.1);
   box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
 }
 
-.site-header.scrolled .nav-island-main {
+.site-header.scrolled .header-container {
   background: rgba(6, 11, 25, 0.96);
   border-color: rgba(0, 214, 143, 0.35);
   box-shadow: 0 12px 45px rgba(0, 0, 0, 0.55), 0 0 20px rgba(0, 214, 143, 0.15);
 }
 
-[data-theme="light"] .site-header.scrolled .nav-island-main {
+[data-theme="light"] .site-header.scrolled .header-container {
   background: rgba(255, 255, 255, 0.98);
 }
 
@@ -358,6 +358,7 @@ button, input, select, textarea {
   gap: 10px;
   flex-shrink: 0;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .logo-box {
@@ -383,7 +384,7 @@ button, input, select, textarea {
 
 .brand-title {
   font-family: var(--font-display);
-  font-size: 1.18rem;
+  font-size: 1.15rem;
   font-weight: 900;
   letter-spacing: -0.03em;
   color: var(--text-primary) !important;
@@ -403,36 +404,26 @@ button, input, select, textarea {
   white-space: nowrap;
 }
 
-@media (max-width: 1240px) {
-  .brand-badge-pill { display: none; }
-}
-
-.nav-divider {
-  width: 1px;
-  height: 24px;
-  background: var(--border-color);
-  opacity: 0.6;
-  margin: 0 2px;
-}
-
 /* Desktop Navigation Menu */
 .desktop-navigation {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
 }
 
 .nav-anchor {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 6px 12px;
-  font-size: 0.84rem;
+  gap: 4px;
+  padding: 6px 11px;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-secondary);
   border-radius: var(--radius-pill);
@@ -550,8 +541,8 @@ button, input, select, textarea {
 .dropdown-link strong { font-size: 0.84rem; display: block; color: var(--text-primary); }
 .dropdown-link span { font-size: 0.72rem; color: var(--text-muted); }
 
-/* Controls: Language + Theme Toggle */
-.header-controls {
+/* Right Header Group: Lang + Theme + Dedicated CTA */
+.header-right-group {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -602,42 +593,37 @@ button, input, select, textarea {
   transform: rotate(20deg) scale(1.06);
 }
 
-.theme-icon { width: 16px; height: 16px; }
+.theme-icon { width: 16px; height: 16px; flex-shrink: 0; }
 [data-theme="dark"] .sun { display: block; }
 [data-theme="dark"] .moon { display: none; }
 [data-theme="light"] .sun { display: none; }
 [data-theme="light"] .moon { display: block; color: var(--text-primary); }
 
-/* Island 2: Standalone Right CTA Pill */
-.nav-island-cta {
-  pointer-events: auto;
-  flex-shrink: 0;
-}
-
-.btn-standalone-cta {
+.btn-nav-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  height: 58px;
-  padding: 0 24px;
+  gap: 6px;
+  height: 38px;
+  padding: 0 18px;
   border-radius: var(--radius-pill);
   background: linear-gradient(135deg, var(--accent-coral) 0%, #FF8A00 100%);
   color: #FFFFFF !important;
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 8px 24px var(--accent-coral-glow);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px var(--accent-coral-glow);
   transition: var(--transition);
   white-space: nowrap;
+  flex-shrink: 0;
+  border: none;
 }
 
-.btn-standalone-cta:hover {
+.btn-nav-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px var(--accent-coral-glow);
+  box-shadow: 0 8px 24px var(--accent-coral-glow);
 }
 
-.btn-standalone-cta svg { width: 16px; height: 16px; }
+.btn-nav-cta svg { width: 15px; height: 15px; }
 
 /* Hamburger Button */
 .mobile-menu-btn {
@@ -1626,17 +1612,146 @@ button, input, select, textarea {
   color: var(--text-primary);
 }
 
-/* Testimonials */
-.testi-card {
-  padding: 30px 24px;
-  display: flex;
-  flex-direction: column;
+/* ==========================================================================
+   TESTIMONIALS SWIPE CAROUSEL ENGINE
+   ========================================================================== */
+.testi-carousel-wrapper {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
-.testi-stars { color: var(--accent-amber); font-size: 1.1rem; margin-bottom: 14px; }
-.testi-quote { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 22px; flex-grow: 1; font-style: italic; }
+.testi-carousel-viewport {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  padding: 10px 4px;
+}
+
+.testi-carousel-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.testi-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 0 8px;
+}
+
+.testi-card {
+  padding: 38px 32px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+}
+
+.testi-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.testi-stars { color: var(--accent-amber); font-size: 1.15rem; letter-spacing: 2px; }
+.testi-verified-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-emerald-subtle);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(0, 214, 143, 0.25);
+}
+
+.testi-quote {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin-bottom: 26px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.testi-author-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author-avatar-chip {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.author-avatar-chip.emerald { background: linear-gradient(135deg, var(--accent-emerald) 0%, #00B377 100%); color: #060B19; }
+.author-avatar-chip.blue { background: linear-gradient(135deg, var(--blueprint-blue) 0%, #2563EB 100%); color: #FFFFFF; }
+.author-avatar-chip.purple { background: linear-gradient(135deg, var(--accent-purple) 0%, #7C3AED 100%); color: #FFFFFF; }
+.author-avatar-chip.amber { background: linear-gradient(135deg, var(--accent-amber) 0%, #D97706 100%); color: #FFFFFF; }
+
 .testi-author strong { font-size: 0.95rem; display: block; color: var(--text-primary); }
 .testi-author span { font-size: 0.76rem; color: var(--text-muted); }
+
+/* Carousel Controls Bar */
+.testi-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.testi-btn-prev, .testi-btn-next {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.testi-btn-prev:hover, .testi-btn-next:hover {
+  background: var(--accent-emerald);
+  color: #060B19;
+  border-color: var(--accent-emerald);
+  transform: scale(1.08);
+}
+
+.testi-btn-prev svg, .testi-btn-next svg { width: 18px; height: 18px; }
+
+.testi-dots-track {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.testi-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testi-dot.active {
+  width: 28px;
+  background: var(--accent-emerald);
+}
 
 /* FAQ Accordion */
 .faq-list-accordion {
@@ -1859,11 +1974,15 @@ button, input, select, textarea {
 /* ==========================================================================
    5. RESPONSIVE BREAKPOINTS (ZERO COLLISION GUARANTEED)
    ========================================================================== */
-@media (max-width: 1100px) {
-  .hide-on-mobile { display: none !important; }
+@media (max-width: 1200px) {
+  .hide-tablet { display: none !important; }
+}
+
+@media (max-width: 1080px) {
+  .hide-mobile { display: none !important; }
   .mobile-menu-btn { display: flex !important; }
-  .header-split-wrapper { width: 92%; }
-  .nav-island-main { width: 100%; justify-content: space-between; }
+  .desktop-navigation { display: none !important; }
+  .header-container { width: 92%; }
   .grid-3-col { grid-template-columns: repeat(2, 1fr); }
   .grid-4-col { grid-template-columns: repeat(2, 1fr); }
   .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1880,7 +1999,9 @@ button, input, select, textarea {
 @media (max-width: 640px) {
   .grid-3-col, .grid-4-col, .roadmap-grid, .footer-grid-4 { grid-template-columns: 1fr; }
   .site-header { top: 10px; }
-  .nav-island-main { padding: 0 10px 0 12px; height: 52px; }
+  .header-container { padding: 0 10px 0 12px; height: 50px; }
   .badge-top-right, .badge-bottom-left { position: static; margin-top: 10px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .testi-card { padding: 26px 20px; }
+  .testi-quote { font-size: 0.95rem; }
 }

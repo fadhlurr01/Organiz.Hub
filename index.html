@@ -27,159 +27,149 @@
 <body>
 
   <!-- ========================================================
-       NAVBAR / HEADER (DUAL-ISLAND SPLIT MODERN LAYOUT)
+       NAVBAR / HEADER (MODERN FROSTED GLASS BAR - ZERO COLLISION)
   ======================================================== -->
   <header id="main-header" class="site-header">
-    <div class="header-split-wrapper container">
+    <div class="header-container container">
       
-      <!-- Island 1: Main Navigation Pill (Logo + Grouped Dropdowns + Controls) -->
-      <div class="nav-island-main glass-panel">
-        <!-- Brand Logo -->
-        <a href="#hero" class="brand-logo" aria-label="Organiz.Hub Beranda">
-          <div class="logo-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-              <path d="M2 17l10 5 10-5"></path>
-              <path d="M2 12l10 5 10-5"></path>
-            </svg>
-          </div>
-          <div class="logo-text">
-            <span class="brand-title">Organiz<span class="brand-accent">.Hub</span></span>
-            <span class="brand-badge-pill">Yayasan • Komunitas • NGO</span>
-          </div>
-        </a>
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="Organiz.Hub Beranda">
+        <div class="logo-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-title">Organiz<span class="brand-accent">.Hub</span></span>
+          <span class="brand-badge-pill hide-tablet">Yayasan • Komunitas • NGO</span>
+        </div>
+      </a>
 
-        <div class="nav-divider hide-on-mobile"></div>
-
-        <!-- Desktop Navigation with Grouped Dropdowns -->
-        <nav class="desktop-navigation hide-on-mobile" aria-label="Navigasi Utama">
-          <ul class="nav-list">
-            
-            <!-- 1. Dropdown Solusi Segmen -->
-            <li class="nav-item has-dropdown">
-              <a href="#solusi" class="nav-anchor">
-                <span>Solusi</span>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      <!-- Desktop Navigation with Grouped Dropdowns -->
+      <nav class="desktop-navigation hide-mobile" aria-label="Navigasi Utama">
+        <ul class="nav-list">
+          
+          <!-- 1. Dropdown Solusi Segmen -->
+          <li class="nav-item has-dropdown">
+            <a href="#solusi" class="nav-anchor">
+              <span>Solusi</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="#solusi-yayasan" class="dropdown-link">
+                <div class="dd-icon emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10a3 3 0 0 1 6 0v11"/></svg></div>
+                <div><strong>Yayasan Sosial & Pendidikan</strong><span>Panti asuhan, beasiswa, donasi QRIS & kas publik</span></div>
               </a>
-              <div class="dropdown-menu">
-                <a href="#solusi-yayasan" class="dropdown-link">
-                  <div class="dd-icon emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10a3 3 0 0 1 6 0v11"/></svg></div>
-                  <div><strong>Yayasan Sosial & Pendidikan</strong><span>Panti asuhan, beasiswa, donasi QRIS & kas publik</span></div>
-                </a>
-                <a href="#solusi-komunitas" class="dropdown-link">
-                  <div class="dd-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
-                  <div><strong>Komunitas & Asosiasi</strong><span>Keanggotaan, database relawan, event & E-KTA</span></div>
-                </a>
-                <a href="#solusi-ngo" class="dropdown-link">
-                  <div class="dd-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-                  <div><strong>NGO & Filantropi</strong><span>Advokasi, multi-bahasa, grant & audit WTP</span></div>
-                </a>
-              </div>
-            </li>
-
-            <!-- 2. Dropdown Produk & Fitur -->
-            <li class="nav-item has-dropdown">
-              <a href="#paket" class="nav-anchor">
-                <span>Produk & Fitur</span>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <a href="#solusi-komunitas" class="dropdown-link">
+                <div class="dd-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+                <div><strong>Komunitas & Asosiasi</strong><span>Keanggotaan, database relawan, event & E-KTA</span></div>
               </a>
-              <div class="dropdown-menu">
-                <a href="#pilar" class="dropdown-link">
-                  <div class="dd-icon emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                  <div><strong>4 Pilar Arsitektur</strong><span>Branding, Fundraising, Transparansi, Relawan</span></div>
-                </a>
-                <a href="#paket" class="dropdown-link">
-                  <div class="dd-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
-                  <div><strong>Pilihan 6 Paket Website</strong><span>Dari Campaign Landing Page hingga Enterprise</span></div>
-                </a>
-                <a href="#fitur" class="dropdown-link">
-                  <div class="dd-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg></div>
-                  <div><strong>Feature Library Modular</strong><span>Kumpulan modul spesifik operasional nirlaba</span></div>
-                </a>
-                <a href="#widgets" class="dropdown-link">
-                  <div class="dd-icon coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                  <div><strong>Organization Smart Tools</strong><span>Widget kalkulator zakat, meter donasi & E-KTA</span></div>
-                </a>
-                <a href="#addons" class="dropdown-link">
-                  <div class="dd-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-                  <div><strong>Layanan Tambahan (Add-Ons)</strong><span>WhatsApp API, Ads Tracking & Video Profil</span></div>
-                </a>
-              </div>
-            </li>
-
-            <!-- 3. Highlight 14 Template Live -->
-            <li class="nav-item">
-              <a href="#templates" class="nav-anchor template-badge-link">
-                <span class="dot-pulse"></span>
-                <span>14 Template Live</span>
+              <a href="#solusi-ngo" class="dropdown-link">
+                <div class="dd-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                <div><strong>NGO & Filantropi</strong><span>Advokasi, multi-bahasa, grant & audit WTP</span></div>
               </a>
-            </li>
+            </div>
+          </li>
 
-            <!-- 4. Dropdown Informasi & Bantuan -->
-            <li class="nav-item has-dropdown">
-              <a href="#why-us" class="nav-anchor">
-                <span>Informasi</span>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          <!-- 2. Dropdown Produk & Fitur -->
+          <li class="nav-item has-dropdown">
+            <a href="#paket" class="nav-anchor">
+              <span>Produk & Fitur</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="#pilar" class="dropdown-link">
+                <div class="dd-icon emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <div><strong>4 Pilar Arsitektur</strong><span>Branding, Fundraising, Transparansi, Relawan</span></div>
               </a>
-              <div class="dropdown-menu">
-                <a href="#why-us" class="dropdown-link">
-                  <div class="dd-icon emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                  <div><strong>Mengapa Organiz.Hub?</strong><span>Spesialisasi regulasi & psikologi donatur</span></div>
-                </a>
-                <a href="#roadmap" class="dropdown-link">
-                  <div class="dd-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-                  <div><strong>Roadmap Pertumbuhan</strong><span>Tahapan digitalisasi bertahap nirlaba</span></div>
-                </a>
-                <a href="#team" class="dropdown-link">
-                  <div class="dd-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-                  <div><strong>Tim Konsultan Digital</strong><span>Principal architect & nonprofit strategists</span></div>
-                </a>
-                <a href="#testimoni" class="dropdown-link">
-                  <div class="dd-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-                  <div><strong>Dipercaya di Seluruh Indonesia</strong><span>Testimoni nyata dari ketua yayasan & NGO</span></div>
-                </a>
-                <a href="#brosur" class="dropdown-link">
-                  <div class="dd-icon coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-                  <div><strong>Download Brosur 2026</strong><span>Panduan lengkap PDF & rincian biaya paket</span></div>
-                </a>
-                <a href="#faq" class="dropdown-link">
-                  <div class="dd-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-                  <div><strong>FAQ (Tanya Jawab)</strong><span>Jawaban seputar teknis, rekening & hosting</span></div>
-                </a>
-              </div>
-            </li>
+              <a href="#paket" class="dropdown-link">
+                <div class="dd-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+                <div><strong>Pilihan 6 Paket Website</strong><span>Dari Campaign Landing Page hingga Enterprise</span></div>
+              </a>
+              <a href="#fitur" class="dropdown-link">
+                <div class="dd-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg></div>
+                <div><strong>Feature Library Modular</strong><span>Kumpulan modul spesifik operasional nirlaba</span></div>
+              </a>
+              <a href="#widgets" class="dropdown-link">
+                <div class="dd-icon coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <div><strong>Organization Smart Tools</strong><span>Widget kalkulator zakat, meter donasi & E-KTA</span></div>
+              </a>
+              <a href="#addons" class="dropdown-link">
+                <div class="dd-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+                <div><strong>Layanan Tambahan (Add-Ons)</strong><span>WhatsApp API, Ads Tracking & Video Profil</span></div>
+              </a>
+            </div>
+          </li>
 
-          </ul>
-        </nav>
+          <!-- 3. Highlight 14 Template Live -->
+          <li class="nav-item">
+            <a href="#templates" class="nav-anchor template-badge-link">
+              <span class="dot-pulse"></span>
+              <span>14 Template Live</span>
+            </a>
+          </li>
 
-        <div class="nav-divider hide-on-mobile"></div>
+          <!-- 4. Dropdown Informasi & Bantuan -->
+          <li class="nav-item has-dropdown">
+            <a href="#why-us" class="nav-anchor">
+              <span>Informasi</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="#why-us" class="dropdown-link">
+                <div class="dd-icon emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <div><strong>Mengapa Organiz.Hub?</strong><span>Spesialisasi regulasi & psikologi donatur</span></div>
+              </a>
+              <a href="#roadmap" class="dropdown-link">
+                <div class="dd-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                <div><strong>Roadmap Pertumbuhan</strong><span>Tahapan digitalisasi bertahap nirlaba</span></div>
+              </a>
+              <a href="#team" class="dropdown-link">
+                <div class="dd-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+                <div><strong>Tim Konsultan Digital</strong><span>Principal architect & nonprofit strategists</span></div>
+              </a>
+              <a href="#testimoni" class="dropdown-link">
+                <div class="dd-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <div><strong>Dipercaya di Seluruh Indonesia</strong><span>Testimoni nyata dari ketua yayasan & NGO</span></div>
+              </a>
+              <a href="#brosur" class="dropdown-link">
+                <div class="dd-icon coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+                <div><strong>Download Brosur 2026</strong><span>Panduan lengkap PDF & rincian biaya paket</span></div>
+              </a>
+              <a href="#faq" class="dropdown-link">
+                <div class="dd-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                <div><strong>FAQ (Tanya Jawab)</strong><span>Jawaban seputar teknis, rekening & hosting</span></div>
+              </a>
+            </div>
+          </li>
 
-        <!-- Controls: Language + Theme Toggle -->
-        <div class="header-controls">
-          <div class="lang-switch">
-            <button class="lang-btn active" id="btn-lang-id" data-lang="id">ID</button>
-            <button class="lang-btn" id="btn-lang-en" data-lang="en">EN</button>
-          </div>
+        </ul>
+      </nav>
 
-          <button class="theme-btn" id="btn-theme-toggle" aria-label="Ganti Mode Tema" title="Toggle Dark/Light Mode">
-            <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-          </button>
-
-          <!-- Mobile Hamburger -->
-          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Buka Menu">
-            <span></span><span></span><span></span>
-          </button>
+      <!-- Right Header Actions: Lang, Theme & Dedicated CTA -->
+      <div class="header-right-group">
+        <div class="lang-switch hide-mobile">
+          <button class="lang-btn active" id="btn-lang-id" data-lang="id">ID</button>
+          <button class="lang-btn" id="btn-lang-en" data-lang="en">EN</button>
         </div>
 
-      </div>
+        <button class="theme-btn" id="btn-theme-toggle" aria-label="Ganti Mode Tema" title="Toggle Dark/Light Mode">
+          <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
 
-      <!-- Island 2: Standalone Separated Right CTA Pill -->
-      <div class="nav-island-cta hide-on-mobile">
-        <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20konsultasi%20website%20organisasi" target="_blank" rel="noopener noreferrer" class="btn-standalone-cta">
+        <!-- Dedicated Standalone CTA -->
+        <a href="https://wa.me/6281234567890?text=Halo%20Organiz.Hub,%20saya%20tertarik%20konsultasi%20website%20organisasi" target="_blank" rel="noopener noreferrer" class="btn-nav-cta hide-mobile">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
           <span>Konsultasi Gratis</span>
         </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Buka Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
 
     </div>
@@ -1145,7 +1135,7 @@
   </section>
 
   <!-- ========================================================
-       13. DIPERCAYA PENGURUS ORGANISASI DI SELURUH INDONESIA
+       13. DIPERCAYA PENGURUS ORGANISASI DI SELURUH INDONESIA (INTERACTIVE SWIPE CAROUSEL)
   ======================================================== -->
   <section id="testimoni" class="section">
     <div class="container">
@@ -1153,37 +1143,108 @@
         <span class="section-tag">BUKTI KEPUASAN KLIEN</span>
         <h2 class="section-heading">Dipercaya Pengurus Organisasi di Seluruh Indonesia</h2>
         <p class="section-subheading">
-          Dari yayasan yatim lokal hingga NGO berskala nasional — mereka mempercayakan arsitektur digital pada Organiz.Hub.
+          Dari yayasan yatim lokal hingga NGO berskala nasional — mereka mempercayakan arsitektur digital pada Organiz.Hub. Geser untuk membaca ulasan lainnya.
         </p>
       </div>
 
-      <div class="grid-3-col">
-        <div class="testi-card glass-panel">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Donasi yayasan kami melonjak lebih dari 300% setelah menggunakan website donasi QRIS dari Organiz.Hub. Laporan kas publiknya membuat para donatur makin percaya."</p>
-          <div class="testi-author">
-            <strong>H. Ahmad Fauzi</strong>
-            <span>Ketua Yayasan Yatim Nusantara Mandiri</span>
+      <!-- Testimonials Carousel Container -->
+      <div class="testi-carousel-wrapper">
+        <div class="testi-carousel-viewport" id="testi-viewport">
+          <div class="testi-carousel-track" id="testi-track">
+            
+            <!-- Slide 1 -->
+            <div class="testi-slide active">
+              <div class="testi-card glass-panel">
+                <div class="testi-top-meta">
+                  <div class="testi-stars">★★★★★</div>
+                  <span class="testi-verified-tag">✓ Donasi QRIS Terverifikasi</span>
+                </div>
+                <p class="testi-quote">"Donasi yayasan kami melonjak lebih dari 300% setelah menggunakan website donasi QRIS dari Organiz.Hub. Laporan kas publik real-time membuat para donatur makin loyal dan percaya."</p>
+                <div class="testi-author-row">
+                  <div class="author-avatar-chip emerald">AF</div>
+                  <div class="testi-author">
+                    <strong>H. Ahmad Fauzi</strong>
+                    <span>Ketua Yayasan Yatim Nusantara Mandiri • Jakarta</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testi-slide">
+              <div class="testi-card glass-panel">
+                <div class="testi-top-meta">
+                  <div class="testi-stars">★★★★★</div>
+                  <span class="testi-verified-tag">✓ 1.200 Relawan Terdaftar</span>
+                </div>
+                <p class="testi-quote">"Manajemen 1.200 anggota relawan di 12 kota jadi sangat mudah dengan generator E-KTA ber-QR code dan sistem kalender aksi sosial terpadu. Sangat direkomendasikan untuk komunitas nasional."</p>
+                <div class="testi-author-row">
+                  <div class="author-avatar-chip blue">NP</div>
+                  <div class="testi-author">
+                    <strong>Nadira Putri, S.I.Kom</strong>
+                    <span>Koordinator Gerakan Relawan Hijau Indonesia • Bandung</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testi-slide">
+              <div class="testi-card glass-panel">
+                <div class="testi-top-meta">
+                  <div class="testi-stars">★★★★★</div>
+                  <span class="testi-verified-tag">✓ Laporan Audit WTP Terbit</span>
+                </div>
+                <p class="testi-quote">"Fitur multi-bahasa dwibahasa dan pusat unduhan audit WTP memudahkan lembaga kami lolos proses due-diligence dan mendapatkan persetujuan grant dari donor filantropi internasional."</p>
+                <div class="testi-author-row">
+                  <div class="author-avatar-chip purple">BW</div>
+                  <div class="testi-author">
+                    <strong>Bambang Wicaksono, M.Sc</strong>
+                    <span>Direktur Eksekutif Advokasi Hak & Lingkungan • Yogyakarta</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="testi-slide">
+              <div class="testi-card glass-panel">
+                <div class="testi-top-meta">
+                  <div class="testi-stars">★★★★★</div>
+                  <span class="testi-verified-tag">✓ 0% Potongan Biaya</span>
+                </div>
+                <p class="testi-quote">"Yang paling kami sukai adalah rekening dan QRIS 100% masuk ke rekening yayasan kami tanpa perantara atau potongan tersembunyi. Pengurus yang gaptek pun langsung bisa update kegiatan."</p>
+                <div class="testi-author-row">
+                  <div class="author-avatar-chip amber">SH</div>
+                  <div class="testi-author">
+                    <strong>Siti Rahmawati, S.Pd</strong>
+                    <span>Pembina Panti Asuhan Kasih Ibu • Surabaya</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="testi-card glass-panel">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Manajemen 1.200 anggota relawan di 12 kota jadi sangat mudah dengan generator E-KTA dan sistem kalender aksi sosial. Sangat direkomendasikan untuk komunitas."</p>
-          <div class="testi-author">
-            <strong>Nadira Putri, S.I.Kom</strong>
-            <span>Koordinator Gerakan Relawan Hijau</span>
+        <!-- Carousel Navigation & Pagination Controls -->
+        <div class="testi-controls-bar">
+          <button class="testi-btn-prev" id="testi-btn-prev" aria-label="Testimoni Sebelumnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="testi-dots-track" id="testi-dots-track">
+            <span class="testi-dot active" data-slide="0"></span>
+            <span class="testi-dot" data-slide="1"></span>
+            <span class="testi-dot" data-slide="2"></span>
+            <span class="testi-dot" data-slide="3"></span>
           </div>
+
+          <button class="testi-btn-next" id="testi-btn-next" aria-label="Testimoni Selanjutnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
         </div>
 
-        <div class="testi-card glass-panel">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Fitur dwibahasa dan laporan audit WTP memudahkan lembaga kami mendapatkan persetujuan grant kemitraan dari donor filantropi internasional."</p>
-          <div class="testi-author">
-            <strong>Bambang Wicaksono, M.Sc</strong>
-            <span>Direktur Advokasi Hak & Lingkungan Hidup</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>

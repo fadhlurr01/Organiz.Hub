@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDemoModal();
   initFloatingScroll();
   initLeadForm();
+  initTestimonialCarousel();
   initGsapAnimations();
 });
 
@@ -423,7 +424,108 @@ function initLeadForm() {
 }
 
 /* ==========================================================================
-   11. GSAP 3.12+ & ScrollTrigger Animation Suite
+   11. Testimonial Interactive Swipe Carousel
+   ========================================================================== */
+function initTestimonialCarousel() {
+  const track = document.getElementById('testi-track');
+  const viewport = document.getElementById('testi-viewport');
+  const btnPrev = document.getElementById('testi-btn-prev');
+  const btnNext = document.getElementById('testi-btn-next');
+  const dots = document.querySelectorAll('.testi-dot');
+  const slides = document.querySelectorAll('.testi-slide');
+
+  if (!track || slides.length === 0) return;
+
+  let currentIdx = 0;
+  const totalSlides = slides.length;
+  let autoPlayTimer = null;
+
+  function goToSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+
+    currentIdx = index;
+    track.style.transform = `translateX(-${currentIdx * 100}%)`;
+
+    dots.forEach((d, i) => {
+      if (i === currentIdx) d.classList.add('active');
+      else d.classList.remove('active');
+    });
+
+    slides.forEach((s, i) => {
+      if (i === currentIdx) s.classList.add('active');
+      else s.classList.remove('active');
+    });
+  }
+
+  function nextSlide() {
+    goToSlide(currentIdx + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentIdx - 1);
+  }
+
+  if (btnNext) btnNext.addEventListener('click', () => { nextSlide(); resetAutoplay(); });
+  if (btnPrev) btnPrev.addEventListener('click', () => { prevSlide(); resetAutoplay(); });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.getAttribute('data-slide') || '0', 10);
+      goToSlide(idx);
+      resetAutoplay();
+    });
+  });
+
+  // Touch Swipe Engine
+  let startX = 0;
+  let currentX = 0;
+  let isSwiping = false;
+
+  if (viewport) {
+    viewport.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isSwiping = true;
+      clearInterval(autoPlayTimer);
+    }, { passive: true });
+
+    viewport.addEventListener('touchmove', (e) => {
+      if (!isSwiping) return;
+      currentX = e.touches[0].clientX;
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', () => {
+      if (!isSwiping) return;
+      const diff = startX - currentX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) nextSlide();
+        else prevSlide();
+      }
+      isSwiping = false;
+      resetAutoplay();
+    });
+  }
+
+  function startAutoplay() {
+    autoPlayTimer = setInterval(nextSlide, 5500);
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoPlayTimer);
+    startAutoplay();
+  }
+
+  if (viewport) {
+    viewport.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+    viewport.addEventListener('mouseleave', startAutoplay);
+  }
+
+  goToSlide(0);
+  startAutoplay();
+}
+
+/* ==========================================================================
+   12. GSAP 3.12+ & ScrollTrigger Animation Suite
    ========================================================================== */
 function initGsapAnimations() {
   if (typeof gsap === 'undefined') return;
