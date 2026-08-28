@@ -8,41 +8,41 @@
    1. CSS RESET & DESIGN TOKENS (DESIGN DNA)
    ========================================================================== */
 :root {
-  /* Color Palette - Abyss Dark Mode (Default) */
-  --bg-body: #080C17;
-  --bg-surface: #0F172A;
-  --bg-surface-elevated: #1E293B;
-  --bg-surface-glass: rgba(15, 23, 42, 0.78);
+  /* Color Palette - Obsidian Black & Platinum Slate (Default Dark Mode) */
+  --bg-body: #09090B;
+  --bg-surface: #121216;
+  --bg-surface-elevated: #1B1B22;
+  --bg-surface-glass: rgba(18, 18, 22, 0.85);
   
   --border-color: rgba(255, 255, 255, 0.1);
-  --border-color-hover: rgba(37, 99, 235, 0.5);
+  --border-color-hover: rgba(225, 29, 72, 0.5);
   
-  --text-primary: #FFFFFF;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
   
-  /* Modern High-Trust Professional Accent Highlights (Sapphire, Indigo & Cyan) */
-  --brand-primary: #2563EB;
-  --brand-primary-glow: rgba(37, 99, 235, 0.35);
-  --brand-primary-subtle: rgba(37, 99, 235, 0.12);
+  /* Modern High-Trust Foundation & NGO Palette (Imperial Crimson, Champagne Amber & Amethyst) */
+  --brand-primary: #E11D48;
+  --brand-primary-glow: rgba(225, 29, 72, 0.35);
+  --brand-primary-subtle: rgba(225, 29, 72, 0.12);
   
-  --accent-emerald: #2563EB; /* Remapped to Electric Sapphire Blue */
-  --accent-emerald-glow: rgba(37, 99, 235, 0.35);
-  --accent-emerald-subtle: rgba(37, 99, 235, 0.12);
+  --accent-emerald: #E11D48; /* Remapped to Imperial Crimson */
+  --accent-emerald-glow: rgba(225, 29, 72, 0.35);
+  --accent-emerald-subtle: rgba(225, 29, 72, 0.12);
   
-  --blueprint-blue: #3B82F6;
-  --blueprint-blue-subtle: rgba(59, 130, 246, 0.12);
+  --blueprint-blue: #D97706; /* Remapped to Warm Champagne Amber */
+  --blueprint-blue-subtle: rgba(217, 119, 6, 0.12);
   
-  --accent-cyan: #06B6D4;
-  --accent-cyan-subtle: rgba(6, 182, 212, 0.12);
+  --accent-cyan: #EA580C; /* Warm Terracotta */
+  --accent-cyan-subtle: rgba(234, 88, 12, 0.12);
   
-  --accent-purple: #6366F1; /* Modern Indigo */
-  --accent-purple-subtle: rgba(99, 102, 241, 0.12);
+  --accent-purple: #7C3AED; /* Royal Amethyst */
+  --accent-purple-subtle: rgba(124, 58, 237, 0.12);
   
-  --accent-coral: #F59E0B; /* Warm Professional Amber */
-  --accent-coral-glow: rgba(245, 158, 11, 0.35);
+  --accent-coral: #E11D48; /* Crimson */
+  --accent-coral-glow: rgba(225, 29, 72, 0.35);
   
-  --accent-amber: #F59E0B;
+  --accent-amber: #F59E0B; /* Gold Accent */
   
   /* Typography System */
   --font-display: 'Outfit', sans-serif;
@@ -57,30 +57,30 @@
   --radius-xl: 28px;
   --radius-pill: 9999px;
   
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.65);
   
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Light Theme Variables - Crisp High-Trust Slate */
+/* Light Theme Variables - Crisp Pristine White & Platinum Slate */
 [data-theme="light"] {
-  --bg-body: #F8FAFC;
+  --bg-body: #F9FAFB;
   --bg-surface: #FFFFFF;
-  --bg-surface-elevated: #F1F5F9;
-  --bg-surface-glass: rgba(255, 255, 255, 0.92);
+  --bg-surface-elevated: #F3F4F6;
+  --bg-surface-glass: rgba(255, 255, 255, 0.94);
   
-  --border-color: rgba(15, 23, 42, 0.09);
-  --border-color-hover: rgba(37, 99, 235, 0.5);
+  --border-color: rgba(24, 24, 27, 0.08);
+  --border-color-hover: rgba(225, 29, 72, 0.5);
   
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #64748B;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
   
-  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
 /* Base Resets */
@@ -490,9 +490,7 @@ svg {
   width: 12px;
   height: 12px;
   transition: transform var(--transition);
-}
-
-.has-dropdown:hover .chevron {
+}.has-dropdown:hover .chevron {
   transform: rotate(180deg);
 }
 
@@ -500,13 +498,16 @@ svg {
   position: absolute;
   top: calc(100% + 14px);
   left: 0;
-  width: 320px;
-  padding: 10px;
+  min-width: 330px;
+  width: max-content;
+  max-width: 390px;
+  padding: 12px;
   border-radius: var(--radius-lg);
-  background: rgba(6, 11, 25, 0.96);
+  background: rgba(18, 18, 22, 0.98);
   backdrop-filter: blur(24px);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -514,12 +515,20 @@ svg {
   visibility: hidden;
   transform: translateY(8px);
   transition: var(--transition);
-  z-index: 100;
+  z-index: 1000;
+}
+
+/* Right-align dropdowns near the edge so they never get cut off */
+.nav-item:last-child .dropdown-menu,
+.nav-item:nth-last-child(2) .dropdown-menu {
+  left: auto;
+  right: 0;
 }
 
 [data-theme="light"] .dropdown-menu {
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12) !important;
 }
 
 .has-dropdown:hover .dropdown-menu {
@@ -530,12 +539,13 @@ svg {
 
 .dropdown-link {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   padding: 10px 12px;
   border-radius: var(--radius-md);
   transition: var(--transition);
   text-decoration: none;
+  white-space: normal !important;
 }
 
 .dropdown-link:hover {
@@ -544,28 +554,53 @@ svg {
 }
 
 [data-theme="light"] .dropdown-link:hover {
-  background: rgba(15, 23, 42, 0.06);
+  background: rgba(0, 0, 0, 0.05) !important;
 }
 
 .dd-icon {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.dd-icon svg { width: 18px; height: 18px; }
-.dd-icon.emerald { background: var(--accent-emerald-subtle); color: var(--accent-emerald); }
-.dd-icon.blue { background: var(--blueprint-blue-subtle); color: var(--blueprint-blue); }
-.dd-icon.purple { background: var(--accent-purple-subtle); color: var(--accent-purple); }
-.dd-icon.coral { background: rgba(255, 107, 0, 0.12); color: var(--accent-coral); }
-.dd-icon.amber { background: rgba(245, 158, 11, 0.12); color: var(--accent-amber); }
+.dd-icon svg { width: 18px !important; height: 18px !important; }
+.dd-icon.emerald { background: rgba(225, 29, 72, 0.12); color: #E11D48; }
+.dd-icon.blue { background: rgba(217, 119, 6, 0.12); color: #D97706; }
+.dd-icon.purple { background: rgba(124, 58, 237, 0.12); color: #7C3AED; }
+.dd-icon.coral { background: rgba(234, 88, 12, 0.12); color: #EA580C; }
+.dd-icon.amber { background: rgba(245, 158, 11, 0.12); color: #F59E0B; }
 
-.dropdown-link strong { font-size: 0.84rem; display: block; color: var(--text-primary); }
-.dropdown-link span { font-size: 0.72rem; color: var(--text-muted); }
+.dropdown-link strong {
+  font-size: 0.88rem;
+  display: block;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 3px;
+  white-space: normal !important;
+}
+
+[data-theme="light"] .dropdown-link strong {
+  color: #111827 !important;
+  font-weight: 700;
+}
+
+.dropdown-link span {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  display: block;
+  white-space: normal !important;
+}
+
+[data-theme="light"] .dropdown-link span {
+  color: #4B5563 !important;
+  font-weight: 500;
+}
 
 /* Right Header Group: Lang + Theme + Dedicated CTA */
 .header-right-group {
