@@ -295,7 +295,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   2. GLOBAL FLOATING FROSTED NAVBAR (ZERO COLLISION)
+   2. DUAL-ISLAND SPLIT MODERN NAVBAR (SEPARATED RIGHT CTA & HIGH-CONTRAST)
    ========================================================================== */
 .site-header {
   position: fixed;
@@ -308,17 +308,26 @@ button, input, select, textarea {
   transition: var(--transition);
 }
 
-.header-container {
-  pointer-events: auto;
+.header-split-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
-  max-width: 1240px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 14px 0 20px;
+  width: 94%;
+  gap: 14px;
+}
+
+/* Island 1: Main Navigation Capsule */
+.nav-island-main {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 58px;
+  padding: 0 12px 0 16px;
   border-radius: var(--radius-pill);
-  background: rgba(6, 11, 25, 0.86);
+  background: rgba(6, 11, 25, 0.88);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--border-color);
@@ -326,16 +335,20 @@ button, input, select, textarea {
   transition: var(--transition);
 }
 
-[data-theme="light"] .header-container {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(15, 23, 42, 0.08);
+[data-theme="light"] .nav-island-main {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(15, 23, 42, 0.1);
   box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
 }
 
-.site-header.scrolled .header-container {
+.site-header.scrolled .nav-island-main {
   background: rgba(6, 11, 25, 0.96);
   border-color: rgba(0, 214, 143, 0.35);
   box-shadow: 0 12px 45px rgba(0, 0, 0, 0.55), 0 0 20px rgba(0, 214, 143, 0.15);
+}
+
+[data-theme="light"] .site-header.scrolled .nav-island-main {
+  background: rgba(255, 255, 255, 0.98);
 }
 
 /* Brand Logo */
@@ -373,14 +386,14 @@ button, input, select, textarea {
   font-size: 1.18rem;
   font-weight: 900;
   letter-spacing: -0.03em;
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
   line-height: 1;
 }
 
 .brand-accent { color: var(--accent-emerald); }
 
-.brand-sub {
-  font-size: 0.64rem;
+.brand-badge-pill {
+  font-size: 0.62rem;
   font-weight: 700;
   padding: 2px 8px;
   border-radius: var(--radius-pill);
@@ -390,8 +403,16 @@ button, input, select, textarea {
   white-space: nowrap;
 }
 
-@media (max-width: 1200px) {
-  .brand-sub { display: none; }
+@media (max-width: 1240px) {
+  .brand-badge-pill { display: none; }
+}
+
+.nav-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border-color);
+  opacity: 0.6;
+  margin: 0 2px;
 }
 
 /* Desktop Navigation Menu */
@@ -403,20 +424,21 @@ button, input, select, textarea {
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
 }
 
 .nav-anchor {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 6px 11px;
+  gap: 5px;
+  padding: 6px 12px;
   font-size: 0.84rem;
   font-weight: 600;
   color: var(--text-secondary);
   border-radius: var(--radius-pill);
   transition: var(--transition);
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .nav-anchor:hover, .nav-anchor.active {
@@ -496,11 +518,16 @@ button, input, select, textarea {
   padding: 10px 12px;
   border-radius: var(--radius-md);
   transition: var(--transition);
+  text-decoration: none;
 }
 
 .dropdown-link:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateX(3px);
+}
+
+[data-theme="light"] .dropdown-link:hover {
+  background: rgba(15, 23, 42, 0.06);
 }
 
 .dd-icon {
@@ -517,11 +544,13 @@ button, input, select, textarea {
 .dd-icon.emerald { background: var(--accent-emerald-subtle); color: var(--accent-emerald); }
 .dd-icon.blue { background: var(--blueprint-blue-subtle); color: var(--blueprint-blue); }
 .dd-icon.purple { background: var(--accent-purple-subtle); color: var(--accent-purple); }
+.dd-icon.coral { background: rgba(255, 107, 0, 0.12); color: var(--accent-coral); }
+.dd-icon.amber { background: rgba(245, 158, 11, 0.12); color: var(--accent-amber); }
 
 .dropdown-link strong { font-size: 0.84rem; display: block; color: var(--text-primary); }
 .dropdown-link span { font-size: 0.72rem; color: var(--text-muted); }
 
-/* Header Controls & Single Primary CTA */
+/* Controls: Language + Theme Toggle */
 .header-controls {
   display: flex;
   align-items: center;
@@ -579,28 +608,36 @@ button, input, select, textarea {
 [data-theme="light"] .sun { display: none; }
 [data-theme="light"] .moon { display: block; color: var(--text-primary); }
 
-.btn-cta-nav {
+/* Island 2: Standalone Right CTA Pill */
+.nav-island-cta {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+
+.btn-standalone-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  height: 38px;
-  padding: 0 18px;
+  gap: 8px;
+  height: 58px;
+  padding: 0 24px;
   border-radius: var(--radius-pill);
   background: linear-gradient(135deg, var(--accent-coral) 0%, #FF8A00 100%);
-  color: #FFFFFF;
-  font-size: 0.82rem;
+  color: #FFFFFF !important;
+  font-size: 0.86rem;
   font-weight: 700;
-  box-shadow: 0 4px 14px var(--accent-coral-glow);
+  text-decoration: none;
+  box-shadow: 0 8px 24px var(--accent-coral-glow);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: var(--transition);
   white-space: nowrap;
 }
 
-.btn-cta-nav:hover {
+.btn-standalone-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px var(--accent-coral-glow);
+  box-shadow: 0 12px 30px var(--accent-coral-glow);
 }
 
-.btn-cta-nav svg { width: 15px; height: 15px; }
+.btn-standalone-cta svg { width: 16px; height: 16px; }
 
 /* Hamburger Button */
 .mobile-menu-btn {
@@ -1823,8 +1860,10 @@ button, input, select, textarea {
    5. RESPONSIVE BREAKPOINTS (ZERO COLLISION GUARANTEED)
    ========================================================================== */
 @media (max-width: 1100px) {
-  .desktop-navigation { display: none; }
-  .mobile-menu-btn { display: flex; }
+  .hide-on-mobile { display: none !important; }
+  .mobile-menu-btn { display: flex !important; }
+  .header-split-wrapper { width: 92%; }
+  .nav-island-main { width: 100%; justify-content: space-between; }
   .grid-3-col { grid-template-columns: repeat(2, 1fr); }
   .grid-4-col { grid-template-columns: repeat(2, 1fr); }
   .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1841,9 +1880,7 @@ button, input, select, textarea {
 @media (max-width: 640px) {
   .grid-3-col, .grid-4-col, .roadmap-grid, .footer-grid-4 { grid-template-columns: 1fr; }
   .site-header { top: 10px; }
-  .header-container { padding: 0 12px; height: 54px; }
-  .btn-cta-nav span { display: none; }
-  .btn-cta-nav { padding: 0 12px; }
+  .nav-island-main { padding: 0 10px 0 12px; height: 52px; }
   .badge-top-right, .badge-bottom-left { position: static; margin-top: 10px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 }
