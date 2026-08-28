@@ -1358,36 +1358,175 @@ svg {
 
 .pkg-features li span { color: var(--accent-emerald); font-weight: 800; }
 
-/* Roadmap Steps */
-.roadmap-grid {
+/* ==========================================================================
+   6. CONNECTED WORKFLOW ARCHITECTURE (PREMIUM STEPPER TIMELINE)
+   ========================================================================== */
+.workflow-journey-wrapper {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.workflow-central-line {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 50%;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-50%);
+  border-radius: var(--radius-pill);
+}
+
+.workflow-line-glow {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent-emerald) 0%, var(--blueprint-blue) 40%, var(--accent-purple) 70%, var(--accent-coral) 100%);
+  box-shadow: 0 0 15px rgba(0, 214, 143, 0.5);
+  border-radius: var(--radius-pill);
+}
+
+.workflow-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.workflow-step-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+  gap: 70px;
 }
 
-.roadmap-step {
-  padding: 26px 20px;
+.workflow-step-row.reverse {
+  direction: rtl;
 }
 
-.step-badge {
-  width: 38px;
-  height: 38px;
+.workflow-step-row.reverse .workflow-card {
+  direction: ltr;
+}
+
+.workflow-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
   font-family: var(--font-mono);
-  margin-bottom: 16px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  z-index: 5;
+  border: 3px solid var(--bg-surface);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
 }
 
-.step-badge.emerald { background: var(--accent-emerald); color: #060B19; }
-.step-badge.blue { background: var(--blueprint-blue); color: #FFFFFF; }
-.step-badge.purple { background: var(--accent-purple); color: #FFFFFF; }
-.step-badge.coral { background: var(--accent-coral); color: #FFFFFF; }
+.workflow-node.emerald { background: linear-gradient(135deg, var(--accent-emerald) 0%, #00B377 100%); color: #060B19; box-shadow: 0 0 25px var(--accent-emerald-glow); }
+.workflow-node.blue { background: linear-gradient(135deg, var(--blueprint-blue) 0%, #2563EB 100%); color: #FFFFFF; box-shadow: 0 0 25px rgba(59, 130, 246, 0.4); }
+.workflow-node.purple { background: linear-gradient(135deg, var(--accent-purple) 0%, #7C3AED 100%); color: #FFFFFF; box-shadow: 0 0 25px rgba(139, 92, 246, 0.4); }
+.workflow-node.coral { background: linear-gradient(135deg, var(--accent-coral) 0%, #FF8A00 100%); color: #FFFFFF; box-shadow: 0 0 25px var(--accent-coral-glow); }
 
-.roadmap-step h4 { font-size: 1.05rem; margin-bottom: 8px; font-family: var(--font-heading); }
-.roadmap-step p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.55; }
+.node-pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  opacity: 0.4;
+  animation: pulseWorkflow 2.5s infinite;
+}
+
+@keyframes pulseWorkflow {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.25); opacity: 0; }
+}
+
+.workflow-card {
+  padding: 32px 28px;
+  border-radius: var(--radius-xl);
+  transition: var(--transition);
+}
+
+.workflow-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-emerald);
+}
+
+.wf-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.wf-phase-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.06em;
+}
+
+.wf-phase-badge.emerald { background: var(--accent-emerald-subtle); color: var(--accent-emerald); }
+.wf-phase-badge.blue { background: var(--blueprint-blue-subtle); color: var(--blueprint-blue); }
+.wf-phase-badge.purple { background: var(--accent-purple-subtle); color: var(--accent-purple); }
+.wf-phase-badge.coral { background: rgba(255, 107, 0, 0.12); color: var(--accent-coral); }
+
+.wf-duration {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.wf-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  font-family: var(--font-heading);
+}
+
+.wf-desc {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.wf-deliverables-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+.wf-deliv-item {
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wf-check {
+  color: var(--accent-emerald);
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .workflow-central-line { left: 24px; }
+  .workflow-step-row, .workflow-step-row.reverse { display: block; padding-left: 64px; direction: ltr; }
+  .workflow-step-row.reverse .workflow-card { direction: ltr; }
+  .workflow-node { left: 24px; top: 32px; transform: translate(-50%, 0); }
+}
 
 /* Why Us */
 .why-card {
