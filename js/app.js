@@ -989,7 +989,7 @@ function initGsapAnimations() {
         }
       );
 
-      gsap.fromTo(".org-trust-marquee-wrap",
+      gsap.fromTo(".org-partner-marquee-container",
         { autoAlpha: 0, y: 20 },
         {
           autoAlpha: 1,
