@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeManager();
   initLanguageManager();
   initNavbar();
-  initAntigravityAnimations();
+  initGsapAnimations();
   initHeroParallax();
   initHeroDashboardTabs();
   initWorkflowTimelineScroll();
@@ -536,53 +536,407 @@ function initLanguageManager() {
 }
 
 /* ==========================================================================
-   3. Antigravity Animation Engine (Scroll Reveals)
+   3. GSAP 3.12+ & ScrollTrigger High-Impact Animation Suite
    ========================================================================== */
-function initAntigravityAnimations() {
-  const reveals = document.querySelectorAll('.reveal-on-scroll');
+function initGsapAnimations() {
+  if (typeof gsap === 'undefined') {
+    console.warn('GSAP is not loaded. Fallback to default visibility.');
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('revealed'));
+    return;
+  }
 
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.1
-  };
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
 
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const delay = parseInt(entry.target.getAttribute('data-delay') || '0', 10);
-        if (delay > 0) {
-          setTimeout(() => {
-            entry.target.classList.add('revealed');
-          }, delay);
-        } else {
-          entry.target.classList.add('revealed');
-        }
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+  gsap.defaults({ ease: "power2.out", duration: 0.8 });
 
-  reveals.forEach((el) => revealObserver.observe(el));
-
-  // Header Scroll State
+  // Header Scroll Frosted State
   const header = document.getElementById('main-header');
   window.addEventListener('scroll', () => {
     if (header) {
-      if (window.scrollY > 40) {
+      if (window.scrollY > 30) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
     }
   }, { passive: true });
+
+  const mm = gsap.matchMedia();
+
+  mm.add({
+    isDesktop: "(min-width: 992px)",
+    isMobile: "(max-width: 991px)",
+    reduceMotion: "(prefers-reduced-motion: reduce)"
+  }, (context) => {
+    const { isDesktop, reduceMotion } = context.conditions;
+
+    if (reduceMotion) {
+      gsap.set(".reveal-on-scroll, .trust-rating-pill, .hero-headline, .hero-subheadline, .hero-cta-group .btn, .quick-trust-badges .badge-item, .glass-dashboard-card, .solusi-card, .solution-card, .pilar-card, .feature-card, .portfolio-card, .pricing-card, .faq-item, .footer-col", {
+        autoAlpha: 1,
+        y: 0,
+        x: 0,
+        scale: 1
+      });
+      return;
+    }
+
+    // --- 1. HERO SECTION MASTER TIMELINE ---
+    const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    heroTl
+      .fromTo(".trust-rating-pill", 
+        { autoAlpha: 0, y: -25, scale: 0.94 }, 
+        { autoAlpha: 1, y: 0, scale: 1, duration: 0.75, delay: 0.15 }
+      )
+      .fromTo(".hero-headline", 
+        { autoAlpha: 0, y: 35 }, 
+        { autoAlpha: 1, y: 0, duration: 0.85 }, 
+        "-=0.45"
+      )
+      .fromTo(".hero-subheadline", 
+        { autoAlpha: 0, y: 20 }, 
+        { autoAlpha: 1, y: 0, duration: 0.75 }, 
+        "-=0.55"
+      )
+      .fromTo(".hero-cta-group .btn", 
+        { autoAlpha: 0, y: 20, scale: 0.92 }, 
+        { autoAlpha: 1, y: 0, scale: 1, duration: 0.65, stagger: 0.12, ease: "back.out(1.6)" }, 
+        "-=0.45"
+      )
+      .fromTo(".quick-trust-badges .badge-item", 
+        { autoAlpha: 0, y: 18 }, 
+        { autoAlpha: 1, y: 0, duration: 0.55, stagger: 0.1 }, 
+        "-=0.35"
+      )
+      .fromTo(".glass-dashboard-card.main-frame", 
+        { autoAlpha: 0, y: 55, scale: 0.93, rotationX: isDesktop ? 8 : 0 }, 
+        { autoAlpha: 1, y: 0, scale: 1, rotationX: 0, duration: 1.05, ease: "power3.out" }, 
+        "-=0.85"
+      )
+      .fromTo(".mockup-floating-badge, .mockup-floating-badge-bottom", 
+        { autoAlpha: 0, scale: 0.6, y: 15 }, 
+        { autoAlpha: 1, scale: 1, y: 0, duration: 0.6, stagger: 0.15, ease: "back.out(2)" }, 
+        "-=0.5"
+      );
+
+    // Continuous Subtle Floating Hero Mockup
+    gsap.to("#hero-mockup-layer", {
+      y: -10,
+      duration: 3.2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+
+    // Background Constellation Nodes Pulse
+    gsap.to(".node-pulse", {
+      scale: 1.8,
+      autoAlpha: 0,
+      duration: 2.4,
+      repeat: -1,
+      stagger: 0.45,
+      transformOrigin: "center center",
+      ease: "power1.out"
+    });
+
+    // --- 2. GLOBAL SECTION HEADERS SCROLLTRIGGER ---
+    if (typeof ScrollTrigger !== 'undefined') {
+      gsap.utils.toArray(".section-header, .section-tag").forEach((el) => {
+        gsap.fromTo(el,
+          { autoAlpha: 0, y: 30 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.75,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+
+      // --- 3. SOLUSI CARDS (4 Segments) ---
+      const solutionCards = gsap.utils.toArray(".solusi-card, .solution-card");
+      if (solutionCards.length) {
+        gsap.fromTo(solutionCards,
+          { autoAlpha: 0, y: 45, scale: 0.95 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.12,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: solutionCards[0].closest(".container") || solutionCards[0],
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+
+      // --- 4. 4 PILAR ARSITEKTUR CARDS ---
+      const pillarCards = gsap.utils.toArray(".pilar-card, .pillar-card");
+      if (pillarCards.length) {
+        gsap.fromTo(pillarCards,
+          { autoAlpha: 0, y: 40, scale: 0.95 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.14,
+            ease: "back.out(1.2)",
+            scrollTrigger: {
+              trigger: pillarCards[0].closest(".container") || pillarCards[0],
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+
+      // --- 5. ALUR KONSTRUKSI (WORKFLOW PIPELINE) ---
+      const workflowSection = document.getElementById('timeline-section') || document.getElementById('alur');
+      const workflowLine = document.getElementById('workflow-line-progress');
+      if (workflowSection && workflowLine) {
+        gsap.fromTo(workflowLine,
+          { height: "8%" },
+          {
+            height: "100%",
+            ease: "none",
+            scrollTrigger: {
+              trigger: workflowSection,
+              start: "top 70%",
+              end: "bottom 70%",
+              scrub: 0.6
+            }
+          }
+        );
+      }
+
+      const stepRows = gsap.utils.toArray(".pipeline-step-row");
+      stepRows.forEach((row, idx) => {
+        gsap.fromTo(row,
+          { autoAlpha: 0, x: idx % 2 === 0 ? -30 : 30 },
+          {
+            autoAlpha: 1,
+            x: 0,
+            duration: 0.75,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: row,
+              start: "top 85%",
+              toggleActions: "play none none none",
+              onEnter: () => row.classList.add('active-step'),
+              onLeaveBack: () => row.classList.remove('active-step')
+            }
+          }
+        );
+      });
+
+      // --- 6. FEATURE LIBRARY MATRIX CARDS ---
+      const featCards = gsap.utils.toArray(".feature-card");
+      if (featCards.length) {
+        gsap.fromTo(featCards,
+          { autoAlpha: 0, y: 30, scale: 0.96 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.65,
+            stagger: 0.08,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: featCards[0].closest(".container") || featCards[0],
+              start: "top 82%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+
+      // --- 7. INTERACTIVE LIVE WIDGETS ---
+      const widgetBoxes = gsap.utils.toArray(".live-widget-box");
+      if (widgetBoxes.length) {
+        gsap.fromTo(widgetBoxes,
+          { autoAlpha: 0, y: 40, scale: 0.96 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.75,
+            stagger: 0.12,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: widgetBoxes[0].closest(".container") || widgetBoxes[0],
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+
+      // --- 8. PORTFOLIO SHOWCASE CARDS ---
+      const portoCards = gsap.utils.toArray(".portfolio-card");
+      if (portoCards.length) {
+        gsap.fromTo(portoCards,
+          { autoAlpha: 0, y: 45, scale: 0.95 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.14,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: portoCards[0].closest(".container") || portoCards[0],
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+
+      // --- 9. PRICING CARDS ---
+      const pricingCards = gsap.utils.toArray(".pricing-card");
+      if (pricingCards.length) {
+        gsap.fromTo(pricingCards,
+          { autoAlpha: 0, y: 50, scale: 0.94 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.85,
+            stagger: 0.15,
+            ease: "back.out(1.3)",
+            scrollTrigger: {
+              trigger: pricingCards[0].closest(".container") || pricingCards[0],
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+
+      // --- 10. LEAD CAPTURE BROCHURE CARD ---
+      const leadCard = document.querySelector(".brochure-section-card, #download-brosur .glass-card");
+      if (leadCard) {
+        gsap.fromTo(leadCard,
+          { autoAlpha: 0, y: 40, scale: 0.96 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.85,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: leadCard,
+              start: "top 82%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+
+      // --- 11. FAQ ITEMS ---
+      const faqItems = gsap.utils.toArray(".faq-item");
+      if (faqItems.length) {
+        gsap.fromTo(faqItems,
+          { autoAlpha: 0, y: 25 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: faqItems[0].closest(".container") || faqItems[0],
+              start: "top 85%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+
+      // --- 12. FOOTER COLUMNS ---
+      const footerCols = gsap.utils.toArray(".site-footer .footer-col, .footer-bottom");
+      if (footerCols.length) {
+        gsap.fromTo(footerCols,
+          { autoAlpha: 0, y: 30 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".site-footer",
+              start: "top 90%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+    }
+
+    // --- 13. FLOATING WHATSAPP BUTTON PULSE ---
+    const waFloat = document.getElementById("wa-floating-btn");
+    if (waFloat) {
+      gsap.to(waFloat, {
+        scale: 1.08,
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+    }
+
+    // --- 14. 3D CARD TILT MICRO-INTERACTION (Desktop) ---
+    if (isDesktop) {
+      const tiltCards = document.querySelectorAll(".glass-card, .solusi-card, .pilar-card, .portfolio-card, .feature-card, .pricing-card");
+      tiltCards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -4;
+          const rotateY = ((x - centerX) / centerX) * 4;
+
+          gsap.to(card, {
+            rotationX: rotateX,
+            rotationY: rotateY,
+            transformPerspective: 1000,
+            duration: 0.3,
+            ease: "power1.out"
+          });
+        });
+
+        card.addEventListener("mouseleave", () => {
+          gsap.to(card, {
+            rotationX: 0,
+            rotationY: 0,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        });
+      });
+    }
+  });
 }
 
 /* ==========================================================================
-   4. Hero Floating Mockup (Pure CSS Bounce Animation, No Mouse Parallax)
+   4. Hero Floating Mockup Interactive Elements
    ========================================================================== */
 function initHeroParallax() {
-  // Hero donation buttons simulation in mockup
   const amountBtns = document.querySelectorAll('.amount-btn');
   amountBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -594,6 +948,12 @@ function initHeroParallax() {
   const heroDonateBtn = document.getElementById('hero-btn-donasi-demo');
   if (heroDonateBtn) {
     heroDonateBtn.addEventListener('click', () => {
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(heroDonateBtn, 
+          { scale: 0.93 }, 
+          { scale: 1, duration: 0.4, ease: "back.out(2)" }
+        );
+      }
       heroDonateBtn.classList.add('btn-pulse-active');
       setTimeout(() => heroDonateBtn.classList.remove('btn-pulse-active'), 400);
     });
@@ -619,7 +979,14 @@ function initHeroDashboardTabs() {
 
       Object.keys(panels).forEach((key) => {
         if (panels[key]) {
-          panels[key].classList.toggle('active', key === target);
+          const isTarget = key === target;
+          panels[key].classList.toggle('active', isTarget);
+          if (isTarget && typeof gsap !== 'undefined') {
+            gsap.fromTo(panels[key], 
+              { autoAlpha: 0, y: 8 }, 
+              { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out" }
+            );
+          }
         }
       });
     });
@@ -627,40 +994,10 @@ function initHeroDashboardTabs() {
 }
 
 /* ==========================================================================
-   6. Workflow (Alur Konstruksi) Connected Laser Pipeline Scroll Engine
+   6. Workflow Laser Pipeline Scroll Engine (Legacy / Fallback Sync)
    ========================================================================== */
 function initWorkflowTimelineScroll() {
-  const timelineSection = document.getElementById('timeline-section');
-  const lineProgress = document.getElementById('workflow-line-progress');
-  const stepRows = document.querySelectorAll('.pipeline-step-row');
-
-  if (!timelineSection || !lineProgress) return;
-
-  function updateTimeline() {
-    const rect = timelineSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    // Track scroll percentage downwards
-    if (rect.top <= windowHeight && rect.bottom >= 0) {
-      const totalHeight = rect.height;
-      const scrolledDist = windowHeight - rect.top;
-      const progressPct = Math.min(Math.max((scrolledDist / (totalHeight + windowHeight * 0.2)) * 100, 15), 100);
-      lineProgress.style.height = `${progressPct}%`;
-    }
-
-    // Highlight step node as it crosses middle of screen
-    stepRows.forEach((row) => {
-      const rowRect = row.getBoundingClientRect();
-      if (rowRect.top <= windowHeight * 0.75 && rowRect.bottom >= windowHeight * 0.15) {
-        row.classList.add('active-step');
-      } else {
-        row.classList.remove('active-step');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', updateTimeline, { passive: true });
-  updateTimeline();
+  // Managed by GSAP ScrollTrigger in initGsapAnimations
 }
 
 /* ==========================================================================
@@ -677,11 +1014,25 @@ function initDonationWidget() {
   const targetAmount = 60000000;
   let currentAmount = baseAmount;
 
-  function updateWidgetDisplay() {
+  function updateWidgetDisplay(animate = true) {
     if (!curAmountEl || !progressFill) return;
     const pct = Math.min((currentAmount / targetAmount) * 100, 100);
     curAmountEl.textContent = `Rp ${new Intl.NumberFormat('id-ID').format(currentAmount)}`;
-    progressFill.style.width = `${pct.toFixed(1)}%`;
+    
+    if (typeof gsap !== 'undefined' && animate) {
+      gsap.to(progressFill, {
+        width: `${pct.toFixed(1)}%`,
+        duration: 0.7,
+        ease: "power2.out"
+      });
+      gsap.fromTo(curAmountEl, 
+        { scale: 1.08, color: "var(--accent-emerald)" }, 
+        { scale: 1, color: "inherit", duration: 0.35 }
+      );
+    } else {
+      progressFill.style.width = `${pct.toFixed(1)}%`;
+    }
+
     if (pctLabel) {
       pctLabel.textContent = `${pct.toFixed(1)}%`;
     }
@@ -691,14 +1042,14 @@ function initDonationWidget() {
     btn.addEventListener('click', () => {
       const val = Number(btn.getAttribute('data-val') || 0);
       currentAmount += val;
-      updateWidgetDisplay();
+      updateWidgetDisplay(true);
     });
   });
 
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
       currentAmount = baseAmount;
-      updateWidgetDisplay();
+      updateWidgetDisplay(true);
     });
   }
 }
@@ -716,6 +1067,12 @@ function initWhatsAppHotlineSimulation() {
       const answer = chip.getAttribute('data-chat-answer');
       if (chatBubbleText && answer) {
         chatBubbleText.innerHTML = `<strong>Admin:</strong> ${answer}`;
+        if (typeof gsap !== 'undefined') {
+          gsap.fromTo(chatBubbleText, 
+            { autoAlpha: 0, scale: 0.95 }, 
+            { autoAlpha: 1, scale: 1, duration: 0.3 }
+          );
+        }
         if (chatBubbleTime) {
           const now = new Date();
           const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
@@ -735,24 +1092,26 @@ function initTransparencyDonutWidget() {
   const centerLabel = document.getElementById('chart-center-label');
 
   legendItems.forEach((item) => {
-    item.addEventListener('mouseenter', () => {
+    const handleInspect = () => {
       const pct = item.getAttribute('data-pct');
       const label = item.getAttribute('data-label');
       if (centerPct && pct) centerPct.textContent = pct;
       if (centerLabel && label) centerLabel.textContent = label;
-    });
+      if (typeof gsap !== 'undefined' && centerPct) {
+        gsap.fromTo([centerPct, centerLabel], 
+          { scale: 1.15, autoAlpha: 0.6 }, 
+          { scale: 1, autoAlpha: 1, duration: 0.35, ease: "back.out(2)" }
+        );
+      }
+    };
 
-    item.addEventListener('click', () => {
-      const pct = item.getAttribute('data-pct');
-      const label = item.getAttribute('data-label');
-      if (centerPct && pct) centerPct.textContent = pct;
-      if (centerLabel && label) centerLabel.textContent = label;
-    });
+    item.addEventListener('mouseenter', handleInspect);
+    item.addEventListener('click', handleInspect);
   });
 }
 
 /* ==========================================================================
-   10. Animated Social Impact Counters
+   10. Animated Social Impact Counters (GSAP Powered)
    ========================================================================== */
 function initImpactCounters() {
   const counterEls = document.querySelectorAll('.counter-animate');
@@ -761,46 +1120,48 @@ function initImpactCounters() {
   function animateCounters() {
     counterEls.forEach((counter) => {
       const target = Number(counter.getAttribute('data-target') || 0);
-      let count = 0;
-      const duration = 1500;
-      const stepTime = 25;
-      const steps = duration / stepTime;
-      const increment = target / steps;
-
-      const timer = setInterval(() => {
-        count += increment;
-        if (count >= target) {
-          counter.textContent = new Intl.NumberFormat('id-ID').format(target);
-          clearInterval(timer);
-        } else {
-          counter.textContent = new Intl.NumberFormat('id-ID').format(Math.floor(count));
-        }
-      }, stepTime);
+      const countObj = { val: 0 };
+      if (typeof gsap !== 'undefined') {
+        gsap.to(countObj, {
+          val: target,
+          duration: 2.2,
+          ease: "power2.out",
+          onUpdate: () => {
+            counter.textContent = new Intl.NumberFormat('id-ID').format(Math.floor(countObj.val));
+          },
+          onComplete: () => {
+            counter.textContent = new Intl.NumberFormat('id-ID').format(target);
+          }
+        });
+      } else {
+        counter.textContent = new Intl.NumberFormat('id-ID').format(target);
+      }
     });
   }
 
-  if (counterEls.length > 0) {
-    const counterObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounters();
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    counterObserver.observe(counterEls[0].closest('.live-widget-box') || counterEls[0]);
+  if (typeof ScrollTrigger !== 'undefined' && counterEls.length > 0) {
+    ScrollTrigger.create({
+      trigger: counterEls[0].closest('.live-widget-box') || counterEls[0],
+      start: "top 80%",
+      once: true,
+      onEnter: animateCounters
+    });
+  } else if (counterEls.length > 0) {
+    animateCounters();
   }
 
   if (replayBtn) {
     replayBtn.addEventListener('click', () => {
       animateCounters();
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(replayBtn, { rotation: 0 }, { rotation: 360, duration: 0.6, ease: "power2.out" });
+      }
     });
   }
 }
 
 /* ==========================================================================
-   11. Feature Library Category Tabs
+   11. Feature Library Category Tabs (GSAP Stagger Transition)
    ========================================================================== */
 function initFeatureTabs() {
   const tabs = document.querySelectorAll('.filter-tab-btn[data-filter]');
@@ -812,21 +1173,33 @@ function initFeatureTabs() {
       tab.classList.add('active');
 
       const filter = tab.getAttribute('data-filter');
+      const visibleCards = [];
 
       cards.forEach((card) => {
         const cat = card.getAttribute('data-cat');
         if (filter === 'all' || cat === filter) {
           card.style.display = 'flex';
+          visibleCards.push(card);
         } else {
           card.style.display = 'none';
         }
       });
+
+      if (typeof gsap !== 'undefined' && visibleCards.length > 0) {
+        gsap.fromTo(visibleCards, 
+          { autoAlpha: 0, y: 20, scale: 0.96 },
+          { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, stagger: 0.05, ease: "power2.out" }
+        );
+      }
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
     });
   });
 }
 
 /* ==========================================================================
-   10. Portfolio Category Filters
+   12. Portfolio Category Filters (GSAP Stagger Transition)
    ========================================================================== */
 function initPortfolioFilter() {
   const tabs = document.querySelectorAll('.filter-tab-btn[data-porto-filter]');
@@ -838,21 +1211,33 @@ function initPortfolioFilter() {
       tab.classList.add('active');
 
       const filter = tab.getAttribute('data-porto-filter');
+      const visibleCards = [];
 
       cards.forEach((card) => {
         const cat = card.getAttribute('data-porto-cat');
         if (filter === 'all' || cat === filter) {
           card.style.display = 'flex';
+          visibleCards.push(card);
         } else {
           card.style.display = 'none';
         }
       });
+
+      if (typeof gsap !== 'undefined' && visibleCards.length > 0) {
+        gsap.fromTo(visibleCards,
+          { autoAlpha: 0, y: 25, scale: 0.95 },
+          { autoAlpha: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.07, ease: "power2.out" }
+        );
+      }
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
     });
   });
 }
 
 /* ==========================================================================
-   11. Interactive Live Preview Simulator Modal (Desktop & Mobile Modes)
+   13. Interactive Live Preview Simulator Modal (Desktop & Mobile Modes)
    ========================================================================== */
 function initLivePreviewSimulator() {
   const modal = document.getElementById('live-preview-modal');
@@ -975,7 +1360,7 @@ function initCaseStudyModal() {
 }
 
 /* ==========================================================================
-   12. Interactive FAQ Search & Accordion
+   14. Interactive FAQ Search & Smooth GSAP Accordion
    ========================================================================== */
 function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
@@ -983,11 +1368,41 @@ function initFaqAccordion() {
 
   faqItems.forEach((item) => {
     const btn = item.querySelector('.faq-question-btn');
-    if (btn) {
+    const pane = item.querySelector('.faq-answer-pane');
+
+    if (btn && pane) {
       btn.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');
-        faqItems.forEach((other) => other.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
+
+        // Close other accordion items smoothly
+        faqItems.forEach((other) => {
+          if (other !== item && other.classList.contains('open')) {
+            other.classList.remove('open');
+            const otherPane = other.querySelector('.faq-answer-pane');
+            if (otherPane && typeof gsap !== 'undefined') {
+              gsap.to(otherPane, { height: 0, autoAlpha: 0, duration: 0.3, ease: "power2.in" });
+            }
+          }
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          if (typeof gsap !== 'undefined') {
+            gsap.fromTo(pane, 
+              { height: 0, autoAlpha: 0 }, 
+              { height: "auto", autoAlpha: 1, duration: 0.35, ease: "power2.out" }
+            );
+          }
+        } else {
+          item.classList.remove('open');
+          if (typeof gsap !== 'undefined') {
+            gsap.to(pane, { height: 0, autoAlpha: 0, duration: 0.25, ease: "power2.in" });
+          }
+        }
+
+        if (typeof ScrollTrigger !== 'undefined') {
+          setTimeout(() => ScrollTrigger.refresh(), 350);
+        }
       });
     }
   });
@@ -995,21 +1410,34 @@ function initFaqAccordion() {
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       const query = e.target.value.toLowerCase().trim();
+      const matched = [];
+
       faqItems.forEach((item) => {
         const qText = item.querySelector('.faq-q-text')?.textContent.toLowerCase() || '';
         const aText = item.querySelector('.faq-answer-pane')?.textContent.toLowerCase() || '';
         if (qText.includes(query) || aText.includes(query)) {
           item.style.display = 'block';
+          matched.push(item);
         } else {
           item.style.display = 'none';
         }
       });
+
+      if (typeof gsap !== 'undefined' && matched.length > 0) {
+        gsap.fromTo(matched, 
+          { autoAlpha: 0, y: 12 }, 
+          { autoAlpha: 1, y: 0, duration: 0.35, stagger: 0.04, ease: "power2.out" }
+        );
+      }
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
     });
   }
 }
 
 /* ==========================================================================
-   13. High-Conversion Lead Capture Form Validation
+   15. High-Conversion Lead Capture Form Validation
    ========================================================================== */
 function initLeadCaptureForm() {
   const form = document.getElementById('brochure-lead-form');
@@ -1090,7 +1518,7 @@ function initLeadCaptureForm() {
 }
 
 /* ==========================================================================
-   14. Pricing Switcher (Annual vs Regular)
+   16. Pricing Switcher (Annual vs Regular with GSAP Animation)
    ========================================================================== */
 function initPricingSwitcher() {
   const btnAnnual = document.getElementById('billing-annual');
@@ -1100,27 +1528,42 @@ function initPricingSwitcher() {
   const p2 = document.getElementById('price-val-2');
   const p3 = document.getElementById('price-val-3');
 
+  function updatePrices(annual) {
+    if (annual) {
+      if (p1) p1.textContent = '1.950.000';
+      if (p2) p2.textContent = '3.850.000';
+      if (p3) p3.textContent = '7.500.000';
+    } else {
+      if (p1) p1.textContent = '2.600.000';
+      if (p2) p2.textContent = '5.100.000';
+      if (p3) p3.textContent = '9.900.000';
+    }
+
+    if (typeof gsap !== 'undefined') {
+      gsap.fromTo([p1, p2, p3], 
+        { autoAlpha: 0, y: -12, scale: 0.94 }, 
+        { autoAlpha: 1, y: 0, scale: 1, duration: 0.4, stagger: 0.06, ease: "back.out(1.5)" }
+      );
+    }
+  }
+
   if (btnAnnual && btnMonthly) {
     btnAnnual.addEventListener('click', () => {
       btnAnnual.classList.add('active');
       btnMonthly.classList.remove('active');
-      if (p1) p1.textContent = '1.950.000';
-      if (p2) p2.textContent = '3.850.000';
-      if (p3) p3.textContent = '7.500.000';
+      updatePrices(true);
     });
 
     btnMonthly.addEventListener('click', () => {
       btnMonthly.classList.add('active');
       btnAnnual.classList.remove('active');
-      if (p1) p1.textContent = '2.600.000';
-      if (p2) p2.textContent = '5.100.000';
-      if (p3) p3.textContent = '9.900.000';
+      updatePrices(false);
     });
   }
 }
 
 /* ==========================================================================
-   15. Automatic Testimonial Swiper / Carousel Engine
+   17. Automatic Testimonial Swiper / Carousel Engine (GSAP Transition)
    ========================================================================== */
 function initTestimonialAutoSlider() {
   const slider = document.getElementById('testimonial-slider');
@@ -1135,13 +1578,22 @@ function initTestimonialAutoSlider() {
   let currentIdx = 0;
   const totalSlides = slides.length;
   let autoPlayTimer = null;
-  const slideInterval = 4500; // 4.5 seconds
+  const slideInterval = 4800;
 
   function showSlide(index) {
+    const prevIdx = currentIdx;
     currentIdx = (index + totalSlides) % totalSlides;
 
     slides.forEach((slide, idx) => {
-      slide.classList.toggle('active', idx === currentIdx);
+      const isActive = idx === currentIdx;
+      slide.classList.toggle('active', isActive);
+
+      if (isActive && typeof gsap !== 'undefined') {
+        gsap.fromTo(slide, 
+          { autoAlpha: 0, x: currentIdx > prevIdx ? 30 : -30 }, 
+          { autoAlpha: 1, x: 0, duration: 0.55, ease: "power2.out" }
+        );
+      }
     });
 
     dots.forEach((dot, idx) => {
