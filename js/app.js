@@ -35,7 +35,7 @@ const I18N = {
     dd_sol_ngo_title: "NGO & Filantropi",
     dd_sol_ngo_sub: "Advokasi, multi-bahasa, grant & audit WTP",
     
-    dd_prod_tpl_title: "14 Template Live Cloud ↗",
+    dd_prod_tpl_title: "15 Template Live Cloud ↗",
     dd_prod_tpl_sub: "Koleksi template cloud live siap pakai untuk Yayasan, Komunitas & NGO",
     dd_prod_pilar_title: "4 Pilar Arsitektur",
     dd_prod_pilar_sub: "Branding, Fundraising, Transparansi, Relawan",
@@ -75,7 +75,7 @@ const I18N = {
     hero_desc: "Kami membantu Yayasan Sosial, Komunitas & Asosiasi, serta Lembaga NGO memiliki kehadiran digital yang profesional — Branding & Trust, Fundraising Donasi QRIS, Transparansi Kas WTP, dan Manajemen Relawan dalam satu platform terpadu.",
     hero_btn_pricing: "Lihat Paket & Harga",
     hero_btn_consult: "Konsultasi Gratis",
-    hero_btn_templates: "14 Template Live ↗",
+    hero_btn_templates: "15 Template Live ↗",
     scroll_explore: "Scroll untuk Eksplorasi Arsitektur Lengkap",
 
     // Solusi
@@ -89,13 +89,13 @@ const I18N = {
     pilar_sub: "Kami tidak sekadar membuat website. Kami membangun infrastruktur digital nirlaba melalui 4 pilar arsitektur yang saling memperkuat — Branding, Fundraising, Transparansi, dan Otomasi Relawan.",
 
     // Templates
-    tpl_tag: "14 LIVE TEMPLATES DEPLOYED",
+    tpl_tag: "15 LIVE TEMPLATES DEPLOYED",
     tpl_title: "Koleksi Template Website Organisasi Modern",
     tpl_sub: "Klik tombol Live Preview untuk menguji langsung website template yang telah dideploy secara live di lingkungan cloud.",
-    tpl_filter_all: "Semua Template (14)",
+    tpl_filter_all: "Semua Template (15)",
     tpl_filter_yayasan: "Yayasan Sosial (5)",
     tpl_filter_komunitas: "Komunitas & Aksi (5)",
-    tpl_filter_ngo: "NGO & Lembaga (4)",
+    tpl_filter_ngo: "NGO & Lembaga (5)",
 
     // Pricing
     pkg_tag: "PILIHAN PAKET INVESTASI",
@@ -179,7 +179,7 @@ const I18N = {
     dd_sol_ngo_title: "NGOs & Philanthropy",
     dd_sol_ngo_sub: "Advocacy, multilingual, grants & audit reports",
     
-    dd_prod_tpl_title: "14 Live Cloud Templates ↗",
+    dd_prod_tpl_title: "15 Live Cloud Templates ↗",
     dd_prod_tpl_sub: "Ready-to-deploy cloud templates for Foundations & NGOs",
     dd_prod_pilar_title: "4 Architecture Pillars",
     dd_prod_pilar_sub: "Branding, Fundraising, Transparency, Volunteers",
@@ -219,7 +219,7 @@ const I18N = {
     hero_desc: "We empower Foundations, Communities & Associations, and NGOs to establish a professional digital presence — Branding & Trust, QRIS Donation Fundraising, Cash Transparency, and Volunteer Automation in one unified platform.",
     hero_btn_pricing: "View Packages & Pricing",
     hero_btn_consult: "Free Consultation",
-    hero_btn_templates: "14 Live Templates ↗",
+    hero_btn_templates: "15 Live Templates ↗",
     scroll_explore: "Scroll to Explore Full Architecture",
 
     // Solusi
@@ -233,13 +233,13 @@ const I18N = {
     pilar_sub: "We don't just build websites. We create nonprofit digital infrastructure through 4 mutually reinforcing pillars — Branding, Fundraising, Transparency, and Volunteer Automation.",
 
     // Templates
-    tpl_tag: "14 LIVE TEMPLATES DEPLOYED",
+    tpl_tag: "15 LIVE TEMPLATES DEPLOYED",
     tpl_title: "Modern Organization Website Template Collection",
     tpl_sub: "Click Live Preview to test and explore live website templates deployed in the cloud environment.",
-    tpl_filter_all: "All Templates (14)",
+    tpl_filter_all: "All Templates (15)",
     tpl_filter_yayasan: "Foundations (5)",
     tpl_filter_komunitas: "Communities (5)",
-    tpl_filter_ngo: "NGOs & Trusts (4)",
+    tpl_filter_ngo: "NGOs & Trusts (5)",
 
     // Pricing
     pkg_tag: "INVESTMENT PACKAGES",
@@ -323,7 +323,7 @@ const I18N = {
     dd_sol_ngo_title: "非政府组织与慈善机构",
     dd_sol_ngo_sub: "社会倡导、多语言支持、国际赠款与WTP审计报告",
     
-    dd_prod_tpl_title: "14套在线云模板 ↗",
+    dd_prod_tpl_title: "15套在线云模板 ↗",
     dd_prod_tpl_sub: "专为基金会与公益组织量身打造的即用型云端模板",
     dd_prod_pilar_title: "四大数字架构支柱",
     dd_prod_pilar_sub: "品牌信誉、筹款募捐、财务透明、志愿者自动化",
@@ -363,7 +363,7 @@ const I18N = {
     hero_desc: "我们帮助社会基金会、公益社团及非政府组织建立专业可信的数字阵地——涵盖品牌信任、QRIS在线筹款、透明财务看板及志愿者协同管理，尽在一体化云端平台。",
     hero_btn_pricing: "查看建站套餐与报价",
     hero_btn_consult: "立即免费咨询",
-    hero_btn_templates: "14套云模板预览 ↗",
+    hero_btn_templates: "15套云模板预览 ↗",
     scroll_explore: "向下滑动探索完整数字化架构",
 
     // Solusi
@@ -377,13 +377,13 @@ const I18N = {
     pilar_sub: "我们不仅是建站，更是通过四大相互协同的支柱——品牌塑造、筹款系统、透明公开与志愿者自动化，构筑数字基建。",
 
     // Templates
-    tpl_tag: "14套已部署云端模板",
+    tpl_tag: "15套已部署云端模板",
     tpl_title: "现代非营利组织网站模板精选",
     tpl_sub: "点击“在线预览”按钮，即可直接在真实云环境中测试体验已部署的模板系统。",
-    tpl_filter_all: "全部模板 (14)",
+    tpl_filter_all: "全部模板 (15)",
     tpl_filter_yayasan: "公益基金会 (5)",
     tpl_filter_komunitas: "社团与行动 (5)",
-    tpl_filter_ngo: "非政府组织 (4)",
+    tpl_filter_ngo: "非政府组织 (5)",
 
     // Pricing
     pkg_tag: "精选投资套餐",
@@ -499,7 +499,7 @@ function initLanguageManager() {
   const btnEn = document.getElementById('btn-lang-en');
   const btnZh = document.getElementById('btn-lang-zh');
 
-  // Complete section datasets for all 14 templates, 6 packages, roadmap, widgets, add-ons, testimonials, and FAQ
+  // Complete section datasets for all 15 templates, 6 packages, roadmap, widgets, add-ons, testimonials, and FAQ
   const EXTENDED_I18N = {
     templates: {
       id: [
@@ -515,8 +515,9 @@ function initLanguageManager() {
         { badge: "Komunitas Pemuda", desc: "Platform kolaborasi gerakan pemuda, direktori anggota daerah, dan ruang pamer karya sosial." },
         { badge: "Yayasan Global", desc: "Template nirlaba berbasis tujuan pembangunan berkelanjutan (SDGs) dengan metriks dampak interaktif." },
         { badge: "Filantropi & Grants", desc: "Portal manajemen hibah dana sosial, seleksi proposal nirlaba, dan tracking pencairan dana bertahap." },
-        { badge: "NGO Konservasi", desc: "Portal advokasi keanekaragaman hayati gunung, ekspedisi alam liar, dan pusat edukasi ekosistem." },
-        { badge: "Komunitas Digital", desc: "Jaringan kolaborasi inovator sosial, lokakarya nirlaba terbuka, dan inkubasi gerakan masa depan." }
+        { badge: "Komunitas Alam", desc: "Gerakan pelestari pegunungan, penanaman pohon cemara, dan panduan keselamatan pendaki relawan." },
+        { badge: "Asosiasi Digital", desc: "Platform ekosistem relawan digital, edukasi literasi teknologi nirlaba, dan jaringan aksi terdesentralisasi." },
+        { badge: "NGO & Ekologi", desc: "Platform advokasi restorasi ekologis global, resiliensi iklim dan pemberdayaan komunitas hijau berkelanjutan." }
       ],
       en: [
         { badge: "NGO & Conservation", desc: "Modern nature design with sharp biodiversity visuals, endangered species protection & habitat campaigns." },
@@ -531,8 +532,9 @@ function initLanguageManager() {
         { badge: "Youth Community", desc: "Youth movement collaboration platform, regional member directory, and social work showcase." },
         { badge: "Global SDGs Foundation", desc: "Sustainable Development Goals (SDGs) non-profit platform with interactive real-time impact metrics." },
         { badge: "Philanthropy & Grants", desc: "Social grant lifecycle management, nonprofit proposal reviews, and milestone payout tracking." },
-        { badge: "Wildlife & Alpine NGO", desc: "Alpine biodiversity preservation, wilderness field expeditions, and ecological conservation center." },
-        { badge: "Digital Nonprofit Network", desc: "Social innovator collaboration network, open nonprofit workshops, and future impact incubation." }
+        { badge: "Alpine & Nature Trust", desc: "Highland nature preservation, alpine tree planting, and volunteer climber safety network." },
+        { badge: "Digital Nonprofit Network", desc: "Next-gen nonprofit digital ecosystem, volunteer tech literacy, and decentralized action network." },
+        { badge: "Ecology & Climate NGO", desc: "Global ecological restoration advocacy platform, climate resilience, and sustainable community empowerment." }
       ],
       zh: [
         { badge: "非政府组织与自然保护", desc: "现代生态自然风格设计，具备物种多样性视觉呈现、珍稀物种守护与栖息地筹款模块。" },
@@ -547,8 +549,9 @@ function initLanguageManager() {
         { badge: "青年行动与社区协同", desc: "青年公益社团协同平台、全国分会花名册及社会创新成果展示空间。" },
         { badge: "全球可持续发展基金", desc: "深度践行联合国可持续发展目标 (SDGs) 的国际非营利平台与动态影响力指标。" },
         { badge: "先锋慈善与国际赠款", desc: "公益创投基金管理中心、机构资助申请评审及分阶段资金拨付全流程追踪。" },
-        { badge: "高山生态与自然信托", desc: "山地生物多样性保护平台、荒野科研科考纪实及生态环境保护科普基地。" },
-        { badge: "数字社会创新联盟", desc: "跨界社会创新者协同网络、开放式非营利工作坊及未来影响力孵化生态。" }
+        { badge: "高山生态与自然信托", desc: "山地生态系统保育、高山植树造林行动及志愿者登山安全向导网络。" },
+        { badge: "数字社会创新联盟", desc: "新一代非营利数字生态、志愿者科技赋能及去中心化公益行动网络。" },
+        { badge: "生态修复与气候治理", desc: "全球生态系统修复倡导平台、气候危机治理及社区绿色可持续发展赋能体系。" }
       ]
     },
     pricing_features: {
