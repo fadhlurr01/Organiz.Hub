@@ -499,21 +499,137 @@ function initLanguageManager() {
   const btnEn = document.getElementById('btn-lang-en');
   const btnZh = document.getElementById('btn-lang-zh');
 
+  // Complete section datasets for all 14 templates, 6 packages, roadmap, widgets, add-ons, testimonials, and FAQ
+  const EXTENDED_I18N = {
+    templates: {
+      id: [
+        { badge: "NGO & Konservasi", desc: "Desain alam modern dengan visual biodiversity tajam, modul perlindungan satwa langka & kampanye habitat." },
+        { badge: "Yayasan & Filantropi", desc: "Portal kemanusiaan anak asuh, kampanye beasiswa, dan laporan kas donasi terintegrasi." },
+        { badge: "NGO & Medis", desc: "Arsitektur nirlaba medis, klinik darurat, dan koordinasi tenaga medis sukarela di daerah pelosok." },
+        { badge: "NGO Lingkungan", desc: "Portal advokasi hutan tropis, adopsi pohon, dan perlindungan ekosistem hutan nusantara." },
+        { badge: "Yayasan Riset", desc: "Portal publikasi riset sosial, pengajuan grant inovasi, dan transparansi dana filantropi." },
+        { badge: "NGO Hukum", desc: "Platform advokasi hukum, pendampingan korban, dan kertas kebijakan nirlaba berstandar internasional." },
+        { badge: "NGO Iklim", desc: "Aksi darurat iklim, edukasi transisi energi hijau, dan petisi online masyarakat terorganisir." },
+        { badge: "Komunitas Medis", desc: "Portal koordinasi tanggap bencana darurat, logistik obat-obatan, dan pemetaan posko lapangan." },
+        { badge: "Yayasan Yatim", desc: "Sistem santunan anak yatim terprogram, laporan beasiswa berkala, dan interaksi orang tua asuh." },
+        { badge: "Komunitas Pemuda", desc: "Platform kolaborasi gerakan pemuda, direktori anggota daerah, dan ruang pamer karya sosial." },
+        { badge: "Yayasan Global", desc: "Template nirlaba berbasis tujuan pembangunan berkelanjutan (SDGs) dengan metriks dampak interaktif." },
+        { badge: "Filantropi & Grants", desc: "Portal manajemen hibah dana sosial, seleksi proposal nirlaba, dan tracking pencairan dana bertahap." },
+        { badge: "NGO Konservasi", desc: "Portal advokasi keanekaragaman hayati gunung, ekspedisi alam liar, dan pusat edukasi ekosistem." },
+        { badge: "Komunitas Digital", desc: "Jaringan kolaborasi inovator sosial, lokakarya nirlaba terbuka, dan inkubasi gerakan masa depan." }
+      ],
+      en: [
+        { badge: "NGO & Conservation", desc: "Modern nature design with sharp biodiversity visuals, endangered species protection & habitat campaigns." },
+        { badge: "Foundations & Philanthropy", desc: "Humanitarian foster child portal, scholarship campaigns, and integrated donation ledger." },
+        { badge: "Medical NGO", desc: "Nonprofit health architecture, emergency clinic response, and rural medical volunteer coordination." },
+        { badge: "Environmental NGO", desc: "Rainforest advocacy platform, tree adoption program, and rainforest ecosystem preservation." },
+        { badge: "Research Foundation", desc: "Social research publication hub, innovation grant applications, and philanthropic transparency." },
+        { badge: "Legal Rights NGO", desc: "Legal advocacy platform, victim assistance desk, and international standard non-profit policy papers." },
+        { badge: "Climate Action NGO", desc: "Planetary climate emergency, green energy transition education, and organized online civic petitions." },
+        { badge: "Emergency Medical Aid", desc: "Disaster emergency response coordination, medicine logistics tracking, and field post mapping." },
+        { badge: "Orphan Welfare Foundation", desc: "Programmed orphan care system, periodic scholarship reporting, and foster parent engagement." },
+        { badge: "Youth Community", desc: "Youth movement collaboration platform, regional member directory, and social work showcase." },
+        { badge: "Global SDGs Foundation", desc: "Sustainable Development Goals (SDGs) non-profit platform with interactive real-time impact metrics." },
+        { badge: "Philanthropy & Grants", desc: "Social grant lifecycle management, nonprofit proposal reviews, and milestone payout tracking." },
+        { badge: "Wildlife & Alpine NGO", desc: "Alpine biodiversity preservation, wilderness field expeditions, and ecological conservation center." },
+        { badge: "Digital Nonprofit Network", desc: "Social innovator collaboration network, open nonprofit workshops, and future impact incubation." }
+      ],
+      zh: [
+        { badge: "非政府组织与自然保护", desc: "现代生态自然风格设计，具备物种多样性视觉呈现、珍稀物种守护与栖息地筹款模块。" },
+        { badge: "慈善基金与人道主义", desc: "受助孤儿关怀中心、助学金项目矩阵及全自动资金流水公示平台。" },
+        { badge: "医疗援助与卫生倡导", desc: "医疗类非营利专属架构、应急流动诊所调度及偏远山区志愿医护协同系统。" },
+        { badge: "热带雨林保护组织", desc: "雨林生态倡导门户、爱心认养树木及国家级原始森林生态系统保护行动。" },
+        { badge: "社会发展与科研基金", desc: "社会科学研究成果发布、创新公益赠款申报通道及慈善基金透明公示平台。" },
+        { badge: "人权倡导与法律援助", desc: "法律援助中心、受害者紧急救助及符合国际非营利标准的政策研究智库。" },
+        { badge: "气候危机应对组织", desc: "全球气候紧急行动、绿色能源转型科普以及有组织的大众在线环保联署平台。" },
+        { badge: "应急医疗志愿网络", desc: "重大灾害应急响应指挥调度、急救药品物资调拨及一线救援网格地图。" },
+        { badge: "孤儿福利与助学基金", desc: "体系化孤儿救助体系、定期学业进展汇报及资助人线上互动家园。" },
+        { badge: "青年行动与社区协同", desc: "青年公益社团协同平台、全国分会花名册及社会创新成果展示空间。" },
+        { badge: "全球可持续发展基金", desc: "深度践行联合国可持续发展目标 (SDGs) 的国际非营利平台与动态影响力指标。" },
+        { badge: "先锋慈善与国际赠款", desc: "公益创投基金管理中心、机构资助申请评审及分阶段资金拨付全流程追踪。" },
+        { badge: "高山生态与自然信托", desc: "山地生物多样性保护平台、荒野科研科考纪实及生态环境保护科普基地。" },
+        { badge: "数字社会创新联盟", desc: "跨界社会创新者协同网络、开放式非营利工作坊及未来影响力孵化生态。" }
+      ]
+    },
+    pricing_features: {
+      id: {
+        ribbon: "PALING BANYAK DIPILIH",
+        btn_order: "Pilih Paket Ini →",
+        btn_consult: "Konsultasikan Paket Ini",
+        p1: ["1 Halaman Responsif Ultra Cepat", "Integrasi Donasi QRIS Otomatis", "Live Donation Progress Meter", "WhatsApp Direct Hotline & Notifikasi", "Free Domain & SSL 1 Tahun"],
+        p2: ["5-7 Halaman Informasi Lembaga", "Publikasi Legalitas Kemenkumham", "Galeri Kegiatan & Berita Terbitan", "Form Kontak & Formulir Relawan", "SEO Dasar & Google Maps Lokasi"],
+        p3: ["Multi-Kampanye Donasi Tanpa Batas", "Payment Gateway QRIS, E-Wallet & VA", "Kalkulator Zakat Maal & Profesi", "Generate Kwitansi PDF Otomatis", "Dashboard Rekap Data Donatur"],
+        p4: ["Seluruh Fitur Paket 1, 2, dan 3", "Laporan Transparansi Kas Terbuka (WTP)", "Multi-Bahasa Dwibahasa (ID / EN / ZH)", "Direktori Relawan & Generator E-KTA", "Unduhan PDF Laporan Tahunan & Riset"],
+        p5: ["Database Relawan Terverifikasi", "Generator E-KTA Ber-QR Code Unik", "Kalender Aksi & Ticketing Event", "E-Sertifikat Partisipasi Aksi Otomatis", "Sistem Penugasan Posko Lapangan"],
+        p6: ["Arsitektur Multi-Cabang / Daerah", "Modul Advokasi Kebijakan & Petisi", "Portal Hibah Dana (Grant Application)", "Enkripsi Data Tertinggi & SLA Support", "Integrasi Custom Database & CRM"]
+      },
+      en: {
+        ribbon: "MOST POPULAR CHOICE",
+        btn_order: "Choose This Package →",
+        btn_consult: "Consult This Package",
+        p1: ["1 Ultra-Fast Responsive Page", "Automated QRIS Donation Integration", "Live Donation Progress Meter", "Direct WhatsApp Hotline & Alert", "Free Domain & 256-Bit SSL 1 Year"],
+        p2: ["5-7 Official Organization Pages", "Ministry of Law Entity Publication", "Program Gallery & Press Releases", "Contact & Volunteer Intake Forms", "Nonprofit Google SEO & Maps Setup"],
+        p3: ["Unlimited Multi-Campaign Fundraising", "QRIS, E-Wallet & VA Payment Gateway", "Automated Nisab Zakat Calculator", "Auto-Generated Barcoded PDF Receipts", "Dedicated Donor CRM Dashboard"],
+        p4: ["All Features in Tier 1, 2, and 3", "Real-Time Public Ledger (WTP Audit)", "Full Multilingual Engine (ID / EN / ZH)", "Volunteer Directory & QR E-ID Cards", "Annual Reports & Grant PDF Center"],
+        p5: ["Verified Volunteer Master Database", "Unique QR Code E-ID Card Generator", "Action Mission Calendar & Ticketing", "Automated Verified Action E-Certificates", "Disaster Field Post Assignment Engine"],
+        p6: ["Multi-Branch Regional Architecture", "Policy Advocacy & Civic Petitions", "Grant Proposal Application Portal", "Highest Grade Encryption & SLA Support", "Custom External Database & CRM API"]
+      },
+      zh: {
+        ribbon: "最受机构青睐方案",
+        btn_order: "选择此方案 →",
+        btn_consult: "咨询此定制方案",
+        p1: ["1页极速响应式着陆页", "自动集成全渠道QRIS捐赠通道", "实时筹款进度条动态看板", "WhatsApp官方直通客服与通知", "赠送1年官方域名与高强度SSL"],
+        p2: ["5-7页完整机构官方页面", "司法部批文与民政资质公示", "公益动态与实地项目图文纪实", "联络沟通与志愿者报名表单", "Google非营利SEO与地图定位标注"],
+        p3: ["无上限发起多项目筹款矩阵", "全电子钱包与银行虚拟账户网关", "智能黄金起征天课与善款计算器", "捐款成功自动生成防伪PDF电子凭条", "捐赠人名册与CRM沉淀看板"],
+        p4: ["包含套餐1、2、3的全部功能", "实时财务收支与WTP无保留审计看板", "印尼语/英语/中文全站多语言引擎", "全国志愿者花名册与二维码电子证", "年度审计公报与研究资助PDF专区"],
+        p5: ["实名认证全国志愿者数据库", "唯一防伪二维码电子会员卡生成器", "公益救援行动日历与活动报名", "服务圆满完成自动批量发放电子证书", "灾区一线救援网格化任务派发系统"],
+        p6: ["支持全国多分会与区域分站架构", "公共政策倡导与在线公民倡议联署", "国际公益基金赠款申请与评审门户", "最高等级数据加密与SLA全天候运维", "支持对接机构私有数据库与ERP/CRM"]
+      }
+    },
+    faq: {
+      id: [
+        { q: "Berapa lama proses pembuatan website organisasi hingga siap online?", a: "Untuk paket Campaign Landing Page dan Organization Profile rata-rata selesai dalam 3-5 hari kerja. Untuk paket Growth Platform atau Enterprise rata-rata membutuhkan waktu 7-14 hari kerja termasuk integrasi payment gateway QRIS." },
+        { q: "Apakah dana donasi dipotong oleh pihak Organiz.Hub?", a: "Sama sekali tidak. Kami tidak memotong donasi sepeser pun (0% fee potongan). Seluruh dana dari donatur masuk 100% langsung ke rekening bank atau akun payment gateway resmi atas nama organisasi Anda." },
+        { q: "Bagaimana jika pengurus yayasan kami belum paham mengelola website?", a: "Tim kami menyediakan sesi training panduan khusus via Zoom / Google Meet serta video tutorial langkah demi langkah. Dashboard admin kami rancang sangat ramah pemula tanpa perlu keahlian coding sama sekali." },
+        { q: "Apakah website sudah termasuk domain resmi .or.id atau .org?", a: "Ya, seluruh paket kami sudah termasuk domain resmi (.or.id, .org, atau .id) beserta sertifikat keamanan SSL dan hosting cloud berkecepatan tinggi selama 1 tahun penuh." }
+      ],
+      en: [
+        { q: "How long does it take to launch the organization website?", a: "Campaign Landing Page and Organization Profile packages typically take 3-5 business days. Growth Platform and Enterprise packages take 7-14 business days including live QRIS payment gateway configuration." },
+        { q: "Does Organiz.Hub take any percentage cut from donations?", a: "Absolutely not. We take 0% intermediary fee. 100% of all donor contributions flow directly into your organization's official bank account or verified merchant gateway." },
+        { q: "What if our management team has no technical web skills?", a: "We provide dedicated live onboarding sessions via Zoom/Google Meet plus structured video walkthroughs. Our administrative dashboard is intuitive and 100% code-free." },
+        { q: "Does the package include official .or.id or .org domains?", a: "Yes, all our packages include official domain registration (.or.id, .org, or .id), 256-bit SSL encryption, and premium high-speed cloud hosting for 1 full year." }
+      ],
+      zh: [
+        { q: "搭建上线一套组织官方网站通常需要多长时间？", a: "单页筹款着陆页与机构形象官网套餐通常在3-5个工作日内交付上线。全功能增长平台及大型企业级方案通常需要7-14个工作日（包含动态QRIS支付网关接入与合规资质审核）。" },
+        { q: "Organiz.Hub 是否会从我们筹集的善款中扣除手续费？", a: "绝不抽成。我们实行0%中介分成政策。爱心人士捐赠的每一分善款100%直接进入以您机构名义开立的正规银行账户或持牌支付通道。" },
+        { q: "如果我们的理事会或工作人员没有技术背景该如何管理？", a: "我们将通过 Zoom 安排专属远程辅导并提供详细的操作视频手册。管理后台专为非技术人员量身研发，发布新闻、更新账目均无需编写任何代码。" },
+        { q: "套餐费用中是否已包含官方 .or.id 或 .org 顶级域名？", a: "是的，所有套餐均已包含1年正规组织顶级域名（.or.id、.org 或 .id）、全球信任的256位SSL安全加密证书以及企业级高速云端托管服务。" }
+      ]
+    }
+  };
+
   function applyLanguage(lang) {
     const validLang = (lang === 'zh' || lang === 'en' || lang === 'id') ? lang : 'id';
     const dict = I18N[validLang] || I18N.id;
     document.documentElement.lang = validLang;
     localStorage.setItem('organiz_lang', validLang);
 
-    // Update active button state
-    [btnId, btnEn, btnZh].forEach(b => {
-      if (b) b.classList.remove('active');
-    });
+    // 1. Update active state of language buttons
+    [btnId, btnEn, btnZh].forEach(b => { if (b) b.classList.remove('active'); });
     if (validLang === 'id' && btnId) btnId.classList.add('active');
     if (validLang === 'en' && btnEn) btnEn.classList.add('active');
     if (validLang === 'zh' && btnZh) btnZh.classList.add('active');
 
-    // Apply translations to all DOM elements marked with [data-i18n]
+    // 2. Update mobile drawer buttons
+    document.querySelectorAll('.lang-switch-mobile .lang-btn').forEach(mb => {
+      mb.classList.remove('active');
+      const txt = mb.textContent.trim().toLowerCase();
+      if ((validLang === 'id' && txt === 'id') || (validLang === 'en' && txt === 'en') || (validLang === 'zh' && (txt === 'zh' || txt === '中文'))) {
+        mb.classList.add('active');
+      }
+    });
+
+    // 3. Update all static elements marked with [data-i18n]
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key]) {
@@ -521,7 +637,57 @@ function initLanguageManager() {
       }
     });
 
-    // Re-render feature library in selected language
+    // 4. Update all 14 Template Cards
+    const tplData = EXTENDED_I18N.templates[validLang] || EXTENDED_I18N.templates.id;
+    document.querySelectorAll('.templates-grid .template-card').forEach((card, idx) => {
+      if (tplData[idx]) {
+        const badgeEl = card.querySelector('.t-head .t-badge');
+        const descEl = card.querySelector('.t-desc');
+        const btnSpan = card.querySelector('.btn-demo-trigger span');
+        if (badgeEl) badgeEl.textContent = tplData[idx].badge;
+        if (descEl) descEl.textContent = tplData[idx].desc;
+        if (btnSpan) btnSpan.textContent = dict['tpl_btn_preview'] || 'Live Preview';
+      }
+    });
+
+    // 5. Update 6 Pricing Cards Checklists & Buttons
+    const pkgData = EXTENDED_I18N.pricing_features[validLang] || EXTENDED_I18N.pricing_features.id;
+    const ribbonEl = document.querySelector('.popular-ribbon');
+    if (ribbonEl) ribbonEl.textContent = pkgData.ribbon;
+
+    document.querySelectorAll('.pricing-card').forEach((card, idx) => {
+      const featureKey = `p${idx + 1}`;
+      const items = pkgData[featureKey];
+      if (items) {
+        const listItems = card.querySelectorAll('.pkg-features li');
+        items.forEach((txt, liIdx) => {
+          if (listItems[liIdx]) {
+            listItems[liIdx].innerHTML = `<span>✓</span> ${txt}`;
+          }
+        });
+      }
+      const ctaBtn = card.querySelector('a.btn-outline, a.btn-primary');
+      if (ctaBtn) {
+        if (card.classList.contains('featured-pkg')) {
+          ctaBtn.textContent = pkgData.btn_consult;
+        } else {
+          ctaBtn.textContent = pkgData.btn_order;
+        }
+      }
+    });
+
+    // 6. Update FAQ items
+    const faqData = EXTENDED_I18N.faq[validLang] || EXTENDED_I18N.faq.id;
+    document.querySelectorAll('.faq-row').forEach((row, idx) => {
+      if (faqData[idx]) {
+        const qSpan = row.querySelector('.faq-trigger span:first-child');
+        const aP = row.querySelector('.faq-panel p');
+        if (qSpan) qSpan.textContent = faqData[idx].q;
+        if (aP) aP.textContent = faqData[idx].a;
+      }
+    });
+
+    // 7. Update Feature Library
     const activeFTab = document.querySelector('.f-tab-btn.active');
     const fCat = activeFTab ? activeFTab.getAttribute('data-fcat') : 'website';
     if (typeof renderFeatureLibrary === 'function') {
@@ -747,6 +913,56 @@ const featureLibraryData = {
       { title: "Automated XML Sitemaps", desc: "Automatic index refresh whenever new articles or programs are published." },
       { title: "Google Search Console Connected", desc: "Detailed analytics on donor search queries and visitor impressions." },
       { title: "Next-Gen WebP Compression", desc: "Ultra-crisp event photos optimized for ultra-low mobile data consumption." }
+    ]
+  },
+  zh: {
+    website: [
+      { title: "全设备响应式设计", desc: "针对手机、平板和大型显示器进行全方位视口适配优化。" },
+      { title: "双主题模式 (深色/浅色)", desc: "内置两套高对比度专业配色，带来舒适的浏览阅读体验。" },
+      { title: "极速秒开架构 (评分99+)", desc: "代码极致精简与资源压缩，即使在弱网环境下也能秒速加载。" },
+      { title: "官方 .or.id / .org 域名", desc: "正规组织域名认证与全球通用免费SSL高安全证书配置。" },
+      { title: "零代码简易后台系统", desc: "无需任何编程经验，管理人员即可轻松发布新闻、动态与财务报表。" },
+      { title: "焦点横幅与使命轮播", desc: "在首页首屏重点呈现核心公益项目，高效激发捐赠人共情。" }
+    ],
+    donasi: [
+      { title: "全渠道动态 QRIS 捐赠", desc: "全面支持GoPay、OVO、DANA、ShopeePay及所有银行手机App扫码。" },
+      { title: "多银行专属虚拟账户 (VA)", desc: "支持各大商业银行专属账户，方便大型企业与机构进行大额对公捐款。" },
+      { title: "实时善款进度条看板", desc: "动态筹款进度条与数据看板，到账后毫秒级自动更新数值。" },
+      { title: "防伪条码 PDF 电子收据", desc: "捐赠成功后自动生成带机构公章与防伪条码的合法电子凭证。" },
+      { title: "智能天课与善款计算器", desc: "依据最新黄金起征标准与法规自动核算应缴天课金额。" },
+      { title: "捐赠人专属档案管理 (CRM)", desc: "系统化沉淀捐款人名册与联络信息，助力建立长期资助信任。" }
+    ],
+    relawan: [
+      { title: "34省全国志愿者花名册", desc: "实名认证志愿者数据库，支持技能标签筛选与属地网格化调度。" },
+      { title: "二维码数字化电子会员证 (E-ID)", desc: "一键生成带专属防伪二维码的电子卡，用于一线救灾身份核验。" },
+      { title: "公益行动联合日历", desc: "集中排期人道主义救援、技能培训与物资派发等各类行动。" },
+      { title: "志愿服务电子荣誉证书", desc: "活动圆满结束后自动批量生成带唯一核验编号的服务证书。" },
+      { title: "志愿者在线报名审核", desc: "自定义招募表单，支持特长分类筛选与空闲时段排班核验。" },
+      { title: "WhatsApp 应急行动群集成", desc: "支持一键直达应急行动联络群，实现突发灾害快速群发调度。" }
+    ],
+    transparansi: [
+      { title: "实时公开财务流水看板", desc: "如实公开善款流入与各科目支出明细，杜绝暗箱操作。" },
+      { title: "WTP无保留审计报告下载中心", desc: "集中归档注册会计师权威审计报告PDF，便于申报政府与大型基金。" },
+      { title: "85/10/5 资金规范分配图", desc: "清晰展示项目直接支出(85%)、运营保障(10%)及应急储备(5%)。" },
+      { title: "善款物资发放图文凭据", desc: "图文归档受助人签收凭条与实地交付现场记录，全程可追溯。" },
+      { title: "法定批文资质权威公示", desc: "显著公示司法部社团批文及民政部门公开募捐许可信息。" },
+      { title: "防篡改交易审计日志", desc: "系统底层记录不可篡改的流水日志，确保账目绝对清白合规。" }
+    ],
+    keamanan: [
+      { title: "256位高强度 SSL 加密", desc: "银行级数据传输加密标准，严密保护捐赠人隐私与支付安全。" },
+      { title: "云端防火墙与防 DDoS 攻击", desc: "全天候7×24小时无间断运行防护，抵御恶意网络攻击。" },
+      { title: "云数据库每日自动冷备份", desc: "多地域隔离的自动化夜间云备份，确保核心资产数据万无一失。" },
+      { title: "分级权限管理体系", desc: "为理事长、财务总监、项目专员及志愿者主管分配精准权限。" },
+      { title: "严格合规个人信息保护法", desc: "严格遵守捐赠人与未成年受助人隐私保密法规标准。" },
+      { title: "异常登录即时安全预警", desc: "当检测到未授权IP异地访问时，系统自动发送邮件拦截警报。" }
+    ],
+    seo: [
+      { title: "Google 非营利规范数据结构", desc: "部署Nonprofit专属结构化数据，确保在Google搜索首页脱颖而出。" },
+      { title: "AI 搜索引擎优化 (AI-Ready)", desc: "深度优化ChatGPT、Perplexity、Gemini等AI工具的语义索引。" },
+      { title: "社交媒体 Open Graph 预览", desc: "在WhatsApp与Facebook分享时自动呈现高清精美的项目海报卡片。" },
+      { title: "自动更新 XML 站点地图", desc: "每当发布新文章或发起新筹款时，自动向搜索引擎提交更新抓取。" },
+      { title: "连接 Google Search Console", desc: "实时洞察捐助人搜索热词与网站访问趋势，精准把握公众关切。" },
+      { title: "下一代 WebP 极速图像压缩", desc: "高清活动现场纪实图片自动转码压缩，节省移动端流量并极速加载。" }
     ]
   }
 };
