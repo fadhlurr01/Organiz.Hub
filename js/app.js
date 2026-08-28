@@ -822,7 +822,7 @@ function initTestimonialCarousel() {
 }
 
 /* ==========================================================================
-   12. GSAP 3.12+ & ScrollTrigger Animation Suite
+   12. GSAP 3.12+ & ScrollTrigger Animation Suite (Design DNA & Skills Applied)
    ========================================================================== */
 function initGsapAnimations() {
   if (typeof gsap === 'undefined') return;
@@ -830,6 +830,17 @@ function initGsapAnimations() {
   if (typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
   }
+
+  // Interactive Glass Card Spotlight Reflection (Design DNA Phase 3 Visual Effects)
+  document.querySelectorAll('.glass-panel, .solution-card, .pillar-card, .pricing-card, .workflow-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
 
   const mm = gsap.matchMedia();
 
@@ -841,7 +852,7 @@ function initGsapAnimations() {
 
     if (reduceMotion) return;
 
-    // Hero Entrance Timeline
+    // 1. Hero Entrance Master Timeline
     const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     heroTl
@@ -852,17 +863,17 @@ function initGsapAnimations() {
       .fromTo(".dashboard-window", { autoAlpha: 0, y: 40, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.9 }, "-=0.6")
       .fromTo(".floating-badge", { autoAlpha: 0, scale: 0.6, y: 15 }, { autoAlpha: 1, scale: 1, y: 0, stagger: 0.15, duration: 0.6, ease: "back.out(2)" }, "-=0.3");
 
-    // 3D Interactive Mouse Parallax on Hero Visual
+    // 2. 3D Interactive Mouse Parallax on Hero Visual
     const heroSection = document.getElementById('hero');
     const mockupWrap = document.getElementById('hero-mockup-wrapper');
     if (heroSection && mockupWrap && isDesktop) {
       heroSection.addEventListener('mousemove', (e) => {
         const { clientX, clientY } = e;
-        const xPos = (clientX / window.innerWidth - 0.5) * 20;
-        const yPos = (clientY / window.innerHeight - 0.5) * 20;
+        const xPos = (clientX / window.innerWidth - 0.5) * 22;
+        const yPos = (clientY / window.innerHeight - 0.5) * 22;
         gsap.to(mockupWrap, {
-          rotationY: xPos * 0.4,
-          rotationX: -yPos * 0.4,
+          rotationY: xPos * 0.45,
+          rotationX: -yPos * 0.45,
           duration: 0.8,
           ease: "power2.out"
         });
@@ -878,7 +889,63 @@ function initGsapAnimations() {
       });
     }
 
-    // ScrollTrigger Batched Entrances
+    // 3. Scrubbed Cyber-Workflow Stepper Timeline (GSAP ScrollTrigger scrub)
+    const wfWrapper = document.querySelector('.workflow-journey-wrapper');
+    const wfGlow = document.querySelector('.workflow-line-glow');
+    if (wfWrapper && wfGlow && typeof ScrollTrigger !== 'undefined') {
+      gsap.fromTo(wfGlow,
+        { height: "0%" },
+        {
+          height: "100%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: wfWrapper,
+            start: "top 70%",
+            end: "bottom 75%",
+            scrub: 0.5
+          }
+        }
+      );
+
+      // Trigger each step node & card on scroll
+      document.querySelectorAll('.workflow-step-row').forEach(row => {
+        const node = row.querySelector('.workflow-node');
+        const card = row.querySelector('.workflow-card');
+
+        gsap.fromTo(node,
+          { scale: 0.7, opacity: 0.4 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.5,
+            ease: "back.out(2)",
+            scrollTrigger: {
+              trigger: row,
+              start: "top 75%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+
+        gsap.fromTo(card,
+          { autoAlpha: 0, y: 35, scale: 0.95 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: row,
+              start: "top 80%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+    }
+
+    // 4. ScrollTrigger Section Titles & Batched Entrances
     if (typeof ScrollTrigger !== 'undefined') {
       gsap.utils.toArray(".section-title-wrap").forEach(el => {
         gsap.fromTo(el,
@@ -893,7 +960,7 @@ function initGsapAnimations() {
         );
       });
 
-      ScrollTrigger.batch(".solution-card, .pillar-card, .template-card, .pricing-card, .workflow-step-row, .why-card, .widget-card, .addon-card", {
+      ScrollTrigger.batch(".solution-card, .pillar-card, .template-card, .pricing-card, .why-card, .widget-card, .addon-card", {
         interval: 0.1,
         batchMax: 3,
         onEnter: (batch) => {
@@ -903,6 +970,19 @@ function initGsapAnimations() {
           );
         },
         start: "top 90%"
+      });
+
+      // Subtle parallax on floating badges
+      gsap.to(".badge-top-right", {
+        y: -30,
+        ease: "none",
+        scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: 1 }
+      });
+
+      gsap.to(".badge-bottom-left", {
+        y: -15,
+        ease: "none",
+        scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: 1 }
       });
     }
   });
