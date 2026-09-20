@@ -12,6 +12,19 @@ Thumbs.db
 *.tmp
 *.log
 
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+
+# References & Local Scratch
+unipix.html
+unipix_files/
+
 # AI & Agent local caches
 .agents/
 skills-lock.json
